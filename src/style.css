@@ -1,0 +1,411 @@
+/**
+ * Selenium Digital Consultant — Main Stylesheet
+ *
+ * Architecture:
+ *   1. Tailwind base directives
+ *   2. Global CSS custom properties (design tokens as CSS vars)
+ *   3. Base element resets
+ *   4. Reusable component classes
+ *   5. Utility overrides
+ *
+ * All Tailwind utilities are available throughout the project.
+ * CSS custom properties are kept in sync with tailwind.config.js.
+ */
+
+/* ─────────────────────────────────────────────────────────────
+   1. TAILWIND DIRECTIVES
+   ───────────────────────────────────────────────────────────── */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────
+   2. CSS CUSTOM PROPERTIES (Design Tokens)
+   These mirror tailwind.config.js for use in raw CSS where needed.
+   ───────────────────────────────────────────────────────────── */
+@layer base {
+  :root {
+    /* Backgrounds */
+    --se-void:        #080A0F;
+    --se-dark:        #0D0E14;
+    --se-surface:     #141720;
+    --se-panel:       #1C2032;
+    --se-border:      #252A3A;
+
+    /* Text */
+    --se-white:       #F0F2F5;
+    --se-silver:      #B8BDD0;
+    --se-muted:       #6B7394;
+    --se-faint:       #3A4060;
+
+    /* Accents */
+    --se-cyan:        #00D4FF;
+    --se-cyan-dark:   #0090C2;
+    --se-red:         #E8214A;
+    --se-red-dark:    #A01036;
+
+    /* Utility */
+    --se-glow-cyan:   rgba(0, 212, 255, 0.2);
+    --se-glow-red:    rgba(232, 33, 74, 0.2);
+
+    /* Transitions */
+    --transition-fast:   0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow:   0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* ───── Base Resets ───── */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    /* Prevent horizontal overflow on mobile */
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--se-dark);
+    color: var(--se-white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Focus ring */
+  :focus-visible {
+    outline: 2px solid var(--se-cyan);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Selection highlight */
+  ::selection {
+    background: rgba(0, 212, 255, 0.25);
+    color: var(--se-white);
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--se-void);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--se-border);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--se-muted);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   3. COMPONENT CLASSES
+   ───────────────────────────────────────────────────────────── */
+@layer components {
+
+  /* ─── Navigation ─── */
+  .nav-link {
+    @apply text-se-silver hover:text-se-white text-sm font-medium tracking-wide transition-colors duration-300 relative;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--se-cyan);
+    transition: width var(--transition-normal);
+  }
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  /* ─── Language Toggle Button ─── */
+  .lang-btn {
+    @apply flex items-center gap-1.5 px-3 py-1.5 rounded border border-se-border text-se-muted text-xs font-mono tracking-widest uppercase
+           hover:border-se-cyan hover:text-se-cyan transition-all duration-300 cursor-pointer;
+  }
+  .lang-btn.active {
+    @apply border-se-cyan text-se-cyan bg-se-cyan/10;
+  }
+
+  /* ─── Buttons ─── */
+  /* Primary CTA: Filled Cyan */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-sm font-display font-semibold text-sm
+           bg-se-cyan text-se-void tracking-wide
+           hover:bg-opacity-90 hover:shadow-glow-cyan
+           transition-all duration-300 ease-smooth;
+  }
+
+  /* Secondary CTA: Ghost / Outlined */
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-sm font-display font-semibold text-sm
+           border border-se-silver/40 text-se-silver
+           hover:border-se-cyan hover:text-se-cyan hover:bg-se-cyan/5
+           transition-all duration-300 ease-smooth;
+  }
+
+  /* Danger CTA: Filled Red */
+  .btn-danger {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-sm font-display font-semibold text-sm
+           bg-se-red text-white tracking-wide
+           hover:bg-se-red-400 hover:shadow-glow-red
+           transition-all duration-300;
+  }
+
+  /* ─── Section Wrappers ─── */
+  .section-container {
+    @apply max-w-content mx-auto px-6 md:px-10 lg:px-16;
+  }
+
+  .section-tag {
+    @apply inline-flex items-center gap-2 text-xs font-mono tracking-[0.2em] uppercase text-se-cyan;
+  }
+  .section-tag::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: var(--se-cyan);
+  }
+
+  .section-heading {
+    @apply font-display text-display-xl text-se-white leading-none tracking-tight;
+  }
+
+  .section-subheading {
+    @apply text-se-silver text-lg leading-relaxed max-w-2xl;
+  }
+
+  /* ─── Cards ─── */
+  .se-card {
+    @apply relative bg-se-surface border border-se-border rounded-sm p-8
+           shadow-card hover:shadow-card-hover
+           transition-all duration-500 ease-smooth overflow-hidden;
+  }
+  /* Shimmer animation overlay on card hover */
+  .se-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--tw-gradient-stops, linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.04) 50%, transparent 100%));
+    background-size: 200% 100%;
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+  }
+  .se-card:hover::before {
+    opacity: 1;
+    animation: shimmer 2s linear infinite;
+  }
+  /* Top border accent line */
+  .se-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--se-cyan), transparent);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+  }
+  .se-card:hover::after {
+    opacity: 1;
+  }
+
+  /* Service icon container */
+  .service-icon-wrap {
+    @apply w-14 h-14 rounded-sm flex items-center justify-center
+           bg-se-cyan/10 border border-se-cyan/20
+           transition-all duration-300;
+  }
+  .se-card:hover .service-icon-wrap {
+    @apply bg-se-cyan/20 border-se-cyan/40;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+  }
+
+  /* ─── Stat Cards ─── */
+  .stat-card {
+    @apply text-center p-8;
+  }
+  .stat-number {
+    @apply font-display text-5xl font-bold text-se-cyan;
+    background: linear-gradient(135deg, var(--se-cyan), #7AEBFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ─── Tech Badge ─── */
+  .tech-badge {
+    @apply flex items-center gap-3 px-5 py-3 rounded-sm border border-se-border bg-se-surface
+           hover:border-se-cyan/50 hover:bg-se-cyan/5 hover:scale-105
+           transition-all duration-300 cursor-default;
+  }
+
+  /* ─── Process Step ─── */
+  .process-step {
+    @apply relative flex gap-6;
+  }
+  .process-step-number {
+    @apply flex-shrink-0 w-10 h-10 rounded-sm font-mono font-bold text-sm
+           flex items-center justify-center
+           border border-se-cyan/40 text-se-cyan bg-se-cyan/10;
+  }
+
+  /* ─── Testimonial Card ─── */
+  .testimonial-card {
+    @apply se-card;
+  }
+  .testimonial-quote {
+    @apply text-se-silver leading-relaxed italic;
+  }
+  .testimonial-author {
+    @apply flex items-center gap-3 mt-6 pt-6 border-t border-se-border;
+  }
+
+  /* ─── Contact Form ─── */
+  .form-group {
+    @apply flex flex-col gap-2;
+  }
+  .form-label {
+    @apply text-xs font-mono tracking-widest uppercase text-se-muted;
+  }
+  .form-input {
+    @apply w-full px-4 py-3.5 rounded-sm
+           bg-se-panel border border-se-border text-se-white
+           placeholder:text-se-faint
+           focus:outline-none focus:border-se-cyan focus:bg-se-panel/80
+           transition-all duration-300 text-sm;
+  }
+  .form-textarea {
+    @apply form-input resize-none;
+    min-height: 140px;
+  }
+  .form-input:hover,
+  .form-textarea:hover {
+    border-color: var(--se-muted);
+  }
+
+  /* ─── Glitch text effect (hero headline decoration) ─── */
+  .glitch-text {
+    position: relative;
+  }
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 2px;
+    top: 0;
+    background: linear-gradient(135deg, #00D4FF, #7AEBFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    opacity: 0.6;
+    animation: glitchSlice 8s infinite;
+  }
+  @keyframes glitchSlice {
+    0%, 90%, 100% { transform: translateX(0); opacity: 0; }
+    92%           { transform: translateX(-3px); opacity: 0.4; }
+    94%           { transform: translateX(3px); opacity: 0.4; }
+    96%           { transform: translateX(0); opacity: 0; }
+  }
+
+  /* ─── Divider line ─── */
+  .se-divider {
+    @apply h-px bg-gradient-to-r from-transparent via-se-border to-transparent my-20;
+  }
+
+  /* ─── Glassmorphism panel ─── */
+  .glass-panel {
+    background: rgba(20, 23, 32, 0.7);
+    border: 1px solid rgba(37, 42, 58, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* ─── Reveal animation base state ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Staggered reveal delays */
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+
+  /* ─── Hero canvas background ─── */
+  #heroCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   4. UTILITY OVERRIDES & GLOBAL EXTRAS
+   ───────────────────────────────────────────────────────────── */
+@layer utilities {
+  /* Gradient text utility */
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, var(--se-cyan) 0%, #7AEBFF 60%, var(--se-white) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-silver {
+    background: linear-gradient(135deg, #C8CDD6, #8A909F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Border gradient trick */
+  .border-gradient-cyan {
+    border-image: linear-gradient(135deg, var(--se-cyan), transparent) 1;
+  }
+
+  /* Hide scrollbar but keep scroll functionality */
+  .scroll-hidden::-webkit-scrollbar { display: none; }
+  .scroll-hidden { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Noise texture overlay */
+  .noise::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+}

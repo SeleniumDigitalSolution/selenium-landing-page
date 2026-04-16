@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- ─── Viewport & Theme ─── -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0D0E14" />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- ─── SEO Meta Tags ─── -->
+    <title>Selenium Digital Consultant — Enterprise IT Consulting</title>
+    <meta name="description"
+          content="Selenium Digital Consultant is your enterprise-grade IT partner — architecting resilient cloud infrastructure, accelerating digital transformation, and securing your most critical systems. Based in Pontianak, Indonesia." />
+    <meta name="keywords"
+          content="IT consultant, digital transformation, cloud architecture, cybersecurity, DevOps, data engineering, AI machine learning, Pontianak, Indonesia, enterprise IT" />
+    <meta name="author" content="Selenium Digital Consultant" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.seleniumdigital.id/" />
+
+    <!-- ─── Open Graph (Social Sharing) ─── -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.seleniumdigital.id/" />
+    <meta property="og:title" content="Selenium Digital Consultant — Enterprise IT Consulting" />
+    <meta property="og:description"
+          content="The essential digital element for your business. Cloud architecture, cybersecurity, data engineering, and AI consulting for enterprises across Indonesia." />
+    <meta property="og:site_name" content="Selenium Digital Consultant" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="id_ID" />
+
+    <!-- ─── Twitter Card ─── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Selenium Digital Consultant — Enterprise IT Consulting" />
+    <meta name="twitter:description"
+          content="The essential digital element for your enterprise. Cloud, security, data, AI consulting." />
+
+    <!-- ─── Favicon (SVG inline as data URI — no external file needed) ─── -->
+    <link rel="icon" type="image/svg+xml"
+          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230D0E14' stroke='%2300D4FF' stroke-width='1'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2300D4FF'/%3E%3Cellipse cx='16' cy='16' rx='13' ry='5' fill='none' stroke='%2300D4FF' stroke-width='0.8' opacity='0.5'/%3E%3Cellipse cx='16' cy='16' rx='13' ry='5' fill='none' stroke='%2300D4FF' stroke-width='0.8' opacity='0.5' transform='rotate(60 16 16)'/%3E%3Cellipse cx='16' cy='16' rx='13' ry='5' fill='none' stroke='%2300D4FF' stroke-width='0.8' opacity='0.5' transform='rotate(120 16 16)'/%3E%3C/svg%3E" />
+
+    <!-- ─── Preconnect for Google Fonts performance ─── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- ─── Google Fonts: Inter + Outfit + JetBrains Mono ─── -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+          rel="stylesheet" />
+
+    <!-- ─── Structured Data (JSON-LD) for SEO ─── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Selenium Digital Consultant",
+      "description": "Enterprise IT consulting company specializing in cloud architecture, cybersecurity, data engineering, and AI/ML solutions.",
+      "url": "https://www.seleniumdigital.id",
+      "telephone": "+62-21-5555-8888",
+      "email": "hello@seleniumdigital.id",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pontianak",
+        "addressCountry": "ID"
+      },
+      "areaServed": "ID",
+      "serviceType": [
+        "Cloud Architecture",
+        "Cybersecurity Consulting",
+        "Application Development",
+        "Data Engineering",
+        "AI & Machine Learning",
+        "IT Infrastructure & DevOps"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/selenium-digital",
+        "https://www.instagram.com/seleniumdigital"
+      ]
+    }
+    </script>
+
+    <!-- ─── Critical Inline CSS: prevent flash of unstyled content ─── -->
+    <style>
+      /* Prevent FOUC: set background immediately before JS/CSS loads */
+      html { background: #0D0E14; }
+      body { margin: 0; background: #0D0E14; }
+      #app { min-height: 100vh; }
+
+      /* Initial loading state */
+      #app:empty::after {
+        content: '';
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: #0D0E14;
+        z-index: 9999;
+      }
+    </style>
+
+    <!-- ─── Performance hints ─── -->
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+  </head>
+
+  <body>
+    <!-- Skip to main content (accessibility) -->
+    <a href="#main-content"
+       class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-se-cyan focus:text-se-void focus:rounded-sm focus:font-semibold"
+       id="skip-nav">
+      Skip to main content
+    </a>
+
+    <!-- React-style app mount point -->
+    <div id="app"></div>
+
+    <!-- Main JS Module -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
