@@ -38,20 +38,20 @@ export const translations = {
       subheadline: 'Selenium Digital Consultant is your enterprise-grade IT partner — architecting resilient cloud infrastructure, accelerating digital transformation, and securing your most critical systems.',
       ctaPrimary:  'Start Your Journey',
       ctaSecondary:'Explore Our Services',
-      stat1Value:  '150+',
-      stat1Label:  'Projects Delivered',
-      stat2Value:  '98%',
-      stat2Label:  'Client Retention',
-      stat3Value:  '12+',
-      stat3Label:  'Years of Expertise',
-      stat4Value:  '24/7',
-      stat4Label:  'System Monitoring',
+      stat1Value:  'Modern',
+      stat1Label:  'Tech Stack',
+      stat2Value:  'Agile',
+      stat2Label:  'Development',
+      stat3Value:  'Secure',
+      stat3Label:  'System & Data',
+      stat4Value:  'Scalable',
+      stat4Label:  'Architecture',
     },
 
     // ── Services Section ──
     services: {
       tag:      'Our Expertise',
-      heading:  'Solutions Built for Enterprise Scale',
+      heading:  'Solutions Built for Small Business to Enterprise Scale',
       subheading: 'From infrastructure to intelligence — we deliver end-to-end technology solutions that drive measurable business outcomes.',
       items: [
         {
@@ -60,29 +60,29 @@ export const translations = {
           description: 'Design and deploy secure, scalable multi-cloud and hybrid cloud environments on AWS, GCP, and Azure — optimized for performance and cost efficiency.',
           tags:        ['AWS', 'GCP', 'Azure', 'Terraform'],
         },
-        {
-          icon:        'shield',
-          title:       'Cybersecurity & Compliance',
-          description: 'Protect your business with enterprise-grade security frameworks, penetration testing, SIEM integration, and full ISO 27001 / SOC 2 compliance consulting.',
-          tags:        ['SOC 2', 'ISO 27001', 'Zero Trust', 'SIEM'],
-        },
+        // {
+        //   icon:        'shield',
+        //   title:       'Cybersecurity & Compliance',
+        //   description: 'Protect your business with enterprise-grade security frameworks, penetration testing, SIEM integration, and full ISO 27001 / SOC 2 compliance consulting.',
+        //   tags:        ['SOC 2', 'ISO 27001', 'Zero Trust', 'SIEM'],
+        // },
         {
           icon:        'code',
           title:       'Application Development',
           description: 'Architect and deliver modern full-stack web applications and microservices with a focus on performance, maintainability, and DevOps-first engineering.',
-          tags:        ['React', 'Node.js', 'K8s', 'Docker'],
+          tags:        ['React', 'express.js', 'Hapi.js', 'Node.js', 'Docker', 'Laravel'],
         },
         {
           icon:        'database',
           title:       'Data Engineering & Analytics',
           description: 'Unify your data landscape — from ETL pipeline design and data warehousing to real-time BI dashboards and predictive analytics infrastructure.',
-          tags:        ['dbt', 'Snowflake', 'Spark', 'Airflow'],
+          tags:        ['Power BI', 'MySQL', 'PostgreSQL'],
         },
         {
           icon:        'cpu',
           title:       'AI & Machine Learning',
           description: 'Integrate intelligent automation into your operations — from LLM-powered workflows and NLP models to computer vision and MLOps deployment pipelines.',
-          tags:        ['Python', 'LangChain', 'MLflow', 'PyTorch'],
+          tags:        ['Python', 'LangChain', 'Computer Vision', 'Machine Learning', 'PyTorch'],
         },
         {
           icon:        'settings',
@@ -90,6 +90,13 @@ export const translations = {
           description: 'Transform your delivery pipeline with CI/CD automation, infrastructure-as-code, container orchestration, and 24/7 proactive system monitoring.',
           tags:        ['GitHub Actions', 'Ansible', 'Prometheus', 'Grafana'],
         },
+        {
+          icon:        'network',
+          title:       'Workspace IT & Network Setup',
+          description: 'Ensure seamless daily operations with reliable Local Area Network (LAN) deployment, CCTV security system installation, and complete workstation setup or reinstallation for your employees.',
+          tags:        ['Office Network (LAN)', 'CCTV Installation', 'Workstation Setup', 'IT Support'],
+        }
+
       ],
     },
 
@@ -111,23 +118,23 @@ export const translations = {
     techStack: {
       tag:        'Technology Expertise',
       heading:    'Built on the Tools Enterprises Trust',
-      subheading: 'We work with the industry\'s most robust, battle-tested technologies across every layer of the modern digital stack.',
+      subheading: 'We work with robust, industry-proven technologies across every layer of the modern digital stack.',
       categories: [
         {
           name: 'Cloud & Infrastructure',
-          items: ['AWS', 'GCP', 'Azure', 'Terraform', 'Pulumi', 'Kubernetes', 'Docker'],
+          items: ['AWS', 'GCP', 'Azure', 'Terraform', 'Kubernetes', 'Docker'],
         },
         {
           name: 'Development',
-          items: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Python', 'Go', 'Rust'],
+          items: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Python'],
         },
         {
           name: 'Data & AI',
-          items: ['Snowflake', 'dbt', 'Apache Spark', 'Airflow', 'PyTorch', 'LangChain', 'PostgreSQL'],
+          items: ['PyTorch', 'LangChain', 'PostgreSQL', 'MySQL', 'AI Integration', 'Tensor Flow'],
         },
         {
-          name: 'Security & DevOps',
-          items: ['GitHub Actions', 'Ansible', 'Prometheus', 'Grafana', 'Vault', 'Wazuh', 'Elasticsearch'],
+          name: 'DevOps',
+          items: ['GitHub Actions', 'CI/CD', 'Elasticsearch'],
         },
       ],
     },
@@ -136,7 +143,7 @@ export const translations = {
     process: {
       tag:        'How We Work',
       heading:    'From Discovery to Delivery',
-      subheading: 'A proven, structured engagement model designed for enterprise complexity and startup agility.',
+      subheading: 'A structured engagement model designed for the complexity of Small Businesses to Enterprises.',
       steps: [
         {
           number: '01',
@@ -146,7 +153,7 @@ export const translations = {
         {
           number: '02',
           title:  'Strategy & Architecture',
-          desc:   'Our senior architects design a tailored technology roadmap and solution architecture aligned to your business objectives and budget constraints.',
+          desc:   'Our developers design a tailored technology roadmap and solution architecture aligned to your business objectives and budget constraints.',
         },
         {
           number: '03',
@@ -161,28 +168,28 @@ export const translations = {
       ],
     },
 
-    // ── Testimonials Section ──
-    testimonials: {
-      tag:      'Client Voices',
-      heading:  'Trusted by Organizations That Can\'t Afford to Fail',
+    // ── Projects Section ──
+    projects: {
+      tag:      'Our Work',
+      heading:  'Our Projects',
       items: [
         {
-          quote:   'Selenium Digital rearchitected our entire AWS infrastructure in 90 days. The result was 40% cost reduction and zero downtime during peak holiday traffic. Exceptional engineering discipline.',
-          name:    'Reza Mahendra',
-          role:    'CTO, Tokko Retail Group',
-          initial: 'R',
+          title:       'Automated Image Validation',
+          client:      'AI & Machine Learning',
+          description: 'Developed an automated image recognition module to reliably validate specific screenshots uploaded by application users.',
+          tags:        ['Computer Vision', 'Machine Learning'],
         },
         {
-          quote:   'Their team embedded with us like true partners. From day one, they understood not just the technical requirements but the business context. They delivered a data platform that unlocked insights we didn\'t know we had.',
-          name:    'Sarah Chen',
-          role:    'VP Engineering, FinFlow Asia',
-          initial: 'S',
+          title:       'Village Profile Website',
+          client:      'Web Development',
+          description: 'Built an interactive website serving as an information hub to provide easy public access to regional data and local potentials.',
+          tags:        ['Frontend', 'UI/UX Design'],
         },
         {
-          quote:   'After the SOC 2 audit was a nightmare, Selenium came in and completely rethought our security posture. We achieved compliance in 4 months and now have a security program I\'m actually proud of.',
-          name:    'David Hartanto',
-          role:    'CISO, MedBridge Indonesia',
-          initial: 'D',
+          title:       'CCTV Security Installation',
+          client:      'Security Infrastructure',
+          description: 'Designed and deployed comprehensive CCTV monitoring networks to ensure the safety and operational security of facility areas.',
+          tags:        ['CCTV', 'Security', 'IT Support'],
         },
       ],
     },
@@ -204,9 +211,9 @@ export const translations = {
       submitSuccess:'Message sent. We\'ll be in touch within 24 hours.',
       info: [
         { label: 'Email', value: 'hello@seleniumdigital.id' },
-        { label: 'Phone', value: '+62 21 5555 8888' },
+        { label: 'Phone', value: '+62 822 5321 0449' },
         { label: 'Headquarters', value: 'Pontianak, Indonesia' },
-        { label: 'Hours', value: 'Mon–Fri: 09:00–18:00 WIB' },
+        { label: 'Hours', value: 'Mon–Fri: 09:00–17:00 WIB' },
       ],
     },
 
@@ -249,23 +256,23 @@ export const translations = {
       headline1:  'Kami Menggerakkan',
       headline2:  'Inti Digital',
       headline3:  'Bisnis Anda.',
-      subheadline: 'Selenium Digital Consultant adalah mitra IT enterprise Anda — merancang infrastruktur cloud yang tangguh, mempercepat transformasi digital, dan mengamankan sistem yang paling kritis.',
+      subheadline: 'Selenium Digital Consultant adalah mitra IT UMKM hingga enterprise Anda — merancang infrastruktur cloud yang tangguh, mempercepat transformasi digital, dan mengamankan sistem yang paling kritis.',
       ctaPrimary:  'Mulai Perjalanan Anda',
       ctaSecondary:'Jelajahi Layanan Kami',
-      stat1Value:  '150+',
-      stat1Label:  'Proyek Selesai',
-      stat2Value:  '98%',
-      stat2Label:  'Retensi Klien',
-      stat3Value:  '12+',
-      stat3Label:  'Tahun Pengalaman',
-      stat4Value:  '24/7',
-      stat4Label:  'Pemantauan Sistem',
+      stat1Value:  'Modern',
+      stat1Label:  'Stack Teknologi',
+      stat2Value:  'Agile',
+      stat2Label:  'Pengembangan',
+      stat3Value:  'Aman',
+      stat3Label:  'Sistem & Data',
+      stat4Value:  'Terukur',
+      stat4Label:  'Arsitektur IT',
     },
 
     // ── Bagian Layanan ──
     services: {
       tag:        'Keahlian Kami',
-      heading:    'Solusi yang Dibangun untuk Skala Enterprise',
+      heading:    'Solusi yang Dibangun untuk Skala UMKM hingga Enterprise',
       subheading: 'Dari infrastruktur hingga kecerdasan buatan — kami menghadirkan solusi teknologi end-to-end yang menghasilkan dampak bisnis yang terukur.',
       items: [
         {
@@ -274,29 +281,29 @@ export const translations = {
           description: 'Merancang dan menerapkan lingkungan multi-cloud dan hybrid cloud yang aman dan skalabel di AWS, GCP, dan Azure — dioptimalkan untuk performa dan efisiensi biaya.',
           tags:        ['AWS', 'GCP', 'Azure', 'Terraform'],
         },
-        {
-          icon:        'shield',
-          title:       'Keamanan Siber & Kepatuhan',
-          description: 'Lindungi bisnis Anda dengan kerangka keamanan enterprise, pengujian penetrasi, integrasi SIEM, dan konsultasi kepatuhan ISO 27001 / SOC 2 yang komprehensif.',
-          tags:        ['SOC 2', 'ISO 27001', 'Zero Trust', 'SIEM'],
-        },
+        // {
+        //   icon:        'shield',
+        //   title:       'Keamanan Siber & Kepatuhan',
+        //   description: 'Lindungi bisnis Anda dengan kerangka keamanan enterprise, pengujian penetrasi, integrasi SIEM, dan konsultasi kepatuhan ISO 27001 / SOC 2 yang komprehensif.',
+        //   tags:        ['SOC 2', 'ISO 27001', 'Zero Trust', 'SIEM'],
+        // },
         {
           icon:        'code',
           title:       'Pengembangan Aplikasi',
           description: 'Merancang dan menghadirkan aplikasi web full-stack dan microservices modern dengan fokus pada performa, kemudahan pemeliharaan, dan rekayasa DevOps-first.',
-          tags:        ['React', 'Node.js', 'K8s', 'Docker'],
+          tags:        ['React', 'express.js', 'Hapi.js', 'Node.js', 'Docker', 'Laravel'],
         },
         {
           icon:        'database',
           title:       'Rekayasa & Analitik Data',
           description: 'Menyatukan lanskap data Anda — dari desain pipeline ETL dan data warehousing hingga dashboard BI real-time dan infrastruktur analitik prediktif.',
-          tags:        ['dbt', 'Snowflake', 'Spark', 'Airflow'],
+          tags:        [ 'Power BI', 'MySQL', 'PostgreSQL'],
         },
         {
           icon:        'cpu',
           title:       'AI & Machine Learning',
           description: 'Integrasikan otomasi cerdas ke dalam operasional Anda — dari alur kerja berbasis LLM dan model NLP hingga computer vision dan pipeline deployment MLOps.',
-          tags:        ['Python', 'LangChain', 'MLflow', 'PyTorch'],
+          tags:        ['Python', 'LangChain', 'Computer Vision', 'Machine Learning', 'PyTorch'],
         },
         {
           icon:        'settings',
@@ -304,6 +311,13 @@ export const translations = {
           description: 'Transformasikan pipeline pengiriman Anda dengan otomasi CI/CD, infrastructure-as-code, orkestrasi container, dan pemantauan sistem proaktif 24/7.',
           tags:        ['GitHub Actions', 'Ansible', 'Prometheus', 'Grafana'],
         },
+        {
+          icon:        'network',
+          title:       'Infrastruktur IT & Jaringan Kantor',
+          description: 'Pastikan operasional harian bisnis Anda berjalan tanpa hambatan dengan instalasi jaringan internet lokal (LAN) yang dapat diandalkan, sistem keamanan CCTV, hingga penyiapan awal dan instalasi ulang komputer untuk karyawan.',
+          tags:        ['Jaringan Kantor (LAN)', 'Instalasi CCTV', 'Setup Komputer Karyawan', 'IT Support'],
+        }
+
       ],
     },
 
@@ -325,23 +339,23 @@ export const translations = {
     techStack: {
       tag:        'Keahlian Teknologi',
       heading:    'Dibangun di Atas Alat yang Dipercaya Enterprise',
-      subheading: 'Kami bekerja dengan teknologi industri yang paling tangguh dan teruji di setiap lapisan tumpukan digital modern.',
+      subheading: 'Kami bekerja dengan teknologi industri yang tangguh dan teruji di setiap lapisan digital modern.',
       categories: [
         {
           name: 'Cloud & Infrastruktur',
-          items: ['AWS', 'GCP', 'Azure', 'Terraform', 'Pulumi', 'Kubernetes', 'Docker'],
+          items: ['AWS', 'GCP', 'Azure', 'Terraform', 'Kubernetes', 'Docker'],
         },
         {
           name: 'Pengembangan',
-          items: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Python', 'Go', 'Rust'],
+          items: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Python'],
         },
         {
           name: 'Data & AI',
-          items: ['Snowflake', 'dbt', 'Apache Spark', 'Airflow', 'PyTorch', 'LangChain', 'PostgreSQL'],
+          items: [ 'PyTorch', 'LangChain', 'PostgreSQL', 'MySQL', 'AI Integration', 'Tensor Flow'],
         },
         {
-          name: 'Keamanan & DevOps',
-          items: ['GitHub Actions', 'Ansible', 'Prometheus', 'Grafana', 'Vault', 'Wazuh', 'Elasticsearch'],
+          name: 'DevOps',
+          items: ['GitHub Actions', 'CI/CD', 'Elasticsearch'],
         },
       ],
     },
@@ -350,7 +364,7 @@ export const translations = {
     process: {
       tag:        'Cara Kami Bekerja',
       heading:    'Dari Penemuan hingga Pengiriman',
-      subheading: 'Model keterlibatan yang terstruktur dan terbukti, dirancang untuk kompleksitas enterprise dan kelincahan startup.',
+      subheading: 'Model keterlibatan yang terstruktur, dirancang untuk kompleksitas Bisnis Kecil hingga Besar',
       steps: [
         {
           number: '01',
@@ -360,7 +374,7 @@ export const translations = {
         {
           number: '02',
           title:  'Strategi & Arsitektur',
-          desc:   'Arsitek senior kami merancang peta jalan teknologi yang disesuaikan dan arsitektur solusi yang selaras dengan tujuan bisnis dan kendala anggaran Anda.',
+          desc:   'Developer kami merancang peta jalan teknologi yang disesuaikan dan arsitektur solusi yang selaras dengan tujuan bisnis dan kendala anggaran Anda.',
         },
         {
           number: '03',
@@ -375,31 +389,32 @@ export const translations = {
       ],
     },
 
-    // ── Testimoni ──
-    testimonials: {
-      tag:      'Suara Klien',
-      heading:  'Dipercaya oleh Organisasi yang Tidak Bisa Gagal',
+    // ── Portofolio Proyek ──
+    projects: {
+      tag:      'Karya Kami',
+      heading:  'Proyek Kami',
       items: [
         {
-          quote:   'Selenium Digital merancang ulang seluruh infrastruktur AWS kami dalam 90 hari. Hasilnya adalah pengurangan biaya 40% dan zero downtime selama puncak trafik hari raya. Disiplin rekayasa yang luar biasa.',
-          name:    'Reza Mahendra',
-          role:    'CTO, Tokko Retail Group',
-          initial: 'R',
+          title:       'Modul Validasi Gambar Otomatis',
+          client:      'AI & Machine Learning',
+          description: 'Mengembangkan modul pengenalan otomatis yang handal untuk memvalidasi tangkapan layar spesifik dari pengguna aplikasi.',
+          tags:        ['Computer Vision', 'Machine Learning'],
         },
         {
-          quote:   'Tim mereka bergabung dengan kami seperti mitra sejati. Sejak hari pertama, mereka memahami bukan hanya kebutuhan teknis tetapi juga konteks bisnis. Mereka menghadirkan platform data yang membuka wawasan yang tidak kami ketahui sebelumnya.',
-          name:    'Sarah Chen',
-          role:    'VP Engineering, FinFlow Asia',
-          initial: 'S',
+          title:       'Website Profil Desa',
+          client:      'Web Development',
+          description: 'Membangun website profil sebagai pilar informasi utama yang memudahkan akses publik terhadap potensi dan data daerah.',
+          tags:        ['Frontend', 'UI/UX Design'],
         },
         {
-          quote:   'Setelah audit SOC 2 yang menjadi mimpi buruk, Selenium hadir dan sepenuhnya memikirkan ulang postur keamanan kami. Kami mencapai kepatuhan dalam 4 bulan dan sekarang memiliki program keamanan yang benar-benar saya banggakan.',
-          name:    'David Hartanto',
-          role:    'CISO, MedBridge Indonesia',
-          initial: 'D',
+          title:       'Instalasi Sistem CCTV',
+          client:      'Infrastruktur Keamanan',
+          description: 'Merancang dan memasang sistem CCTV secara menyeluruh guna memastikan keamanan serta kelancaran operasional area fasilitas.',
+          tags:        ['CCTV', 'Security', 'IT Support'],
         },
       ],
     },
+
 
     // ── Kontak ──
     contact: {

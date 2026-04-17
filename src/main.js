@@ -488,14 +488,14 @@ function renderProcess() {
 }
 
 /* ═════════════════════════════════════════════════════════════
-   SECTION: TESTIMONIALS
+   SECTION: PROJECTS
    ═════════════════════════════════════════════════════════════ */
-function renderTestimonials() {
-  const test = getSection('testimonials');
+function renderProjects() {
+  const proj = getSection('projects');
 
   return `
-  <section id="testimonials" class="py-section bg-se-dark relative overflow-hidden"
-           aria-labelledby="testimonials-heading">
+  <section id="projects" class="py-section bg-se-dark relative overflow-hidden"
+           aria-labelledby="projects-heading">
 
     <!-- Glow background accents -->
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
@@ -505,43 +505,32 @@ function renderTestimonials() {
 
       <!-- Header -->
       <div class="text-center mb-16 reveal">
-        <div class="section-tag mb-4 justify-center">${test.tag}</div>
-        <h2 id="testimonials-heading" class="section-heading">${test.heading}</h2>
+        <div class="section-tag mb-4 justify-center">${proj.tag}</div>
+        <h2 id="projects-heading" class="section-heading">${proj.heading}</h2>
       </div>
 
-      <!-- Testimonial Cards -->
+      <!-- Project Cards -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6"
-           role="list" aria-label="Client testimonials">
-        ${test.items.map((item, i) => `
-          <article class="testimonial-card reveal reveal-delay-${i + 1}"
+           role="list" aria-label="Featured projects">
+        ${proj.items.map((item, i) => `
+          <article class="se-card flex flex-col h-full group reveal reveal-delay-${i + 1}"
                    role="listitem"
-                   aria-labelledby="testimonial-${i}">
+                   aria-labelledby="project-${i}">
 
-            <!-- Quote Icon -->
-            <div class="text-se-cyan/30 mb-6">${icons.get('quote', 'w-8 h-8')}</div>
-
-            <!-- Stars -->
-            <div class="flex gap-1 mb-4" aria-label="5 star rating" role="img">
-              ${[...Array(5)].map(() => `<span class="text-se-cyan/70">${icons.get('star', 'w-4 h-4')}</span>`).join('')}
+            <div class="mb-4">
+              <h3 id="project-${i}" class="font-display font-semibold text-lg text-se-white mb-1
+                         group-hover:text-se-cyan transition-colors duration-300">${item.title}</h3>
+              <p class="text-se-cyan text-sm font-mono">${item.client}</p>
             </div>
 
-            <!-- Quote Text -->
-            <blockquote>
-              <p class="testimonial-quote" id="testimonial-${i}">"${item.quote}"</p>
-            </blockquote>
+            <p class="text-se-muted text-sm leading-relaxed mb-6 flex-grow">${item.description}</p>
 
-            <!-- Author -->
-            <div class="testimonial-author">
-              <!-- Avatar initial -->
-              <div class="w-10 h-10 rounded-sm bg-se-cyan/10 border border-se-cyan/20 flex items-center justify-center
-                          font-display font-bold text-se-cyan text-sm flex-shrink-0"
-                   aria-hidden="true">
-                ${item.initial}
-              </div>
-              <div>
-                <cite class="font-display font-semibold text-se-white text-sm not-italic">${item.name}</cite>
-                <p class="text-se-muted text-xs">${item.role}</p>
-              </div>
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-2 mt-auto" role="list" aria-label="Technologies used">
+              ${item.tags.map(tag => `
+                <span class="px-2.5 py-1 text-xs font-mono text-se-cyan/80 bg-se-cyan/5 border border-se-cyan/20 rounded-sm"
+                      role="listitem">${tag}</span>
+              `).join('')}
             </div>
 
           </article>
@@ -777,7 +766,7 @@ function renderPage() {
       ${renderAbout()}
       ${renderTechStack()}
       ${renderProcess()}
-      ${renderTestimonials()}
+      ${renderProjects()}
       ${renderContact()}
     </main>
     ${renderFooter()}
@@ -1068,29 +1057,30 @@ function mountContactForm() {
     const submitIcon = document.getElementById('contact-submit-icon');
     const successMsg = document.getElementById('contact-success');
 
-    // Loading state
-    submitBtn.disabled = true;
-    submitText.textContent = currentLang === 'id' ? 'Mengirim...' : 'Sending...';
-    submitIcon.innerHTML = `<svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
-      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
-      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
-    </svg>`;
+    const name = document.getElementById('contact-name').value.trim();
+    const email = document.getElementById('contact-email').value.trim();
+    const company = document.getElementById('contact-company').value.trim();
+    const message = document.getElementById('contact-message').value.trim();
 
-    // Simulate async API call
+    const subject = encodeURIComponent(`Inquiry from ${name} - ${company || 'Individual'}`);
+    const bodyText = `Hello Selenium Digital Team,\n\nMy name is ${name}. You can reach me at ${email}.\n\nMessage:\n${message}\n\nBest Regards,\n${name}`;
+    
+    // Create the Gmail compose URL
+    const gmailWebLink = `https://mail.google.com/mail/?view=cm&fs=1&to=hello@seleniumdigital.id&su=${subject}&body=${encodeURIComponent(bodyText)}`;
+
+    // Open Gmail in a new tab
+    window.open(gmailWebLink, '_blank');
+
+    // Show success message and reset form
+    successMsg.classList.remove('hidden');
+    successMsg.classList.add('flex');
+    form.reset();
+
+    // Hide success after 6 seconds
     setTimeout(() => {
-      submitBtn.disabled = false;
-      submitText.textContent = T('contact.submitBtn');
-      submitIcon.innerHTML = icons.get('send', 'w-4 h-4');
-      successMsg.classList.remove('hidden');
-      successMsg.classList.add('flex');
-      form.reset();
-
-      // Hide success after 6 seconds
-      setTimeout(() => {
-        successMsg.classList.add('hidden');
-        successMsg.classList.remove('flex');
-      }, 6000);
-    }, 1800);
+      successMsg.classList.add('hidden');
+      successMsg.classList.remove('flex');
+    }, 6000);
   });
 }
 
