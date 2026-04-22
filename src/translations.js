@@ -191,6 +191,18 @@ export const translations = {
           description: 'Designed and deployed comprehensive CCTV monitoring networks to ensure the safety and operational security of facility areas.',
           tags:        ['CCTV', 'Security', 'IT Support'],
         },
+        {
+          title:       'SoundMood',
+          client:      'AI & Android Application ',
+          description: 'Developed an android application for detecting user mood and generated a Spotify playlist.',
+          tags:        ['Computer Vision', 'Deep Learning', 'Fun'],
+        },
+        {
+          title:       'QTancy',
+          client:      'MSMEs',
+          description: 'Developed AI-Based web application for transaction recording and business management automation.',
+          tags:        ['Computer Vision', 'Deep Learning', 'Finance', 'MSMEs'],
+        },
       ],
     },
 
@@ -411,6 +423,18 @@ export const translations = {
           client:      'Infrastruktur Keamanan',
           description: 'Merancang dan memasang sistem CCTV secara menyeluruh guna memastikan keamanan serta kelancaran operasional area fasilitas.',
           tags:        ['CCTV', 'Security', 'IT Support'],
+        },
+        {
+          title:       'SoundMood',
+          client:      'AI & Android Application ',
+          description: 'Mengembangkan aplikasi android untuk mendeteksi mood pengguna kemudian menghasilkan serta mengeskport playlist Spotfy.',
+          tags:        ['Computer Vision', 'Deep Learning', 'Fun'],
+        },
+        {
+          title:       'QTancy',
+          client:      'UMKM',
+          description: 'Mengembangkan aplikasi web berbasis AI untuk merekam transaksi dddan manajemen bisnis secara otomatis.',
+          tags:        ['Computer Vision', 'Deep Learning', 'Finance', 'MSMEs'],
         },
       ],
     },
