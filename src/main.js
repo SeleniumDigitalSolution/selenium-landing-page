@@ -831,7 +831,7 @@ function renderFooter() {
    ═════════════════════════════════════════════════════════════ */
 function renderWhatsAppFAB() {
   return `
-  <a href="https://wa.me/62857570139209" target="_blank" rel="noopener noreferrer"
+  <a href="https://wa.me/6282253210449" target="_blank" rel="noopener noreferrer"
      class="fixed bottom-6 right-6 z-[99] bg-[#25D366] text-white p-4 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:scale-110 hover:shadow-[0_6px_25px_rgba(37,211,102,0.6)] transition-all duration-300 flex items-center justify-center animate-pulse"
      aria-label="Contact us on WhatsApp">
     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

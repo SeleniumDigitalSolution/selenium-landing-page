@@ -250,7 +250,7 @@ export const translations = {
       submitSuccess:'Message sent. We\'ll be in touch within 24 hours.',
       info: [
         { label: 'Email', value: 'seleniumdigitalsolution@gmail.com' },
-        { label: 'Phone', value: '+62 857 5701 39209' },
+        { label: 'Phone', value: '+62 822 5321 0449' },
         { label: 'Headquarters', value: 'Pontianak, Indonesia' },
         { label: 'Hours', value: 'Mon–Fri: 09:00–17:00 WIB' },
       ],
@@ -510,7 +510,7 @@ export const translations = {
       submitSuccess:'Pesan terkirim. Kami akan menghubungi Anda dalam 24 jam.',
       info: [
         { label: 'Email', value: 'seleniumdigitalsolution@gmail.com' },
-        { label: 'Telepon', value: '+62 857 5701 39209' },
+        { label: 'Telepon', value: '+62 822 5321 0449' },
         { label: 'Kantor Pusat', value: 'Pontianak, Indonesia' },
         { label: 'Jam Kerja', value: 'Sen–Jum: 09:00–18:00 WIB' },
       ],
