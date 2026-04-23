@@ -194,6 +194,33 @@ export const translations = {
       ],
     },
 
+    // ── Pricing Section ──
+    pricing: {
+      tag:        'Special Offer',
+      heading:    'Empowering Small Businesses',
+      subheading: 'Get online with our highly affordable complete digital presence package. Designed specifically for growing businesses.',
+      planName:   'Company Profile Package',
+      price:      'Rp 299.000',
+      priceNote:  'One-time setup fee',
+      features: [
+        'Free Domain (.my.id / .web.id)',
+        '1-Page Professional Website (SEO Friendly)',
+        'Delivered Ready to Use & Live',
+        'Includes llm.txt for AI Curation',
+        'High-Performance Hosting Included',
+        '1 Month Free Maintenance & Live Support',
+        'Full Source Code Ownership',
+        'Free Initial Consultation',
+      ],
+      renewalHeading: 'Maintenance & Hosting Renewals',
+      renewals: [
+        { period: '1 Month', price: 'Rp 99.000' },
+        { period: '3 Months', price: 'Rp 199.000' },
+        { period: '1 Year', price: 'Rp 999.000' }
+      ],
+      cta: 'Claim This Promo',
+    },
+
     // ── Contact Section ──
     contact: {
       tag:         'Get In Touch',
@@ -415,6 +442,33 @@ export const translations = {
       ],
     },
 
+
+    // ── Harga / Promo ──
+    pricing: {
+      tag:        'Promo Spesial UMKM',
+      heading:    'Go Digital dengan Harga Terjangkau',
+      subheading: 'Hadirkan bisnis Anda di dunia digital dengan paket pembuatan Company Profile super hemat, dirancang khusus untuk Anda yang baru memulai.',
+      planName:   'Paket Company Profile',
+      price:      'Rp 299.000',
+      priceNote:  'Biaya pembuatan (Sekali bayar)',
+      features: [
+        'Gratis Domain (.my.id / .web.id)',
+        'Jasa Pembuatan Website 1 Halaman (SEO Friendly)',
+        'Terima Jadi dan Langsung Live',
+        'Termasuk llm.txt (Mudah Dikurasi AI)',
+        'Sudah Termasuk Hosting Server',
+        'Gratis 1 Bulan Live & Maintenance',
+        'Source Code Menjadi Milik Anda',
+        'Gratis Konsultasi Bisnis',
+      ],
+      renewalHeading: 'Perpanjangan Hosting & Maintenance',
+      renewals: [
+        { period: 'Per Bulan', price: 'Rp 99.000' },
+        { period: 'Per 3 Bulan', price: 'Rp 199.000' },
+        { period: 'Per Tahun', price: 'Rp 999.000' }
+      ],
+      cta: 'Ambil Promo Ini',
+    },
 
     // ── Kontak ──
     contact: {
