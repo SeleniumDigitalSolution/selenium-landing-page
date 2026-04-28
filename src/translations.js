@@ -174,34 +174,52 @@ export const translations = {
       heading:  'Our Projects',
       items: [
         {
+          title:       'Learning Management System',
+          client:      'AI & LMS',
+          description: 'Develop a system to digitalize the learning process in schools equipped with AI chatbot, scheduling, student management, material management, mentor management, discussion forum, and video conferencing.',
+          tags:        ['AI Chatbot', 'Video Conference', 'Forum', 'Scheduling', 'Management'],
+          url:         'https://amslms.web.id/',
+          text:        'Live Demo',
+        },
+        {
           title:       'Automated Image Validation',
           client:      'AI & Machine Learning',
           description: 'Developed an automated image recognition module to reliably validate specific screenshots uploaded by application users.',
           tags:        ['Computer Vision', 'Machine Learning'],
+          url:         '',
+          text:        '',
         },
         {
           title:       'Village Profile Website',
           client:      'Web Development',
           description: 'Built an interactive website serving as an information hub to provide easy public access to regional data and local potentials.',
           tags:        ['Frontend', 'UI/UX Design'],
+          url:         'https://github.com/PMKM-IF-UNTAN-2025/Web-Profile-Desa-CMS-Template',
+          text:        'Visit Project',
         },
         {
           title:       'CCTV Security Installation',
           client:      'Security Infrastructure',
           description: 'Designed and deployed comprehensive CCTV monitoring networks to ensure the safety and operational security of facility areas.',
           tags:        ['CCTV', 'Security', 'IT Support'],
+          url:         '',
+          text:        '',
         },
         {
           title:       'SoundMood',
           client:      'AI & Android Application ',
           description: 'Developed an android application for detecting user mood and generated a Spotify playlist.',
           tags:        ['Computer Vision', 'Deep Learning', 'Fun'],
+          url:         '',
+          text:        '',
         },
         {
           title:       'QTancy',
           client:      'MSMEs',
           description: 'Developed AI-Based web application for transaction recording and business management automation.',
           tags:        ['Computer Vision', 'Deep Learning', 'Finance', 'MSMEs'],
+          url:         'https://github.com/QTancy/front-end',
+          text:        'Visit Project',
         },
       ],
     },
@@ -434,34 +452,52 @@ export const translations = {
       heading:  'Proyek Kami',
       items: [
         {
+          title:       'Sistem Manajemen Pembelajaran',
+          client:      'AI & Sistem Manajemen Pembelajaran',
+          description: 'Mengembangkan sistem untuk mendigitalisasi proses pembelajaran di sekolah yang dilengkapi dengan chatbot AI, penjadwalan, manajemen siswa, manajemen materi, manajemen mentor, forum diskusi, dan video conference.',
+          tags:        ['Chatbot AI', 'Video Conference', 'Forum', 'Penjadwalan', 'Manajemen'],
+          url:         'https://amslms.web.id/',
+          text:        'Kunjungi Demo',
+        },
+        {
           title:       'Modul Validasi Gambar Otomatis',
           client:      'AI & Machine Learning',
           description: 'Mengembangkan modul pengenalan otomatis yang handal untuk memvalidasi tangkapan layar spesifik dari pengguna aplikasi.',
           tags:        ['Computer Vision', 'Machine Learning'],
+          url:         '',
+          text:        '',
         },
         {
           title:       'Website Profil Desa',
           client:      'Web Development',
           description: 'Membangun website profil sebagai pilar informasi utama yang memudahkan akses publik terhadap potensi dan data daerah.',
           tags:        ['Frontend', 'UI/UX Design'],
+          url:         'https://github.com/PMKM-IF-UNTAN-2025/Web-Profile-Desa-CMS-Template',
+          text:        'Kunjungi Projek',
         },
         {
           title:       'Instalasi Sistem CCTV',
           client:      'Infrastruktur Keamanan',
           description: 'Merancang dan memasang sistem CCTV secara menyeluruh guna memastikan keamanan serta kelancaran operasional area fasilitas.',
           tags:        ['CCTV', 'Security', 'IT Support'],
+          url:         '',
+          text:        '',
         },
         {
           title:       'SoundMood',
           client:      'AI & Android Application ',
           description: 'Mengembangkan aplikasi android untuk mendeteksi mood pengguna kemudian menghasilkan serta mengeskport playlist Spotfy.',
           tags:        ['Computer Vision', 'Deep Learning', 'Fun'],
+          url:         '',
+          text:        '',
         },
         {
           title:       'QTancy',
           client:      'UMKM',
           description: 'Mengembangkan aplikasi web berbasis AI untuk merekam transaksi dddan manajemen bisnis secara otomatis.',
           tags:        ['Computer Vision', 'Deep Learning', 'Finance', 'MSMEs'],
+          url:         'https://github.com/QTancy/front-end',
+          text:        'Kunjungi Projek',
         },
       ],
     },
@@ -550,9 +586,9 @@ export function detectLanguage() {
   const stored = localStorage.getItem('se_lang');
   if (stored && translations[stored]) return stored;
 
-  // 2. Auto-detect from browser
-  const browserLang = navigator.language || navigator.userLanguage || 'en';
-  const resolved = browserLang.toLowerCase().startsWith('id') ? 'id' : 'en';
+  // 2. Auto-detect from browser, default to 'id'
+  const browserLang = navigator.language || navigator.userLanguage || 'id';
+  const resolved = browserLang.toLowerCase().startsWith('en') ? 'en' : 'id';
 
   return resolved;
 }
@@ -572,9 +608,9 @@ export function t(lang, key) {
     if (result === undefined || result === null) return key; // Fallback to key
     result = result[k];
   }
-  // Final fallback: try English if translation is missing
+  // Final fallback: try Indonesian if translation is missing
   if (result === undefined || result === null) {
-    let fallback = translations['en'];
+    let fallback = translations['id'];
     for (const k of keys) {
       if (fallback === undefined) return key;
       fallback = fallback[k];

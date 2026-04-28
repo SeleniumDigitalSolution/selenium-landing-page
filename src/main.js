@@ -533,6 +533,18 @@ function renderProjects() {
               `).join('')}
             </div>
 
+            <!-- Visit Project Button (only rendered when url is set) -->
+            ${item.url ? `
+            <a href="${item.url}" target="_blank" rel="noopener noreferrer"
+               class="w-full mt-5 inline-flex items-center gap-2 px-4 py-2 text-xs font-mono font-semibold
+                      text-se-cyan border border-se-cyan/40 rounded-sm bg-se-cyan/5
+                      hover:bg-se-cyan/15 hover:border-se-cyan/70 hover:shadow-[0_0_12px_rgba(0,212,255,0.2)]
+                      transition-all duration-300 self-start"
+               aria-label="Visit ${item.title} project">
+              ${icons.get('arrowRight', 'w-max h-3')}
+              ${item.text}
+            </a>` : ''}
+
           </article>
         `).join('')}
       </div>
