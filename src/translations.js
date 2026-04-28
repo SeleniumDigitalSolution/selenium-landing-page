@@ -210,8 +210,8 @@ export const translations = {
           client:      'AI & Android Application ',
           description: 'Developed an android application for detecting user mood and generated a Spotify playlist.',
           tags:        ['Computer Vision', 'Deep Learning', 'Fun'],
-          url:         '',
-          text:        '',
+          url:         'https://github.com/SoundMood/mobile-development',
+          text:        'Visit Project',
         },
         {
           title:       'QTancy',
@@ -488,8 +488,8 @@ export const translations = {
           client:      'AI & Android Application ',
           description: 'Mengembangkan aplikasi android untuk mendeteksi mood pengguna kemudian menghasilkan serta mengeskport playlist Spotfy.',
           tags:        ['Computer Vision', 'Deep Learning', 'Fun'],
-          url:         '',
-          text:        '',
+          url:         'https://github.com/SoundMood/mobile-development',
+          text:        'Kunjungi Projek',
         },
         {
           title:       'QTancy',
