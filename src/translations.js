@@ -186,8 +186,8 @@ export const translations = {
           client:      'AI & Machine Learning',
           description: 'Developed an automated image recognition module to reliably validate specific screenshots uploaded by application users.',
           tags:        ['Computer Vision', 'Machine Learning'],
-          url:         '',
-          text:        '',
+          url:         'https://www.linkedin.com/posts/muhammad-za-im-shidqi-414326281_presentation-slide-activity-7284398955751264256-2Xey',
+          text:        'Visit Project',
         },
         {
           title:       'Village Profile Website',
@@ -464,8 +464,8 @@ export const translations = {
           client:      'AI & Machine Learning',
           description: 'Mengembangkan modul pengenalan otomatis yang handal untuk memvalidasi tangkapan layar spesifik dari pengguna aplikasi.',
           tags:        ['Computer Vision', 'Machine Learning'],
-          url:         '',
-          text:        '',
+          url:         'https://www.linkedin.com/posts/muhammad-za-im-shidqi-414326281_presentation-slide-activity-7284398955751264256-2Xey',
+          text:        'Kunjungi Projek',
         },
         {
           title:       'Website Profil Desa',
