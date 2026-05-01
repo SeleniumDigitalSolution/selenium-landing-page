@@ -586,11 +586,13 @@ export function detectLanguage() {
   const stored = localStorage.getItem('se_lang');
   if (stored && translations[stored]) return stored;
 
-  // 2. Auto-detect from browser, default to 'id'
-  const browserLang = navigator.language || navigator.userLanguage || 'id';
-  const resolved = browserLang.toLowerCase().startsWith('en') ? 'en' : 'id';
+  // const browserLang = navigator.language || navigator.userLanguage || 'id';
+  // const resolved = browserLang.toLowerCase().startsWith('en') ? 'en' : 'id';
 
-  return resolved;
+  // return resolved;
+
+  // 2. Default to 'id' for Indonesian SEO
+  return 'id';
 }
 
 /**

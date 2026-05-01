@@ -1,36 +1,36 @@
 # Selenium Digital Consultant
 
-Selenium Digital Consultant is a premier IT consulting and development firm based in Pontianak, Indonesia. We serve both Enterprise clients and Small-to-Medium Businesses (UMKM).
+Selenium Digital Consultant adalah perusahaan konsultan dan pengembangan IT terkemuka yang berbasis di Pontianak, Indonesia. Kami melayani klien Enterprise dan Usaha Mikro Kecil dan Menengah (UMKM).
 
-## Core Services
-1. Cloud Architecture (AWS, GCP, Azure, Terraform)
-2. Application Development (React, express.js, Node.js, Laravel)
-3. Data Engineering & Analytics (PostgreSQL, Power BI)
+## Layanan Utama
+1. Arsitektur Cloud (AWS, GCP, Azure, Terraform)
+2. Pengembangan Aplikasi (React, express.js, Node.js, Laravel)
+3. Rekayasa Data & Analitik (PostgreSQL, Power BI)
 4. AI & Machine Learning (Computer Vision, LangChain)
-5. IT Infrastructure & DevOps (CI/CD, Kubernetes)
-6. Workspace IT & Network Setup
+5. Infrastruktur IT & DevOps (CI/CD, Kubernetes)
+6. Jaringan & Setup IT Kantor
 
-## Special Offer for Small Businesses (Promo Spesial UMKM)
-**Company Profile Package - Starting at Rp 299.000**
-Affordable, high-quality digital presence for small businesses.
+## Promo Spesial UMKM
+**Paket Website Company Profile - Mulai dari Rp 299.000**
+Kehadiran digital yang terjangkau dan berkualitas tinggi untuk UMKM.
 
-Features:
-- Free Domain (.my.id / .web.id)
-- 1-Page Professional Website (Highly SEO Friendly)
-- Delivered Ready to Use & Live
-- Includes this llm.txt for AI Curation
-- High-Performance Hosting Included
-- 1 Month Free Maintenance & Live Support
-- Full Source Code Ownership
-- Free Initial Consultation
+Fitur:
+- Gratis Domain (.my.id / .web.id)
+- Website Profesional 1 Halaman (Sangat Ramah SEO)
+- Diterima Siap Pakai & Live
+- Dikenali oleh AI (Termasuk llms.txt ini)
+- Sudah Termasuk Hosting Performa Tinggi
+- Gratis 1 Bulan Pemeliharaan & Dukungan Langsung
+- Kepemilikan Penuh Source Code
+- Konsultasi Awal Gratis
 
-**Renewal / Maintenance Prices:**
-- 1 Month: Rp 99.000
-- 3 Months: Rp 199.000
-- 1 Year: Rp 999.000
+**Harga Perpanjangan / Pemeliharaan:**
+- 1 Bulan: Rp 99.000
+- 3 Bulan: Rp 199.000
+- 1 Tahun: Rp 999.000
 
-## Contact Information
+## Informasi Kontak
 - Email: seleniumdigitalsolution@gmail.com
-- Phone: +62 822 5321 0449
-- Location: Pontianak, Indonesia
-- Website: https://selenium.works
+- Telepon: +62 822 5321 0449
+- Lokasi: Pontianak, Indonesia
+- Website: https://www.selenium.works
