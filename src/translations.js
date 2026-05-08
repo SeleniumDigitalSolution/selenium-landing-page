@@ -13,52 +13,54 @@
  */
 
 export const translations = {
-
   /* ══════════════════════════════════════════════
      ENGLISH (en) — Default / Fallback
      ══════════════════════════════════════════════ */
   en: {
     // ── Navigation ──
     nav: {
-      brand:     'Selenium',
-      services:  'Services',
-      about:     'About',
-      techStack: 'Tech Stack',
-      process:   'Process',
-      contact:   'Contact',
-      cta:       'Get a Free Consultation',
+      brand: "Selenium",
+      services: "Services",
+      about: "About",
+      techStack: "Tech Stack",
+      process: "Process",
+      contact: "Contact",
+      cta: "Get a Free Consultation",
     },
 
     // ── Hero Section ──
     hero: {
-      eyebrow:    'The Essential Digital Element',
-      headline1:  'We Power the',
-      headline2:  'Digital Core',
-      headline3:  'of Your Business.',
-      subheadline: 'Selenium Digital Consultant is your enterprise-grade IT partner — architecting resilient cloud infrastructure, accelerating digital transformation, and securing your most critical systems.',
-      ctaPrimary:  'Start Your Journey',
-      ctaSecondary:'Explore Our Services',
-      stat1Value:  'Modern',
-      stat1Label:  'Tech Stack',
-      stat2Value:  'Agile',
-      stat2Label:  'Development',
-      stat3Value:  'Secure',
-      stat3Label:  'System & Data',
-      stat4Value:  'Scalable',
-      stat4Label:  'Architecture',
+      eyebrow: "The Essential Digital Element",
+      headline1: "We Power the",
+      headline2: "Digital Core",
+      headline3: "of Your Business.",
+      subheadline:
+        "Selenium Digital Consultant is your enterprise-grade IT partner — architecting resilient cloud infrastructure, accelerating digital transformation, and securing your most critical systems.",
+      ctaPrimary: "Start Your Journey",
+      ctaSecondary: "Explore Our Services",
+      stat1Value: "Modern",
+      stat1Label: "Tech Stack",
+      stat2Value: "Agile",
+      stat2Label: "Development",
+      stat3Value: "Secure",
+      stat3Label: "System & Data",
+      stat4Value: "Scalable",
+      stat4Label: "Architecture",
     },
 
     // ── Services Section ──
     services: {
-      tag:      'Our Expertise',
-      heading:  'Solutions Built for Small Business to Enterprise Scale',
-      subheading: 'From infrastructure to intelligence — we deliver end-to-end technology solutions that drive measurable business outcomes.',
+      tag: "Our Expertise",
+      heading: "Solutions Built for Small Business to Enterprise Scale",
+      subheading:
+        "From infrastructure to intelligence — we deliver end-to-end technology solutions that drive measurable business outcomes.",
       items: [
         {
-          icon:        'cloud',
-          title:       'Cloud Architecture',
-          description: 'Design and deploy secure, scalable multi-cloud and hybrid cloud environments on AWS, GCP, and Azure — optimized for performance and cost efficiency.',
-          tags:        ['AWS', 'GCP', 'Azure', 'Terraform'],
+          icon: "cloud",
+          title: "Cloud Architecture",
+          description:
+            "Design and deploy secure, scalable multi-cloud and hybrid cloud environments on AWS, GCP, and Azure — optimized for performance and cost efficiency.",
+          tags: ["AWS", "GCP", "Azure", "Terraform"],
         },
         // {
         //   icon:        'shield',
@@ -67,227 +69,345 @@ export const translations = {
         //   tags:        ['SOC 2', 'ISO 27001', 'Zero Trust', 'SIEM'],
         // },
         {
-          icon:        'code',
-          title:       'Application Development',
-          description: 'Architect and deliver modern full-stack web applications and microservices with a focus on performance, maintainability, and DevOps-first engineering.',
-          tags:        ['React', 'express.js', 'Hapi.js', 'Node.js', 'Docker', 'Laravel'],
+          icon: "code",
+          title: "Application Development",
+          description:
+            "Architect and deliver modern full-stack web applications and microservices with a focus on performance, maintainability, and DevOps-first engineering.",
+          tags: [
+            "React",
+            "express.js",
+            "Hapi.js",
+            "Node.js",
+            "Docker",
+            "Laravel",
+          ],
         },
         {
-          icon:        'database',
-          title:       'Data Engineering & Analytics',
-          description: 'Unify your data landscape — from ETL pipeline design and data warehousing to real-time BI dashboards and predictive analytics infrastructure.',
-          tags:        ['Power BI', 'MySQL', 'PostgreSQL'],
+          icon: "database",
+          title: "Data Engineering & Analytics",
+          description:
+            "Unify your data landscape — from ETL pipeline design and data warehousing to real-time BI dashboards and predictive analytics infrastructure.",
+          tags: ["Power BI", "MySQL", "PostgreSQL"],
         },
         {
-          icon:        'cpu',
-          title:       'AI & Machine Learning',
-          description: 'Integrate intelligent automation into your operations — from LLM-powered workflows and NLP models to computer vision and MLOps deployment pipelines.',
-          tags:        ['Python', 'LangChain', 'Computer Vision', 'Machine Learning', 'PyTorch'],
+          icon: "cpu",
+          title: "AI & Machine Learning",
+          description:
+            "Integrate intelligent automation into your operations — from LLM-powered workflows and NLP models to computer vision and MLOps deployment pipelines.",
+          tags: [
+            "Python",
+            "LangChain",
+            "Computer Vision",
+            "Machine Learning",
+            "PyTorch",
+          ],
         },
         {
-          icon:        'settings',
-          title:       'IT Infrastructure & DevOps',
-          description: 'Transform your delivery pipeline with CI/CD automation, infrastructure-as-code, container orchestration, and 24/7 proactive system monitoring.',
-          tags:        ['GitHub Actions', 'Ansible', 'Prometheus', 'Grafana'],
+          icon: "settings",
+          title: "IT Infrastructure & DevOps",
+          description:
+            "Transform your delivery pipeline with CI/CD automation, infrastructure-as-code, container orchestration, and 24/7 proactive system monitoring.",
+          tags: ["GitHub Actions", "Ansible", "Prometheus", "Grafana"],
         },
         {
-          icon:        'network',
-          title:       'Workspace IT & Network Setup',
-          description: 'Ensure seamless daily operations with reliable Local Area Network (LAN) deployment, CCTV security system installation, and complete workstation setup or reinstallation for your employees.',
-          tags:        ['Office Network (LAN)', 'CCTV Installation', 'Workstation Setup', 'IT Support'],
-        }
-
+          icon: "network",
+          title: "Workspace IT & Network Setup",
+          description:
+            "Ensure seamless daily operations with reliable Local Area Network (LAN) deployment, CCTV security system installation, and complete workstation setup or reinstallation for your employees.",
+          tags: [
+            "Office Network (LAN)",
+            "CCTV Installation",
+            "Workstation Setup",
+            "IT Support",
+          ],
+        },
       ],
     },
 
     // ── About Section ──
     about: {
-      tag:         'About Selenium',
-      heading:     'The Essential Element for Your Digital Ecosystem',
-      paragraph1:  'Just as Selenium (Se, At. No. 34) is a trace element indispensable to biological life — found in trace amounts yet critical to cellular function and vitality — Selenium Digital Consultant is the essential, foundational partner woven into the fabric of your organization\'s digital health.',
-      paragraph2:  'We don\'t just consult. We embed ourselves as a strategic extension of your technical team, delivering precision-engineered solutions that sustain, protect, and accelerate your most critical digital systems.',
-      quote:       '"We are the element your digital ecosystem cannot function without."',
+      tag: "About Selenium",
+      heading: "The Essential Element for Your Digital Ecosystem",
+      paragraph1:
+        "Just as Selenium (Se, At. No. 34) is a trace element indispensable to biological life — found in trace amounts yet critical to cellular function and vitality — Selenium Digital Consultant is the essential, foundational partner woven into the fabric of your organization's digital health.",
+      paragraph2:
+        "We don't just consult. We embed ourselves as a strategic extension of your technical team, delivering precision-engineered solutions that sustain, protect, and accelerate your most critical digital systems.",
+      quote:
+        '"We are the element your digital ecosystem cannot function without."',
       valueProps: [
-        { title: 'Precision Engineering', desc: 'Every solution is architecturally sound, documented, and built to last — not just to ship.' },
-        { title: 'Strategic Partnership', desc: 'We become an embedded part of your team, aligned to your business goals, not just technical tickets.' },
-        { title: 'Proactive Intelligence', desc: 'We identify risks before they become incidents through continuous monitoring and threat intelligence.' },
+        {
+          title: "Precision Engineering",
+          desc: "Every solution is architecturally sound, documented, and built to last — not just to ship.",
+        },
+        {
+          title: "Strategic Partnership",
+          desc: "We become an embedded part of your team, aligned to your business goals, not just technical tickets.",
+        },
+        {
+          title: "Proactive Intelligence",
+          desc: "We identify risks before they become incidents through continuous monitoring and threat intelligence.",
+        },
       ],
     },
 
     // ── Tech Stack Section ──
     techStack: {
-      tag:        'Technology Expertise',
-      heading:    'Built on the Tools Enterprises Trust',
-      subheading: 'We work with robust, industry-proven technologies across every layer of the modern digital stack.',
+      tag: "Technology Expertise",
+      heading: "Built on the Tools Enterprises Trust",
+      subheading:
+        "We work with robust, industry-proven technologies across every layer of the modern digital stack.",
       categories: [
         {
-          name: 'Cloud & Infrastructure',
-          items: ['AWS', 'GCP', 'Azure', 'Terraform', 'Kubernetes', 'Docker'],
+          name: "Cloud & Infrastructure",
+          items: ["AWS", "GCP", "Azure", "Terraform", "Kubernetes", "Docker"],
         },
         {
-          name: 'Development',
-          items: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Python'],
+          name: "Development",
+          items: ["React", "Next.js", "TypeScript", "Node.js", "Python"],
         },
         {
-          name: 'Data & AI',
-          items: ['PyTorch', 'LangChain', 'PostgreSQL', 'MySQL', 'AI Integration', 'Tensor Flow'],
+          name: "Data & AI",
+          items: [
+            "PyTorch",
+            "LangChain",
+            "PostgreSQL",
+            "MySQL",
+            "AI Integration",
+            "Tensor Flow",
+          ],
         },
         {
-          name: 'DevOps',
-          items: ['GitHub Actions', 'CI/CD', 'Elasticsearch'],
+          name: "DevOps",
+          items: ["GitHub Actions", "CI/CD", "Elasticsearch"],
         },
       ],
     },
 
     // ── Process Section ──
     process: {
-      tag:        'How We Work',
-      heading:    'From Discovery to Delivery',
-      subheading: 'A structured engagement model designed for the complexity of Small Businesses to Enterprises.',
+      tag: "How We Work",
+      heading: "From Discovery to Delivery",
+      subheading:
+        "A structured engagement model designed for the complexity of Small Businesses to Enterprises.",
       steps: [
         {
-          number: '01',
-          title:  'Discovery & Assessment',
-          desc:   'We conduct a full technical and business audit — mapping your current systems, identifying gaps, and establishing a clear baseline for transformation.',
+          number: "01",
+          title: "Discovery & Assessment",
+          desc: "We conduct a full technical and business audit — mapping your current systems, identifying gaps, and establishing a clear baseline for transformation.",
         },
         {
-          number: '02',
-          title:  'Strategy & Architecture',
-          desc:   'Our developers design a tailored technology roadmap and solution architecture aligned to your business objectives and budget constraints.',
+          number: "02",
+          title: "Strategy & Architecture",
+          desc: "Our developers design a tailored technology roadmap and solution architecture aligned to your business objectives and budget constraints.",
         },
         {
-          number: '03',
-          title:  'Agile Implementation',
-          desc:   'We execute in focused sprints with full transparency — delivering measurable milestones while maintaining your operations without disruption.',
+          number: "03",
+          title: "Agile Implementation",
+          desc: "We execute in focused sprints with full transparency — delivering measurable milestones while maintaining your operations without disruption.",
         },
         {
-          number: '04',
-          title:  'Optimization & Support',
-          desc:   'Post-delivery, we monitor, optimize, and iterate. Our 24/7 support and continuous improvement cycles ensure sustained performance over time.',
+          number: "04",
+          title: "Optimization & Support",
+          desc: "Post-delivery, we monitor, optimize, and iterate. Our 24/7 support and continuous improvement cycles ensure sustained performance over time.",
         },
       ],
     },
 
     // ── Projects Section ──
     projects: {
-      tag:      'Our Work',
-      heading:  'Our Projects',
+      tag: "Our Work",
+      heading: "Our Projects",
       items: [
         {
-          title:       'Learning Management System',
-          client:      'AI & LMS',
-          description: 'Develop a system to digitalize the learning process in schools equipped with AI chatbot, scheduling, student management, material management, mentor management, discussion forum, and video conferencing.',
-          tags:        ['AI Chatbot', 'Video Conference', 'Forum', 'Scheduling', 'Management'],
-          url:         'https://amslms.web.id/',
-          text:        'Live Demo',
+          title: "Learning Management System",
+          client: "AI & LMS",
+          description:
+            "Develop a system to digitalize the learning process in schools equipped with AI chatbot, scheduling, student management, material management, mentor management, discussion forum, and video conferencing.",
+          tags: [
+            "AI Chatbot",
+            "Video Conference",
+            "Forum",
+            "Scheduling",
+            "Management",
+          ],
+          url: "https://amslms.web.id/",
+          text: "Live Demo",
         },
         {
-          title:       'Automated Image Validation',
-          client:      'AI & Machine Learning',
-          description: 'Developed an automated image recognition module to reliably validate specific screenshots uploaded by application users.',
-          tags:        ['Computer Vision', 'Machine Learning'],
-          url:         'https://www.linkedin.com/posts/muhammad-za-im-shidqi-414326281_presentation-slide-activity-7284398955751264256-2Xey',
-          text:        'Visit Project',
+          title: "Automated Image Validation",
+          client: "AI & Machine Learning",
+          description:
+            "Developed an automated image recognition module to reliably validate specific screenshots uploaded by application users.",
+          tags: ["Computer Vision", "Machine Learning"],
+          url: "https://www.linkedin.com/posts/muhammad-za-im-shidqi-414326281_presentation-slide-activity-7284398955751264256-2Xey",
+          text: "Visit Project",
         },
         {
-          title:       'Village Profile Website',
-          client:      'Web Development',
-          description: 'Built an interactive website serving as an information hub to provide easy public access to regional data and local potentials.',
-          tags:        ['Frontend', 'UI/UX Design'],
-          url:         'https://github.com/PMKM-IF-UNTAN-2025/Web-Profile-Desa-CMS-Template',
-          text:        'Visit Project',
+          title: "Village Profile Website",
+          client: "Web Development",
+          description:
+            "Built an interactive website serving as an information hub to provide easy public access to regional data and local potentials.",
+          tags: ["Frontend", "UI/UX Design"],
+          url: "https://github.com/PMKM-IF-UNTAN-2025/Web-Profile-Desa-CMS-Template",
+          text: "Visit Project",
         },
         {
-          title:       'CCTV Security Installation',
-          client:      'Security Infrastructure',
-          description: 'Designed and deployed comprehensive CCTV monitoring networks to ensure the safety and operational security of facility areas.',
-          tags:        ['CCTV', 'Security', 'IT Support'],
-          url:         '',
-          text:        '',
+          title: "CCTV Security Installation",
+          client: "Security Infrastructure",
+          description:
+            "Designed and deployed comprehensive CCTV monitoring networks to ensure the safety and operational security of facility areas.",
+          tags: ["CCTV", "Security", "IT Support"],
+          url: "",
+          text: "",
         },
         {
-          title:       'SoundMood',
-          client:      'AI & Android Application ',
-          description: 'Developed an android application for detecting user mood and generated a Spotify playlist.',
-          tags:        ['Computer Vision', 'Deep Learning', 'Fun'],
-          url:         'https://github.com/SoundMood/mobile-development',
-          text:        'Visit Project',
+          title: "SoundMood",
+          client: "AI & Android Application ",
+          description:
+            "Developed an android application for detecting user mood and generated a Spotify playlist.",
+          tags: ["Computer Vision", "Deep Learning", "Fun"],
+          url: "https://github.com/SoundMood/mobile-development",
+          text: "Visit Project",
         },
         {
-          title:       'QTancy',
-          client:      'MSMEs',
-          description: 'Developed AI-Based web application for transaction recording and business management automation.',
-          tags:        ['Computer Vision', 'Deep Learning', 'Finance', 'MSMEs'],
-          url:         'https://github.com/QTancy/front-end',
-          text:        'Visit Project',
+          title: "QTancy",
+          client: "MSMEs",
+          description:
+            "Developed AI-Based web application for transaction recording and business management automation.",
+          tags: ["Computer Vision", "Deep Learning", "Finance", "MSMEs"],
+          url: "https://github.com/QTancy/front-end",
+          text: "Visit Project",
         },
       ],
     },
 
     // ── Pricing Section ──
     pricing: {
-      tag:        'Special Offer',
-      heading:    'Empowering Small Businesses',
-      subheading: 'Get online with our highly affordable complete digital presence package. Designed specifically for growing businesses.',
-      planName:   'Company Profile Package Start From',
-      price:      'Rp 299.000',
-      priceNote:  'One-time setup fee',
+      tag: "Special Offer",
+      heading: "Empowering Small Businesses",
+      subheading:
+        "Get online with our highly affordable complete digital presence package. Designed specifically for growing businesses.",
+      planName: "Company Profile Package Start From",
+      price: "Rp 299.000",
+      priceNote: "One-time setup fee",
       features: [
-        'Free Domain (.my.id / .web.id)',
-        '1-Page Professional Website (Discoverable in google)',
-        'Delivered Ready to Use & Live',
-        'Discoverable in AI',
-        'High-Performance Hosting Included',
-        '1 Month Free Maintenance & Live Support',
-        'Full Source Code Ownership',
-        'Free Initial Consultation',
+        "Free Domain (.my.id / .web.id)",
+        "1-Page Professional Website (Discoverable in google)",
+        "Delivered Ready to Use & Live",
+        "Discoverable in AI",
+        "High-Performance Hosting Included",
+        "1 Month Free Maintenance & Live Support",
+        "Full Source Code Ownership",
+        "Free Initial Consultation",
       ],
-      renewalHeading: 'Maintenance & Hosting Renewals',
+      renewalHeading: "Maintenance & Hosting Renewals",
       renewals: [
-        { period: '1 Month', price: 'Rp 99.000' },
-        { period: '3 Months', price: 'Rp 199.000' },
-        { period: '1 Year', price: 'Rp 999.000' }
+        { period: "1 Month", price: "Rp 99.000" },
+        { period: "3 Months", price: "Rp 199.000" },
+        { period: "1 Year", price: "Rp 999.000" },
       ],
-      cta: 'Claim This Promo',
+      cta: "Claim This Promo",
+    },
+
+    // ── Catalog Section ──
+    catalog: {
+      tag: "Our Catalog",
+      heading: "Digital Solutions Catalog",
+      subheading:
+        "Explore our curated collection of successful digital transformations and high-performance templates.",
+      whatsappBase: "https://wa.me/6282253210449",
+      items: [
+        {
+          id: 1,
+          image: "/catalog/catalog-1.jpg",
+          title: "Landing Page",
+          description:
+            "High-performance sales pages specifically designed to maximize conversion rates and loading speeds.",
+        },
+        {
+          id: 2,
+          image: "/catalog/catalog-2.jpg",
+          title: "System Integration",
+          description:
+            "Seamlessly connecting various platforms and APIs to ensure automated and fluid business data workflows.",
+        },
+        {
+          id: 3,
+          image: "/catalog/catalog-3.jpg",
+          title: "Building Custom App",
+          description:
+            "Tailor-made web or mobile applications built from the ground up to match your unique workflow and business requirements.",
+        },
+        {
+          id: 4,
+          image: "/catalog/catalog-4.jpg",
+          title: "Business Automation",
+          description:
+            "Streamlining repetitive tasks to boost operational efficiency and minimize the risk of human error.",
+        },
+        {
+          id: 5,
+          image: "/catalog/catalog-5.jpg",
+          title: "Digital System Audit",
+          description:
+            "Comprehensive evaluation of digital infrastructure to identify security vulnerabilities, performance bottlenecks, and optimization paths.",
+        },
+        {
+          id: 6,
+          image: "/catalog/catalog-6.jpg",
+          title: "WhatsApp Bot",
+          description:
+            "Intelligent chatbot solutions for 24/7 customer service, automated lead management, and real-time messaging integration.",
+        },
+        {
+          id: 7,
+          image: "/catalog/catalog-7.jpg",
+          title: "Queue System",
+          description:
+            "Modern, transparent customer flow management designed to enhance user experience and on-site operational efficiency.",
+        },
+      ],
+      cta: "Inquire via WhatsApp",
     },
 
     // ── Contact Section ──
     contact: {
-      tag:         'Get In Touch',
-      heading:     'Start the Conversation',
-      subheading:  'Tell us about your challenge. Our team of senior consultants will respond within 24 hours with a preliminary assessment.',
-      namePlaceholder:    'Full Name',
-      emailPlaceholder:   'Business Email',
-      companyPlaceholder: 'Company Name',
-      messagePlaceholder: 'Describe your project or challenge...',
-      nameLabel:    'Name',
-      emailLabel:   'Email',
-      companyLabel: 'Company',
-      messageLabel: 'Message',
-      submitBtn:    'Send Message',
-      submitSuccess:'Message sent. We\'ll be in touch within 24 hours.',
+      tag: "Get In Touch",
+      heading: "Start the Conversation",
+      subheading:
+        "Tell us about your challenge. Our team of senior consultants will respond within 24 hours with a preliminary assessment.",
+      namePlaceholder: "Full Name",
+      emailPlaceholder: "Business Email",
+      companyPlaceholder: "Company Name",
+      messagePlaceholder: "Describe your project or challenge...",
+      nameLabel: "Name",
+      emailLabel: "Email",
+      companyLabel: "Company",
+      messageLabel: "Message",
+      submitBtn: "Send Message",
+      submitSuccess: "Message sent. We'll be in touch within 24 hours.",
       info: [
-        { label: 'Email', value: 'seleniumdigitalsolution@gmail.com' },
-        { label: 'Phone', value: '+62 822 5321 0449' },
-        { label: 'Headquarters', value: 'Pontianak, Indonesia' },
-        { label: 'Hours', value: 'Mon–Fri: 09:00–17:00 WIB' },
+        { label: "Email", value: "seleniumdigitalsolution@gmail.com" },
+        { label: "Phone", value: "+62 822 5321 0449" },
+        { label: "Headquarters", value: "Pontianak, Indonesia" },
+        { label: "Hours", value: "Mon–Fri: 09:00–17:00 WIB" },
       ],
     },
 
     // ── Footer ──
     footer: {
-      tagline:   'The Essential Element for Your Digital Ecosystem.',
-      copyright: '© 2025 Selenium Digital Consultant. All rights reserved.',
+      tagline: "The Essential Element for Your Digital Ecosystem.",
+      copyright: "© 2025 Selenium Digital Consultant. All rights reserved.",
       links: [
-        { label: 'Services',   href: '#services' },
-        { label: 'About',      href: '#about' },
-        { label: 'Tech Stack', href: '#tech-stack' },
-        { label: 'Process',    href: '#process' },
-        { label: 'Contact',    href: '#contact' },
+        { label: "Services", href: "#services" },
+        { label: "About", href: "#about" },
+        { label: "Tech Stack", href: "#tech-stack" },
+        { label: "Process", href: "#process" },
+        { label: "Contact", href: "#contact" },
       ],
       legalLinks: [
-        { label: 'Privacy Policy', href: '#' },
-        { label: 'Terms of Service', href: '#' },
+        { label: "Privacy Policy", href: "#" },
+        { label: "Terms of Service", href: "#" },
       ],
     },
   },
@@ -298,45 +418,48 @@ export const translations = {
   id: {
     // ── Navigasi ──
     nav: {
-      brand:     'Selenium',
-      services:  'Layanan',
-      about:     'Tentang Kami',
-      techStack: 'Teknologi',
-      process:   'Proses',
-      contact:   'Kontak',
-      cta:       'Konsultasi Gratis',
+      brand: "Selenium",
+      services: "Layanan",
+      about: "Tentang Kami",
+      techStack: "Teknologi",
+      process: "Proses",
+      contact: "Kontak",
+      cta: "Konsultasi Gratis",
     },
 
     // ── Bagian Hero ──
     hero: {
-      eyebrow:    'Elemen Digital yang Esensial',
-      headline1:  'Kami Menggerakkan',
-      headline2:  'Inti Digital',
-      headline3:  'Bisnis Anda.',
-      subheadline: 'Selenium Digital Consultant adalah mitra IT UMKM hingga enterprise Anda — merancang infrastruktur cloud yang tangguh, mempercepat transformasi digital, dan mengamankan sistem yang paling kritis.',
-      ctaPrimary:  'Mulai Perjalanan Anda',
-      ctaSecondary:'Jelajahi Layanan Kami',
-      stat1Value:  'Modern',
-      stat1Label:  'Stack Teknologi',
-      stat2Value:  'Agile',
-      stat2Label:  'Pengembangan',
-      stat3Value:  'Aman',
-      stat3Label:  'Sistem & Data',
-      stat4Value:  'Terukur',
-      stat4Label:  'Arsitektur IT',
+      eyebrow: "Elemen Digital yang Esensial",
+      headline1: "Kami Menggerakkan",
+      headline2: "Inti Digital",
+      headline3: "Bisnis Anda.",
+      subheadline:
+        "Selenium Digital Consultant adalah mitra IT UMKM hingga enterprise Anda — merancang infrastruktur cloud yang tangguh, mempercepat transformasi digital, dan mengamankan sistem yang paling kritis.",
+      ctaPrimary: "Mulai Perjalanan Anda",
+      ctaSecondary: "Jelajahi Layanan Kami",
+      stat1Value: "Modern",
+      stat1Label: "Stack Teknologi",
+      stat2Value: "Agile",
+      stat2Label: "Pengembangan",
+      stat3Value: "Aman",
+      stat3Label: "Sistem & Data",
+      stat4Value: "Terukur",
+      stat4Label: "Arsitektur IT",
     },
 
     // ── Bagian Layanan ──
     services: {
-      tag:        'Keahlian Kami',
-      heading:    'Solusi yang Dibangun untuk Skala UMKM hingga Enterprise',
-      subheading: 'Dari infrastruktur hingga kecerdasan buatan — kami menghadirkan solusi teknologi end-to-end yang menghasilkan dampak bisnis yang terukur.',
+      tag: "Keahlian Kami",
+      heading: "Solusi yang Dibangun untuk Skala UMKM hingga Enterprise",
+      subheading:
+        "Dari infrastruktur hingga kecerdasan buatan — kami menghadirkan solusi teknologi end-to-end yang menghasilkan dampak bisnis yang terukur.",
       items: [
         {
-          icon:        'cloud',
-          title:       'Arsitektur Cloud',
-          description: 'Merancang dan menerapkan lingkungan multi-cloud dan hybrid cloud yang aman dan skalabel di AWS, GCP, dan Azure — dioptimalkan untuk performa dan efisiensi biaya.',
-          tags:        ['AWS', 'GCP', 'Azure', 'Terraform'],
+          icon: "cloud",
+          title: "Arsitektur Cloud",
+          description:
+            "Merancang dan menerapkan lingkungan multi-cloud dan hybrid cloud yang aman dan skalabel di AWS, GCP, dan Azure — dioptimalkan untuk performa dan efisiensi biaya.",
+          tags: ["AWS", "GCP", "Azure", "Terraform"],
         },
         // {
         //   icon:        'shield',
@@ -345,227 +468,344 @@ export const translations = {
         //   tags:        ['SOC 2', 'ISO 27001', 'Zero Trust', 'SIEM'],
         // },
         {
-          icon:        'code',
-          title:       'Pengembangan Aplikasi',
-          description: 'Merancang dan menghadirkan aplikasi web full-stack dan microservices modern dengan fokus pada performa, kemudahan pemeliharaan, dan rekayasa DevOps-first.',
-          tags:        ['React', 'express.js', 'Hapi.js', 'Node.js', 'Docker', 'Laravel'],
+          icon: "code",
+          title: "Pengembangan Aplikasi",
+          description:
+            "Merancang dan menghadirkan aplikasi web full-stack dan microservices modern dengan fokus pada performa, kemudahan pemeliharaan, dan rekayasa DevOps-first.",
+          tags: [
+            "React",
+            "express.js",
+            "Hapi.js",
+            "Node.js",
+            "Docker",
+            "Laravel",
+          ],
         },
         {
-          icon:        'database',
-          title:       'Rekayasa & Analitik Data',
-          description: 'Menyatukan lanskap data Anda — dari desain pipeline ETL dan data warehousing hingga dashboard BI real-time dan infrastruktur analitik prediktif.',
-          tags:        [ 'Power BI', 'MySQL', 'PostgreSQL'],
+          icon: "database",
+          title: "Rekayasa & Analitik Data",
+          description:
+            "Menyatukan lanskap data Anda — dari desain pipeline ETL dan data warehousing hingga dashboard BI real-time dan infrastruktur analitik prediktif.",
+          tags: ["Power BI", "MySQL", "PostgreSQL"],
         },
         {
-          icon:        'cpu',
-          title:       'AI & Machine Learning',
-          description: 'Integrasikan otomasi cerdas ke dalam operasional Anda — dari alur kerja berbasis LLM dan model NLP hingga computer vision dan pipeline deployment MLOps.',
-          tags:        ['Python', 'LangChain', 'Computer Vision', 'Machine Learning', 'PyTorch'],
+          icon: "cpu",
+          title: "AI & Machine Learning",
+          description:
+            "Integrasikan otomasi cerdas ke dalam operasional Anda — dari alur kerja berbasis LLM dan model NLP hingga computer vision dan pipeline deployment MLOps.",
+          tags: [
+            "Python",
+            "LangChain",
+            "Computer Vision",
+            "Machine Learning",
+            "PyTorch",
+          ],
         },
         {
-          icon:        'settings',
-          title:       'Infrastruktur IT & DevOps',
-          description: 'Transformasikan pipeline pengiriman Anda dengan otomasi CI/CD, infrastructure-as-code, orkestrasi container, dan pemantauan sistem proaktif 24/7.',
-          tags:        ['GitHub Actions', 'Ansible', 'Prometheus', 'Grafana'],
+          icon: "settings",
+          title: "Infrastruktur IT & DevOps",
+          description:
+            "Transformasikan pipeline pengiriman Anda dengan otomasi CI/CD, infrastructure-as-code, orkestrasi container, dan pemantauan sistem proaktif 24/7.",
+          tags: ["GitHub Actions", "Ansible", "Prometheus", "Grafana"],
         },
         {
-          icon:        'network',
-          title:       'Infrastruktur IT & Jaringan Kantor',
-          description: 'Pastikan operasional harian bisnis Anda berjalan tanpa hambatan dengan instalasi jaringan internet lokal (LAN) yang dapat diandalkan, sistem keamanan CCTV, hingga penyiapan awal dan instalasi ulang komputer untuk karyawan.',
-          tags:        ['Jaringan Kantor (LAN)', 'Instalasi CCTV', 'Setup Komputer Karyawan', 'IT Support'],
-        }
-
+          icon: "network",
+          title: "Infrastruktur IT & Jaringan Kantor",
+          description:
+            "Pastikan operasional harian bisnis Anda berjalan tanpa hambatan dengan instalasi jaringan internet lokal (LAN) yang dapat diandalkan, sistem keamanan CCTV, hingga penyiapan awal dan instalasi ulang komputer untuk karyawan.",
+          tags: [
+            "Jaringan Kantor (LAN)",
+            "Instalasi CCTV",
+            "Setup Komputer Karyawan",
+            "IT Support",
+          ],
+        },
       ],
     },
 
     // ── Tentang Kami ──
     about: {
-      tag:         'Tentang Selenium',
-      heading:     'Elemen Esensial untuk Ekosistem Digital Anda',
-      paragraph1:  'Seperti halnya Selenium (Se, No. At. 34) adalah elemen jejak yang sangat diperlukan oleh kehidupan biologis — ditemukan dalam jumlah sedikit namun kritis bagi fungsi seluler dan vitalitas — Selenium Digital Consultant adalah mitra esensial dan fundamental yang terjalin ke dalam jalinan kesehatan digital organisasi Anda.',
-      paragraph2:  'Kami tidak hanya berkonsultasi. Kami menanamkan diri sebagai perpanjangan strategis dari tim teknis Anda, menghadirkan solusi yang dirancang dengan presisi untuk mempertahankan, melindungi, dan mempercepat sistem digital Anda yang paling kritis.',
-      quote:       '"Kami adalah elemen yang tidak bisa berfungsi tanpa ekosistem digital Anda."',
+      tag: "Tentang Selenium",
+      heading: "Elemen Esensial untuk Ekosistem Digital Anda",
+      paragraph1:
+        "Seperti halnya Selenium (Se, No. At. 34) adalah elemen jejak yang sangat diperlukan oleh kehidupan biologis — ditemukan dalam jumlah sedikit namun kritis bagi fungsi seluler dan vitalitas — Selenium Digital Consultant adalah mitra esensial dan fundamental yang terjalin ke dalam jalinan kesehatan digital organisasi Anda.",
+      paragraph2:
+        "Kami tidak hanya berkonsultasi. Kami menanamkan diri sebagai perpanjangan strategis dari tim teknis Anda, menghadirkan solusi yang dirancang dengan presisi untuk mempertahankan, melindungi, dan mempercepat sistem digital Anda yang paling kritis.",
+      quote:
+        '"Kami adalah elemen yang tidak bisa berfungsi tanpa ekosistem digital Anda."',
       valueProps: [
-        { title: 'Rekayasa Presisi', desc: 'Setiap solusi dirancang secara arsitektural, terdokumentasi, dan dibangun untuk bertahan lama — bukan hanya untuk selesai.' },
-        { title: 'Kemitraan Strategis', desc: 'Kami menjadi bagian tertanam dari tim Anda, selaras dengan tujuan bisnis Anda, bukan hanya tiket teknis.' },
-        { title: 'Intelijen Proaktif', desc: 'Kami mengidentifikasi risiko sebelum menjadi insiden melalui pemantauan berkelanjutan dan threat intelligence.' },
+        {
+          title: "Rekayasa Presisi",
+          desc: "Setiap solusi dirancang secara arsitektural, terdokumentasi, dan dibangun untuk bertahan lama — bukan hanya untuk selesai.",
+        },
+        {
+          title: "Kemitraan Strategis",
+          desc: "Kami menjadi bagian tertanam dari tim Anda, selaras dengan tujuan bisnis Anda, bukan hanya tiket teknis.",
+        },
+        {
+          title: "Intelijen Proaktif",
+          desc: "Kami mengidentifikasi risiko sebelum menjadi insiden melalui pemantauan berkelanjutan dan threat intelligence.",
+        },
       ],
     },
 
     // ── Stack Teknologi ──
     techStack: {
-      tag:        'Keahlian Teknologi',
-      heading:    'Dibangun di Atas Alat yang Dipercaya Enterprise',
-      subheading: 'Kami bekerja dengan teknologi industri yang tangguh dan teruji di setiap lapisan digital modern.',
+      tag: "Keahlian Teknologi",
+      heading: "Dibangun di Atas Alat yang Dipercaya Enterprise",
+      subheading:
+        "Kami bekerja dengan teknologi industri yang tangguh dan teruji di setiap lapisan digital modern.",
       categories: [
         {
-          name: 'Cloud & Infrastruktur',
-          items: ['AWS', 'GCP', 'Azure', 'Terraform', 'Kubernetes', 'Docker'],
+          name: "Cloud & Infrastruktur",
+          items: ["AWS", "GCP", "Azure", "Terraform", "Kubernetes", "Docker"],
         },
         {
-          name: 'Pengembangan',
-          items: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Python'],
+          name: "Pengembangan",
+          items: ["React", "Next.js", "TypeScript", "Node.js", "Python"],
         },
         {
-          name: 'Data & AI',
-          items: [ 'PyTorch', 'LangChain', 'PostgreSQL', 'MySQL', 'AI Integration', 'Tensor Flow'],
+          name: "Data & AI",
+          items: [
+            "PyTorch",
+            "LangChain",
+            "PostgreSQL",
+            "MySQL",
+            "AI Integration",
+            "Tensor Flow",
+          ],
         },
         {
-          name: 'DevOps',
-          items: ['GitHub Actions', 'CI/CD', 'Elasticsearch'],
+          name: "DevOps",
+          items: ["GitHub Actions", "CI/CD", "Elasticsearch"],
         },
       ],
     },
 
     // ── Proses Kerja ──
     process: {
-      tag:        'Cara Kami Bekerja',
-      heading:    'Dari Penemuan hingga Pengiriman',
-      subheading: 'Model keterlibatan yang terstruktur, dirancang untuk kompleksitas Bisnis Kecil hingga Besar',
+      tag: "Cara Kami Bekerja",
+      heading: "Dari Penemuan hingga Pengiriman",
+      subheading:
+        "Model keterlibatan yang terstruktur, dirancang untuk kompleksitas Bisnis Kecil hingga Besar",
       steps: [
         {
-          number: '01',
-          title:  'Penemuan & Penilaian',
-          desc:   'Kami melakukan audit teknis dan bisnis penuh — memetakan sistem Anda saat ini, mengidentifikasi kesenjangan, dan menetapkan baseline yang jelas untuk transformasi.',
+          number: "01",
+          title: "Penemuan & Penilaian",
+          desc: "Kami melakukan audit teknis dan bisnis penuh — memetakan sistem Anda saat ini, mengidentifikasi kesenjangan, dan menetapkan baseline yang jelas untuk transformasi.",
         },
         {
-          number: '02',
-          title:  'Strategi & Arsitektur',
-          desc:   'Developer kami merancang peta jalan teknologi yang disesuaikan dan arsitektur solusi yang selaras dengan tujuan bisnis dan kendala anggaran Anda.',
+          number: "02",
+          title: "Strategi & Arsitektur",
+          desc: "Developer kami merancang peta jalan teknologi yang disesuaikan dan arsitektur solusi yang selaras dengan tujuan bisnis dan kendala anggaran Anda.",
         },
         {
-          number: '03',
-          title:  'Implementasi Agile',
-          desc:   'Kami mengeksekusi dalam sprint yang terfokus dengan transparansi penuh — menghasilkan pencapaian yang terukur sambil menjaga operasional Anda tetap berjalan tanpa gangguan.',
+          number: "03",
+          title: "Implementasi Agile",
+          desc: "Kami mengeksekusi dalam sprint yang terfokus dengan transparansi penuh — menghasilkan pencapaian yang terukur sambil menjaga operasional Anda tetap berjalan tanpa gangguan.",
         },
         {
-          number: '04',
-          title:  'Optimisasi & Dukungan',
-          desc:   'Setelah pengiriman, kami memantau, mengoptimalkan, dan melakukan iterasi. Dukungan 24/7 dan siklus peningkatan berkelanjutan kami memastikan performa yang berkelanjutan.',
+          number: "04",
+          title: "Optimisasi & Dukungan",
+          desc: "Setelah pengiriman, kami memantau, mengoptimalkan, dan melakukan iterasi. Dukungan 24/7 dan siklus peningkatan berkelanjutan kami memastikan performa yang berkelanjutan.",
         },
       ],
     },
 
     // ── Portofolio Proyek ──
     projects: {
-      tag:      'Karya Kami',
-      heading:  'Proyek Kami',
+      tag: "Karya Kami",
+      heading: "Proyek Kami",
       items: [
         {
-          title:       'Sistem Manajemen Pembelajaran',
-          client:      'AI & Sistem Manajemen Pembelajaran',
-          description: 'Mengembangkan sistem untuk mendigitalisasi proses pembelajaran di sekolah yang dilengkapi dengan chatbot AI, penjadwalan, manajemen siswa, manajemen materi, manajemen mentor, forum diskusi, dan video conference.',
-          tags:        ['Chatbot AI', 'Video Conference', 'Forum', 'Penjadwalan', 'Manajemen'],
-          url:         'https://amslms.web.id/',
-          text:        'Kunjungi Demo',
+          title: "Sistem Manajemen Pembelajaran",
+          client: "AI & Sistem Manajemen Pembelajaran",
+          description:
+            "Mengembangkan sistem untuk mendigitalisasi proses pembelajaran di sekolah yang dilengkapi dengan chatbot AI, penjadwalan, manajemen siswa, manajemen materi, manajemen mentor, forum diskusi, dan video conference.",
+          tags: [
+            "Chatbot AI",
+            "Video Conference",
+            "Forum",
+            "Penjadwalan",
+            "Manajemen",
+          ],
+          url: "https://amslms.web.id/",
+          text: "Kunjungi Demo",
         },
         {
-          title:       'Modul Validasi Gambar Otomatis',
-          client:      'AI & Machine Learning',
-          description: 'Mengembangkan modul pengenalan otomatis yang handal untuk memvalidasi tangkapan layar spesifik dari pengguna aplikasi.',
-          tags:        ['Computer Vision', 'Machine Learning'],
-          url:         'https://www.linkedin.com/posts/muhammad-za-im-shidqi-414326281_presentation-slide-activity-7284398955751264256-2Xey',
-          text:        'Kunjungi Projek',
+          title: "Modul Validasi Gambar Otomatis",
+          client: "AI & Machine Learning",
+          description:
+            "Mengembangkan modul pengenalan otomatis yang handal untuk memvalidasi tangkapan layar spesifik dari pengguna aplikasi.",
+          tags: ["Computer Vision", "Machine Learning"],
+          url: "https://www.linkedin.com/posts/muhammad-za-im-shidqi-414326281_presentation-slide-activity-7284398955751264256-2Xey",
+          text: "Kunjungi Projek",
         },
         {
-          title:       'Website Profil Desa',
-          client:      'Web Development',
-          description: 'Membangun website profil sebagai pilar informasi utama yang memudahkan akses publik terhadap potensi dan data daerah.',
-          tags:        ['Frontend', 'UI/UX Design'],
-          url:         'https://github.com/PMKM-IF-UNTAN-2025/Web-Profile-Desa-CMS-Template',
-          text:        'Kunjungi Projek',
+          title: "Website Profil Desa",
+          client: "Web Development",
+          description:
+            "Membangun website profil sebagai pilar informasi utama yang memudahkan akses publik terhadap potensi dan data daerah.",
+          tags: ["Frontend", "UI/UX Design"],
+          url: "https://github.com/PMKM-IF-UNTAN-2025/Web-Profile-Desa-CMS-Template",
+          text: "Kunjungi Projek",
         },
         {
-          title:       'Instalasi Sistem CCTV',
-          client:      'Infrastruktur Keamanan',
-          description: 'Merancang dan memasang sistem CCTV secara menyeluruh guna memastikan keamanan serta kelancaran operasional area fasilitas.',
-          tags:        ['CCTV', 'Security', 'IT Support'],
-          url:         '',
-          text:        '',
+          title: "Instalasi Sistem CCTV",
+          client: "Infrastruktur Keamanan",
+          description:
+            "Merancang dan memasang sistem CCTV secara menyeluruh guna memastikan keamanan serta kelancaran operasional area fasilitas.",
+          tags: ["CCTV", "Security", "IT Support"],
+          url: "",
+          text: "",
         },
         {
-          title:       'SoundMood',
-          client:      'AI & Android Application ',
-          description: 'Mengembangkan aplikasi android untuk mendeteksi mood pengguna kemudian menghasilkan serta mengeskport playlist Spotfy.',
-          tags:        ['Computer Vision', 'Deep Learning', 'Fun'],
-          url:         'https://github.com/SoundMood/mobile-development',
-          text:        'Kunjungi Projek',
+          title: "SoundMood",
+          client: "AI & Android Application ",
+          description:
+            "Mengembangkan aplikasi android untuk mendeteksi mood pengguna kemudian menghasilkan serta mengeskport playlist Spotfy.",
+          tags: ["Computer Vision", "Deep Learning", "Fun"],
+          url: "https://github.com/SoundMood/mobile-development",
+          text: "Kunjungi Projek",
         },
         {
-          title:       'QTancy',
-          client:      'UMKM',
-          description: 'Mengembangkan aplikasi web berbasis AI untuk merekam transaksi dddan manajemen bisnis secara otomatis.',
-          tags:        ['Computer Vision', 'Deep Learning', 'Finance', 'MSMEs'],
-          url:         'https://github.com/QTancy/front-end',
-          text:        'Kunjungi Projek',
+          title: "QTancy",
+          client: "UMKM",
+          description:
+            "Mengembangkan aplikasi web berbasis AI untuk merekam transaksi dddan manajemen bisnis secara otomatis.",
+          tags: ["Computer Vision", "Deep Learning", "Finance", "MSMEs"],
+          url: "https://github.com/QTancy/front-end",
+          text: "Kunjungi Projek",
         },
       ],
     },
 
-
     // ── Harga / Promo ──
     pricing: {
-      tag:        'Promo Spesial UMKM',
-      heading:    'Go Digital dengan Harga Terjangkau',
-      subheading: 'Hadirkan bisnis Anda di dunia digital dengan paket pembuatan Company Profile super hemat, dirancang khusus untuk Anda yang baru memulai.',
-      planName:   'Paket Website Profile Mulai Dari',
-      price:      'Rp 299.000',
-      priceNote:  'Biaya pembuatan (Sekali bayar)',
+      tag: "Promo Spesial UMKM",
+      heading: "Go Digital dengan Harga Terjangkau",
+      subheading:
+        "Hadirkan bisnis Anda di dunia digital dengan paket pembuatan Company Profile super hemat, dirancang khusus untuk Anda yang baru memulai.",
+      planName: "Paket Website Profile Mulai Dari",
+      price: "Rp 299.000",
+      priceNote: "Biaya pembuatan (Sekali bayar)",
       features: [
-        'Gratis Domain (.my.id / .web.id)',
-        'Jasa Pembuatan Website 1 Halaman (Muncul di Pencarian Google)',
-        'Terima Jadi dan Langsung Live',
-        'Bisa direkomendasikan oleh AI',
-        'Gratis 1 Bulan Live & Maintenance',
-        'Source Code Menjadi Milik Anda',
-        'Gratis Konsultasi Bisnis',
+        "Gratis Domain (.my.id / .web.id)",
+        "Jasa Pembuatan Website 1 Halaman (Muncul di Pencarian Google)",
+        "Terima Jadi dan Langsung Live",
+        "Bisa direkomendasikan oleh AI",
+        "Gratis 1 Bulan Live & Maintenance",
+        "Source Code Menjadi Milik Anda",
+        "Gratis Konsultasi Bisnis",
       ],
-      renewalHeading: 'Perpanjangan Hosting & Maintenance',
+      renewalHeading: "Perpanjangan Hosting & Maintenance",
       renewals: [
-        { period: 'Per Bulan', price: 'Rp 99.000' },
-        { period: 'Per 3 Bulan', price: 'Rp 199.000' },
-        { period: 'Per Tahun', price: 'Rp 999.000' }
+        { period: "Per Bulan", price: "Rp 99.000" },
+        { period: "Per 3 Bulan", price: "Rp 199.000" },
+        { period: "Per Tahun", price: "Rp 999.000" },
       ],
-      cta: 'Ambil Promo Ini',
+      cta: "Ambil Promo Ini",
+    },
+
+    // ── Catalog Section ──
+    catalog: {
+      tag: "Katalog Kami",
+      heading: "Katalog Solusi Digital",
+      subheading:
+        "Jelajahi koleksi transformasi digital kami yang terkurasi dan template berperforma tinggi untuk bisnis Anda.",
+      whatsappBase: "https://wa.me/6282253210449",
+      items: [
+        {
+          id: 1,
+          image: "/catalog/catalog-1.jpg",
+          title: "Landing Page",
+          description:
+            "Halaman penjualan berperforma tinggi yang dirancang khusus untuk memaksimalkan konversi dan kecepatan akses.",
+        },
+        {
+          id: 2,
+          image: "/catalog/catalog-2.jpg",
+          title: "Integrasi Sistem",
+          description:
+            "Menghubungkan berbagai platform dan API untuk memastikan alur data bisnis Anda berjalan mulus tanpa hambatan manual.",
+        },
+        {
+          id: 3,
+          image: "/catalog/catalog-3.jpg",
+          title: "Building Custom App",
+          description:
+            "Pengembangan aplikasi web atau mobile yang dibangun dari nol sesuai dengan alur kerja unik dan kebutuhan spesifik bisnis Anda.",
+        },
+        {
+          id: 4,
+          image: "/catalog/catalog-4.jpg",
+          title: "Automation Bisnis",
+          description:
+            "Otomatisasi proses repetitif untuk meningkatkan efisiensi operasional dan meminimalisir risiko kesalahan manusia (human error).",
+        },
+        {
+          id: 5,
+          image: "/catalog/catalog-5.jpg",
+          title: "Digital System Audit",
+          description:
+            "Evaluasi mendalam terhadap infrastruktur digital untuk menemukan celah keamanan, bottleneck performa, dan peluang optimasi.",
+        },
+        {
+          id: 6,
+          image: "/catalog/catalog-6.jpg",
+          title: "Whatsapp Bot",
+          description:
+            "Solusi chatbot pintar untuk melayani pelanggan 24/7, manajemen prospek otomatis, dan integrasi pesan real-time.",
+        },
+        {
+          id: 7,
+          image: "/catalog/catalog-7.jpg",
+          title: "Sistem Antrian",
+          description:
+            "Manajemen alur pelanggan yang modern dan transparan untuk meningkatkan kenyamanan pengguna serta efisiensi layanan di lokasi.",
+        },
+      ],
+      cta: "Tanya via WhatsApp",
     },
 
     // ── Kontak ──
     contact: {
-      tag:         'Hubungi Kami',
-      heading:     'Mulai Percakapan',
-      subheading:  'Ceritakan tantangan Anda. Tim konsultan senior kami akan merespons dalam 24 jam dengan penilaian awal.',
-      namePlaceholder:    'Nama Lengkap',
-      emailPlaceholder:   'Email Bisnis',
-      companyPlaceholder: 'Nama Perusahaan',
-      messagePlaceholder: 'Deskripsikan proyek atau tantangan Anda...',
-      nameLabel:    'Nama',
-      emailLabel:   'Email',
-      companyLabel: 'Perusahaan',
-      messageLabel: 'Pesan',
-      submitBtn:    'Kirim Pesan',
-      submitSuccess:'Pesan terkirim. Kami akan menghubungi Anda dalam 24 jam.',
+      tag: "Hubungi Kami",
+      heading: "Mulai Percakapan",
+      subheading:
+        "Ceritakan tantangan Anda. Tim konsultan senior kami akan merespons dalam 24 jam dengan penilaian awal.",
+      namePlaceholder: "Nama Lengkap",
+      emailPlaceholder: "Email Bisnis",
+      companyPlaceholder: "Nama Perusahaan",
+      messagePlaceholder: "Deskripsikan proyek atau tantangan Anda...",
+      nameLabel: "Nama",
+      emailLabel: "Email",
+      companyLabel: "Perusahaan",
+      messageLabel: "Pesan",
+      submitBtn: "Kirim Pesan",
+      submitSuccess: "Pesan terkirim. Kami akan menghubungi Anda dalam 24 jam.",
       info: [
-        { label: 'Email', value: 'seleniumdigitalsolution@gmail.com' },
-        { label: 'Telepon', value: '+62 822 5321 0449' },
-        { label: 'Kantor Pusat', value: 'Pontianak, Indonesia' },
-        { label: 'Jam Kerja', value: 'Sen–Jum: 09:00–18:00 WIB' },
+        { label: "Email", value: "seleniumdigitalsolution@gmail.com" },
+        { label: "Telepon", value: "+62 822 5321 0449" },
+        { label: "Kantor Pusat", value: "Pontianak, Indonesia" },
+        { label: "Jam Kerja", value: "Sen–Jum: 09:00–18:00 WIB" },
       ],
     },
 
     // ── Footer ──
     footer: {
-      tagline:   'Elemen Esensial untuk Ekosistem Digital Anda.',
-      copyright: '© 2025 Selenium Digital Consultant. Hak cipta dilindungi.',
+      tagline: "Elemen Esensial untuk Ekosistem Digital Anda.",
+      copyright: "© 2025 Selenium Digital Consultant. Hak cipta dilindungi.",
       links: [
-        { label: 'Layanan',    href: '#services' },
-        { label: 'Tentang',    href: '#about' },
-        { label: 'Teknologi',  href: '#tech-stack' },
-        { label: 'Proses',     href: '#process' },
-        { label: 'Kontak',     href: '#contact' },
+        { label: "Layanan", href: "#services" },
+        { label: "Tentang", href: "#about" },
+        { label: "Teknologi", href: "#tech-stack" },
+        { label: "Proses", href: "#process" },
+        { label: "Kontak", href: "#contact" },
       ],
       legalLinks: [
-        { label: 'Kebijakan Privasi', href: '#' },
-        { label: 'Syarat Layanan', href: '#' },
+        { label: "Kebijakan Privasi", href: "#" },
+        { label: "Syarat Layanan", href: "#" },
       ],
     },
   },
@@ -583,7 +823,7 @@ export const translations = {
  */
 export function detectLanguage() {
   // 1. Check for manually saved preference
-  const stored = localStorage.getItem('se_lang');
+  const stored = localStorage.getItem("se_lang");
   if (stored && translations[stored]) return stored;
 
   // const browserLang = navigator.language || navigator.userLanguage || 'id';
@@ -592,7 +832,7 @@ export function detectLanguage() {
   // return resolved;
 
   // 2. Default to 'id' for Indonesian SEO
-  return 'id';
+  return "id";
 }
 
 /**
@@ -604,7 +844,7 @@ export function detectLanguage() {
  * @returns {string}     - Resolved translation or the key itself as fallback
  */
 export function t(lang, key) {
-  const keys = key.split('.');
+  const keys = key.split(".");
   let result = translations[lang];
   for (const k of keys) {
     if (result === undefined || result === null) return key; // Fallback to key
@@ -612,7 +852,7 @@ export function t(lang, key) {
   }
   // Final fallback: try Indonesian if translation is missing
   if (result === undefined || result === null) {
-    let fallback = translations['id'];
+    let fallback = translations["id"];
     for (const k of keys) {
       if (fallback === undefined) return key;
       fallback = fallback[k];
