@@ -12,9 +12,9 @@
  *   renderSection(lang) → HTML string
  */
 
-import './style.css';
-import { translations, detectLanguage, t } from './translations.js';
-import { icons } from './icons.js';
+import "./style.css";
+import { translations, detectLanguage, t } from "./translations.js";
+import { icons } from "./icons.js";
 
 /* ═════════════════════════════════════════════════════════════
    GLOBAL STATE
@@ -33,7 +33,7 @@ const TA = (key) => t(currentLang, key); // Arrays returned as-is from translati
 
 /** Renders translation array items for a section */
 const getSection = (key) => {
-  const keys = key.split('.');
+  const keys = key.split(".");
   let result = translations[currentLang];
   for (const k of keys) {
     if (!result) return null;
@@ -46,8 +46,8 @@ const getSection = (key) => {
    SECTION: NAVIGATION
    ═════════════════════════════════════════════════════════════ */
 function renderNav() {
-  const nav = getSection('nav');
-  const links = ['services', 'about', 'techStack', 'process', 'contact'];
+  const nav = getSection("nav");
+  const links = ["services", "about", "techStack", "process", "contact"];
 
   return `
   <nav id="navbar" role="navigation" aria-label="Main navigation"
@@ -71,27 +71,31 @@ function renderNav() {
 
         <!-- Desktop Navigation Links -->
         <ul class="hidden lg:flex items-center gap-8" role="list">
-          ${links.map(key => `
+          ${links
+            .map(
+              (key) => `
             <li>
-              <a href="#${key.replace('techStack','tech-stack')}"
+              <a href="#${key.replace("techStack", "tech-stack")}"
                  class="nav-link"
                  aria-label="Navigate to ${nav[key]}">
                 ${nav[key]}
               </a>
             </li>
-          `).join('')}
+          `,
+            )
+            .join("")}
         </ul>
 
         <!-- Right Controls -->
         <div class="flex items-center gap-4">
           <!-- Language Toggle -->
           <div class="flex items-center gap-1 p-1 rounded-sm border border-se-border bg-se-surface/50" role="group" aria-label="Language selector">
-            <button id="lang-en" class="lang-btn ${currentLang === 'en' ? 'active' : ''}"
-                    data-lang="en" aria-pressed="${currentLang === 'en'}" aria-label="Switch to English">
+            <button id="lang-en" class="lang-btn ${currentLang === "en" ? "active" : ""}"
+                    data-lang="en" aria-pressed="${currentLang === "en"}" aria-label="Switch to English">
               EN
             </button>
-            <button id="lang-id" class="lang-btn ${currentLang === 'id' ? 'active' : ''}"
-                    data-lang="id" aria-pressed="${currentLang === 'id'}" aria-label="Switch to Indonesian">
+            <button id="lang-id" class="lang-btn ${currentLang === "id" ? "active" : ""}"
+                    data-lang="id" aria-pressed="${currentLang === "id"}" aria-label="Switch to Indonesian">
               ID
             </button>
           </div>
@@ -99,13 +103,13 @@ function renderNav() {
           <!-- CTA Button (Desktop) -->
           <a href="#contact" class="hidden md:inline-flex btn-primary text-sm py-2.5 px-5" id="nav-cta">
             ${nav.cta}
-            ${icons.get('arrowRight', 'w-4 h-4')}
+            ${icons.get("arrowRight", "w-4 h-4")}
           </a>
 
           <!-- Mobile Menu Toggle -->
           <button id="mobile-menu-btn" class="lg:hidden p-2 text-se-silver hover:text-se-white transition-colors"
                   aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
-            <span id="mobile-menu-icon">${icons.get('menu', 'w-5 h-5')}</span>
+            <span id="mobile-menu-icon">${icons.get("menu", "w-5 h-5")}</span>
           </button>
         </div>
       </div>
@@ -114,16 +118,20 @@ function renderNav() {
     <!-- Mobile Menu Drawer -->
     <div id="mobile-menu" class="lg:hidden hidden glass-panel border-t border-se-border" role="dialog" aria-modal="true" aria-label="Mobile navigation">
       <div class="section-container py-6 flex flex-col gap-4">
-        ${links.map(key => `
-          <a href="#${key.replace('techStack','tech-stack')}"
+        ${links
+          .map(
+            (key) => `
+          <a href="#${key.replace("techStack", "tech-stack")}"
              class="mobile-nav-link text-se-silver hover:text-se-cyan text-base font-medium py-2 border-b border-se-border/50 transition-colors duration-300"
              aria-label="Navigate to ${nav[key]}">
             ${nav[key]}
           </a>
-        `).join('')}
+        `,
+          )
+          .join("")}
         <a href="#contact" class="btn-primary mt-4 justify-center">
           ${nav.cta}
-          ${icons.get('arrowRight', 'w-4 h-4')}
+          ${icons.get("arrowRight", "w-4 h-4")}
         </a>
       </div>
     </div>
@@ -134,7 +142,7 @@ function renderNav() {
    SECTION: HERO
    ═════════════════════════════════════════════════════════════ */
 function renderHero() {
-  const hero = getSection('hero');
+  const hero = getSection("hero");
 
   return `
   <section id="home" class="relative min-h-screen flex flex-col justify-center overflow-hidden bg-se-void"
@@ -176,7 +184,7 @@ function renderHero() {
         <div class="flex flex-wrap gap-4 mb-20 reveal reveal-delay-3">
           <a href="#contact" class="btn-primary animate-glow-pulse" id="hero-cta-primary" aria-label="${hero.ctaPrimary}">
             ${hero.ctaPrimary}
-            ${icons.get('arrowRight', 'w-4 h-4')}
+            ${icons.get("arrowRight", "w-4 h-4")}
           </a>
           <a href="#services" class="btn-ghost" id="hero-cta-secondary" aria-label="${hero.ctaSecondary}">
             ${hero.ctaSecondary}
@@ -191,7 +199,9 @@ function renderHero() {
             { val: hero.stat2Value, label: hero.stat2Label },
             { val: hero.stat3Value, label: hero.stat3Label },
             { val: hero.stat4Value, label: hero.stat4Label },
-          ].map((stat, i) => `
+          ]
+            .map(
+              (stat, i) => `
             <div class="bg-se-dark/90 px-6 py-5 text-center group hover:bg-se-surface transition-colors duration-300"
                  role="listitem">
               <div class="font-display font-bold text-2xl md:text-3xl text-se-cyan mb-1
@@ -201,7 +211,9 @@ function renderHero() {
               </div>
               <div class="text-xs text-se-muted tracking-wide uppercase font-mono">${stat.label}</div>
             </div>
-          `).join('')}
+          `,
+            )
+            .join("")}
         </div>
 
       </div>
@@ -221,7 +233,7 @@ function renderHero() {
    SECTION: SERVICES
    ═════════════════════════════════════════════════════════════ */
 function renderServices() {
-  const svc = getSection('services');
+  const svc = getSection("services");
 
   return `
   <section id="services" class="py-section bg-se-dark relative overflow-hidden"
@@ -246,14 +258,16 @@ function renderServices() {
       <!-- Service Cards Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
            role="list" aria-label="Our services">
-        ${svc.items.map((item, i) => `
+        ${svc.items
+          .map(
+            (item, i) => `
           <article class="se-card group reveal reveal-delay-${(i % 3) + 1}"
                    role="listitem"
                    aria-labelledby="service-${i}-title">
 
             <!-- Icon -->
             <div class="service-icon-wrap mb-6 text-se-cyan">
-              ${icons.get(item.icon, 'w-6 h-6')}
+              ${icons.get(item.icon, "w-6 h-6")}
             </div>
 
             <!-- Title -->
@@ -267,14 +281,20 @@ function renderServices() {
 
             <!-- Tags -->
             <div class="flex flex-wrap gap-2" role="list" aria-label="Technologies used">
-              ${item.tags.map(tag => `
+              ${item.tags
+                .map(
+                  (tag) => `
                 <span class="px-2.5 py-1 text-xs font-mono text-se-cyan/80 bg-se-cyan/5 border border-se-cyan/20 rounded-sm"
                       role="listitem">${tag}</span>
-              `).join('')}
+              `,
+                )
+                .join("")}
             </div>
 
           </article>
-        `).join('')}
+        `,
+          )
+          .join("")}
       </div>
 
     </div>
@@ -285,7 +305,7 @@ function renderServices() {
    SECTION: ABOUT
    ═════════════════════════════════════════════════════════════ */
 function renderAbout() {
-  const about = getSection('about');
+  const about = getSection("about");
 
   return `
   <section id="about" class="py-section bg-se-surface relative overflow-hidden"
@@ -320,15 +340,19 @@ function renderAbout() {
 
           <!-- Value Props -->
           <div class="space-y-4" role="list" aria-label="Our value propositions">
-            ${about.valueProps.map((vp, i) => `
-              <div class="flex items-start gap-4 reveal reveal-delay-${i+1}" role="listitem">
-                <div class="flex-shrink-0 w-6 h-6 text-se-cyan mt-0.5">${icons.get('checkCircle', 'w-5 h-5')}</div>
+            ${about.valueProps
+              .map(
+                (vp, i) => `
+              <div class="flex items-start gap-4 reveal reveal-delay-${i + 1}" role="listitem">
+                <div class="flex-shrink-0 w-6 h-6 text-se-cyan mt-0.5">${icons.get("checkCircle", "w-5 h-5")}</div>
                 <div>
                   <h4 class="font-display font-semibold text-se-white mb-1">${vp.title}</h4>
                   <p class="text-se-muted text-sm leading-relaxed">${vp.desc}</p>
                 </div>
               </div>
-            `).join('')}
+            `,
+              )
+              .join("")}
           </div>
         </div>
 
@@ -364,7 +388,7 @@ function renderAbout() {
             <div class="absolute inset-0 flex items-center justify-center">
               <div class="relative">
                 <div class="w-20 h-20 rounded-full bg-se-cyan/10 border border-se-cyan/30 flex items-center justify-center animate-glow-pulse">
-                  <div class="text-se-cyan">${icons.get('atom', 'w-10 h-10')}</div>
+                  <div class="text-se-cyan">${icons.get("atom", "w-10 h-10")}</div>
                 </div>
                 <!-- Atomic number label -->
                 <div class="absolute -top-10 left-1/2 -translate-x-1/2 text-center">
@@ -392,7 +416,7 @@ function renderAbout() {
    SECTION: TECH STACK
    ═════════════════════════════════════════════════════════════ */
 function renderTechStack() {
-  const ts = getSection('techStack');
+  const ts = getSection("techStack");
 
   return `
   <section id="tech-stack" class="py-section bg-se-dark relative overflow-hidden"
@@ -412,7 +436,9 @@ function renderTechStack() {
 
       <!-- Tech Categories -->
       <div class="space-y-12" role="list" aria-label="Technology categories">
-        ${ts.categories.map((cat, ci) => `
+        ${ts.categories
+          .map(
+            (cat, ci) => `
           <div class="reveal reveal-delay-${ci + 1}" role="listitem">
             <!-- Category label -->
             <h3 class="font-mono text-xs uppercase tracking-[0.2em] text-se-muted mb-5 flex items-center gap-3">
@@ -423,15 +449,21 @@ function renderTechStack() {
 
             <!-- Tech badges -->
             <div class="flex flex-wrap gap-3" role="list" aria-label="${cat.name} technologies">
-              ${cat.items.map(item => `
+              ${cat.items
+                .map(
+                  (item) => `
                 <div class="tech-badge" role="listitem">
                   <div class="w-1.5 h-1.5 rounded-full bg-se-cyan/60"></div>
                   <span class="font-mono text-sm text-se-silver">${item}</span>
                 </div>
-              `).join('')}
+              `,
+                )
+                .join("")}
             </div>
           </div>
-        `).join('')}
+        `,
+          )
+          .join("")}
       </div>
 
     </div>
@@ -442,7 +474,7 @@ function renderTechStack() {
    SECTION: PROCESS
    ═════════════════════════════════════════════════════════════ */
 function renderProcess() {
-  const proc = getSection('process');
+  const proc = getSection("process");
 
   return `
   <section id="process" class="py-section bg-se-surface relative overflow-hidden"
@@ -460,7 +492,9 @@ function renderProcess() {
       <!-- Steps -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12"
            role="list" aria-label="Process steps">
-        ${proc.steps.map((step, i) => `
+        ${proc.steps
+          .map(
+            (step, i) => `
           <div class="process-step reveal reveal-delay-${i + 1}" role="listitem">
 
             <!-- Step Number -->
@@ -474,13 +508,19 @@ function renderProcess() {
               <p class="text-se-muted text-sm leading-relaxed">${step.desc}</p>
 
               <!-- Connector line (not last item) -->
-              ${i < proc.steps.length - 1 ? `
+              ${
+                i < proc.steps.length - 1
+                  ? `
                 <div class="mt-6 h-px bg-gradient-to-r from-se-cyan/20 to-transparent hidden md:block" aria-hidden="true"></div>
-              ` : ''}
+              `
+                  : ""
+              }
             </div>
 
           </div>
-        `).join('')}
+        `,
+          )
+          .join("")}
       </div>
 
     </div>
@@ -491,7 +531,7 @@ function renderProcess() {
    SECTION: PROJECTS
    ═════════════════════════════════════════════════════════════ */
 function renderProjects() {
-  const proj = getSection('projects');
+  const proj = getSection("projects");
 
   return `
   <section id="projects" class="py-section bg-se-dark relative overflow-hidden"
@@ -512,7 +552,9 @@ function renderProjects() {
       <!-- Project Cards -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6"
            role="list" aria-label="Featured projects">
-        ${proj.items.map((item, i) => `
+        ${proj.items
+          .map(
+            (item, i) => `
           <article class="se-card flex flex-col h-full group reveal reveal-delay-${i + 1}"
                    role="listitem"
                    aria-labelledby="project-${i}">
@@ -527,26 +569,36 @@ function renderProjects() {
 
             <!-- Tags -->
             <div class="flex flex-wrap gap-2 mt-auto" role="list" aria-label="Technologies used">
-              ${item.tags.map(tag => `
+              ${item.tags
+                .map(
+                  (tag) => `
                 <span class="px-2.5 py-1 text-xs font-mono text-se-cyan/80 bg-se-cyan/5 border border-se-cyan/20 rounded-sm"
                       role="listitem">${tag}</span>
-              `).join('')}
+              `,
+                )
+                .join("")}
             </div>
 
             <!-- Visit Project Button (only rendered when url is set) -->
-            ${item.url ? `
+            ${
+              item.url
+                ? `
             <a href="${item.url}" target="_blank" rel="noopener noreferrer"
                class="w-full mt-5 inline-flex items-center gap-2 px-4 py-2 text-xs font-mono font-semibold
                       text-se-cyan border border-se-cyan/40 rounded-sm bg-se-cyan/5
                       hover:bg-se-cyan/15 hover:border-se-cyan/70 hover:shadow-[0_0_12px_rgba(0,212,255,0.2)]
                       transition-all duration-300 self-start"
                aria-label="Visit ${item.title} project">
-              ${icons.get('arrowRight', 'w-max h-3')}
+              ${icons.get("arrowRight", "w-max h-3")}
               ${item.text}
-            </a>` : ''}
+            </a>`
+                : ""
+            }
 
           </article>
-        `).join('')}
+        `,
+          )
+          .join("")}
       </div>
 
     </div>
@@ -557,8 +609,8 @@ function renderProjects() {
    SECTION: PRICING / PROMO
    ═════════════════════════════════════════════════════════════ */
 function renderPricing() {
-  const pr = getSection('pricing');
-  if (!pr) return '';
+  const pr = getSection("pricing");
+  if (!pr) return "";
 
   return `
   <section id="promo" class="py-section bg-se-dark relative overflow-hidden"
@@ -568,7 +620,7 @@ function renderPricing() {
          style="background-image:radial-gradient(var(--se-cyan) 1px,transparent 1px);background-size:40px 40px;"></div>
 
     <div class="section-container relative z-10">
-      
+
       <!-- Header -->
       <div class="text-center mb-16 reveal">
         <div class="section-tag mb-4 justify-center text-se-red border-se-red/30 bg-se-red/10">${pr.tag}</div>
@@ -582,9 +634,9 @@ function renderPricing() {
           <div class="absolute top-0 right-0 p-4 opacity-10">
             <svg class="w-32 h-32 text-se-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
           </div>
-          
+
           <h3 class="font-display font-bold text-2xl text-se-white mb-2 relative z-10">${pr.planName}</h3>
-          
+
           <div class="my-6 relative z-10">
             <div class="flex items-baseline gap-2">
               <span class="font-display font-bold text-4xl lg:text-5xl text-se-cyan">${pr.price}</span>
@@ -593,14 +645,18 @@ function renderPricing() {
           </div>
 
           <div class="space-y-4 mb-8 flex-1 relative z-10">
-            ${pr.features.map(f => `
+            ${pr.features
+              .map(
+                (f) => `
               <div class="flex items-start gap-3">
                 <div class="flex-shrink-0 w-5 h-5 text-se-cyan mt-0.5">
                   <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 </div>
                 <span class="text-se-silver text-sm">${f}</span>
               </div>
-            `).join('')}
+            `,
+              )
+              .join("")}
           </div>
 
           <a href="#contact" class="btn-primary w-full justify-center text-sm relative z-10 hover:shadow-[0_0_20px_rgba(0,212,255,0.4)]">
@@ -613,12 +669,16 @@ function renderPricing() {
           <div class="bg-se-void border border-se-border rounded-sm p-6">
             <h4 class="font-display text-sm font-semibold text-se-white mb-6 uppercase tracking-wider">${pr.renewalHeading}</h4>
             <div class="space-y-4">
-              ${pr.renewals.map(r => `
+              ${pr.renewals
+                .map(
+                  (r) => `
                 <div class="flex justify-between items-center border-b border-se-border/50 pb-3 last:border-0 last:pb-0">
                   <span class="text-sm text-se-muted">${r.period}</span>
                   <span class="font-mono text-sm text-se-cyan">${r.price}</span>
                 </div>
-              `).join('')}
+              `,
+                )
+                .join("")}
             </div>
           </div>
         </div>
@@ -632,7 +692,7 @@ function renderPricing() {
    SECTION: CONTACT
    ═════════════════════════════════════════════════════════════ */
 function renderContact() {
-  const contact = getSection('contact');
+  const contact = getSection("contact");
 
   return `
   <section id="contact" class="py-section bg-se-surface relative overflow-hidden"
@@ -698,13 +758,13 @@ function renderContact() {
             <!-- Submit -->
             <button type="submit" id="contact-submit" class="btn-primary w-full justify-center" aria-label="${contact.submitBtn}">
               <span id="contact-submit-text">${contact.submitBtn}</span>
-              <span id="contact-submit-icon">${icons.get('send', 'w-4 h-4')}</span>
+              <span id="contact-submit-icon">${icons.get("send", "w-4 h-4")}</span>
             </button>
 
             <!-- Success message (hidden by default) -->
             <div id="contact-success" class="hidden flex items-center gap-3 p-4 rounded-sm bg-se-cyan/10 border border-se-cyan/30 text-se-cyan text-sm"
                  role="alert" aria-live="polite">
-              ${icons.get('checkCircle', 'w-5 h-5')}
+              ${icons.get("checkCircle", "w-5 h-5")}
               <span>${contact.submitSuccess}</span>
             </div>
 
@@ -714,7 +774,9 @@ function renderContact() {
         <!-- Contact Info (2 cols) -->
         <aside class="lg:col-span-2 reveal reveal-delay-2" aria-label="Contact information">
           <div class="space-y-6">
-            ${contact.info.map(item => `
+            ${contact.info
+              .map(
+                (item) => `
               <div class="flex items-start gap-4 group">
                 <div class="flex-shrink-0 w-10 h-10 rounded-sm bg-se-surface border border-se-border
                             flex items-center justify-center text-se-cyan
@@ -727,7 +789,9 @@ function renderContact() {
                   <p class="text-se-silver text-sm">${item.value}</p>
                 </div>
               </div>
-            `).join('')}
+            `,
+              )
+              .join("")}
           </div>
 
           <!-- Social Links -->
@@ -735,17 +799,29 @@ function renderContact() {
             <p class="form-label mb-4">Follow Us</p>
             <div class="flex gap-4" role="list" aria-label="Social media links">
               ${[
-                { icon: 'instagram', label: 'Instagram (@seleniumdigital.id)', href: 'https://instagram.com/seleniumdigital.id' },
-                { icon: 'tiktok', label: 'TikTok (selenium.id)', href: 'https://tiktok.com/@selenium.id' },
-              ].map(social => `
+                {
+                  icon: "instagram",
+                  label: "Instagram (@seleniumdigital.id)",
+                  href: "https://instagram.com/seleniumdigital.id",
+                },
+                {
+                  icon: "tiktok",
+                  label: "TikTok (selenium.id)",
+                  href: "https://tiktok.com/@selenium.id",
+                },
+              ]
+                .map(
+                  (social) => `
                 <a href="${social.href}" rel="noopener noreferrer" target="_blank"
                    class="w-10 h-10 rounded-sm border border-se-border bg-se-surface flex items-center justify-center
                           text-se-muted hover:text-se-cyan hover:border-se-cyan/40 hover:bg-se-cyan/10
                           transition-all duration-300"
                    aria-label="Visit our ${social.label}" role="listitem">
-                  ${icons.get(social.icon, 'w-4 h-4')}
+                  ${icons.get(social.icon, "w-4 h-4")}
                 </a>
-              `).join('')}
+              `,
+                )
+                .join("")}
             </div>
           </div>
 
@@ -757,11 +833,76 @@ function renderContact() {
 }
 
 /* ═════════════════════════════════════════════════════════════
+   SECTION: CATALOG
+   ═════════════════════════════════════════════════════════════ */
+
+function renderCatalog() {
+  const cat = getSection("catalog");
+
+  return `
+    <section id="catalog" class="py-section bg-se-dark relative overflow-hidden"
+             aria-labelledby="catalog-heading">
+      <!-- Background grid pattern -->
+      <div class="absolute inset-0 opacity-5 pointer-events-none" aria-hidden="true"
+           style="background-image:radial-gradient(var(--se-cyan) 1px,transparent 1px);background-size:40px 40px;"></div>
+
+      <div class="section-container relative z-10">
+
+        <!-- Header -->
+        <div class="text-center mb-16 reveal">
+          <div class="section-tag mb-4 justify-center text-se-cyan border-se-cyan/30 bg-se-cyan/10">${cat.tag}</div>
+          <h2 id="catalog-heading" class="section-heading mb-4">${cat.heading}</h2>
+          <p class="section-subheading mx-auto text-center">${cat.subheading}</p>
+        </div>
+
+        <!-- Catalog Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 reveal reveal-delay-1">
+          ${cat.items
+            .map((item) => {
+              // Encode the WhatsApp message for each specific item
+              const waMessage = encodeURIComponent(
+                `Halo, saya tertarik dengan katalog: ${item.title}`,
+              );
+              const waUrl = `${cat.whatsappBase}?text=${waMessage}`;
+
+              return `
+            <div class="se-card border-se-border/40 bg-se-surface flex flex-col h-full group hover:border-se-cyan/40 transition-all duration-300">
+              <!-- Image Container -->
+              <div class="aspect-square w-full overflow-hidden bg-se-void mb-6">
+                <img src="${item.image}" alt="${item.title}"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                     loading="lazy">
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-1 px-2">
+                <h3 class="font-display font-bold text-xl text-se-white mb-2">${item.title}</h3>
+                <p class="text-se-silver text-sm mb-6 flex-1">${item.description}</p>
+
+                <a href="${waUrl}" target="_blank" rel="noopener noreferrer"
+                   class="w-full mt-5 inline-flex items-center gap-2 px-4 py-2 text-xs font-mono font-semibold
+                          text-se-cyan border border-se-cyan/40 rounded-sm bg-se-cyan/5
+                          hover:bg-se-cyan/15 hover:border-se-cyan/70 hover:shadow-[0_0_12px_rgba(0,212,255,0.2)]
+                          transition-all duration-300 self-start">
+                  ${cat.cta}
+                </a>
+              </div>
+            </div>
+          `;
+            })
+            .join("")}
+        </div>
+
+      </div>
+    </section>`;
+}
+
+/* ═════════════════════════════════════════════════════════════
    SECTION: FOOTER
    ═════════════════════════════════════════════════════════════ */
 function renderFooter() {
-  const footer = getSection('footer');
-  const nav = getSection('nav');
+  const footer = getSection("footer");
+  const nav = getSection("nav");
 
   return `
   <footer class="bg-se-void border-t border-se-border" role="contentinfo">
@@ -794,13 +935,17 @@ function renderFooter() {
         <nav class="md:col-span-1" aria-label="Footer navigation">
           <h3 class="form-label mb-5">Navigation</h3>
           <ul class="space-y-3" role="list">
-            ${footer.links.map(link => `
+            ${footer.links
+              .map(
+                (link) => `
               <li role="listitem">
                 <a href="${link.href}" class="text-se-muted text-sm hover:text-se-cyan transition-colors duration-300">
                   ${link.label}
                 </a>
               </li>
-            `).join('')}
+            `,
+              )
+              .join("")}
           </ul>
         </nav>
 
@@ -808,19 +953,23 @@ function renderFooter() {
         <div class="md:col-span-1">
           <h3 class="form-label mb-5">Legal</h3>
           <ul class="space-y-3 mb-8" role="list">
-            ${footer.legalLinks.map(link => `
+            ${footer.legalLinks
+              .map(
+                (link) => `
               <li role="listitem">
                 <a href="${link.href}" class="text-se-muted text-sm hover:text-se-cyan transition-colors duration-300">
                   ${link.label}
                 </a>
               </li>
-            `).join('')}
+            `,
+              )
+              .join("")}
           </ul>
 
           <!-- Language indicator -->
           <div class="text-xs font-mono text-se-faint flex items-center gap-2">
-            ${icons.get('globe', 'w-3 h-3')}
-            <span>${currentLang === 'id' ? 'Bahasa Indonesia' : 'English'}</span>
+            ${icons.get("globe", "w-3 h-3")}
+            <span>${currentLang === "id" ? "Bahasa Indonesia" : "English"}</span>
           </div>
         </div>
 
@@ -856,13 +1005,14 @@ function renderWhatsAppFAB() {
    FULL PAGE RENDER
    ═════════════════════════════════════════════════════════════ */
 function renderPage() {
-  const app = document.getElementById('app');
+  const app = document.getElementById("app");
 
   app.innerHTML = `
     ${renderNav()}
     <main id="main-content">
       ${renderHero()}
       ${renderPricing()}
+      ${renderCatalog()}
       ${renderServices()}
       ${renderAbout()}
       ${renderTechStack()}
@@ -887,42 +1037,44 @@ function renderPage() {
    BEHAVIOR: NAVBAR (scroll-aware, transparent → solid)
    ═════════════════════════════════════════════════════════════ */
 function mountNavBehavior() {
-  const navbar = document.getElementById('navbar');
+  const navbar = document.getElementById("navbar");
   if (!navbar) return;
 
   const updateNavStyle = () => {
     const scrolled = window.scrollY > 60;
     if (scrolled) {
-      navbar.classList.add('glass-panel', 'shadow-nav');
-      navbar.classList.remove('bg-transparent');
+      navbar.classList.add("glass-panel", "shadow-nav");
+      navbar.classList.remove("bg-transparent");
     } else {
-      navbar.classList.remove('glass-panel', 'shadow-nav');
+      navbar.classList.remove("glass-panel", "shadow-nav");
     }
     navbar.dataset.scrolled = scrolled;
   };
 
-  window.addEventListener('scroll', updateNavStyle, { passive: true });
+  window.addEventListener("scroll", updateNavStyle, { passive: true });
   updateNavStyle(); // Run on mount
 
   // Active section highlighting via IntersectionObserver
-  const sections = document.querySelectorAll('section[id], div[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll("section[id], div[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
 
   const observer = new IntersectionObserver(
     (entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          navLinks.forEach(link => {
-            link.classList.toggle('active',
-              link.getAttribute('href') === `#${entry.target.id}`);
+          navLinks.forEach((link) => {
+            link.classList.toggle(
+              "active",
+              link.getAttribute("href") === `#${entry.target.id}`,
+            );
           });
         }
       });
     },
-    { threshold: 0.3, rootMargin: '-80px 0px -60% 0px' }
+    { threshold: 0.3, rootMargin: "-80px 0px -60% 0px" },
   );
 
-  sections.forEach(s => observer.observe(s));
+  sections.forEach((s) => observer.observe(s));
 }
 
 /* ═════════════════════════════════════════════════════════════
@@ -930,20 +1082,20 @@ function mountNavBehavior() {
    Renders animated bioluminescent particle network
    ═════════════════════════════════════════════════════════════ */
 function mountHeroCanvas() {
-  const canvas = document.getElementById('heroCanvas');
+  const canvas = document.getElementById("heroCanvas");
   if (!canvas) return;
 
-  const ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext("2d");
 
   // Particle configuration
   const config = {
-    count:        80,      // Number of particles
-    baseRadius:   1.5,     // Base particle radius (px)
-    speed:        0.3,     // Max speed
-    connectionDist: 140,   // Max distance to draw connection lines
-    primaryColor: [0, 212, 255],    // Cyan [R,G,B]
-    secondaryColor: [232, 33, 74],  // Red (sparse)
-    secondaryRatio: 0.15,           // 15% particles are red
+    count: 80, // Number of particles
+    baseRadius: 1.5, // Base particle radius (px)
+    speed: 0.3, // Max speed
+    connectionDist: 140, // Max distance to draw connection lines
+    primaryColor: [0, 212, 255], // Cyan [R,G,B]
+    secondaryColor: [232, 33, 74], // Red (sparse)
+    secondaryRatio: 0.15, // 15% particles are red
   };
 
   let particles = [];
@@ -962,11 +1114,11 @@ function mountHeroCanvas() {
     particles = Array.from({ length: config.count }, () => {
       const isSecondary = Math.random() < config.secondaryRatio;
       return {
-        x:  Math.random() * W,
-        y:  Math.random() * H,
+        x: Math.random() * W,
+        y: Math.random() * H,
         vx: (Math.random() - 0.5) * config.speed,
         vy: (Math.random() - 0.5) * config.speed,
-        r:  config.baseRadius + Math.random() * 1.5,
+        r: config.baseRadius + Math.random() * 1.5,
         alpha: 0.3 + Math.random() * 0.5,
         color: isSecondary ? config.secondaryColor : config.primaryColor,
         pulse: Math.random() * Math.PI * 2, // Phase offset for pulse
@@ -981,7 +1133,7 @@ function mountHeroCanvas() {
     const now = Date.now() * 0.001;
 
     // Update and paint particles
-    particles.forEach(p => {
+    particles.forEach((p) => {
       // Move
       p.x += p.vx;
       p.y += p.vy;
@@ -1003,7 +1155,7 @@ function mountHeroCanvas() {
       // Soft glow
       const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 4);
       grad.addColorStop(0, `rgba(${r},${g},${b},${pulseAlpha * 0.3})`);
-      grad.addColorStop(1, 'rgba(0,0,0,0)');
+      grad.addColorStop(1, "rgba(0,0,0,0)");
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r * 4, 0, Math.PI * 2);
       ctx.fillStyle = grad;
@@ -1043,66 +1195,71 @@ function mountHeroCanvas() {
 
   // Handle resize (debounced)
   let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      cancelAnimationFrame(animFrameId);
-      resize();
-      createParticles();
-      animate();
-    }, 200);
-  }, { passive: true });
+  window.addEventListener(
+    "resize",
+    () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        cancelAnimationFrame(animFrameId);
+        resize();
+        createParticles();
+        animate();
+      }, 200);
+    },
+    { passive: true },
+  );
 }
 
 /* ═════════════════════════════════════════════════════════════
    BEHAVIOR: SCROLL REVEAL (Intersection Observer)
    ═════════════════════════════════════════════════════════════ */
 function mountScrollReveal() {
-  const elements = document.querySelectorAll('.reveal');
+  const elements = document.querySelectorAll(".reveal");
   if (!elements.length) return;
 
   const observer = new IntersectionObserver(
     (entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
+          entry.target.classList.add("is-visible");
           observer.unobserve(entry.target); // Only animate once
         }
       });
     },
     {
       threshold: 0.08,
-      rootMargin: '0px 0px -40px 0px',
-    }
+      rootMargin: "0px 0px -40px 0px",
+    },
   );
 
-  elements.forEach(el => observer.observe(el));
+  elements.forEach((el) => observer.observe(el));
 }
 
 /* ═════════════════════════════════════════════════════════════
    BEHAVIOR: LANGUAGE TOGGLE
    ═════════════════════════════════════════════════════════════ */
 function mountLangToggle() {
-  const langBtns = document.querySelectorAll('[data-lang]');
+  const langBtns = document.querySelectorAll("[data-lang]");
 
-  langBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
+  langBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
       const lang = btn.dataset.lang;
       if (lang === currentLang) return; // No change needed
 
       // 1. Persist to localStorage
-      localStorage.setItem('se_lang', lang);
+      localStorage.setItem("se_lang", lang);
 
       // 2. Update global state
       currentLang = lang;
 
       // 3. Update <html lang> attribute for accessibility
-      document.documentElement.lang = lang === 'id' ? 'id' : 'en';
+      document.documentElement.lang = lang === "id" ? "id" : "en";
 
       // 4. Update page title
-      document.title = lang === 'id'
-        ? 'Selenium Digital Consultant — Konsultan IT Enterprise'
-        : 'Selenium Digital Consultant — Enterprise IT Consulting';
+      document.title =
+        lang === "id"
+          ? "Selenium Digital Consultant — Konsultan IT Enterprise"
+          : "Selenium Digital Consultant — Enterprise IT Consulting";
 
       // 5. Re-render the full page
       renderPage();
@@ -1114,9 +1271,9 @@ function mountLangToggle() {
    BEHAVIOR: MOBILE MENU
    ═════════════════════════════════════════════════════════════ */
 function mountMobileMenu() {
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const menu    = document.getElementById('mobile-menu');
-  const menuIcon = document.getElementById('mobile-menu-icon');
+  const menuBtn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  const menuIcon = document.getElementById("mobile-menu-icon");
 
   if (!menuBtn || !menu) return;
 
@@ -1124,20 +1281,22 @@ function mountMobileMenu() {
 
   const toggle = (force) => {
     isOpen = force !== undefined ? force : !isOpen;
-    menu.classList.toggle('hidden', !isOpen);
-    menuBtn.setAttribute('aria-expanded', isOpen);
-    menuIcon.innerHTML = isOpen ? icons.get('close', 'w-5 h-5') : icons.get('menu', 'w-5 h-5');
+    menu.classList.toggle("hidden", !isOpen);
+    menuBtn.setAttribute("aria-expanded", isOpen);
+    menuIcon.innerHTML = isOpen
+      ? icons.get("close", "w-5 h-5")
+      : icons.get("menu", "w-5 h-5");
   };
 
-  menuBtn.addEventListener('click', () => toggle());
+  menuBtn.addEventListener("click", () => toggle());
 
   // Close on mobile nav link click
-  menu.querySelectorAll('.mobile-nav-link, .btn-primary').forEach(link => {
-    link.addEventListener('click', () => toggle(false));
+  menu.querySelectorAll(".mobile-nav-link, .btn-primary").forEach((link) => {
+    link.addEventListener("click", () => toggle(false));
   });
 
   // Close on outside click
-  document.addEventListener('click', (e) => {
+  document.addEventListener("click", (e) => {
     if (isOpen && !menu.contains(e.target) && !menuBtn.contains(e.target)) {
       toggle(false);
     }
@@ -1148,40 +1307,42 @@ function mountMobileMenu() {
    BEHAVIOR: CONTACT FORM (client-side only simulation)
    ═════════════════════════════════════════════════════════════ */
 function mountContactForm() {
-  const form = document.getElementById('contact-form');
+  const form = document.getElementById("contact-form");
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const submitBtn  = document.getElementById('contact-submit');
-    const submitText = document.getElementById('contact-submit-text');
-    const submitIcon = document.getElementById('contact-submit-icon');
-    const successMsg = document.getElementById('contact-success');
+    const submitBtn = document.getElementById("contact-submit");
+    const submitText = document.getElementById("contact-submit-text");
+    const submitIcon = document.getElementById("contact-submit-icon");
+    const successMsg = document.getElementById("contact-success");
 
-    const name = document.getElementById('contact-name').value.trim();
-    const email = document.getElementById('contact-email').value.trim();
-    const company = document.getElementById('contact-company').value.trim();
-    const message = document.getElementById('contact-message').value.trim();
+    const name = document.getElementById("contact-name").value.trim();
+    const email = document.getElementById("contact-email").value.trim();
+    const company = document.getElementById("contact-company").value.trim();
+    const message = document.getElementById("contact-message").value.trim();
 
-    const subject = encodeURIComponent(`Inquiry from ${name} - ${company || 'Individual'}`);
+    const subject = encodeURIComponent(
+      `Inquiry from ${name} - ${company || "Individual"}`,
+    );
     const bodyText = `Hello Selenium Digital Team,\n\nMy name is ${name}. You can reach me at ${email}.\n\nMessage:\n${message}\n\nBest Regards,\n${name}`;
-    
+
     // Create the Gmail compose URL
     const gmailWebLink = `https://mail.google.com/mail/?view=cm&fs=1&to=hello@seleniumdigital.id&su=${subject}&body=${encodeURIComponent(bodyText)}`;
 
     // Open Gmail in a new tab
-    window.open(gmailWebLink, '_blank');
+    window.open(gmailWebLink, "_blank");
 
     // Show success message and reset form
-    successMsg.classList.remove('hidden');
-    successMsg.classList.add('flex');
+    successMsg.classList.remove("hidden");
+    successMsg.classList.add("flex");
     form.reset();
 
     // Hide success after 6 seconds
     setTimeout(() => {
-      successMsg.classList.add('hidden');
-      successMsg.classList.remove('flex');
+      successMsg.classList.add("hidden");
+      successMsg.classList.remove("flex");
     }, 6000);
   });
 }
@@ -1191,12 +1352,13 @@ function mountContactForm() {
    ═════════════════════════════════════════════════════════════ */
 
 // Set initial <html> lang attribute
-document.documentElement.lang = currentLang === 'id' ? 'id' : 'en';
+document.documentElement.lang = currentLang === "id" ? "id" : "en";
 
 // Set dynamic page title
-document.title = currentLang === 'id'
-  ? 'Selenium Digital Consultant — Konsultan IT Enterprise'
-  : 'Selenium Digital Consultant — Enterprise IT Consulting';
+document.title =
+  currentLang === "id"
+    ? "Selenium Digital Consultant — Konsultan IT Enterprise"
+    : "Selenium Digital Consultant — Enterprise IT Consulting";
 
 // Boot
 renderPage();
