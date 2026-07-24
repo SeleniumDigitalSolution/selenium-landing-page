@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>selenium.id — Brand &amp; UI Guideline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* ===== PRIMARY ===== */
+    --primary:#0A64BC;
+    --primary-dark:#084E93;
+    --primary-tint:#E8F1FB;
+
+    /* ===== SECONDARY (teal — profesional, inovatif, growth/longterm) ===== */
+    --secondary:#0D9488;
+    --secondary-dark:#0B7A70;
+    --secondary-tint:#E1F5F2;
+
+    /* ===== AKSI / CTA (oranye hangat — komplementer dari biru) ===== */
+    --accent:#F2994A;
+    --accent-dark:#D97C2B;
+    --accent-tint:#FDEEE0;
+
+    /* ===== SEMANTIC ===== */
+    --success:#16A34A;
+    --warning:#F5A623;
+    --danger:#DC2626;
+
+    /* ===== SURFACES (light) ===== */
+    --bg:#FFFAFF;
+    --surface:#FFFFFF;
+    --surface-2:#F6F2F7;
+    --border:#E5E1E8;
+    --border-strong:#D3CDDA;
+
+    /* ===== TEXT (light) ===== */
+    --text-primary:#171A2B;
+    --text-secondary:#5B5E6B;
+    --text-muted:#8B8E9A;
+    --on-color:#FFFFFF;
+
+    /* ===== TYPE ===== */
+    --font-heading:'Plus Jakarta Sans', sans-serif;
+    --font-body:'Inter', sans-serif;
+
+    /* ===== RADIUS ===== */
+    --r-sm:8px; --r-md:10px; --r-lg:16px; --r-full:999px;
+
+    /* ===== SPACE ===== */
+    --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:24px; --sp-6:32px; --sp-7:48px; --sp-8:64px;
+
+    /* ===== SHADOW ===== */
+    --shadow-sm:0 2px 8px rgba(10,100,188,0.08);
+    --shadow-md:0 8px 24px rgba(10,100,188,0.10);
+  }
+
+  [data-theme="dark"]{
+    --bg:#0B1120;
+    --surface:#131B2E;
+    --surface-2:#0F1526;
+    --border:#232B3D;
+    --border-strong:#2E3752;
+    --text-primary:#F5F6FA;
+    --text-secondary:#A7ABC0;
+    --text-muted:#767B93;
+    --primary-tint:#122236;
+    --secondary-tint:#0E2622;
+    --accent-tint:#2E2013;
+    --shadow-sm:0 2px 10px rgba(0,0,0,0.35);
+    --shadow-md:0 10px 28px rgba(0,0,0,0.45);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text-primary);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    transition:background .25s ease, color .25s ease;
+  }
+  h1,h2,h3,h4{ font-family:var(--font-heading); color:var(--text-primary); margin:0; letter-spacing:-0.01em; }
+  h1{ font-size:clamp(1.75rem, 5vw, 3rem); font-weight:800; line-height:1.15; }
+  h2{ font-size:clamp(1.375rem, 3.4vw, 2rem); font-weight:700; line-height:1.2; }
+  h3{ font-size:clamp(1.125rem, 2.4vw, 1.375rem); font-weight:600; line-height:1.3; }
+  p{ margin:0; color:var(--text-secondary); }
+  code{ font-family:monospace; background:var(--surface-2); padding:2px 6px; border-radius:6px; font-size:.85em; color:var(--text-primary); }
+
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 var(--sp-4); }
+
+  /* ---- topbar ---- */
+  .topbar{
+    position:sticky; top:0; z-index:10;
+    background:var(--surface); border-bottom:1px solid var(--border);
+    padding:var(--sp-3) 0;
+  }
+  .topbar-inner{ display:flex; align-items:center; justify-content:space-between; }
+  .brand{ display:flex; align-items:center; gap:10px; font-family:var(--font-heading); font-weight:700; font-size:15px; }
+  .brand-dot{ width:22px; height:22px; border-radius:6px; background:linear-gradient(135deg,var(--primary),var(--secondary)); flex:none; }
+  .toggle{
+    display:flex; align-items:center; gap:8px; background:var(--surface-2); border:1px solid var(--border);
+    border-radius:var(--r-full); padding:6px 14px; cursor:pointer; font-size:13px; font-weight:600; color:var(--text-secondary);
+  }
+
+  /* ---- sections ---- */
+  section{ padding:var(--sp-7) 0; border-bottom:1px solid var(--border); }
+  .eyebrow{ font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--primary); margin-bottom:var(--sp-2); }
+  .section-head{ max-width:640px; margin-bottom:var(--sp-6); }
+  .section-head p{ margin-top:var(--sp-2); font-size:15px; }
+
+  /* ---- hero ---- */
+  .hero{ padding:var(--sp-8) 0 var(--sp-6); }
+  .hero p.lead{ font-size:17px; max-width:620px; margin-top:var(--sp-3); }
+
+  /* ---- color grid ---- */
+  .color-grid{ display:grid; grid-template-columns:1fr; gap:var(--sp-4); }
+  @media(min-width:640px){ .color-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media(min-width:1024px){ .color-grid{ grid-template-columns:repeat(3,1fr); } }
+  .swatch{ border:1px solid var(--border); border-radius:var(--r-lg); overflow:hidden; background:var(--surface); }
+  .swatch-color{ height:88px; }
+  .swatch-body{ padding:var(--sp-4); }
+  .swatch-name{ font-weight:600; font-size:14px; margin-bottom:2px; }
+  .swatch-hex{ font-family:monospace; font-size:12px; color:var(--text-muted); }
+  .swatch-note{ font-size:13px; color:var(--text-secondary); margin-top:var(--sp-2); }
+
+  /* ---- type scale ---- */
+  .type-row{ display:flex; flex-direction:column; gap:2px; padding:var(--sp-5) 0; border-bottom:1px dashed var(--border); }
+  .type-row:last-child{ border-bottom:none; }
+  .type-meta{ font-size:12px; color:var(--text-muted); font-family:monospace; }
+
+  /* ---- buttons ---- */
+  .btn-group{ display:flex; flex-wrap:wrap; gap:var(--sp-3); align-items:center; margin-bottom:var(--sp-5); }
+  .btn{ font-family:var(--font-body); font-weight:600; font-size:15px; border-radius:var(--r-md); padding:12px 22px; border:1.5px solid transparent; cursor:pointer; min-height:44px; transition:transform .12s ease, background .15s ease; }
+  .btn:active{ transform:scale(0.97); }
+  .btn-primary{ background:var(--accent); color:#3A1E00; }
+  .btn-primary:hover{ background:var(--accent-dark); }
+  .btn-secondary{ background:transparent; border-color:var(--primary); color:var(--primary); }
+  .btn-secondary:hover{ background:var(--primary-tint); }
+  .btn-ghost{ background:transparent; border-color:transparent; color:var(--primary); }
+  .btn-ghost:hover{ background:var(--surface-2); }
+  .btn-sm{ padding:8px 16px; font-size:13px; min-height:36px; }
+  .btn-lg{ padding:16px 28px; font-size:16px; min-height:52px; }
+  .btn[disabled]{ opacity:.4; cursor:not-allowed; }
+
+  /* ---- cards ---- */
+  .card-grid{ display:grid; grid-template-columns:1fr; gap:var(--sp-4); }
+  @media(min-width:768px){ .card-grid{ grid-template-columns:repeat(3,1fr); } }
+  .card{ background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); padding:var(--sp-5); box-shadow:var(--shadow-sm); }
+  .card-icon{ width:44px; height:44px; border-radius:var(--r-sm); background:var(--primary-tint); display:flex; align-items:center; justify-content:center; margin-bottom:var(--sp-4); color:var(--primary); }
+  .card h4{ font-family:var(--font-heading); font-size:16px; font-weight:600; margin-bottom:6px; }
+  .card p{ font-size:14px; margin-bottom:var(--sp-4); }
+  .card a{ font-size:14px; font-weight:600; color:var(--secondary); text-decoration:none; }
+
+  /* ---- icons ---- */
+  .icon-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--sp-4); }
+  @media(min-width:640px){ .icon-grid{ grid-template-columns:repeat(6,1fr); } }
+  .icon-tile{ display:flex; flex-direction:column; align-items:center; gap:var(--sp-2); text-align:center; }
+  .icon-box{ width:52px; height:52px; border-radius:var(--r-md); background:var(--surface); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--primary); }
+  .icon-label{ font-size:12px; color:var(--text-muted); }
+
+  /* ---- token chips ---- */
+  .chip-row{ display:flex; flex-wrap:wrap; gap:var(--sp-3); }
+  .chip{ background:var(--surface-2); border:1px solid var(--border); border-radius:var(--r-full); padding:6px 14px; font-size:12px; font-family:monospace; color:var(--text-secondary); }
+
+  footer{ padding:var(--sp-6) 0 var(--sp-8); text-align:center; }
+  footer p{ font-size:13px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand"><span class="brand-dot"></span>selenium.id — brand &amp; UI guideline</div>
+    <button class="toggle" id="themeToggle">🌗 &nbsp;mode gelap</button>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap section-head">
+    <div class="eyebrow">Filosofi</div>
+    <h1>Se-esensial selenium bagi kehidupan.</h1>
+    <p class="lead">Sama seperti unsur selenium yang esensial bagi tubuh manusia, selenium.id hadir sebagai fondasi teknologi &amp; digitalisasi yang tak tergantikan bagi bisnis yang kami dampingi — dipercaya, kompeten, dan berjangka panjang.</p>
+  </div>
+</header>
+
+<section id="color">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">01 — Sistem Warna</div>
+      <h2>Warna dengan landasan color theory</h2>
+      <p><strong style="color:var(--text-primary)">Biru primer</strong> membawa kesan dipercaya &amp; profesional (warna paling umum dipakai institusi finansial/konsultan). <strong style="color:var(--text-primary)">Teal sekunder</strong> analog dengan biru — memperkuat kesan inovatif &amp; pertumbuhan jangka panjang tanpa bentrok. <strong style="color:var(--text-primary)">Oranye aksi</strong> adalah komplementer dari biru pada roda warna (±180°) — kontras paling tinggi secara visual, sehingga tombol aksi selalu menonjol namun tetap terasa hangat &amp; approachable.</p>
+    </div>
+
+    <div class="color-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:var(--primary)"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">Primary — Biru Kepercayaan</div>
+          <div class="swatch-hex">#0A64BC</div>
+          <div class="swatch-note">Logo, navigasi, link, elemen brand utama.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:var(--secondary)"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">Secondary — Teal Profesional</div>
+          <div class="swatch-hex">#0D9488</div>
+          <div class="swatch-note">Highlight sekunder, ikon layanan, badge "trusted/expert".</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:var(--accent)"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">Aksi — Oranye Hangat</div>
+          <div class="swatch-hex">#F2994A</div>
+          <div class="swatch-note">Tombol CTA utama: "Konsultasi Gratis", "Hubungi Kami".</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:var(--bg); border-bottom:1px solid var(--border)"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">Background — Putih Hangat</div>
+          <div class="swatch-hex">#FFFAFF</div>
+          <div class="swatch-note">Latar utama light mode — lebih lembut dari putih murni.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#0B1120"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">Background — Navy Gelap</div>
+          <div class="swatch-hex">#0B1120</div>
+          <div class="swatch-note">Latar dark mode — navy pekat, bukan hitam pekat (lebih premium).</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:var(--surface-2)"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">Surface / Card</div>
+          <div class="swatch-hex" id="surfaceHex">#F6F2F7</div>
+          <div class="swatch-note">Latar card &amp; elemen berlapis di atas background.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:var(--success)"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">Success</div>
+          <div class="swatch-hex">#16A34A</div>
+          <div class="swatch-note">Status berhasil, proyek selesai.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:var(--warning)"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">Warning</div>
+          <div class="swatch-hex">#F5A623</div>
+          <div class="swatch-note">Perhatian, proses tertunda.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:var(--danger)"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">Danger</div>
+          <div class="swatch-hex">#DC2626</div>
+          <div class="swatch-note">Error, gagal, penghapusan.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="type">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">02 — Tipografi</div>
+      <h2>Plus Jakarta Sans + Inter</h2>
+      <p><strong style="color:var(--text-primary)">Plus Jakarta Sans</strong> untuk heading — geometris namun dengan ujung membulat, terasa modern sekaligus hangat/approachable (dipakai banyak brand tech Indonesia). <strong style="color:var(--text-primary)">Inter</strong> untuk body text — huruf paling teruji untuk keterbacaan layar di ukuran kecil, dipakai produk enterprise (Stripe, Linear, GitHub) sehingga memperkuat kesan kredibel &amp; profesional.</p>
+    </div>
+
+    <div class="type-row">
+      <h1>Konsultan IT yang tumbuh bersama Anda</h1>
+      <div class="type-meta">H1 · Plus Jakarta Sans 800 · clamp(1.75rem–3rem) · line-height 1.15</div>
+    </div>
+    <div class="type-row">
+      <h2>Layanan digitalisasi end-to-end</h2>
+      <div class="type-meta">H2 · Plus Jakarta Sans 700 · clamp(1.375rem–2rem)</div>
+    </div>
+    <div class="type-row">
+      <h3>Audit IT gratis untuk bisnis Anda</h3>
+      <div class="type-meta">H3 · Plus Jakarta Sans 600 · clamp(1.125rem–1.375rem)</div>
+    </div>
+    <div class="type-row">
+      <p style="color:var(--text-primary); font-size:16px;">Body text — selenium.id membantu UMKM dan bisnis lokal membangun sistem, aplikasi, dan infrastruktur IT yang esensial untuk pertumbuhan jangka panjang.</p>
+      <div class="type-meta">Body · Inter 400 · 16px · line-height 1.6</div>
+    </div>
+    <div class="type-row">
+      <p style="font-size:14px;">Caption / metadata — diperbarui 2 hari lalu</p>
+      <div class="type-meta">Caption · Inter 500 · 14px</div>
+    </div>
+  </div>
+</section>
+
+<section id="buttons">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">03 — Tombol</div>
+      <h2>Standarisasi tombol</h2>
+      <p>Radius 10px — cukup lembut untuk terasa approachable, tapi tidak sebulat pill agar tetap tegas &amp; profesional. Tinggi minimum 44px demi target sentuh mobile.</p>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-primary btn-lg">Konsultasi gratis</button>
+      <button class="btn btn-secondary btn-lg">Lihat layanan</button>
+      <button class="btn btn-ghost btn-lg">Pelajari lebih lanjut</button>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-primary">Hubungi kami</button>
+      <button class="btn btn-secondary">Unduh proposal</button>
+      <button class="btn btn-primary btn-sm">Kirim</button>
+      <button class="btn btn-primary" disabled>Diproses…</button>
+    </div>
+  </div>
+</section>
+
+<section id="cards">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">04 — Kartu</div>
+      <h2>Standarisasi card</h2>
+      <p>Radius 16px, border tipis, shadow lembut bertona biru brand — cukup untuk memberi kedalaman tanpa terasa berat.</p>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 5-3.4 8.4-7 9-3.6-.6-7-4-7-9V7l7-4z"/></svg></div>
+        <h4>Keamanan &amp; kepercayaan</h4>
+        <p>Infrastruktur IT yang aman dan andal untuk operasional bisnis harian.</p>
+        <a href="#">Selengkapnya →</a>
+      </div>
+      <div class="card">
+        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></div>
+        <h4>Inovasi berkelanjutan</h4>
+        <p>Solusi AI &amp; otomasi yang terus kami kembangkan bersama klien.</p>
+        <a href="#">Selengkapnya →</a>
+      </div>
+      <div class="card">
+        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg></div>
+        <h4>Pendampingan jangka panjang</h4>
+        <p>Kami hadir sebagai mitra, bukan vendor sekali proyek.</p>
+        <a href="#">Selengkapnya →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="icons">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">05 — Ikon</div>
+      <h2>Gaya ikon: outline, sudut membulat</h2>
+      <p>Stroke 1.8px, ujung &amp; sambungan membulat (round cap/join) — konsisten dengan radius tombol &amp; card, memperkuat kesan approachable tanpa mengorbankan kesan modern-profesional.</p>
+    </div>
+    <div class="icon-grid">
+      <div class="icon-tile"><div class="icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9h14v-9"/></svg></div><div class="icon-label">Website</div></div>
+      <div class="icon-tile"><div class="icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg></div><div class="icon-label">Aplikasi</div></div>
+      <div class="icon-tile"><div class="icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div><div class="icon-label">Infrastruktur</div></div>
+      <div class="icon-tile"><div class="icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></div><div class="icon-label">AI &amp; Otomasi</div></div>
+      <div class="icon-tile"><div class="icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 5-3.4 8.4-7 9-3.6-.6-7-4-7-9V7l7-4z"/></svg></div><div class="icon-label">Keamanan</div></div>
+      <div class="icon-tile"><div class="icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg></div><div class="icon-label">Konsultasi</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="tokens">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">06 — Token dasar &amp; mobile-first</div>
+      <h2>Radius, spacing, breakpoint</h2>
+      <p>Semua CSS disusun mobile-first: gaya dasar ditulis untuk layar ±375px, lalu ditambah <code>min-width</code> media query untuk layar lebih besar — bukan sebaliknya. Ini menjaga performa &amp; keterbacaan di perangkat mayoritas pengguna UMKM (mobile).</p>
+    </div>
+    <p style="margin-bottom:8px; font-size:13px; font-weight:600; color:var(--text-primary)">Radius</p>
+    <div class="chip-row" style="margin-bottom:24px;">
+      <span class="chip">--r-sm: 8px (input, ikon)</span>
+      <span class="chip">--r-md: 10px (tombol)</span>
+      <span class="chip">--r-lg: 16px (card)</span>
+      <span class="chip">--r-full: 999px (badge/pill)</span>
+    </div>
+    <p style="margin-bottom:8px; font-size:13px; font-weight:600; color:var(--text-primary)">Breakpoint (mobile-first)</p>
+    <div class="chip-row" style="margin-bottom:24px;">
+      <span class="chip">base: 0px+ (mobile)</span>
+      <span class="chip">min-width: 640px (tablet kecil)</span>
+      <span class="chip">min-width: 768px (tablet)</span>
+      <span class="chip">min-width: 1024px (desktop)</span>
+    </div>
+    <p style="margin-bottom:8px; font-size:13px; font-weight:600; color:var(--text-primary)">Spacing scale</p>
+    <div class="chip-row">
+      <span class="chip">4 · 8 · 12 · 16 · 24 · 32 · 48 · 64px</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>selenium.id — Brand &amp; UI Guideline v1.0 · Dibangun mobile-first · Kontras teks &amp; latar telah disesuaikan untuk AA accessibility di kedua mode.</p>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+  toggle.addEventListener('click', () => {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? '🌗  mode gelap' : '☀️  mode terang';
+  });
+</script>
+</body>
+</html>
