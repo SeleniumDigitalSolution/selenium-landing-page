@@ -22,7 +22,6 @@ export const translations = {
       brand: "Selenium",
       services: "Services",
       about: "About",
-      process: "Process",
       contact: "Contact",
       cta: "Get a Free Consultation",
     },
@@ -145,36 +144,6 @@ export const translations = {
         {
           title: "Proactive Intelligence",
           desc: "We identify risks before they become incidents through continuous monitoring and threat intelligence.",
-        },
-      ],
-    },
-
-    // ── Process Section ──
-    process: {
-      tag: "How We Work",
-      heading: "From Discovery to Delivery",
-      subheading:
-        "A structured engagement model designed for the complexity of Small Businesses to Enterprises.",
-      steps: [
-        {
-          number: "01",
-          title: "Discovery & Assessment",
-          desc: "We conduct a full technical and business audit — mapping your current systems, identifying gaps, and establishing a clear baseline for transformation.",
-        },
-        {
-          number: "02",
-          title: "Strategy & Architecture",
-          desc: "Our developers design a tailored technology roadmap and solution architecture aligned to your business objectives and budget constraints.",
-        },
-        {
-          number: "03",
-          title: "Agile Implementation",
-          desc: "We execute in focused sprints with full transparency — delivering measurable milestones while maintaining your operations without disruption.",
-        },
-        {
-          number: "04",
-          title: "Optimization & Support",
-          desc: "Post-delivery, we monitor, optimize, and iterate. Our 24/7 support and continuous improvement cycles ensure sustained performance over time.",
         },
       ],
     },
@@ -339,8 +308,6 @@ export const translations = {
       links: [
         { label: "Services", href: "#services" },
         { label: "About", href: "#about" },
-        { label: "Tech Stack", href: "#tech-stack" },
-        { label: "Process", href: "#process" },
         { label: "Contact", href: "#contact" },
       ],
       legalLinks: [
@@ -359,7 +326,6 @@ export const translations = {
       brand: "Selenium",
       services: "Layanan",
       about: "Tentang Kami",
-      process: "Proses",
       contact: "Kontak",
       cta: "Konsultasi Gratis",
     },
@@ -482,36 +448,6 @@ export const translations = {
         {
           title: "Intelijen Proaktif",
           desc: "Kami mengidentifikasi risiko sebelum menjadi insiden melalui pemantauan berkelanjutan dan threat intelligence.",
-        },
-      ],
-    },
-
-    // ── Proses Kerja ──
-    process: {
-      tag: "Cara Kami Bekerja",
-      heading: "Dari Penemuan hingga Pengiriman",
-      subheading:
-        "Model keterlibatan yang terstruktur, dirancang untuk kompleksitas Bisnis Kecil hingga Besar",
-      steps: [
-        {
-          number: "01",
-          title: "Penemuan & Penilaian",
-          desc: "Kami melakukan audit teknis dan bisnis penuh — memetakan sistem Anda saat ini, mengidentifikasi kesenjangan, dan menetapkan baseline yang jelas untuk transformasi.",
-        },
-        {
-          number: "02",
-          title: "Strategi & Arsitektur",
-          desc: "Developer kami merancang peta jalan teknologi yang disesuaikan dan arsitektur solusi yang selaras dengan tujuan bisnis dan kendala anggaran Anda.",
-        },
-        {
-          number: "03",
-          title: "Implementasi Agile",
-          desc: "Kami mengeksekusi dalam sprint yang terfokus dengan transparansi penuh — menghasilkan pencapaian yang terukur sambil menjaga operasional Anda tetap berjalan tanpa gangguan.",
-        },
-        {
-          number: "04",
-          title: "Optimisasi & Dukungan",
-          desc: "Setelah pengiriman, kami memantau, mengoptimalkan, dan melakukan iterasi. Dukungan 24/7 dan siklus peningkatan berkelanjutan kami memastikan performa yang berkelanjutan.",
         },
       ],
     },
@@ -676,8 +612,6 @@ export const translations = {
       links: [
         { label: "Layanan", href: "#services" },
         { label: "Tentang", href: "#about" },
-        { label: "Teknologi", href: "#tech-stack" },
-        { label: "Proses", href: "#process" },
         { label: "Kontak", href: "#contact" },
       ],
       legalLinks: [

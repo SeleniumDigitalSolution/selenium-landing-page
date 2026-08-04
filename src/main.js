@@ -47,7 +47,7 @@ const getSection = (key) => {
    ═════════════════════════════════════════════════════════════ */
 function renderNav() {
   const nav = getSection("nav");
-  const links = ["services", "about", "process", "contact"];
+  const links = ["services", "about", "contact"];
 
   return `
   <nav id="navbar" role="navigation" aria-label="Main navigation"
@@ -408,63 +408,6 @@ function renderAbout() {
         </div>
 
       </div>
-    </div>
-  </section>`;
-}
-
-/* ═════════════════════════════════════════════════════════════
-   SECTION: PROCESS
-   ═════════════════════════════════════════════════════════════ */
-function renderProcess() {
-  const proc = getSection("process");
-
-  return `
-  <section id="process" class="py-section bg-se-surface relative overflow-hidden"
-           aria-labelledby="process-heading">
-
-    <div class="section-container relative z-10">
-
-      <!-- Header -->
-      <div class="mb-16 reveal">
-        <div class="section-tag mb-4">${proc.tag}</div>
-        <h2 id="process-heading" class="section-heading mb-4">${proc.heading}</h2>
-        <p class="section-subheading">${proc.subheading}</p>
-      </div>
-
-      <!-- Steps -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12"
-           role="list" aria-label="Process steps">
-        ${proc.steps
-          .map(
-            (step, i) => `
-          <div class="process-step reveal reveal-delay-${i + 1}" role="listitem">
-
-            <!-- Step Number -->
-            <div class="flex-shrink-0">
-              <div class="process-step-number" aria-label="Step ${step.number}">${step.number}</div>
-            </div>
-
-            <!-- Step Content -->
-            <div class="pt-1">
-              <h3 class="font-display font-semibold text-lg text-se-white mb-3">${step.title}</h3>
-              <p class="text-se-muted text-sm leading-relaxed">${step.desc}</p>
-
-              <!-- Connector line (not last item) -->
-              ${
-                i < proc.steps.length - 1
-                  ? `
-                <div class="mt-6 h-px bg-gradient-to-r from-se-cyan/20 to-transparent hidden md:block" aria-hidden="true"></div>
-              `
-                  : ""
-              }
-            </div>
-
-          </div>
-        `,
-          )
-          .join("")}
-      </div>
-
     </div>
   </section>`;
 }
@@ -873,7 +816,6 @@ function renderPage() {
       ${renderCatalog()}
       ${renderServices()}
       ${renderAbout()}
-      ${renderProcess()}
       ${renderProjects()}
       ${renderContact()}
     </main>
