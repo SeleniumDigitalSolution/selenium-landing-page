@@ -22,7 +22,16 @@ export const translations = {
       brand: "Selenium",
       services: "Services",
       about: "About",
+      portfolio: "Portfolio",
+      // projects: "Projects",
+      contact: "Contact",
       cta: "Get a Free Consultation",
+    },
+
+    contact: {
+      title: "Ready to solve your problem?",
+      description: "Let's discuss how we can help you achieve your digital goals.",
+      btnText:"Chat on Whatsapp"
     },
 
     // ── Hero Section ──
@@ -148,9 +157,9 @@ export const translations = {
     },
 
     // ── Projects Section ──
-    projects: {
+    portfolio: {
       tag: "Our Work",
-      heading: "Our Projects",
+      heading: "Our Portofolio",
       items: [
         {
           title: "Learning Management System",
@@ -300,7 +309,16 @@ export const translations = {
       brand: "Selenium",
       services: "Layanan",
       about: "Tentang Kami",
+      portfolio: "Portofolio",
+      // projects: "Projects",
+      contact: "Kontak",
       cta: "Konsultasi Gratis",
+    },
+
+    contact: {
+      title: "Siap untuk menyelesaikan masalahmu?",
+      description: "Mari diskusikan bersaa kami agar bisa mencapai target",
+      btnText:"Hubungi lewat Whatsapp"
     },
 
     // ── Bagian Hero ──
@@ -426,9 +444,9 @@ export const translations = {
     },
 
     // ── Portofolio Proyek ──
-    projects: {
+    portfolio: {
       tag: "Karya Kami",
-      heading: "Proyek Kami",
+      heading: "Portofolio Kami",
       items: [
         {
           title: "Sistem Manajemen Pembelajaran",

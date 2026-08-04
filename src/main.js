@@ -47,7 +47,8 @@ const getSection = (key) => {
    ═════════════════════════════════════════════════════════════ */
 function renderNav() {
   const nav = getSection("nav");
-  const links = ["services", "about"];
+  const links = ["services", "about", "portfolio", "contact"];
+  const waUrl ="https://wa.me/6282253210449?text=Halo,%20saya%20ingin%20konsultasi%20";
 
   return `
   <nav id="navbar" role="navigation" aria-label="Main navigation"
@@ -101,7 +102,7 @@ function renderNav() {
           </div>
 
           <!-- CTA Button (Desktop) -->
-          <a href="#contact" class="hidden md:inline-flex btn-primary text-sm py-2.5 px-5" id="nav-cta">
+          <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex btn-primary text-sm py-2.5 px-5" id="nav-cta">
             ${nav.cta}
             ${icons.get("arrowRight", "w-4 h-4")}
           </a>
@@ -129,7 +130,7 @@ function renderNav() {
         `,
           )
           .join("")}
-        <a href="#contact" class="btn-primary mt-4 justify-center">
+        <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary mt-4 justify-center">
           ${nav.cta}
           ${icons.get("arrowRight", "w-4 h-4")}
         </a>
@@ -302,6 +303,45 @@ function renderServices() {
 }
 
 /* ═════════════════════════════════════════════════════════════
+   SECTION: CALL TO ACTION (CTA) / CONTACT
+   ═════════════════════════════════════════════════════════════ */
+function renderCTA() {
+  const cta =  getSection("contact")
+  const waUrl = "https://wa.me/6282253210449?text=Halo,%20saya%20ingin%20konsultasi%20";
+
+  return `
+  <section id="contact" class="py-20 relative overflow-hidden">
+    <div class="section-container relative z-10">
+      <div class="glass-panel rounded-2xl p-8 md:p-16 text-center max-w-4xl mx-auto border border-se-border relative overflow-hidden">
+
+        <!-- Decorative background glow -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-md bg-se-cyan/10 blur-[100px] rounded-full z-0 pointer-events-none"></div>
+
+        <div class="relative z-10 flex flex-col items-center">
+          <div class="w-16 h-16 rounded-full bg-se-cyan/10 flex items-center justify-center mb-6 border border-se-cyan/20">
+            ${typeof icons !== 'undefined' ? icons.get("messageCircle", "w-8 h-8 text-se-cyan") : ''}
+          </div>
+
+          <h2 class="text-3xl md:text-5xl font-display font-bold text-se-white mb-4 tracking-tight">
+            ${cta.title}
+          </h2>
+
+          <p class="text-se-silver text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+            ${cta.description}
+          </p>
+
+          <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center text-base md:text-lg py-3 px-8 shadow-lg shadow-se-cyan/20 transition-transform hover:-translate-y-1">
+            ${cta.btnText || cta.cta || 'Consult Now'}
+            ${typeof icons !== 'undefined' ? icons.get("arrowRight", "w-5 h-5 ml-2") : ''}
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>`;
+}
+
+/* ═════════════════════════════════════════════════════════════
    SECTION: ABOUT
    ═════════════════════════════════════════════════════════════ */
 function renderAbout() {
@@ -416,10 +456,10 @@ function renderAbout() {
    SECTION: PROJECTS
    ═════════════════════════════════════════════════════════════ */
 function renderProjects() {
-  const proj = getSection("projects");
+  const proj = getSection("portfolio");
 
   return `
-  <section id="projects" class="py-section bg-se-dark relative overflow-hidden"
+  <section id="portfolio" class="py-section bg-se-dark relative overflow-hidden"
            aria-labelledby="projects-heading">
 
     <!-- Glow background accents -->
@@ -673,6 +713,7 @@ function renderPage() {
       ${renderServices()}
       ${renderAbout()}
       ${renderProjects()}
+      ${renderCTA()}
     </main>
     ${renderFooter()}
     ${renderWhatsAppFAB()}
