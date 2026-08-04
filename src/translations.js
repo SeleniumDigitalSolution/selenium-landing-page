@@ -22,10 +22,16 @@ export const translations = {
       brand: "Selenium",
       services: "Services",
       about: "About",
-      techStack: "Tech Stack",
-      process: "Process",
+      portfolio: "Portfolio",
+      // projects: "Projects",
       contact: "Contact",
       cta: "Get a Free Consultation",
+    },
+
+    contact: {
+      title: "Ready to solve your problem?",
+      description: "Let's discuss how we can help you achieve your digital goals.",
+      btnText:"Chat on Whatsapp"
     },
 
     // ── Hero Section ──
@@ -150,73 +156,10 @@ export const translations = {
       ],
     },
 
-    // ── Tech Stack Section ──
-    techStack: {
-      tag: "Technology Expertise",
-      heading: "Built on the Tools Enterprises Trust",
-      subheading:
-        "We work with robust, industry-proven technologies across every layer of the modern digital stack.",
-      categories: [
-        {
-          name: "Cloud & Infrastructure",
-          items: ["AWS", "GCP", "Azure", "Terraform", "Kubernetes", "Docker"],
-        },
-        {
-          name: "Development",
-          items: ["React", "Next.js", "TypeScript", "Node.js", "Python"],
-        },
-        {
-          name: "Data & AI",
-          items: [
-            "PyTorch",
-            "LangChain",
-            "PostgreSQL",
-            "MySQL",
-            "AI Integration",
-            "Tensor Flow",
-          ],
-        },
-        {
-          name: "DevOps",
-          items: ["GitHub Actions", "CI/CD", "Elasticsearch"],
-        },
-      ],
-    },
-
-    // ── Process Section ──
-    process: {
-      tag: "How We Work",
-      heading: "From Discovery to Delivery",
-      subheading:
-        "A structured engagement model designed for the complexity of Small Businesses to Enterprises.",
-      steps: [
-        {
-          number: "01",
-          title: "Discovery & Assessment",
-          desc: "We conduct a full technical and business audit — mapping your current systems, identifying gaps, and establishing a clear baseline for transformation.",
-        },
-        {
-          number: "02",
-          title: "Strategy & Architecture",
-          desc: "Our developers design a tailored technology roadmap and solution architecture aligned to your business objectives and budget constraints.",
-        },
-        {
-          number: "03",
-          title: "Agile Implementation",
-          desc: "We execute in focused sprints with full transparency — delivering measurable milestones while maintaining your operations without disruption.",
-        },
-        {
-          number: "04",
-          title: "Optimization & Support",
-          desc: "Post-delivery, we monitor, optimize, and iterate. Our 24/7 support and continuous improvement cycles ensure sustained performance over time.",
-        },
-      ],
-    },
-
     // ── Projects Section ──
-    projects: {
+    portfolio: {
       tag: "Our Work",
-      heading: "Our Projects",
+      heading: "Our Portofolio",
       items: [
         {
           title: "Learning Management System",
@@ -281,34 +224,6 @@ export const translations = {
       ],
     },
 
-    // ── Pricing Section ──
-    pricing: {
-      tag: "Special Offer",
-      heading: "Empowering Small Businesses",
-      subheading:
-        "Get online with our highly affordable complete digital presence package. Designed specifically for growing businesses.",
-      planName: "Company Profile Package Start From",
-      price: "Rp 299.000",
-      priceNote: "One-time setup fee",
-      features: [
-        "Free Domain (.my.id / .web.id)",
-        "1-Page Professional Website (Discoverable in google)",
-        "Delivered Ready to Use & Live",
-        "Discoverable in AI",
-        "High-Performance Hosting Included",
-        "1 Month Free Maintenance & Live Support",
-        "Full Source Code Ownership",
-        "Free Initial Consultation",
-      ],
-      renewalHeading: "Maintenance & Hosting Renewals",
-      renewals: [
-        { period: "1 Month", price: "Rp 99.000" },
-        { period: "3 Months", price: "Rp 199.000" },
-        { period: "1 Year", price: "Rp 999.000" },
-      ],
-      cta: "Claim This Promo",
-    },
-
     // ── Catalog Section ──
     catalog: {
       tag: "Our Catalog",
@@ -370,30 +285,6 @@ export const translations = {
       cta: "Inquire via WhatsApp",
     },
 
-    // ── Contact Section ──
-    contact: {
-      tag: "Get In Touch",
-      heading: "Start the Conversation",
-      subheading:
-        "Tell us about your challenge. Our team of senior consultants will respond within 24 hours with a preliminary assessment.",
-      namePlaceholder: "Full Name",
-      emailPlaceholder: "Business Email",
-      companyPlaceholder: "Company Name",
-      messagePlaceholder: "Describe your project or challenge...",
-      nameLabel: "Name",
-      emailLabel: "Email",
-      companyLabel: "Company",
-      messageLabel: "Message",
-      submitBtn: "Send Message",
-      submitSuccess: "Message sent. We'll be in touch within 24 hours.",
-      info: [
-        { label: "Email", value: "seleniumdigitalsolution@gmail.com" },
-        { label: "Phone", value: "+62 822 5321 0449" },
-        { label: "Headquarters", value: "Pontianak, Indonesia" },
-        { label: "Hours", value: "Mon–Fri: 09:00–17:00 WIB" },
-      ],
-    },
-
     // ── Footer ──
     footer: {
       tagline: "The Essential Element for Your Digital Ecosystem.",
@@ -401,9 +292,6 @@ export const translations = {
       links: [
         { label: "Services", href: "#services" },
         { label: "About", href: "#about" },
-        { label: "Tech Stack", href: "#tech-stack" },
-        { label: "Process", href: "#process" },
-        { label: "Contact", href: "#contact" },
       ],
       legalLinks: [
         { label: "Privacy Policy", href: "#" },
@@ -421,10 +309,16 @@ export const translations = {
       brand: "Selenium",
       services: "Layanan",
       about: "Tentang Kami",
-      techStack: "Teknologi",
-      process: "Proses",
+      portfolio: "Portofolio",
+      // projects: "Projects",
       contact: "Kontak",
       cta: "Konsultasi Gratis",
+    },
+
+    contact: {
+      title: "Siap untuk menyelesaikan masalahmu?",
+      description: "Mari diskusikan bersaa kami agar bisa mencapai target",
+      btnText:"Hubungi lewat Whatsapp"
     },
 
     // ── Bagian Hero ──
@@ -549,73 +443,10 @@ export const translations = {
       ],
     },
 
-    // ── Stack Teknologi ──
-    techStack: {
-      tag: "Keahlian Teknologi",
-      heading: "Dibangun di Atas Alat yang Dipercaya Enterprise",
-      subheading:
-        "Kami bekerja dengan teknologi industri yang tangguh dan teruji di setiap lapisan digital modern.",
-      categories: [
-        {
-          name: "Cloud & Infrastruktur",
-          items: ["AWS", "GCP", "Azure", "Terraform", "Kubernetes", "Docker"],
-        },
-        {
-          name: "Pengembangan",
-          items: ["React", "Next.js", "TypeScript", "Node.js", "Python"],
-        },
-        {
-          name: "Data & AI",
-          items: [
-            "PyTorch",
-            "LangChain",
-            "PostgreSQL",
-            "MySQL",
-            "AI Integration",
-            "Tensor Flow",
-          ],
-        },
-        {
-          name: "DevOps",
-          items: ["GitHub Actions", "CI/CD", "Elasticsearch"],
-        },
-      ],
-    },
-
-    // ── Proses Kerja ──
-    process: {
-      tag: "Cara Kami Bekerja",
-      heading: "Dari Penemuan hingga Pengiriman",
-      subheading:
-        "Model keterlibatan yang terstruktur, dirancang untuk kompleksitas Bisnis Kecil hingga Besar",
-      steps: [
-        {
-          number: "01",
-          title: "Penemuan & Penilaian",
-          desc: "Kami melakukan audit teknis dan bisnis penuh — memetakan sistem Anda saat ini, mengidentifikasi kesenjangan, dan menetapkan baseline yang jelas untuk transformasi.",
-        },
-        {
-          number: "02",
-          title: "Strategi & Arsitektur",
-          desc: "Developer kami merancang peta jalan teknologi yang disesuaikan dan arsitektur solusi yang selaras dengan tujuan bisnis dan kendala anggaran Anda.",
-        },
-        {
-          number: "03",
-          title: "Implementasi Agile",
-          desc: "Kami mengeksekusi dalam sprint yang terfokus dengan transparansi penuh — menghasilkan pencapaian yang terukur sambil menjaga operasional Anda tetap berjalan tanpa gangguan.",
-        },
-        {
-          number: "04",
-          title: "Optimisasi & Dukungan",
-          desc: "Setelah pengiriman, kami memantau, mengoptimalkan, dan melakukan iterasi. Dukungan 24/7 dan siklus peningkatan berkelanjutan kami memastikan performa yang berkelanjutan.",
-        },
-      ],
-    },
-
     // ── Portofolio Proyek ──
-    projects: {
+    portfolio: {
       tag: "Karya Kami",
-      heading: "Proyek Kami",
+      heading: "Portofolio Kami",
       items: [
         {
           title: "Sistem Manajemen Pembelajaran",
@@ -680,33 +511,6 @@ export const translations = {
       ],
     },
 
-    // ── Harga / Promo ──
-    pricing: {
-      tag: "Promo Spesial UMKM",
-      heading: "Go Digital dengan Harga Terjangkau",
-      subheading:
-        "Hadirkan bisnis Anda di dunia digital dengan paket pembuatan Company Profile super hemat, dirancang khusus untuk Anda yang baru memulai.",
-      planName: "Paket Website Profile Mulai Dari",
-      price: "Rp 299.000",
-      priceNote: "Biaya pembuatan (Sekali bayar)",
-      features: [
-        "Gratis Domain (.my.id / .web.id)",
-        "Jasa Pembuatan Website 1 Halaman (Muncul di Pencarian Google)",
-        "Terima Jadi dan Langsung Live",
-        "Bisa direkomendasikan oleh AI",
-        "Gratis 1 Bulan Live & Maintenance",
-        "Source Code Menjadi Milik Anda",
-        "Gratis Konsultasi Bisnis",
-      ],
-      renewalHeading: "Perpanjangan Hosting & Maintenance",
-      renewals: [
-        { period: "Per Bulan", price: "Rp 99.000" },
-        { period: "Per 3 Bulan", price: "Rp 199.000" },
-        { period: "Per Tahun", price: "Rp 999.000" },
-      ],
-      cta: "Ambil Promo Ini",
-    },
-
     // ── Catalog Section ──
     catalog: {
       tag: "Katalog Kami",
@@ -768,30 +572,6 @@ export const translations = {
       cta: "Tanya via WhatsApp",
     },
 
-    // ── Kontak ──
-    contact: {
-      tag: "Hubungi Kami",
-      heading: "Mulai Percakapan",
-      subheading:
-        "Ceritakan tantangan Anda. Tim konsultan senior kami akan merespons dalam 24 jam dengan penilaian awal.",
-      namePlaceholder: "Nama Lengkap",
-      emailPlaceholder: "Email Bisnis",
-      companyPlaceholder: "Nama Perusahaan",
-      messagePlaceholder: "Deskripsikan proyek atau tantangan Anda...",
-      nameLabel: "Nama",
-      emailLabel: "Email",
-      companyLabel: "Perusahaan",
-      messageLabel: "Pesan",
-      submitBtn: "Kirim Pesan",
-      submitSuccess: "Pesan terkirim. Kami akan menghubungi Anda dalam 24 jam.",
-      info: [
-        { label: "Email", value: "seleniumdigitalsolution@gmail.com" },
-        { label: "Telepon", value: "+62 822 5321 0449" },
-        { label: "Kantor Pusat", value: "Pontianak, Indonesia" },
-        { label: "Jam Kerja", value: "Sen–Jum: 09:00–18:00 WIB" },
-      ],
-    },
-
     // ── Footer ──
     footer: {
       tagline: "Elemen Esensial untuk Ekosistem Digital Anda.",
@@ -799,9 +579,6 @@ export const translations = {
       links: [
         { label: "Layanan", href: "#services" },
         { label: "Tentang", href: "#about" },
-        { label: "Teknologi", href: "#tech-stack" },
-        { label: "Proses", href: "#process" },
-        { label: "Kontak", href: "#contact" },
       ],
       legalLinks: [
         { label: "Kebijakan Privasi", href: "#" },

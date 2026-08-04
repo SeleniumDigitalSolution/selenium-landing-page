@@ -47,7 +47,8 @@ const getSection = (key) => {
    ═════════════════════════════════════════════════════════════ */
 function renderNav() {
   const nav = getSection("nav");
-  const links = ["services", "about", "techStack", "process", "contact"];
+  const links = ["services", "about", "portfolio", "contact"];
+  const waUrl ="https://wa.me/6282253210449?text=Halo,%20saya%20ingin%20konsultasi%20";
 
   return `
   <nav id="navbar" role="navigation" aria-label="Main navigation"
@@ -101,7 +102,7 @@ function renderNav() {
           </div>
 
           <!-- CTA Button (Desktop) -->
-          <a href="#contact" class="hidden md:inline-flex btn-primary text-sm py-2.5 px-5" id="nav-cta">
+          <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex btn-primary text-sm py-2.5 px-5" id="nav-cta">
             ${nav.cta}
             ${icons.get("arrowRight", "w-4 h-4")}
           </a>
@@ -129,7 +130,7 @@ function renderNav() {
         `,
           )
           .join("")}
-        <a href="#contact" class="btn-primary mt-4 justify-center">
+        <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary mt-4 justify-center">
           ${nav.cta}
           ${icons.get("arrowRight", "w-4 h-4")}
         </a>
@@ -302,6 +303,45 @@ function renderServices() {
 }
 
 /* ═════════════════════════════════════════════════════════════
+   SECTION: CALL TO ACTION (CTA) / CONTACT
+   ═════════════════════════════════════════════════════════════ */
+function renderCTA() {
+  const cta =  getSection("contact")
+  const waUrl = "https://wa.me/6282253210449?text=Halo,%20saya%20ingin%20konsultasi%20";
+
+  return `
+  <section id="contact" class="py-20 relative overflow-hidden">
+    <div class="section-container relative z-10">
+      <div class="glass-panel rounded-2xl p-8 md:p-16 text-center max-w-4xl mx-auto border border-se-border relative overflow-hidden">
+
+        <!-- Decorative background glow -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-md bg-se-cyan/10 blur-[100px] rounded-full z-0 pointer-events-none"></div>
+
+        <div class="relative z-10 flex flex-col items-center">
+          <div class="w-16 h-16 rounded-full bg-se-cyan/10 flex items-center justify-center mb-6 border border-se-cyan/20">
+            ${typeof icons !== 'undefined' ? icons.get("messageCircle", "w-8 h-8 text-se-cyan") : ''}
+          </div>
+
+          <h2 class="text-3xl md:text-5xl font-display font-bold text-se-white mb-4 tracking-tight">
+            ${cta.title}
+          </h2>
+
+          <p class="text-se-silver text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+            ${cta.description}
+          </p>
+
+          <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center text-base md:text-lg py-3 px-8 shadow-lg shadow-se-cyan/20 transition-transform hover:-translate-y-1">
+            ${cta.btnText || cta.cta || 'Consult Now'}
+            ${typeof icons !== 'undefined' ? icons.get("arrowRight", "w-5 h-5 ml-2") : ''}
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>`;
+}
+
+/* ═════════════════════════════════════════════════════════════
    SECTION: ABOUT
    ═════════════════════════════════════════════════════════════ */
 function renderAbout() {
@@ -413,128 +453,13 @@ function renderAbout() {
 }
 
 /* ═════════════════════════════════════════════════════════════
-   SECTION: TECH STACK
-   ═════════════════════════════════════════════════════════════ */
-function renderTechStack() {
-  const ts = getSection("techStack");
-
-  return `
-  <section id="tech-stack" class="py-section bg-se-dark relative overflow-hidden"
-           aria-labelledby="tech-heading">
-
-    <!-- Top fade from previous section -->
-    <div class="absolute top-0 inset-x-0 h-24 bg-fade-up-dark pointer-events-none" aria-hidden="true"></div>
-
-    <div class="section-container relative z-10">
-
-      <!-- Header -->
-      <div class="text-center mb-16 reveal">
-        <div class="section-tag mb-4 justify-center">${ts.tag}</div>
-        <h2 id="tech-heading" class="section-heading mb-4">${ts.heading}</h2>
-        <p class="section-subheading mx-auto text-center">${ts.subheading}</p>
-      </div>
-
-      <!-- Tech Categories -->
-      <div class="space-y-12" role="list" aria-label="Technology categories">
-        ${ts.categories
-          .map(
-            (cat, ci) => `
-          <div class="reveal reveal-delay-${ci + 1}" role="listitem">
-            <!-- Category label -->
-            <h3 class="font-mono text-xs uppercase tracking-[0.2em] text-se-muted mb-5 flex items-center gap-3">
-              <span class="w-6 h-px bg-se-border inline-block"></span>
-              ${cat.name}
-              <span class="flex-1 h-px bg-se-border inline-block"></span>
-            </h3>
-
-            <!-- Tech badges -->
-            <div class="flex flex-wrap gap-3" role="list" aria-label="${cat.name} technologies">
-              ${cat.items
-                .map(
-                  (item) => `
-                <div class="tech-badge" role="listitem">
-                  <div class="w-1.5 h-1.5 rounded-full bg-se-cyan/60"></div>
-                  <span class="font-mono text-sm text-se-silver">${item}</span>
-                </div>
-              `,
-                )
-                .join("")}
-            </div>
-          </div>
-        `,
-          )
-          .join("")}
-      </div>
-
-    </div>
-  </section>`;
-}
-
-/* ═════════════════════════════════════════════════════════════
-   SECTION: PROCESS
-   ═════════════════════════════════════════════════════════════ */
-function renderProcess() {
-  const proc = getSection("process");
-
-  return `
-  <section id="process" class="py-section bg-se-surface relative overflow-hidden"
-           aria-labelledby="process-heading">
-
-    <div class="section-container relative z-10">
-
-      <!-- Header -->
-      <div class="mb-16 reveal">
-        <div class="section-tag mb-4">${proc.tag}</div>
-        <h2 id="process-heading" class="section-heading mb-4">${proc.heading}</h2>
-        <p class="section-subheading">${proc.subheading}</p>
-      </div>
-
-      <!-- Steps -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12"
-           role="list" aria-label="Process steps">
-        ${proc.steps
-          .map(
-            (step, i) => `
-          <div class="process-step reveal reveal-delay-${i + 1}" role="listitem">
-
-            <!-- Step Number -->
-            <div class="flex-shrink-0">
-              <div class="process-step-number" aria-label="Step ${step.number}">${step.number}</div>
-            </div>
-
-            <!-- Step Content -->
-            <div class="pt-1">
-              <h3 class="font-display font-semibold text-lg text-se-white mb-3">${step.title}</h3>
-              <p class="text-se-muted text-sm leading-relaxed">${step.desc}</p>
-
-              <!-- Connector line (not last item) -->
-              ${
-                i < proc.steps.length - 1
-                  ? `
-                <div class="mt-6 h-px bg-gradient-to-r from-se-cyan/20 to-transparent hidden md:block" aria-hidden="true"></div>
-              `
-                  : ""
-              }
-            </div>
-
-          </div>
-        `,
-          )
-          .join("")}
-      </div>
-
-    </div>
-  </section>`;
-}
-
-/* ═════════════════════════════════════════════════════════════
    SECTION: PROJECTS
    ═════════════════════════════════════════════════════════════ */
 function renderProjects() {
-  const proj = getSection("projects");
+  const proj = getSection("portfolio");
 
   return `
-  <section id="projects" class="py-section bg-se-dark relative overflow-hidden"
+  <section id="portfolio" class="py-section bg-se-dark relative overflow-hidden"
            aria-labelledby="projects-heading">
 
     <!-- Glow background accents -->
@@ -601,233 +526,6 @@ function renderProjects() {
           .join("")}
       </div>
 
-    </div>
-  </section>`;
-}
-
-/* ═════════════════════════════════════════════════════════════
-   SECTION: PRICING / PROMO
-   ═════════════════════════════════════════════════════════════ */
-function renderPricing() {
-  const pr = getSection("pricing");
-  if (!pr) return "";
-
-  return `
-  <section id="promo" class="py-section bg-se-dark relative overflow-hidden"
-           aria-labelledby="pricing-heading">
-    <!-- Background grid pattern -->
-    <div class="absolute inset-0 opacity-5 pointer-events-none" aria-hidden="true"
-         style="background-image:radial-gradient(var(--se-cyan) 1px,transparent 1px);background-size:40px 40px;"></div>
-
-    <div class="section-container relative z-10">
-
-      <!-- Header -->
-      <div class="text-center mb-16 reveal">
-        <div class="section-tag mb-4 justify-center text-se-red border-se-red/30 bg-se-red/10">${pr.tag}</div>
-        <h2 id="pricing-heading" class="section-heading mb-4">${pr.heading}</h2>
-        <p class="section-subheading mx-auto text-center">${pr.subheading}</p>
-      </div>
-
-      <div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-8 reveal reveal-delay-1">
-        <!-- Main Pricing Card -->
-        <div class="flex-1 se-card border-se-cyan/40 bg-se-surface shadow-[0_0_40px_rgba(0,212,255,0.1)] flex flex-col overflow-hidden relative">
-          <div class="absolute top-0 right-0 p-4 opacity-10">
-            <svg class="w-32 h-32 text-se-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-          </div>
-
-          <h3 class="font-display font-bold text-2xl text-se-white mb-2 relative z-10">${pr.planName}</h3>
-
-          <div class="my-6 relative z-10">
-            <div class="flex items-baseline gap-2">
-              <span class="font-display font-bold text-4xl lg:text-5xl text-se-cyan">${pr.price}</span>
-            </div>
-            <span class="text-sm text-se-muted block mt-1">${pr.priceNote}</span>
-          </div>
-
-          <div class="space-y-4 mb-8 flex-1 relative z-10">
-            ${pr.features
-              .map(
-                (f) => `
-              <div class="flex items-start gap-3">
-                <div class="flex-shrink-0 w-5 h-5 text-se-cyan mt-0.5">
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                </div>
-                <span class="text-se-silver text-sm">${f}</span>
-              </div>
-            `,
-              )
-              .join("")}
-          </div>
-
-          <a href="#contact" class="btn-primary w-full justify-center text-sm relative z-10 hover:shadow-[0_0_20px_rgba(0,212,255,0.4)]">
-            ${pr.cta}
-          </a>
-        </div>
-
-        <!-- Renewals Sidebar -->
-        <div class="md:w-1/3 flex flex-col justify-center">
-          <div class="bg-se-void border border-se-border rounded-sm p-6">
-            <h4 class="font-display text-sm font-semibold text-se-white mb-6 uppercase tracking-wider">${pr.renewalHeading}</h4>
-            <div class="space-y-4">
-              ${pr.renewals
-                .map(
-                  (r) => `
-                <div class="flex justify-between items-center border-b border-se-border/50 pb-3 last:border-0 last:pb-0">
-                  <span class="text-sm text-se-muted">${r.period}</span>
-                  <span class="font-mono text-sm text-se-cyan">${r.price}</span>
-                </div>
-              `,
-                )
-                .join("")}
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>`;
-}
-
-/* ═════════════════════════════════════════════════════════════
-   SECTION: CONTACT
-   ═════════════════════════════════════════════════════════════ */
-function renderContact() {
-  const contact = getSection("contact");
-
-  return `
-  <section id="contact" class="py-section bg-se-surface relative overflow-hidden"
-           aria-labelledby="contact-heading">
-
-    <!-- Background accent -->
-    <div class="absolute top-0 right-0 w-96 h-96 pointer-events-none" aria-hidden="true"
-         style="background:radial-gradient(circle,rgba(232,33,74,0.06) 0%,transparent 70%);transform:translate(30%,-20%);"></div>
-
-    <div class="section-container relative z-10">
-
-      <!-- Header -->
-      <div class="mb-16 reveal">
-        <div class="section-tag mb-4">${contact.tag}</div>
-        <h2 id="contact-heading" class="section-heading mb-4">${contact.heading}</h2>
-        <p class="section-subheading">${contact.subheading}</p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
-
-        <!-- Contact Form (3 cols) -->
-        <div class="lg:col-span-3 reveal reveal-delay-1">
-          <form id="contact-form" novalidate
-                class="space-y-6"
-                aria-label="Contact form">
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <!-- Name -->
-              <div class="form-group">
-                <label for="contact-name" class="form-label">${contact.nameLabel}</label>
-                <input type="text" id="contact-name" name="name" required
-                       class="form-input" placeholder="${contact.namePlaceholder}"
-                       autocomplete="name"
-                       aria-required="true">
-              </div>
-
-              <!-- Email -->
-              <div class="form-group">
-                <label for="contact-email" class="form-label">${contact.emailLabel}</label>
-                <input type="email" id="contact-email" name="email" required
-                       class="form-input" placeholder="${contact.emailPlaceholder}"
-                       autocomplete="email"
-                       aria-required="true">
-              </div>
-            </div>
-
-            <!-- Company -->
-            <div class="form-group">
-              <label for="contact-company" class="form-label">${contact.companyLabel}</label>
-              <input type="text" id="contact-company" name="company"
-                     class="form-input" placeholder="${contact.companyPlaceholder}"
-                     autocomplete="organization">
-            </div>
-
-            <!-- Message -->
-            <div class="form-group">
-              <label for="contact-message" class="form-label">${contact.messageLabel}</label>
-              <textarea id="contact-message" name="message" required
-                        class="form-textarea" placeholder="${contact.messagePlaceholder}"
-                        aria-required="true" rows="5"></textarea>
-            </div>
-
-            <!-- Submit -->
-            <button type="submit" id="contact-submit" class="btn-primary w-full justify-center" aria-label="${contact.submitBtn}">
-              <span id="contact-submit-text">${contact.submitBtn}</span>
-              <span id="contact-submit-icon">${icons.get("send", "w-4 h-4")}</span>
-            </button>
-
-            <!-- Success message (hidden by default) -->
-            <div id="contact-success" class="hidden flex items-center gap-3 p-4 rounded-sm bg-se-cyan/10 border border-se-cyan/30 text-se-cyan text-sm"
-                 role="alert" aria-live="polite">
-              ${icons.get("checkCircle", "w-5 h-5")}
-              <span>${contact.submitSuccess}</span>
-            </div>
-
-          </form>
-        </div>
-
-        <!-- Contact Info (2 cols) -->
-        <aside class="lg:col-span-2 reveal reveal-delay-2" aria-label="Contact information">
-          <div class="space-y-6">
-            ${contact.info
-              .map(
-                (item) => `
-              <div class="flex items-start gap-4 group">
-                <div class="flex-shrink-0 w-10 h-10 rounded-sm bg-se-surface border border-se-border
-                            flex items-center justify-center text-se-cyan
-                            group-hover:border-se-cyan/40 group-hover:bg-se-cyan/10
-                            transition-all duration-300">
-                  ${icons.getContactIcon(item.label)}
-                </div>
-                <div>
-                  <p class="form-label mb-1">${item.label}</p>
-                  <p class="text-se-silver text-sm">${item.value}</p>
-                </div>
-              </div>
-            `,
-              )
-              .join("")}
-          </div>
-
-          <!-- Social Links -->
-          <div class="mt-10 pt-8 border-t border-se-border">
-            <p class="form-label mb-4">Follow Us</p>
-            <div class="flex gap-4" role="list" aria-label="Social media links">
-              ${[
-                {
-                  icon: "instagram",
-                  label: "Instagram (@seleniumdigital.id)",
-                  href: "https://instagram.com/seleniumdigital.id",
-                },
-                {
-                  icon: "tiktok",
-                  label: "TikTok (selenium.id)",
-                  href: "https://tiktok.com/@selenium.id",
-                },
-              ]
-                .map(
-                  (social) => `
-                <a href="${social.href}" rel="noopener noreferrer" target="_blank"
-                   class="w-10 h-10 rounded-sm border border-se-border bg-se-surface flex items-center justify-center
-                          text-se-muted hover:text-se-cyan hover:border-se-cyan/40 hover:bg-se-cyan/10
-                          transition-all duration-300"
-                   aria-label="Visit our ${social.label}" role="listitem">
-                  ${icons.get(social.icon, "w-4 h-4")}
-                </a>
-              `,
-                )
-                .join("")}
-            </div>
-          </div>
-
-        </aside>
-
-      </div>
     </div>
   </section>`;
 }
@@ -992,7 +690,7 @@ function renderFooter() {
    ═════════════════════════════════════════════════════════════ */
 function renderWhatsAppFAB() {
   return `
-  <a href="https://wa.me/6282253210449" target="_blank" rel="noopener noreferrer"
+  <a href="https://wa.me/6282253210449?text=Halo,%20saya%20ingin%20konsultasi%20" target="_blank" rel="noopener noreferrer"
      class="fixed bottom-6 right-6 z-[99] bg-[#25D366] text-white p-4 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:scale-110 hover:shadow-[0_6px_25px_rgba(37,211,102,0.6)] transition-all duration-300 flex items-center justify-center animate-pulse"
      aria-label="Contact us on WhatsApp">
     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1011,14 +709,11 @@ function renderPage() {
     ${renderNav()}
     <main id="main-content">
       ${renderHero()}
-      ${renderPricing()}
       ${renderCatalog()}
       ${renderServices()}
       ${renderAbout()}
-      ${renderTechStack()}
-      ${renderProcess()}
       ${renderProjects()}
-      ${renderContact()}
+      ${renderCTA()}
     </main>
     ${renderFooter()}
     ${renderWhatsAppFAB()}
@@ -1029,7 +724,6 @@ function renderPage() {
   mountHeroCanvas();
   mountScrollReveal();
   mountLangToggle();
-  mountContactForm();
   mountMobileMenu();
 }
 
@@ -1300,50 +994,6 @@ function mountMobileMenu() {
     if (isOpen && !menu.contains(e.target) && !menuBtn.contains(e.target)) {
       toggle(false);
     }
-  });
-}
-
-/* ═════════════════════════════════════════════════════════════
-   BEHAVIOR: CONTACT FORM (client-side only simulation)
-   ═════════════════════════════════════════════════════════════ */
-function mountContactForm() {
-  const form = document.getElementById("contact-form");
-  if (!form) return;
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const submitBtn = document.getElementById("contact-submit");
-    const submitText = document.getElementById("contact-submit-text");
-    const submitIcon = document.getElementById("contact-submit-icon");
-    const successMsg = document.getElementById("contact-success");
-
-    const name = document.getElementById("contact-name").value.trim();
-    const email = document.getElementById("contact-email").value.trim();
-    const company = document.getElementById("contact-company").value.trim();
-    const message = document.getElementById("contact-message").value.trim();
-
-    const subject = encodeURIComponent(
-      `Inquiry from ${name} - ${company || "Individual"}`,
-    );
-    const bodyText = `Hello Selenium Digital Team,\n\nMy name is ${name}. You can reach me at ${email}.\n\nMessage:\n${message}\n\nBest Regards,\n${name}`;
-
-    // Create the Gmail compose URL
-    const gmailWebLink = `https://mail.google.com/mail/?view=cm&fs=1&to=hello@seleniumdigital.id&su=${subject}&body=${encodeURIComponent(bodyText)}`;
-
-    // Open Gmail in a new tab
-    window.open(gmailWebLink, "_blank");
-
-    // Show success message and reset form
-    successMsg.classList.remove("hidden");
-    successMsg.classList.add("flex");
-    form.reset();
-
-    // Hide success after 6 seconds
-    setTimeout(() => {
-      successMsg.classList.add("hidden");
-      successMsg.classList.remove("flex");
-    }, 6000);
   });
 }
 
