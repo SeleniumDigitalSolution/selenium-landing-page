@@ -22,7 +22,6 @@ export const translations = {
       brand: "Selenium",
       services: "Services",
       about: "About",
-      contact: "Contact",
       cta: "Get a Free Consultation",
     },
 
@@ -277,30 +276,6 @@ export const translations = {
       cta: "Inquire via WhatsApp",
     },
 
-    // ── Contact Section ──
-    contact: {
-      tag: "Get In Touch",
-      heading: "Start the Conversation",
-      subheading:
-        "Tell us about your challenge. Our team of senior consultants will respond within 24 hours with a preliminary assessment.",
-      namePlaceholder: "Full Name",
-      emailPlaceholder: "Business Email",
-      companyPlaceholder: "Company Name",
-      messagePlaceholder: "Describe your project or challenge...",
-      nameLabel: "Name",
-      emailLabel: "Email",
-      companyLabel: "Company",
-      messageLabel: "Message",
-      submitBtn: "Send Message",
-      submitSuccess: "Message sent. We'll be in touch within 24 hours.",
-      info: [
-        { label: "Email", value: "seleniumdigitalsolution@gmail.com" },
-        { label: "Phone", value: "+62 822 5321 0449" },
-        { label: "Headquarters", value: "Pontianak, Indonesia" },
-        { label: "Hours", value: "Mon–Fri: 09:00–17:00 WIB" },
-      ],
-    },
-
     // ── Footer ──
     footer: {
       tagline: "The Essential Element for Your Digital Ecosystem.",
@@ -308,7 +283,6 @@ export const translations = {
       links: [
         { label: "Services", href: "#services" },
         { label: "About", href: "#about" },
-        { label: "Contact", href: "#contact" },
       ],
       legalLinks: [
         { label: "Privacy Policy", href: "#" },
@@ -326,7 +300,6 @@ export const translations = {
       brand: "Selenium",
       services: "Layanan",
       about: "Tentang Kami",
-      contact: "Kontak",
       cta: "Konsultasi Gratis",
     },
 
@@ -581,30 +554,6 @@ export const translations = {
       cta: "Tanya via WhatsApp",
     },
 
-    // ── Kontak ──
-    contact: {
-      tag: "Hubungi Kami",
-      heading: "Mulai Percakapan",
-      subheading:
-        "Ceritakan tantangan Anda. Tim konsultan senior kami akan merespons dalam 24 jam dengan penilaian awal.",
-      namePlaceholder: "Nama Lengkap",
-      emailPlaceholder: "Email Bisnis",
-      companyPlaceholder: "Nama Perusahaan",
-      messagePlaceholder: "Deskripsikan proyek atau tantangan Anda...",
-      nameLabel: "Nama",
-      emailLabel: "Email",
-      companyLabel: "Perusahaan",
-      messageLabel: "Pesan",
-      submitBtn: "Kirim Pesan",
-      submitSuccess: "Pesan terkirim. Kami akan menghubungi Anda dalam 24 jam.",
-      info: [
-        { label: "Email", value: "seleniumdigitalsolution@gmail.com" },
-        { label: "Telepon", value: "+62 822 5321 0449" },
-        { label: "Kantor Pusat", value: "Pontianak, Indonesia" },
-        { label: "Jam Kerja", value: "Sen–Jum: 09:00–18:00 WIB" },
-      ],
-    },
-
     // ── Footer ──
     footer: {
       tagline: "Elemen Esensial untuk Ekosistem Digital Anda.",
@@ -612,7 +561,6 @@ export const translations = {
       links: [
         { label: "Layanan", href: "#services" },
         { label: "Tentang", href: "#about" },
-        { label: "Kontak", href: "#contact" },
       ],
       legalLinks: [
         { label: "Kebijakan Privasi", href: "#" },

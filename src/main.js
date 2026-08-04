@@ -47,7 +47,7 @@ const getSection = (key) => {
    ═════════════════════════════════════════════════════════════ */
 function renderNav() {
   const nav = getSection("nav");
-  const links = ["services", "about", "contact"];
+  const links = ["services", "about"];
 
   return `
   <nav id="navbar" role="navigation" aria-label="Main navigation"
@@ -491,150 +491,6 @@ function renderProjects() {
 }
 
 /* ═════════════════════════════════════════════════════════════
-   SECTION: CONTACT
-   ═════════════════════════════════════════════════════════════ */
-function renderContact() {
-  const contact = getSection("contact");
-
-  return `
-  <section id="contact" class="py-section bg-se-surface relative overflow-hidden"
-           aria-labelledby="contact-heading">
-
-    <!-- Background accent -->
-    <div class="absolute top-0 right-0 w-96 h-96 pointer-events-none" aria-hidden="true"
-         style="background:radial-gradient(circle,rgba(232,33,74,0.06) 0%,transparent 70%);transform:translate(30%,-20%);"></div>
-
-    <div class="section-container relative z-10">
-
-      <!-- Header -->
-      <div class="mb-16 reveal">
-        <div class="section-tag mb-4">${contact.tag}</div>
-        <h2 id="contact-heading" class="section-heading mb-4">${contact.heading}</h2>
-        <p class="section-subheading">${contact.subheading}</p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
-
-        <!-- Contact Form (3 cols) -->
-        <div class="lg:col-span-3 reveal reveal-delay-1">
-          <form id="contact-form" novalidate
-                class="space-y-6"
-                aria-label="Contact form">
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <!-- Name -->
-              <div class="form-group">
-                <label for="contact-name" class="form-label">${contact.nameLabel}</label>
-                <input type="text" id="contact-name" name="name" required
-                       class="form-input" placeholder="${contact.namePlaceholder}"
-                       autocomplete="name"
-                       aria-required="true">
-              </div>
-
-              <!-- Email -->
-              <div class="form-group">
-                <label for="contact-email" class="form-label">${contact.emailLabel}</label>
-                <input type="email" id="contact-email" name="email" required
-                       class="form-input" placeholder="${contact.emailPlaceholder}"
-                       autocomplete="email"
-                       aria-required="true">
-              </div>
-            </div>
-
-            <!-- Company -->
-            <div class="form-group">
-              <label for="contact-company" class="form-label">${contact.companyLabel}</label>
-              <input type="text" id="contact-company" name="company"
-                     class="form-input" placeholder="${contact.companyPlaceholder}"
-                     autocomplete="organization">
-            </div>
-
-            <!-- Message -->
-            <div class="form-group">
-              <label for="contact-message" class="form-label">${contact.messageLabel}</label>
-              <textarea id="contact-message" name="message" required
-                        class="form-textarea" placeholder="${contact.messagePlaceholder}"
-                        aria-required="true" rows="5"></textarea>
-            </div>
-
-            <!-- Submit -->
-            <button type="submit" id="contact-submit" class="btn-primary w-full justify-center" aria-label="${contact.submitBtn}">
-              <span id="contact-submit-text">${contact.submitBtn}</span>
-              <span id="contact-submit-icon">${icons.get("send", "w-4 h-4")}</span>
-            </button>
-
-            <!-- Success message (hidden by default) -->
-            <div id="contact-success" class="hidden flex items-center gap-3 p-4 rounded-sm bg-se-cyan/10 border border-se-cyan/30 text-se-cyan text-sm"
-                 role="alert" aria-live="polite">
-              ${icons.get("checkCircle", "w-5 h-5")}
-              <span>${contact.submitSuccess}</span>
-            </div>
-
-          </form>
-        </div>
-
-        <!-- Contact Info (2 cols) -->
-        <aside class="lg:col-span-2 reveal reveal-delay-2" aria-label="Contact information">
-          <div class="space-y-6">
-            ${contact.info
-              .map(
-                (item) => `
-              <div class="flex items-start gap-4 group">
-                <div class="flex-shrink-0 w-10 h-10 rounded-sm bg-se-surface border border-se-border
-                            flex items-center justify-center text-se-cyan
-                            group-hover:border-se-cyan/40 group-hover:bg-se-cyan/10
-                            transition-all duration-300">
-                  ${icons.getContactIcon(item.label)}
-                </div>
-                <div>
-                  <p class="form-label mb-1">${item.label}</p>
-                  <p class="text-se-silver text-sm">${item.value}</p>
-                </div>
-              </div>
-            `,
-              )
-              .join("")}
-          </div>
-
-          <!-- Social Links -->
-          <div class="mt-10 pt-8 border-t border-se-border">
-            <p class="form-label mb-4">Follow Us</p>
-            <div class="flex gap-4" role="list" aria-label="Social media links">
-              ${[
-                {
-                  icon: "instagram",
-                  label: "Instagram (@seleniumdigital.id)",
-                  href: "https://instagram.com/seleniumdigital.id",
-                },
-                {
-                  icon: "tiktok",
-                  label: "TikTok (selenium.id)",
-                  href: "https://tiktok.com/@selenium.id",
-                },
-              ]
-                .map(
-                  (social) => `
-                <a href="${social.href}" rel="noopener noreferrer" target="_blank"
-                   class="w-10 h-10 rounded-sm border border-se-border bg-se-surface flex items-center justify-center
-                          text-se-muted hover:text-se-cyan hover:border-se-cyan/40 hover:bg-se-cyan/10
-                          transition-all duration-300"
-                   aria-label="Visit our ${social.label}" role="listitem">
-                  ${icons.get(social.icon, "w-4 h-4")}
-                </a>
-              `,
-                )
-                .join("")}
-            </div>
-          </div>
-
-        </aside>
-
-      </div>
-    </div>
-  </section>`;
-}
-
-/* ═════════════════════════════════════════════════════════════
    SECTION: CATALOG
    ═════════════════════════════════════════════════════════════ */
 
@@ -794,7 +650,7 @@ function renderFooter() {
    ═════════════════════════════════════════════════════════════ */
 function renderWhatsAppFAB() {
   return `
-  <a href="https://wa.me/6282253210449" target="_blank" rel="noopener noreferrer"
+  <a href="https://wa.me/6282253210449?text=Halo,%20saya%20ingin%20konsultasi%20" target="_blank" rel="noopener noreferrer"
      class="fixed bottom-6 right-6 z-[99] bg-[#25D366] text-white p-4 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:scale-110 hover:shadow-[0_6px_25px_rgba(37,211,102,0.6)] transition-all duration-300 flex items-center justify-center animate-pulse"
      aria-label="Contact us on WhatsApp">
     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -817,7 +673,6 @@ function renderPage() {
       ${renderServices()}
       ${renderAbout()}
       ${renderProjects()}
-      ${renderContact()}
     </main>
     ${renderFooter()}
     ${renderWhatsAppFAB()}
@@ -828,7 +683,6 @@ function renderPage() {
   mountHeroCanvas();
   mountScrollReveal();
   mountLangToggle();
-  mountContactForm();
   mountMobileMenu();
 }
 
@@ -1099,50 +953,6 @@ function mountMobileMenu() {
     if (isOpen && !menu.contains(e.target) && !menuBtn.contains(e.target)) {
       toggle(false);
     }
-  });
-}
-
-/* ═════════════════════════════════════════════════════════════
-   BEHAVIOR: CONTACT FORM (client-side only simulation)
-   ═════════════════════════════════════════════════════════════ */
-function mountContactForm() {
-  const form = document.getElementById("contact-form");
-  if (!form) return;
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const submitBtn = document.getElementById("contact-submit");
-    const submitText = document.getElementById("contact-submit-text");
-    const submitIcon = document.getElementById("contact-submit-icon");
-    const successMsg = document.getElementById("contact-success");
-
-    const name = document.getElementById("contact-name").value.trim();
-    const email = document.getElementById("contact-email").value.trim();
-    const company = document.getElementById("contact-company").value.trim();
-    const message = document.getElementById("contact-message").value.trim();
-
-    const subject = encodeURIComponent(
-      `Inquiry from ${name} - ${company || "Individual"}`,
-    );
-    const bodyText = `Hello Selenium Digital Team,\n\nMy name is ${name}. You can reach me at ${email}.\n\nMessage:\n${message}\n\nBest Regards,\n${name}`;
-
-    // Create the Gmail compose URL
-    const gmailWebLink = `https://mail.google.com/mail/?view=cm&fs=1&to=hello@seleniumdigital.id&su=${subject}&body=${encodeURIComponent(bodyText)}`;
-
-    // Open Gmail in a new tab
-    window.open(gmailWebLink, "_blank");
-
-    // Show success message and reset form
-    successMsg.classList.remove("hidden");
-    successMsg.classList.add("flex");
-    form.reset();
-
-    // Hide success after 6 seconds
-    setTimeout(() => {
-      successMsg.classList.add("hidden");
-      successMsg.classList.remove("flex");
-    }, 6000);
   });
 }
 
