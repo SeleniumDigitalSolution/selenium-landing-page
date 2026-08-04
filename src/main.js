@@ -606,89 +606,6 @@ function renderProjects() {
 }
 
 /* ═════════════════════════════════════════════════════════════
-   SECTION: PRICING / PROMO
-   ═════════════════════════════════════════════════════════════ */
-function renderPricing() {
-  const pr = getSection("pricing");
-  if (!pr) return "";
-
-  return `
-  <section id="promo" class="py-section bg-se-dark relative overflow-hidden"
-           aria-labelledby="pricing-heading">
-    <!-- Background grid pattern -->
-    <div class="absolute inset-0 opacity-5 pointer-events-none" aria-hidden="true"
-         style="background-image:radial-gradient(var(--se-cyan) 1px,transparent 1px);background-size:40px 40px;"></div>
-
-    <div class="section-container relative z-10">
-
-      <!-- Header -->
-      <div class="text-center mb-16 reveal">
-        <div class="section-tag mb-4 justify-center text-se-red border-se-red/30 bg-se-red/10">${pr.tag}</div>
-        <h2 id="pricing-heading" class="section-heading mb-4">${pr.heading}</h2>
-        <p class="section-subheading mx-auto text-center">${pr.subheading}</p>
-      </div>
-
-      <div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-8 reveal reveal-delay-1">
-        <!-- Main Pricing Card -->
-        <div class="flex-1 se-card border-se-cyan/40 bg-se-surface shadow-[0_0_40px_rgba(0,212,255,0.1)] flex flex-col overflow-hidden relative">
-          <div class="absolute top-0 right-0 p-4 opacity-10">
-            <svg class="w-32 h-32 text-se-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-          </div>
-
-          <h3 class="font-display font-bold text-2xl text-se-white mb-2 relative z-10">${pr.planName}</h3>
-
-          <div class="my-6 relative z-10">
-            <div class="flex items-baseline gap-2">
-              <span class="font-display font-bold text-4xl lg:text-5xl text-se-cyan">${pr.price}</span>
-            </div>
-            <span class="text-sm text-se-muted block mt-1">${pr.priceNote}</span>
-          </div>
-
-          <div class="space-y-4 mb-8 flex-1 relative z-10">
-            ${pr.features
-              .map(
-                (f) => `
-              <div class="flex items-start gap-3">
-                <div class="flex-shrink-0 w-5 h-5 text-se-cyan mt-0.5">
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                </div>
-                <span class="text-se-silver text-sm">${f}</span>
-              </div>
-            `,
-              )
-              .join("")}
-          </div>
-
-          <a href="#contact" class="btn-primary w-full justify-center text-sm relative z-10 hover:shadow-[0_0_20px_rgba(0,212,255,0.4)]">
-            ${pr.cta}
-          </a>
-        </div>
-
-        <!-- Renewals Sidebar -->
-        <div class="md:w-1/3 flex flex-col justify-center">
-          <div class="bg-se-void border border-se-border rounded-sm p-6">
-            <h4 class="font-display text-sm font-semibold text-se-white mb-6 uppercase tracking-wider">${pr.renewalHeading}</h4>
-            <div class="space-y-4">
-              ${pr.renewals
-                .map(
-                  (r) => `
-                <div class="flex justify-between items-center border-b border-se-border/50 pb-3 last:border-0 last:pb-0">
-                  <span class="text-sm text-se-muted">${r.period}</span>
-                  <span class="font-mono text-sm text-se-cyan">${r.price}</span>
-                </div>
-              `,
-                )
-                .join("")}
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>`;
-}
-
-/* ═════════════════════════════════════════════════════════════
    SECTION: CONTACT
    ═════════════════════════════════════════════════════════════ */
 function renderContact() {
@@ -1011,7 +928,6 @@ function renderPage() {
     ${renderNav()}
     <main id="main-content">
       ${renderHero()}
-      ${renderPricing()}
       ${renderCatalog()}
       ${renderServices()}
       ${renderAbout()}
