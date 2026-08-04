@@ -22,7 +22,6 @@ export const translations = {
       brand: "Selenium",
       services: "Services",
       about: "About",
-      techStack: "Tech Stack",
       process: "Process",
       contact: "Contact",
       cta: "Get a Free Consultation",
@@ -146,39 +145,6 @@ export const translations = {
         {
           title: "Proactive Intelligence",
           desc: "We identify risks before they become incidents through continuous monitoring and threat intelligence.",
-        },
-      ],
-    },
-
-    // ── Tech Stack Section ──
-    techStack: {
-      tag: "Technology Expertise",
-      heading: "Built on the Tools Enterprises Trust",
-      subheading:
-        "We work with robust, industry-proven technologies across every layer of the modern digital stack.",
-      categories: [
-        {
-          name: "Cloud & Infrastructure",
-          items: ["AWS", "GCP", "Azure", "Terraform", "Kubernetes", "Docker"],
-        },
-        {
-          name: "Development",
-          items: ["React", "Next.js", "TypeScript", "Node.js", "Python"],
-        },
-        {
-          name: "Data & AI",
-          items: [
-            "PyTorch",
-            "LangChain",
-            "PostgreSQL",
-            "MySQL",
-            "AI Integration",
-            "Tensor Flow",
-          ],
-        },
-        {
-          name: "DevOps",
-          items: ["GitHub Actions", "CI/CD", "Elasticsearch"],
         },
       ],
     },
@@ -393,7 +359,6 @@ export const translations = {
       brand: "Selenium",
       services: "Layanan",
       about: "Tentang Kami",
-      techStack: "Teknologi",
       process: "Proses",
       contact: "Kontak",
       cta: "Konsultasi Gratis",
@@ -517,39 +482,6 @@ export const translations = {
         {
           title: "Intelijen Proaktif",
           desc: "Kami mengidentifikasi risiko sebelum menjadi insiden melalui pemantauan berkelanjutan dan threat intelligence.",
-        },
-      ],
-    },
-
-    // ── Stack Teknologi ──
-    techStack: {
-      tag: "Keahlian Teknologi",
-      heading: "Dibangun di Atas Alat yang Dipercaya Enterprise",
-      subheading:
-        "Kami bekerja dengan teknologi industri yang tangguh dan teruji di setiap lapisan digital modern.",
-      categories: [
-        {
-          name: "Cloud & Infrastruktur",
-          items: ["AWS", "GCP", "Azure", "Terraform", "Kubernetes", "Docker"],
-        },
-        {
-          name: "Pengembangan",
-          items: ["React", "Next.js", "TypeScript", "Node.js", "Python"],
-        },
-        {
-          name: "Data & AI",
-          items: [
-            "PyTorch",
-            "LangChain",
-            "PostgreSQL",
-            "MySQL",
-            "AI Integration",
-            "Tensor Flow",
-          ],
-        },
-        {
-          name: "DevOps",
-          items: ["GitHub Actions", "CI/CD", "Elasticsearch"],
         },
       ],
     },

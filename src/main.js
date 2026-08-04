@@ -47,7 +47,7 @@ const getSection = (key) => {
    ═════════════════════════════════════════════════════════════ */
 function renderNav() {
   const nav = getSection("nav");
-  const links = ["services", "about", "techStack", "process", "contact"];
+  const links = ["services", "about", "process", "contact"];
 
   return `
   <nav id="navbar" role="navigation" aria-label="Main navigation"
@@ -408,64 +408,6 @@ function renderAbout() {
         </div>
 
       </div>
-    </div>
-  </section>`;
-}
-
-/* ═════════════════════════════════════════════════════════════
-   SECTION: TECH STACK
-   ═════════════════════════════════════════════════════════════ */
-function renderTechStack() {
-  const ts = getSection("techStack");
-
-  return `
-  <section id="tech-stack" class="py-section bg-se-dark relative overflow-hidden"
-           aria-labelledby="tech-heading">
-
-    <!-- Top fade from previous section -->
-    <div class="absolute top-0 inset-x-0 h-24 bg-fade-up-dark pointer-events-none" aria-hidden="true"></div>
-
-    <div class="section-container relative z-10">
-
-      <!-- Header -->
-      <div class="text-center mb-16 reveal">
-        <div class="section-tag mb-4 justify-center">${ts.tag}</div>
-        <h2 id="tech-heading" class="section-heading mb-4">${ts.heading}</h2>
-        <p class="section-subheading mx-auto text-center">${ts.subheading}</p>
-      </div>
-
-      <!-- Tech Categories -->
-      <div class="space-y-12" role="list" aria-label="Technology categories">
-        ${ts.categories
-          .map(
-            (cat, ci) => `
-          <div class="reveal reveal-delay-${ci + 1}" role="listitem">
-            <!-- Category label -->
-            <h3 class="font-mono text-xs uppercase tracking-[0.2em] text-se-muted mb-5 flex items-center gap-3">
-              <span class="w-6 h-px bg-se-border inline-block"></span>
-              ${cat.name}
-              <span class="flex-1 h-px bg-se-border inline-block"></span>
-            </h3>
-
-            <!-- Tech badges -->
-            <div class="flex flex-wrap gap-3" role="list" aria-label="${cat.name} technologies">
-              ${cat.items
-                .map(
-                  (item) => `
-                <div class="tech-badge" role="listitem">
-                  <div class="w-1.5 h-1.5 rounded-full bg-se-cyan/60"></div>
-                  <span class="font-mono text-sm text-se-silver">${item}</span>
-                </div>
-              `,
-                )
-                .join("")}
-            </div>
-          </div>
-        `,
-          )
-          .join("")}
-      </div>
-
     </div>
   </section>`;
 }
@@ -931,7 +873,6 @@ function renderPage() {
       ${renderCatalog()}
       ${renderServices()}
       ${renderAbout()}
-      ${renderTechStack()}
       ${renderProcess()}
       ${renderProjects()}
       ${renderContact()}
