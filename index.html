@@ -5,8 +5,8 @@
 
     <!-- ─── Viewport & Theme ─── -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0D0E14" />
-    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#FFFAFF" id="theme-color-meta" />
+    <meta name="color-scheme" content="light dark" />
 
     <!-- ─── SEO Meta Tags ─── -->
     <title>Selenium Digital Consultant — Mitra IT UMKM & Enterprise</title>
@@ -45,8 +45,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- ─── Google Fonts: Inter + Outfit + JetBrains Mono ─── -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    <!-- ─── Google Fonts: Plus Jakarta Sans (heading) + Inter (body) ─── -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet" />
 
     <!-- ─── Structured Data (JSON-LD) for SEO ─── -->
@@ -82,22 +82,27 @@
     }
     </script>
 
+    <!-- ─── FOUC Prevention: theme detection runs before paint ─── -->
+    <script>
+      (function() {
+        var saved = localStorage.getItem('theme');
+        var preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        var theme = saved || preferred;
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          var meta = document.getElementById('theme-color-meta');
+          if (meta) meta.setAttribute('content', '#0B1120');
+        }
+      })();
+    </script>
+
     <!-- ─── Critical Inline CSS: prevent flash of unstyled content ─── -->
     <style>
-      /* Prevent FOUC: set background immediately before JS/CSS loads */
-      html { background: #0D0E14; }
-      body { margin: 0; background: #0D0E14; }
+      /* Prevent FOUC: light mode default */
+      html { background: #FFFAFF; }
+      html[data-theme="dark"] { background: #0B1120; }
+      body { margin: 0; }
       #app { min-height: 100vh; }
-
-      /* Initial loading state */
-      #app:empty::after {
-        content: '';
-        display: block;
-        position: fixed;
-        inset: 0;
-        background: #0D0E14;
-        z-index: 9999;
-      }
     </style>
 
     <!-- ─── Performance hints ─── -->

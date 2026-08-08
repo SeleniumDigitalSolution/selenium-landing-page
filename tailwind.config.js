@@ -15,69 +15,30 @@ export default {
       //   - Metallic silver           → text & UI elements
       // ─────────────────────────────────────────────────
       colors: {
-        // Backgrounds (metallic dark allotrope hierarchy)
-        'se-void':       '#080A0F', // Deepest void — page root bg
-        'se-dark':       '#0D0E14', // Primary background
-        'se-surface':    '#141720', // Elevated cards & panels
-        'se-panel':      '#1C2032', // Modals, popovers
-        'se-border':     '#252A3A', // Dividers & subtle borders
-        'se-border-dim': '#1A1F2E', // Ultra-subtle separators
-
-        // Text (metallic silver spectrum)
-        'se-white':      '#F0F2F5', // Primary text
-        'se-silver':     '#B8BDD0', // Secondary text
-        'se-muted':      '#6B7394', // Placeholder, labels
-        'se-faint':      '#3A4060', // Disabled states
-
-        // Primary Accent — Bioluminescent Cyan (digital energy / spark of life)
+        // ── ONLY kept for opacity-modifier utilities (bg-se-cyan/10, border-se-cyan/40, etc.) ──
+        // ALL surface, background, and text colors are handled via CSS variables in style.css
         'se-cyan': {
-          DEFAULT: '#00D4FF',
-          50:  '#E5FBFF',
-          100: '#B8F4FF',
-          200: '#7AEBFF',
-          300: '#3DDFFF',
-          400: '#00D4FF', // ← PRIMARY CYAN ACCENT
-          500: '#00B8E5',
-          600: '#0090C2',
-          700: '#006B99',
-          800: '#004A70',
-          900: '#002A47',
-        },
-
-        // Secondary Accent — Deep Allotrope Red (vital energy)
-        'se-red': {
-          DEFAULT: '#E8214A',
-          50:  '#FFF0F3',
-          100: '#FFD6DE',
-          200: '#FFA8BB',
-          300: '#FF7096',
-          400: '#E8214A', // ← PRIMARY RED ACCENT
-          500: '#C41840',
-          600: '#A01036',
-          700: '#7C0A2B',
-          800: '#580420',
-          900: '#340015',
-        },
-
-        // Metallic silver gradients (Porsche-inspired chrome)
-        'se-chrome': {
-          100: '#E8EBF2',
-          200: '#C8CDD6',
-          300: '#A8ADD6',
-          400: '#8A909F',
-          500: '#6C7085',
+          DEFAULT: '#0A64BC', // brand primary blue
+          50:  '#E8F1FB',
+          100: '#C5D9F4',
+          200: '#9BBDE9',
+          300: '#6B9FDB',
+          400: '#0A64BC',
+          500: '#084E93',
+          600: '#063B6E',
         },
       },
 
+
       // ─────────────────────────────────────────────────
-      // TYPOGRAPHY SYSTEM
-      // Primary: "Inter" (precision/tech)
-      // Display: "Outfit" (bold, modern luxury headers)
-      // Mono: "JetBrains Mono" (tech stack / code labels)
+      // TYPOGRAPHY SYSTEM — UI Guideline v1.0
+      // Heading: "Plus Jakarta Sans" (modern, warm, approachable)
+      // Body:    "Inter" (highly legible on screen, enterprise-grade)
+      // Mono:    "JetBrains Mono" (tech stack / code labels)
       // ─────────────────────────────────────────────────
       fontFamily: {
         sans:    ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Outfit', 'Inter', 'sans-serif'],
+        display: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
         mono:    ['"JetBrains Mono"', '"Fira Code"', 'monospace'],
       },
       fontSize: {
@@ -155,37 +116,37 @@ export default {
         'glass': '20px',
       },
       boxShadow: {
-        'glow-cyan':  '0 0 30px rgba(0, 212, 255, 0.25)',
-        'glow-red':   '0 0 30px rgba(232, 33, 74, 0.3)',
-        'card':       '0 4px 24px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255,255,255,0.06) inset',
-        'card-hover': '0 12px 48px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 212, 255, 0.12)',
-        'nav':        '0 1px 0 rgba(255,255,255,0.05), 0 4px 32px rgba(0,0,0,0.6)',
-        'hero-text':  '0 0 60px rgba(0, 212, 255, 0.3)',
+        'glow-cyan':  '0 0 30px rgba(10, 100, 188, 0.20)',
+        'glow-red':   '0 0 30px rgba(220, 38, 38, 0.20)',
+        'card':       '0 2px 8px rgba(10, 100, 188, 0.08)',
+        'card-hover': '0 8px 24px rgba(10, 100, 188, 0.12)',
+        'nav':        '0 1px 0 rgba(0,0,0,0.06), 0 4px 16px rgba(10,100,188,0.08)',
+        'hero-text':  '0 0 40px rgba(10, 100, 188, 0.15)',
       },
 
       // ─────────────────────────────────────────────────
       // GRADIENTS (stored as bg-gradient utilities)
       // ─────────────────────────────────────────────────
       backgroundImage: {
-        // Primary dark gradient (background meshes)
-        'se-gradient':       'linear-gradient(135deg, #0D0E14 0%, #141720 50%, #0D1018 100%)',
-        'se-cyan-gradient':  'linear-gradient(135deg, #00D4FF 0%, #0090C2 100%)',
-        'se-red-gradient':   'linear-gradient(135deg, #E8214A 0%, #7C0A2B 100%)',
+        // Primary light gradient (background meshes)
+        'se-gradient':       'linear-gradient(135deg, #FFFAFF 0%, #F6F2F7 50%, #FFFAFF 100%)',
+        'se-cyan-gradient':  'linear-gradient(135deg, #0A64BC 0%, #084E93 100%)',
+        'se-red-gradient':   'linear-gradient(135deg, #DC2626 0%, #991B1B 100%)',
         'se-chrome-gradient':'linear-gradient(135deg, #C8CDD6 0%, #8A909F 100%)',
 
-        // Hero section mesh gradient
-        'hero-mesh':         'radial-gradient(ellipse 80% 80% at 50% -10%, rgba(0,212,255,0.15) 0%, transparent 60%), radial-gradient(ellipse 60% 60% at 80% 80%, rgba(232,33,74,0.08) 0%, transparent 60%)',
+        // Hero section mesh gradient — brand blue tint, light-mode friendly
+        'hero-mesh':         'radial-gradient(ellipse 80% 80% at 50% -10%, rgba(10,100,188,0.08) 0%, transparent 60%), radial-gradient(ellipse 60% 60% at 80% 80%, rgba(13,148,136,0.05) 0%, transparent 60%)',
 
-        // Glow overlays
-        'glow-cyan-radial':  'radial-gradient(circle, rgba(0,212,255,0.2) 0%, transparent 70%)',
-        'glow-red-radial':   'radial-gradient(circle, rgba(232,33,74,0.2) 0%, transparent 70%)',
+        // Glow overlays (brand blue)
+        'glow-cyan-radial':  'radial-gradient(circle, rgba(10,100,188,0.12) 0%, transparent 70%)',
+        'glow-red-radial':   'radial-gradient(circle, rgba(220,38,38,0.12) 0%, transparent 70%)',
 
         // Subtle shimmer for cards
-        'shimmer':           'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 50%, transparent 100%)',
+        'shimmer':           'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.5) 50%, transparent 100%)',
 
         // Section divider fades
-        'fade-down':         'linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.8) 100%)',
-        'fade-up-dark':      'linear-gradient(0deg, #0D0E14 0%, transparent 100%)',
+        'fade-down':         'linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.05) 100%)',
+        'fade-up-dark':      'linear-gradient(0deg, var(--bg) 0%, transparent 100%)',
       },
 
       // ─────────────────────────────────────────────────

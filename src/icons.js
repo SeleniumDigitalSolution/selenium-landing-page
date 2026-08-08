@@ -121,6 +121,16 @@ export const icons = {
       star: `<svg class="${cls}" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
       </svg>`,
+      moon: `<svg class="${cls}" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+          d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+      </svg>`,
+
+      sun: `<svg class="${cls}" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+          d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+      </svg>`,
     };
 
     return map[name] || map.checkCircle;
