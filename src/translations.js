@@ -317,13 +317,12 @@ export const translations = {
 
     contact: {
       title: "Siap untuk menyelesaikan masalahmu?",
-      description: "Mari diskusikan bersaa kami agar bisa mencapai target",
+      description: "Mari diskusikan bersama kami agar bisa mencapai target",
       btnText:"Hubungi lewat Whatsapp"
     },
 
     // ── Bagian Hero ──
     hero: {
-      eyebrow: "Elemen Digital yang Esensial",
       headline1: "Kami Menggerakkan",
       headline2: "Inti Digital",
       headline3: "Bisnis Anda.",

@@ -63,10 +63,10 @@ function renderNav() {
             <!-- Atomic orbit logo mark -->
             <div class="absolute inset-0 rounded-full border border-se-cyan/40 animate-spin" style="animation-duration:8s;"></div>
             <div class="absolute inset-1 rounded-full border border-se-cyan/20 animate-spin" style="animation-duration:5s;animation-direction:reverse;"></div>
-            <div class="absolute" style="top:50%;left:50%;transform:translate(-50%,-50%);width:6px;height:6px;border-radius:50%;background:var(--se-cyan);box-shadow:0 0 8px var(--se-cyan);"></div>
+            <div class="absolute" style="top:50%;left:50%;transform:translate(-50%,-50%);width:6px;height:6px;border-radius:50%;background:var(--primary);box-shadow:0 0 8px rgba(10,100,188,0.5);"></div>
           </div>
-          <span class="font-display font-bold text-lg tracking-tight text-se-white group-hover:text-se-cyan transition-colors duration-300">
-            Se<span class="text-se-cyan">lenium</span>
+          <span class="footer-brand text-lg tracking-tight">
+            Se<span>lenium</span>
           </span>
         </a>
 
@@ -90,7 +90,7 @@ function renderNav() {
         <!-- Right Controls -->
         <div class="flex items-center gap-4">
           <!-- Language Toggle -->
-          <div class="flex items-center gap-1 p-1 rounded-sm border border-se-border bg-se-surface/50" role="group" aria-label="Language selector">
+          <div class="flex items-center gap-1 p-1 rounded-md border border-[var(--border)] bg-[var(--surface-2)]" role="group" aria-label="Language selector">
             <button id="lang-en" class="lang-btn ${currentLang === "en" ? "active" : ""}"
                     data-lang="en" aria-pressed="${currentLang === "en"}" aria-label="Switch to English">
               EN
@@ -101,14 +101,23 @@ function renderNav() {
             </button>
           </div>
 
+          <!-- Dark Mode Toggle -->
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <span id="theme-toggle-icon" style="display:flex;align-items:center;justify-content:center;">
+              ${document.documentElement.getAttribute('data-theme') === 'dark'
+                ? icons.get('sun', 'w-4 h-4')
+                : icons.get('moon', 'w-4 h-4')}
+            </span>
+          </button>
+
           <!-- CTA Button (Desktop) -->
-          <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex btn-primary text-sm py-2.5 px-5" id="nav-cta">
+          <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex btn-primary btn-sm" id="nav-cta">
             ${nav.cta}
             ${icons.get("arrowRight", "w-4 h-4")}
           </a>
 
           <!-- Mobile Menu Toggle -->
-          <button id="mobile-menu-btn" class="lg:hidden p-2 text-se-silver hover:text-se-white transition-colors"
+          <button id="mobile-menu-btn" class="theme-toggle-btn lg:hidden"
                   aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
             <span id="mobile-menu-icon">${icons.get("menu", "w-5 h-5")}</span>
           </button>
@@ -123,7 +132,7 @@ function renderNav() {
           .map(
             (key) => `
           <a href="#${key.replace("techStack", "tech-stack")}"
-             class="mobile-nav-link text-se-silver hover:text-se-cyan text-base font-medium py-2 border-b border-se-border/50 transition-colors duration-300"
+             class="mobile-nav-link text-base font-medium py-3 border-b border-[var(--border)]"
              aria-label="Navigate to ${nav[key]}">
             ${nav[key]}
           </a>
@@ -146,7 +155,7 @@ function renderHero() {
   const hero = getSection("hero");
 
   return `
-  <section id="home" class="relative min-h-screen flex flex-col justify-center overflow-hidden bg-se-void"
+  <section id="home" class="relative flex flex-col justify-center overflow-hidden"
            aria-labelledby="hero-headline" role="banner">
 
     <!-- Particle Canvas Background -->
@@ -155,25 +164,17 @@ function renderHero() {
     <!-- Gradient mesh overlay -->
     <div class="absolute inset-0 bg-hero-mesh pointer-events-none" aria-hidden="true"></div>
 
-    <!-- Scan line decorative effect -->
-    <div class="absolute inset-x-0 pointer-events-none overflow-hidden opacity-30" aria-hidden="true"
-         style="height:2px;top:0;background:linear-gradient(90deg,transparent,var(--se-cyan),transparent);animation:scanLine 6s linear infinite;"></div>
+    <div class="hero-scanline" aria-hidden="true"></div>
 
     <!-- Content -->
     <div class="section-container relative z-10 pt-32 pb-24 md:pt-40 md:pb-32">
       <div class="max-w-4xl">
-
-        <!-- Eyebrow Label -->
-        <div class="section-tag mb-6 reveal" role="text">
-          ${hero.eyebrow}
-        </div>
-
         <!-- Main Headline -->
-        <h1 id="hero-headline" class="font-display leading-none tracking-tight mb-8 reveal reveal-delay-1"
-            style="font-size:clamp(3rem,7vw,6.5rem);font-weight:800;">
-          <span class="block text-se-white">${hero.headline1}</span>
-          <span class="block text-gradient-cyan glitch-text" data-text="${hero.headline2}">${hero.headline2}</span>
-          <span class="block text-se-white">${hero.headline3}</span>
+        <h1 id="hero-headline" class="font-display tracking-tight mb-8 reveal reveal-delay-1"
+            style="font-size:clamp(3rem,7vw,6.5rem);font-weight:800;line-height:1.15;">
+          <span class="block pb-1">${hero.headline1}</span>
+          <span class="block pb-1 text-gradient-primary">${hero.headline2}</span>
+          <span class="block pb-1">${hero.headline3}</span>
         </h1>
 
         <!-- Subheadline -->
@@ -193,8 +194,7 @@ function renderHero() {
         </div>
 
         <!-- Stats Bar -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-se-border rounded-sm overflow-hidden reveal reveal-delay-4"
-             role="list" aria-label="Key statistics">
+        <div class="stats-bar reveal reveal-delay-4" role="list" aria-label="Key statistics">
           ${[
             { val: hero.stat1Value, label: hero.stat1Label },
             { val: hero.stat2Value, label: hero.stat2Label },
@@ -202,15 +202,10 @@ function renderHero() {
             { val: hero.stat4Value, label: hero.stat4Label },
           ]
             .map(
-              (stat, i) => `
-            <div class="bg-se-dark/90 px-6 py-5 text-center group hover:bg-se-surface transition-colors duration-300"
-                 role="listitem">
-              <div class="font-display font-bold text-2xl md:text-3xl text-se-cyan mb-1
-                          group-hover:scale-110 transition-transform duration-300 origin-center"
-                   data-stat-value="${stat.val}">
-                ${stat.val}
-              </div>
-              <div class="text-xs text-se-muted tracking-wide uppercase font-mono">${stat.label}</div>
+              (stat) => `
+            <div class="stats-bar-item" role="listitem">
+              <div class="stat-value" data-stat-value="${stat.val}">${stat.val}</div>
+              <div class="stat-label">${stat.label}</div>
             </div>
           `,
             )
@@ -223,8 +218,8 @@ function renderHero() {
     <!-- Scroll indicator -->
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 reveal reveal-delay-5"
          aria-hidden="true">
-      <span class="text-xs text-se-faint font-mono tracking-widest uppercase">Scroll</span>
-      <div class="w-px h-12 bg-gradient-to-b from-se-cyan to-transparent animate-pulse"></div>
+      <span class="scroll-indicator">Scroll</span>
+      <div class="scroll-indicator-line"></div>
     </div>
 
   </section>`;
@@ -237,12 +232,11 @@ function renderServices() {
   const svc = getSection("services");
 
   return `
-  <section id="services" class="py-section bg-se-dark relative overflow-hidden"
+  <section id="services" class="py-section relative overflow-hidden"
            aria-labelledby="services-heading">
 
-    <!-- Background grid pattern -->
-    <div class="absolute inset-0 opacity-5 pointer-events-none" aria-hidden="true"
-         style="background-image:linear-gradient(var(--se-border) 1px,transparent 1px),linear-gradient(90deg,var(--se-border) 1px,transparent 1px);background-size:60px 60px;"></div>
+    <div class="absolute inset-0 opacity-[0.04] pointer-events-none" aria-hidden="true"
+         style="background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;"></div>
 
     <div class="section-container relative z-10">
 
@@ -272,13 +266,12 @@ function renderServices() {
             </div>
 
             <!-- Title -->
-            <h3 id="service-${i}-title" class="font-display font-semibold text-lg text-se-white mb-3
-                        group-hover:text-se-cyan transition-colors duration-300">
+            <h3 id="service-${i}-title" class="font-display font-semibold text-lg mb-3">
               ${item.title}
             </h3>
 
             <!-- Description -->
-            <p class="text-se-muted text-sm leading-relaxed mb-6">${item.description}</p>
+            <p class="text-sm leading-relaxed mb-6">${item.description}</p>
 
             <!-- Tags -->
             <div class="flex flex-wrap gap-2" role="list" aria-label="Technologies used">
@@ -312,25 +305,25 @@ function renderCTA() {
   return `
   <section id="contact" class="py-20 relative overflow-hidden">
     <div class="section-container relative z-10">
-      <div class="glass-panel rounded-2xl p-8 md:p-16 text-center max-w-4xl mx-auto border border-se-border relative overflow-hidden">
+      <div class="glass-panel rounded-2xl p-8 md:p-16 text-center max-w-4xl mx-auto relative overflow-hidden">
 
-        <!-- Decorative background glow -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-md bg-se-cyan/10 blur-[100px] rounded-full z-0 pointer-events-none"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-md blur-[80px] rounded-full z-0 pointer-events-none"
+             style="background:radial-gradient(circle,rgba(10,100,188,0.12) 0%,transparent 70%);"></div>
 
         <div class="relative z-10 flex flex-col items-center">
-          <div class="w-16 h-16 rounded-full bg-se-cyan/10 flex items-center justify-center mb-6 border border-se-cyan/20">
-            ${typeof icons !== 'undefined' ? icons.get("messageCircle", "w-8 h-8 text-se-cyan") : ''}
+          <div class="w-16 h-16 rounded-full bg-[var(--primary-tint)] flex items-center justify-center mb-6 border border-[var(--primary)]/20">
+            ${typeof icons !== 'undefined' ? icons.get("messageCircle", "w-8 h-8 text-[var(--primary)]") : ''}
           </div>
 
-          <h2 class="text-3xl md:text-5xl font-display font-bold text-se-white mb-4 tracking-tight">
+          <h2 class="text-3xl md:text-5xl font-display font-bold mb-4 tracking-tight">
             ${cta.title}
           </h2>
 
-          <p class="text-se-silver text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+          <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto">
             ${cta.description}
           </p>
 
-          <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center text-base md:text-lg py-3 px-8 shadow-lg shadow-se-cyan/20 transition-transform hover:-translate-y-1">
+          <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center text-base md:text-lg py-3 px-8 shadow-lg transition-transform hover:-translate-y-1">
             ${cta.btnText || cta.cta || 'Consult Now'}
             ${typeof icons !== 'undefined' ? icons.get("arrowRight", "w-5 h-5 ml-2") : ''}
           </a>
@@ -348,14 +341,14 @@ function renderAbout() {
   const about = getSection("about");
 
   return `
-  <section id="about" class="py-section bg-se-surface relative overflow-hidden"
+  <section id="about" class="py-section relative overflow-hidden"
            aria-labelledby="about-heading">
 
     <!-- Decorative glow orbs -->
     <div class="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" aria-hidden="true"
-         style="background:radial-gradient(circle,rgba(0,212,255,0.08) 0%,transparent 70%);transform:translate(30%,-30%);"></div>
+         style="background:radial-gradient(circle,rgba(10,100,188,0.07) 0%,transparent 70%);transform:translate(30%,-30%);"></div>
     <div class="absolute bottom-0 left-0 w-64 h-64 rounded-full pointer-events-none" aria-hidden="true"
-         style="background:radial-gradient(circle,rgba(232,33,74,0.06) 0%,transparent 70%);transform:translate(-30%,30%);"></div>
+         style="background:radial-gradient(circle,rgba(13,148,136,0.05) 0%,transparent 70%);transform:translate(-30%,30%);"></div>
 
     <div class="section-container relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
@@ -371,9 +364,9 @@ function renderAbout() {
           </div>
 
           <!-- Pull Quote -->
-          <blockquote class="relative pl-6 border-l-2 border-se-cyan py-2 mb-10 reveal reveal-delay-4"
+          <blockquote class="pull-quote py-2 mb-10 reveal reveal-delay-4"
                       aria-label="Company philosophy quote">
-            <p class="text-se-white font-display font-medium text-lg italic leading-snug">
+            <p class="font-display font-medium text-lg leading-snug">
               ${about.quote}
             </p>
           </blockquote>
@@ -384,10 +377,10 @@ function renderAbout() {
               .map(
                 (vp, i) => `
               <div class="flex items-start gap-4 reveal reveal-delay-${i + 1}" role="listitem">
-                <div class="flex-shrink-0 w-6 h-6 text-se-cyan mt-0.5">${icons.get("checkCircle", "w-5 h-5")}</div>
+                <div class="value-prop-icon flex-shrink-0 w-6 h-6 mt-0.5">${icons.get("checkCircle", "w-5 h-5")}</div>
                 <div>
-                  <h4 class="font-display font-semibold text-se-white mb-1">${vp.title}</h4>
-                  <p class="text-se-muted text-sm leading-relaxed">${vp.desc}</p>
+                  <h4 class="value-prop-title mb-1">${vp.title}</h4>
+                  <p class="value-prop-desc leading-relaxed">${vp.desc}</p>
                 </div>
               </div>
             `,
@@ -443,7 +436,7 @@ function renderAbout() {
 
             <!-- Background glow -->
             <div class="absolute inset-0 rounded-full"
-                 style="background:radial-gradient(circle,rgba(0,212,255,0.06) 0%,transparent 70%);"></div>
+                 style="background:radial-gradient(circle,rgba(10,100,188,0.08) 0%,transparent 70%);"></div>
           </div>
         </div>
 
@@ -459,12 +452,12 @@ function renderProjects() {
   const proj = getSection("portfolio");
 
   return `
-  <section id="portfolio" class="py-section bg-se-dark relative overflow-hidden"
+  <section id="portfolio" class="py-section relative overflow-hidden"
            aria-labelledby="projects-heading">
 
     <!-- Glow background accents -->
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
-         style="background:radial-gradient(ellipse 60% 40% at 50% 50%,rgba(0,212,255,0.04) 0%,transparent 70%);"></div>
+         style="background:radial-gradient(ellipse 60% 40% at 50% 50%,rgba(10,100,188,0.05) 0%,transparent 70%);"></div>
 
     <div class="section-container relative z-10">
 
@@ -485,12 +478,11 @@ function renderProjects() {
                    aria-labelledby="project-${i}">
 
             <div class="mb-4">
-              <h3 id="project-${i}" class="font-display font-semibold text-lg text-se-white mb-1
-                         group-hover:text-se-cyan transition-colors duration-300">${item.title}</h3>
+              <h3 id="project-${i}" class="font-display font-semibold text-lg mb-1">${item.title}</h3>
               <p class="text-se-cyan text-sm font-mono">${item.client}</p>
             </div>
 
-            <p class="text-se-muted text-sm leading-relaxed mb-6 flex-grow">${item.description}</p>
+            <p class="text-sm leading-relaxed mb-6 flex-grow">${item.description}</p>
 
             <!-- Tags -->
             <div class="flex flex-wrap gap-2 mt-auto" role="list" aria-label="Technologies used">
@@ -509,10 +501,9 @@ function renderProjects() {
               item.url
                 ? `
             <a href="${item.url}" target="_blank" rel="noopener noreferrer"
-               class="w-full mt-5 inline-flex items-center gap-2 px-4 py-2 text-xs font-mono font-semibold
+               class="w-full mt-5 inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold
                       text-se-cyan border border-se-cyan/40 rounded-sm bg-se-cyan/5
-                      hover:bg-se-cyan/15 hover:border-se-cyan/70 hover:shadow-[0_0_12px_rgba(0,212,255,0.2)]
-                      transition-all duration-300 self-start"
+                      hover:bg-se-cyan/15 hover:border-se-cyan transition-all duration-300 self-start"
                aria-label="Visit ${item.title} project">
               ${icons.get("arrowRight", "w-max h-3")}
               ${item.text}
@@ -538,17 +529,13 @@ function renderCatalog() {
   const cat = getSection("catalog");
 
   return `
-    <section id="catalog" class="py-section bg-se-dark relative overflow-hidden"
+    <section id="catalog" class="py-section relative overflow-hidden"
              aria-labelledby="catalog-heading">
-      <!-- Background grid pattern -->
-      <div class="absolute inset-0 opacity-5 pointer-events-none" aria-hidden="true"
-           style="background-image:radial-gradient(var(--se-cyan) 1px,transparent 1px);background-size:40px 40px;"></div>
-
       <div class="section-container relative z-10">
 
         <!-- Header -->
         <div class="text-center mb-16 reveal">
-          <div class="section-tag mb-4 justify-center text-se-cyan border-se-cyan/30 bg-se-cyan/10">${cat.tag}</div>
+          <div class="section-tag mb-4 justify-center">${cat.tag}</div>
           <h2 id="catalog-heading" class="section-heading mb-4">${cat.heading}</h2>
           <p class="section-subheading mx-auto text-center">${cat.subheading}</p>
         </div>
@@ -564,9 +551,9 @@ function renderCatalog() {
               const waUrl = `${cat.whatsappBase}?text=${waMessage}`;
 
               return `
-            <div class="se-card border-se-border/40 bg-se-surface flex flex-col h-full group hover:border-se-cyan/40 transition-all duration-300">
+            <div class="se-card flex flex-col h-full group hover:border-se-cyan/40 transition-all duration-300">
               <!-- Image Container -->
-              <div class="aspect-square w-full overflow-hidden bg-se-void mb-6">
+              <div class="aspect-square w-full overflow-hidden mb-6">
                 <img src="${item.image}" alt="${item.title}"
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                      loading="lazy">
@@ -574,14 +561,13 @@ function renderCatalog() {
 
               <!-- Content -->
               <div class="flex flex-col flex-1 px-2">
-                <h3 class="font-display font-bold text-xl text-se-white mb-2">${item.title}</h3>
-                <p class="text-se-silver text-sm mb-6 flex-1">${item.description}</p>
+                <h3 class="font-display font-bold text-xl mb-2">${item.title}</h3>
+                <p class="text-sm mb-6 flex-1">${item.description}</p>
 
                 <a href="${waUrl}" target="_blank" rel="noopener noreferrer"
-                   class="w-full mt-5 inline-flex items-center gap-2 px-4 py-2 text-xs font-mono font-semibold
+                   class="w-full mt-5 inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold
                           text-se-cyan border border-se-cyan/40 rounded-sm bg-se-cyan/5
-                          hover:bg-se-cyan/15 hover:border-se-cyan/70 hover:shadow-[0_0_12px_rgba(0,212,255,0.2)]
-                          transition-all duration-300 self-start">
+                          hover:bg-se-cyan/15 hover:border-se-cyan transition-all duration-300 self-start">
                   ${cat.cta}
                 </a>
               </div>
@@ -603,7 +589,7 @@ function renderFooter() {
   const nav = getSection("nav");
 
   return `
-  <footer class="bg-se-void border-t border-se-border" role="contentinfo">
+  <footer role="contentinfo">
     <div class="section-container py-16">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
 
@@ -615,14 +601,14 @@ function renderFooter() {
               <div class="absolute inset-1 rounded-full border border-se-cyan/15"></div>
               <div class="absolute" style="top:50%;left:50%;transform:translate(-50%,-50%);width:6px;height:6px;border-radius:50%;background:var(--se-cyan);box-shadow:0 0 8px var(--se-cyan);"></div>
             </div>
-            <span class="font-display font-bold text-lg text-se-white">
-              Se<span class="text-se-cyan">lenium</span>
+            <span class="footer-brand text-lg">
+              Se<span>lenium</span>
             </span>
           </div>
-          <p class="text-se-muted text-sm leading-relaxed max-w-xs">${footer.tagline}</p>
+          <p class="text-sm leading-relaxed max-w-xs">${footer.tagline}</p>
 
           <!-- Atomic number badge -->
-          <div class="mt-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-sm border border-se-border text-xs font-mono text-se-muted">
+          <div class="mt-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-sm border border-se-border text-xs font-mono">
             <span class="text-se-cyan">Se</span>
             <span>·</span>
             <span>Atomic No. 34</span>
@@ -637,7 +623,7 @@ function renderFooter() {
               .map(
                 (link) => `
               <li role="listitem">
-                <a href="${link.href}" class="text-se-muted text-sm hover:text-se-cyan transition-colors duration-300">
+                <a href="${link.href}" class="text-sm hover:text-se-cyan transition-colors duration-300">
                   ${link.label}
                 </a>
               </li>
@@ -655,7 +641,7 @@ function renderFooter() {
               .map(
                 (link) => `
               <li role="listitem">
-                <a href="${link.href}" class="text-se-muted text-sm hover:text-se-cyan transition-colors duration-300">
+                <a href="${link.href}" class="text-sm hover:text-se-cyan transition-colors duration-300">
                   ${link.label}
                 </a>
               </li>
@@ -665,7 +651,7 @@ function renderFooter() {
           </ul>
 
           <!-- Language indicator -->
-          <div class="text-xs font-mono text-se-faint flex items-center gap-2">
+          <div class="text-xs font-mono flex items-center gap-2">
             ${icons.get("globe", "w-3 h-3")}
             <span>${currentLang === "id" ? "Bahasa Indonesia" : "English"}</span>
           </div>
@@ -675,10 +661,10 @@ function renderFooter() {
 
       <!-- Bottom bar -->
       <div class="mt-12 pt-8 border-t border-se-border flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <p class="text-se-faint text-xs">${footer.copyright}</p>
-        <p class="text-se-faint text-xs font-mono">
-          Built with precision. Engineered for scale.
-        </p>
+          <p class="text-xs">${footer.copyright}</p>
+          <p class="text-xs">
+            Built with precision. Engineered for scale.
+          </p>
       </div>
 
     </div>
@@ -725,6 +711,7 @@ function renderPage() {
   mountScrollReveal();
   mountLangToggle();
   mountMobileMenu();
+  mountThemeToggle();
 }
 
 /* ═════════════════════════════════════════════════════════════
@@ -787,9 +774,9 @@ function mountHeroCanvas() {
     baseRadius: 1.5, // Base particle radius (px)
     speed: 0.3, // Max speed
     connectionDist: 140, // Max distance to draw connection lines
-    primaryColor: [0, 212, 255], // Cyan [R,G,B]
-    secondaryColor: [232, 33, 74], // Red (sparse)
-    secondaryRatio: 0.15, // 15% particles are red
+    primaryColor: [10, 100, 188], // Brand blue [R,G,B]
+    secondaryColor: [13, 148, 136], // Teal secondary (brand secondary)
+    secondaryRatio: 0.15, // 15% particles are teal
   };
 
   let particles = [];
@@ -962,6 +949,47 @@ function mountLangToggle() {
 }
 
 /* ═════════════════════════════════════════════════════════════
+   BEHAVIOR: THEME TOGGLE (Dark / Light Mode)
+   ═════════════════════════════════════════════════════════════ */
+function initTheme() {
+  // FOUC already handled by inline script in index.html.
+  // This syncs JS state after the app is mounted.
+  const saved = localStorage.getItem('theme');
+  const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  const theme = saved || preferred;
+  document.documentElement.setAttribute('data-theme', theme);
+}
+
+function mountThemeToggle() {
+  const btn = document.getElementById('theme-toggle');
+  const iconEl = document.getElementById('theme-toggle-icon');
+  if (!btn) return;
+
+  const updateIcon = () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (iconEl) {
+      iconEl.innerHTML = isDark
+        ? icons.get('sun', 'w-4 h-4')
+        : icons.get('moon', 'w-4 h-4');
+    }
+    btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  };
+
+  btn.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    // Update theme-color meta
+    const meta = document.getElementById('theme-color-meta');
+    if (meta) meta.setAttribute('content', next === 'dark' ? '#0B1120' : '#FFFAFF');
+    updateIcon();
+  });
+
+  updateIcon();
+}
+
+/* ═════════════════════════════════════════════════════════════
    BEHAVIOR: MOBILE MENU
    ═════════════════════════════════════════════════════════════ */
 function mountMobileMenu() {
@@ -1009,6 +1037,9 @@ document.title =
   currentLang === "id"
     ? "Selenium Digital Consultant — Konsultan IT Enterprise"
     : "Selenium Digital Consultant — Enterprise IT Consulting";
+
+// Sync theme from localStorage (FOUC already handled in index.html)
+initTheme();
 
 // Boot
 renderPage();
