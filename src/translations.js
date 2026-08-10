@@ -323,13 +323,14 @@ export const translations = {
 
     // ── Bagian Hero ──
     hero: {
-      headline1: "Kami Menggerakkan",
-      headline2: "Inti Digital",
-      headline3: "Bisnis Anda.",
+      eyebrow: "Solusi Digital untuk UMKM",
+      headline1: "Bikin Usaha Anda",
+      headline2: "Lebih Rapi dan Mudah",
+      headline3: "Dikelola Setiap Hari",
       subheadline:
-        "Selenium Digital Consultant adalah mitra IT UMKM hingga enterprise Anda — merancang infrastruktur cloud yang tangguh, mempercepat transformasi digital, dan mengamankan sistem yang paling kritis.",
-      ctaPrimary: "Mulai Perjalanan Anda",
-      ctaSecondary: "Jelajahi Layanan Kami",
+        "Selenium hadir di Pontianak sebagai konsultan yang menyediakan jasa pembuatan software dan perangkat lunak untuk membantu UMKM bekerja lebih praktis, tertata, dan siap berkembang.",
+      ctaPrimary: "Konsultasi Gratis via WhatsApp",
+      ctaSecondary: "Lihat Layanan Kami",
       stat1Value: "Modern",
       stat1Label: "Stack Teknologi",
       stat2Value: "Agile",
