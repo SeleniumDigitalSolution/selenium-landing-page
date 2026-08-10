@@ -158,14 +158,6 @@ function renderHero() {
   <section id="home" class="relative flex flex-col justify-center overflow-hidden"
            aria-labelledby="hero-headline" role="banner">
 
-    <!-- Particle Canvas Background -->
-    <canvas id="heroCanvas" aria-hidden="true"></canvas>
-
-    <!-- Gradient mesh overlay -->
-    <div class="absolute inset-0 bg-hero-mesh pointer-events-none" aria-hidden="true"></div>
-
-    <div class="hero-scanline" aria-hidden="true"></div>
-
     <!-- Content -->
     <div class="section-container relative z-10 pt-32 pb-24 md:pt-40 md:pb-32">
       <div class="max-w-4xl">
@@ -707,7 +699,7 @@ function renderPage() {
 
   // Mount all behaviors AFTER DOM is set
   mountNavBehavior();
-  mountHeroCanvas();
+
   mountScrollReveal();
   mountLangToggle();
   mountMobileMenu();
@@ -758,138 +750,7 @@ function mountNavBehavior() {
   sections.forEach((s) => observer.observe(s));
 }
 
-/* ═════════════════════════════════════════════════════════════
-   BEHAVIOR: HERO CANVAS PARTICLE SYSTEM
-   Renders animated bioluminescent particle network
-   ═════════════════════════════════════════════════════════════ */
-function mountHeroCanvas() {
-  const canvas = document.getElementById("heroCanvas");
-  if (!canvas) return;
 
-  const ctx = canvas.getContext("2d");
-
-  // Particle configuration
-  const config = {
-    count: 80, // Number of particles
-    baseRadius: 1.5, // Base particle radius (px)
-    speed: 0.3, // Max speed
-    connectionDist: 140, // Max distance to draw connection lines
-    primaryColor: [10, 100, 188], // Brand blue [R,G,B]
-    secondaryColor: [13, 148, 136], // Teal secondary (brand secondary)
-    secondaryRatio: 0.15, // 15% particles are teal
-  };
-
-  let particles = [];
-  let animFrameId;
-  let W, H;
-
-  /** Resize canvas to fill its container */
-  const resize = () => {
-    const rect = canvas.parentElement.getBoundingClientRect();
-    W = canvas.width = rect.width;
-    H = canvas.height = rect.height;
-  };
-
-  /** Create particle pool */
-  const createParticles = () => {
-    particles = Array.from({ length: config.count }, () => {
-      const isSecondary = Math.random() < config.secondaryRatio;
-      return {
-        x: Math.random() * W,
-        y: Math.random() * H,
-        vx: (Math.random() - 0.5) * config.speed,
-        vy: (Math.random() - 0.5) * config.speed,
-        r: config.baseRadius + Math.random() * 1.5,
-        alpha: 0.3 + Math.random() * 0.5,
-        color: isSecondary ? config.secondaryColor : config.primaryColor,
-        pulse: Math.random() * Math.PI * 2, // Phase offset for pulse
-      };
-    });
-  };
-
-  /** Main animation loop */
-  const animate = () => {
-    ctx.clearRect(0, 0, W, H);
-
-    const now = Date.now() * 0.001;
-
-    // Update and paint particles
-    particles.forEach((p) => {
-      // Move
-      p.x += p.vx;
-      p.y += p.vy;
-
-      // Bounce off edges
-      if (p.x < 0 || p.x > W) p.vx *= -1;
-      if (p.y < 0 || p.y > H) p.vy *= -1;
-
-      // Pulsing alpha
-      const pulseAlpha = p.alpha + Math.sin(now + p.pulse) * 0.15;
-
-      // Draw particle
-      const [r, g, b] = p.color;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${r},${g},${b},${pulseAlpha})`;
-      ctx.fill();
-
-      // Soft glow
-      const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 4);
-      grad.addColorStop(0, `rgba(${r},${g},${b},${pulseAlpha * 0.3})`);
-      grad.addColorStop(1, "rgba(0,0,0,0)");
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r * 4, 0, Math.PI * 2);
-      ctx.fillStyle = grad;
-      ctx.fill();
-    });
-
-    // Draw connection lines between nearby particles
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const a = particles[i];
-        const b = particles[j];
-        const dx = a.x - b.x;
-        const dy = a.y - b.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < config.connectionDist) {
-          const opacity = (1 - dist / config.connectionDist) * 0.15;
-          // Use the color of the first particle for the line
-          const [r, g, b2] = a.color;
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = `rgba(${r},${g},${b2},${opacity})`;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
-        }
-      }
-    }
-
-    animFrameId = requestAnimationFrame(animate);
-  };
-
-  // Initialize
-  resize();
-  createParticles();
-  animate();
-
-  // Handle resize (debounced)
-  let resizeTimer;
-  window.addEventListener(
-    "resize",
-    () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        cancelAnimationFrame(animFrameId);
-        resize();
-        createParticles();
-        animate();
-      }, 200);
-    },
-    { passive: true },
-  );
-}
 
 /* ═════════════════════════════════════════════════════════════
    BEHAVIOR: SCROLL REVEAL (Intersection Observer)
