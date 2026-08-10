@@ -44,14 +44,15 @@ export const translations = {
         "Selenium Digital Consultant is your enterprise-grade IT partner — architecting resilient cloud infrastructure, accelerating digital transformation, and securing your most critical systems.",
       ctaPrimary: "Start Your Journey",
       ctaSecondary: "Explore Our Services",
-      stat1Value: "Modern",
-      stat1Label: "Tech Stack",
-      stat2Value: "Agile",
-      stat2Label: "Development",
-      stat3Value: "Secure",
-      stat3Label: "System & Data",
-      stat4Value: "Scalable",
-      stat4Label: "Architecture",
+      // TODO: Replace these placeholder metrics with verified business numbers when available.
+      stat1Value: "10+",
+      stat1Label: "Clients",
+      stat2Value: "15+",
+      stat2Label: "Completed Projects",
+      stat3Value: "3",
+      stat3Label: "Years Experience",
+      stat4Value: "100%",
+      stat4Label: "Client Satisfaction",
     },
 
     // ── Services Section ──
@@ -323,21 +324,23 @@ export const translations = {
 
     // ── Bagian Hero ──
     hero: {
-      headline1: "Kami Menggerakkan",
-      headline2: "Inti Digital",
-      headline3: "Bisnis Anda.",
+      eyebrow: "Solusi Digital untuk UMKM",
+      headline1: "Bikin Usaha Anda",
+      headline2: "Lebih Rapi dan Mudah",
+      headline3: "Dikelola Setiap Hari",
       subheadline:
-        "Selenium Digital Consultant adalah mitra IT UMKM hingga enterprise Anda — merancang infrastruktur cloud yang tangguh, mempercepat transformasi digital, dan mengamankan sistem yang paling kritis.",
-      ctaPrimary: "Mulai Perjalanan Anda",
-      ctaSecondary: "Jelajahi Layanan Kami",
-      stat1Value: "Modern",
-      stat1Label: "Stack Teknologi",
-      stat2Value: "Agile",
-      stat2Label: "Pengembangan",
-      stat3Value: "Aman",
-      stat3Label: "Sistem & Data",
-      stat4Value: "Terukur",
-      stat4Label: "Arsitektur IT",
+        "Selenium hadir di Pontianak sebagai konsultan yang menyediakan jasa pembuatan software dan perangkat lunak untuk membantu UMKM bekerja lebih praktis, tertata, dan siap berkembang.",
+      ctaPrimary: "Konsultasi Gratis via WhatsApp",
+      ctaSecondary: "Lihat Layanan Kami",
+      // TODO: Replace these placeholder metrics with verified business numbers when available.
+      stat1Value: "10+",
+      stat1Label: "Klien",
+      stat2Value: "15+",
+      stat2Label: "Proyek Selesai",
+      stat3Value: "3",
+      stat3Label: "Tahun Pengalaman",
+      stat4Value: "100%",
+      stat4Label: "Kepuasan Klien",
     },
 
     // ── Bagian Layanan ──

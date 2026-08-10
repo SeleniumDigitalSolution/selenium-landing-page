@@ -134,8 +134,7 @@ export default {
         'se-red-gradient':   'linear-gradient(135deg, #DC2626 0%, #991B1B 100%)',
         'se-chrome-gradient':'linear-gradient(135deg, #C8CDD6 0%, #8A909F 100%)',
 
-        // Hero section mesh gradient — brand blue tint, light-mode friendly
-        'hero-mesh':         'radial-gradient(ellipse 80% 80% at 50% -10%, rgba(10,100,188,0.08) 0%, transparent 60%), radial-gradient(ellipse 60% 60% at 80% 80%, rgba(13,148,136,0.05) 0%, transparent 60%)',
+
 
         // Glow overlays (brand blue)
         'glow-cyan-radial':  'radial-gradient(circle, rgba(10,100,188,0.12) 0%, transparent 70%)',

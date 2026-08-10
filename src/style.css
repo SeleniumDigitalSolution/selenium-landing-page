@@ -429,13 +429,6 @@ nav[data-scrolled="true"] {
   .form-input:focus  { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(10,100,188,.12); }
   .form-textarea     { @apply form-input; resize: vertical; min-height: 140px; }
 
-  /* ── Hero Canvas ── */
-  #heroCanvas {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    pointer-events: none; z-index: 0;
-    opacity: 0.5;
-  }
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -466,15 +459,44 @@ nav[data-scrolled="true"] {
    ───────────────────────────────────────────────────────────── */
 #home {
   min-height: 100svh;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-tint) 100%);
 }
 
-/* Hero headline — large display */
+/* Hero headline — large display (white for contrast on gradient bg) */
 #home h1 {
-  color: var(--text-primary);
+  color: #FFFFFF;
   font-size: clamp(3rem, 7vw, 6.5rem);
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.02em;
+}
+
+/* Override gradient-text inside hero — solid white instead */
+#home .text-gradient-primary {
+  background: none;
+  -webkit-text-fill-color: #FFFFFF;
+  opacity: 0.9;
+}
+
+/* Hero subheading & scroll indicator — softer white */
+#home .section-subheading {
+  color: rgba(255, 255, 255, 0.85);
+}
+#home .scroll-indicator {
+  color: rgba(255, 255, 255, 0.6);
+}
+#home .scroll-indicator-line {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
+}
+
+/* Hero ghost button — white border on gradient bg */
+#home .btn-ghost {
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+#home .btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
 /* Stats bar */
