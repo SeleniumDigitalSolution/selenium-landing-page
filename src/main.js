@@ -15,12 +15,29 @@
 import "./style.css";
 import { translations, detectLanguage, t } from "./translations.js";
 import { icons } from "./icons.js";
+import { getRoute, initRouter } from "./router.js";
+import {
+  renderServiceDetailPage,
+  renderServiceNotFoundPage,
+} from "./pages/serviceDetailPage.js";
 
 /* ═════════════════════════════════════════════════════════════
    GLOBAL STATE
    ═════════════════════════════════════════════════════════════ */
 let currentLang = detectLanguage();
 const WHATSAPP_NUMBER = "6282253210449";
+const HOME_META = {
+  en: {
+    title: "Selenium Digital Consultant — Enterprise IT Consulting",
+    description:
+      "Selenium Digital Consultant helps businesses in Pontianak build websites, applications, software, automation, and practical IT support.",
+  },
+  id: {
+    title: "Selenium Digital Consultant — Konsultan IT Pontianak",
+    description:
+      "Selenium Digital Consultant adalah konsultan IT Pontianak untuk jasa website, aplikasi, perangkat lunak, otomasi, dan support bisnis.",
+  },
+};
 
 /* ═════════════════════════════════════════════════════════════
    HELPER UTILITIES
@@ -46,6 +63,34 @@ const getSection = (key) => {
 const buildWhatsAppUrl = (message) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
+const setDocumentMeta = (title, description) => {
+  document.title = title;
+
+  const metaDescription = document.querySelector('meta[name="description"]');
+  if (metaDescription) metaDescription.setAttribute("content", description);
+
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle) ogTitle.setAttribute("content", title);
+
+  const ogDescription = document.querySelector(
+    'meta[property="og:description"]',
+  );
+  if (ogDescription) ogDescription.setAttribute("content", description);
+
+  const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+  if (twitterTitle) twitterTitle.setAttribute("content", title);
+
+  const twitterDescription = document.querySelector(
+    'meta[name="twitter:description"]',
+  );
+  if (twitterDescription) {
+    twitterDescription.setAttribute("content", description);
+  }
+};
+
+const getServiceBySlug = (slug) =>
+  getSection("services")?.items.find((item) => item.slug === slug);
+
 /* ═════════════════════════════════════════════════════════════
    SECTION: NAVIGATION
    ═════════════════════════════════════════════════════════════ */
@@ -53,6 +98,11 @@ function renderNav() {
   const nav = getSection("nav");
   const links = ["services", "about", "portfolio", "contact"];
   const waUrl = buildWhatsAppUrl("Halo, saya ingin konsultasi");
+  const route = getRoute();
+  const sectionHref = (key) => {
+    const sectionId = key.replace("techStack", "tech-stack");
+    return route.name === "home" ? `#${sectionId}` : `/#${sectionId}`;
+  };
 
   return `
   <nav id="navbar" role="navigation" aria-label="Main navigation"
@@ -62,7 +112,7 @@ function renderNav() {
       <div class="flex items-center justify-between h-16 md:h-20">
 
         <!-- Brand / Logo -->
-        <a href="#" id="nav-brand" class="flex items-center gap-3 group" aria-label="Selenium Digital Consultant">
+        <a href="/" data-router-link id="nav-brand" class="flex items-center gap-3 group" aria-label="Selenium Digital Consultant">
           <div class="w-8 h-8 relative">
             <!-- Atomic orbit logo mark -->
             <div class="absolute inset-0 rounded-full border border-se-cyan/40 animate-spin" style="animation-duration:8s;"></div>
@@ -80,7 +130,8 @@ function renderNav() {
             .map(
               (key) => `
             <li>
-              <a href="#${key.replace("techStack", "tech-stack")}"
+              <a href="${sectionHref(key)}"
+                 data-router-link
                  class="nav-link"
                  aria-label="Navigate to ${nav[key]}">
                 ${nav[key]}
@@ -135,7 +186,8 @@ function renderNav() {
         ${links
           .map(
             (key) => `
-          <a href="#${key.replace("techStack", "tech-stack")}"
+          <a href="${sectionHref(key)}"
+             data-router-link
              class="mobile-nav-link text-base font-medium py-3 border-b border-[var(--border)]"
              aria-label="Navigate to ${nav[key]}">
             ${nav[key]}
@@ -227,6 +279,7 @@ function renderHero() {
 function renderServices() {
   const svc = getSection("services");
   const ctaLabel = svc.cta || "Tanya via WhatsApp";
+  const detailLabel = svc.detailCta || "Lihat Detail";
 
   return `
   <section id="services" class="py-section relative overflow-hidden"
@@ -252,12 +305,13 @@ function renderServices() {
            role="list" aria-label="Our services">
         ${svc.items
           .map((item, i) => {
+            const detailUrl = `/layanan/${item.slug}`;
             const waUrl = buildWhatsAppUrl(
               `Halo, saya tertarik dengan layanan ${item.title}`,
             );
 
             return `
-          <article class="se-card group reveal reveal-delay-${(i % 3) + 1}"
+          <article class="se-card flex flex-col h-full group reveal reveal-delay-${(i % 3) + 1}"
                    role="listitem"
                    aria-labelledby="service-${i}-title">
 
@@ -268,14 +322,16 @@ function renderServices() {
 
             <!-- Title -->
             <h3 id="service-${i}-title" class="font-display font-semibold text-lg mb-3">
-              ${item.title}
+              <a href="${detailUrl}" data-router-link class="hover:text-se-cyan transition-colors">
+                ${item.title}
+              </a>
             </h3>
 
             <!-- Description -->
             <p class="text-sm leading-relaxed mb-6">${item.description}</p>
 
             <!-- Tags -->
-            <div class="flex flex-wrap gap-2" role="list" aria-label="Technologies used">
+            <div class="flex flex-wrap gap-2 mb-6" role="list" aria-label="Technologies used">
               ${item.tags
                 .map(
                   (tag) => `
@@ -286,14 +342,22 @@ function renderServices() {
                 .join("")}
             </div>
 
-            <!-- WhatsApp CTA -->
-            <a href="${waUrl}"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="btn-secondary btn-sm w-full justify-center mt-6 max-w-full text-center"
-               aria-label="${ctaLabel}: ${item.title}">
-              ${ctaLabel}
-            </a>
+            <div class="mt-auto flex flex-col sm:flex-row gap-3">
+              <a href="${detailUrl}"
+                 data-router-link
+                 class="btn-ghost btn-sm justify-center flex-1 min-w-0"
+                 aria-label="${detailLabel}: ${item.title}">
+                ${detailLabel}
+              </a>
+
+              <a href="${waUrl}"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="btn-secondary btn-sm justify-center flex-1 min-w-0 text-center"
+                 aria-label="${ctaLabel}: ${item.title}">
+                ${ctaLabel}
+              </a>
+            </div>
 
           </article>
         `;
@@ -699,6 +763,11 @@ function renderWhatsAppFAB() {
    FULL PAGE RENDER
    ═════════════════════════════════════════════════════════════ */
 function renderPage() {
+  setDocumentMeta(
+    HOME_META[currentLang].title,
+    HOME_META[currentLang].description,
+  );
+
   const app = document.getElementById("app");
 
   app.innerHTML = `
@@ -715,13 +784,87 @@ function renderPage() {
     ${renderWhatsAppFAB()}
   `;
 
-  // Mount all behaviors AFTER DOM is set
-  mountNavBehavior();
+  mountPageBehaviors();
+}
 
+function renderDetailRoute(slug) {
+  const app = document.getElementById("app");
+  const labels = getSection("services");
+  const service = getServiceBySlug(slug);
+
+  if (!service) {
+    setDocumentMeta(
+      `${labels.notFoundTitle} | Selenium Digital Consultant`,
+      labels.notFoundDescription,
+    );
+
+    app.innerHTML = `
+      ${renderNav()}
+      <main id="main-content">
+        ${renderServiceNotFoundPage({ labels })}
+      </main>
+      ${renderFooter()}
+      ${renderWhatsAppFAB()}
+    `;
+
+    mountPageBehaviors();
+    return;
+  }
+
+  setDocumentMeta(service.metaTitle, service.metaDescription);
+
+  app.innerHTML = `
+    ${renderNav()}
+    <main id="main-content">
+      ${renderServiceDetailPage({
+        service,
+        labels,
+        icons,
+        whatsappUrl: buildWhatsAppUrl(
+          `Halo, saya tertarik dengan layanan ${service.title}`,
+        ),
+      })}
+    </main>
+    ${renderFooter()}
+    ${renderWhatsAppFAB()}
+  `;
+
+  mountPageBehaviors();
+}
+
+function mountPageBehaviors() {
+  mountNavBehavior();
   mountScrollReveal();
   mountLangToggle();
   mountMobileMenu();
   mountThemeToggle();
+}
+
+function syncScrollPosition() {
+  const target = window.location.hash
+    ? document.querySelector(window.location.hash)
+    : null;
+
+  if (target) {
+    target.scrollIntoView({ block: "start" });
+    return;
+  }
+
+  window.scrollTo({ top: 0 });
+}
+
+function renderCurrentRoute() {
+  const route = getRoute();
+
+  if (route.name === "home") {
+    renderPage();
+  } else if (route.name === "service-detail") {
+    renderDetailRoute(route.slug);
+  } else {
+    renderDetailRoute("");
+  }
+
+  syncScrollPosition();
 }
 
 /* ═════════════════════════════════════════════════════════════
@@ -815,14 +958,8 @@ function mountLangToggle() {
       // 3. Update <html lang> attribute for accessibility
       document.documentElement.lang = lang === "id" ? "id" : "en";
 
-      // 4. Update page title
-      document.title =
-        lang === "id"
-          ? "Selenium Digital Consultant — Konsultan IT Enterprise"
-          : "Selenium Digital Consultant — Enterprise IT Consulting";
-
-      // 5. Re-render the full page
-      renderPage();
+      // 4. Re-render the current route with localized content
+      renderCurrentRoute();
     });
   });
 }
@@ -911,14 +1048,9 @@ function mountMobileMenu() {
 // Set initial <html> lang attribute
 document.documentElement.lang = currentLang === "id" ? "id" : "en";
 
-// Set dynamic page title
-document.title =
-  currentLang === "id"
-    ? "Selenium Digital Consultant — Konsultan IT Enterprise"
-    : "Selenium Digital Consultant — Enterprise IT Consulting";
-
 // Sync theme from localStorage (FOUC already handled in index.html)
 initTheme();
 
 // Boot
-renderPage();
+initRouter(renderCurrentRoute);
+renderCurrentRoute();
