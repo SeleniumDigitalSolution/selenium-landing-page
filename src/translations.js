@@ -61,6 +61,7 @@ export const translations = {
       heading: "Solutions Built for Small Business to Enterprise Scale",
       subheading:
         "From infrastructure to intelligence — we deliver end-to-end technology solutions that drive measurable business outcomes.",
+      cta: "Ask via WhatsApp",
       items: [
         {
           icon: "cloud",
@@ -346,6 +347,7 @@ export const translations = {
       heading: "Solusi yang Dibangun untuk Skala UMKM hingga Enterprise",
       subheading:
         "Dari infrastruktur hingga kecerdasan buatan — kami menghadirkan solusi teknologi end-to-end yang menghasilkan dampak bisnis yang terukur.",
+      cta: "Tanya via WhatsApp",
       items: [
         {
           icon: "cloud",
