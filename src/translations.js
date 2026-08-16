@@ -64,10 +64,10 @@ export const translations = {
       items: [
         {
           icon: "cloud",
-          title: "Cloud Architecture",
+          title: "Reliable Online Business Systems",
           description:
-            "Design and deploy secure, scalable multi-cloud and hybrid cloud environments on AWS, GCP, and Azure — optimized for performance and cost efficiency.",
-          tags: ["AWS", "GCP", "Azure", "Terraform"],
+            "Keep your business website and application fast, secure, and ready to grow, with guidance from a Pontianak consultant who helps you avoid downtime and unnecessary costs.",
+          tags: ["Stable System", "Secure Access", "Cost Efficient", "Growth Ready"],
         },
         // {
         //   icon:        'shield',
@@ -77,55 +77,52 @@ export const translations = {
         // },
         {
           icon: "code",
-          title: "Application Development",
+          title: "Custom Business Applications",
           description:
-            "Architect and deliver modern full-stack web applications and microservices with a focus on performance, maintainability, and DevOps-first engineering.",
+            "Build a website, application, or software that matches your daily workflow, makes admin work easier, and gives customers a smoother way to reach your business.",
           tags: [
-            "React",
-            "express.js",
-            "Hapi.js",
-            "Node.js",
-            "Docker",
-            "Laravel",
+            "Easy to Use",
+            "Time Saving",
+            "Custom Fit",
+            "Clear Pricing",
           ],
         },
         {
           icon: "database",
-          title: "Data Engineering & Analytics",
+          title: "Business Reports & Dashboards",
           description:
-            "Unify your data landscape — from ETL pipeline design and data warehousing to real-time BI dashboards and predictive analytics infrastructure.",
-          tags: ["Power BI", "MySQL", "PostgreSQL"],
+            "Turn scattered sales, stock, and customer data into clear reports so owners and managers can make faster decisions without guessing.",
+          tags: ["Clear Reports", "Faster Decisions", "Organized Data"],
         },
         {
           icon: "cpu",
-          title: "AI & Machine Learning",
+          title: "Smart Operations Automation",
           description:
-            "Integrate intelligent automation into your operations — from LLM-powered workflows and NLP models to computer vision and MLOps deployment pipelines.",
+            "Use practical automation to handle repetitive tasks, respond faster to customers, and reduce manual errors in your business application or internal software.",
           tags: [
-            "Python",
-            "LangChain",
-            "Computer Vision",
-            "Machine Learning",
-            "PyTorch",
+            "Time Saving",
+            "Less Manual Work",
+            "Fast Response",
+            "Easy to Scale",
           ],
         },
         {
           icon: "settings",
-          title: "IT Infrastructure & DevOps",
+          title: "Digital System Care",
           description:
-            "Transform your delivery pipeline with CI/CD automation, infrastructure-as-code, container orchestration, and 24/7 proactive system monitoring.",
-          tags: ["GitHub Actions", "Ansible", "Prometheus", "Grafana"],
+            "Keep your website, application, and software running smoothly with routine checks, fast support, and a consultant who helps your team solve issues before they disrupt work.",
+          tags: ["Fast Support", "Less Downtime", "Routine Checks", "Peace of Mind"],
         },
         {
           icon: "network",
-          title: "Workspace IT & Network Setup",
+          title: "Office IT & CCTV Setup",
           description:
-            "Ensure seamless daily operations with reliable Local Area Network (LAN) deployment, CCTV security system installation, and complete workstation setup or reinstallation for your employees.",
+            "Set up office internet, employee computers, and CCTV so your team in Pontianak can work safely, stay connected, and get daily operations moving without technical confusion.",
           tags: [
-            "Office Network (LAN)",
-            "CCTV Installation",
-            "Workstation Setup",
-            "IT Support",
+            "Smooth Operations",
+            "Office Security",
+            "Ready to Use",
+            "Fast Support",
           ],
         },
       ],
@@ -352,10 +349,10 @@ export const translations = {
       items: [
         {
           icon: "cloud",
-          title: "Arsitektur Cloud",
+          title: "Sistem Online yang Stabil",
           description:
-            "Merancang dan menerapkan lingkungan multi-cloud dan hybrid cloud yang aman dan skalabel di AWS, GCP, dan Azure — dioptimalkan untuk performa dan efisiensi biaya.",
-          tags: ["AWS", "GCP", "Azure", "Terraform"],
+            "Jasa website dan aplikasi untuk menjaga sistem bisnis Anda tetap cepat, aman, dan siap berkembang bersama konsultan Pontianak yang membantu mencegah downtime dan biaya yang tidak perlu.",
+          tags: ["Sistem Stabil", "Akses Aman", "Hemat Biaya", "Siap Berkembang"],
         },
         // {
         //   icon:        'shield',
@@ -365,55 +362,52 @@ export const translations = {
         // },
         {
           icon: "code",
-          title: "Pengembangan Aplikasi",
+          title: "Aplikasi Bisnis Sesuai Kebutuhan",
           description:
-            "Merancang dan menghadirkan aplikasi web full-stack dan microservices modern dengan fokus pada performa, kemudahan pemeliharaan, dan rekayasa DevOps-first.",
+            "Bangun website, aplikasi, atau perangkat lunak yang sesuai alur kerja harian, memudahkan administrasi, dan memberi pelanggan cara yang lebih nyaman untuk menjangkau bisnis Anda.",
           tags: [
-            "React",
-            "express.js",
-            "Hapi.js",
-            "Node.js",
-            "Docker",
-            "Laravel",
+            "Mudah Digunakan",
+            "Hemat Waktu",
+            "Sesuai Kebutuhan",
+            "Harga Transparan",
           ],
         },
         {
           icon: "database",
-          title: "Rekayasa & Analitik Data",
+          title: "Laporan Bisnis & Dashboard",
           description:
-            "Menyatukan lanskap data Anda — dari desain pipeline ETL dan data warehousing hingga dashboard BI real-time dan infrastruktur analitik prediktif.",
-          tags: ["Power BI", "MySQL", "PostgreSQL"],
+            "Ubah data penjualan, stok, dan pelanggan yang tersebar menjadi laporan yang jelas agar pemilik usaha dapat mengambil keputusan lebih cepat tanpa menebak-nebak.",
+          tags: ["Laporan Jelas", "Keputusan Cepat", "Data Rapi"],
         },
         {
           icon: "cpu",
-          title: "AI & Machine Learning",
+          title: "Otomasi Pintar untuk Operasional",
           description:
-            "Integrasikan otomasi cerdas ke dalam operasional Anda — dari alur kerja berbasis LLM dan model NLP hingga computer vision dan pipeline deployment MLOps.",
+            "Gunakan otomasi praktis untuk menangani pekerjaan berulang, merespons pelanggan lebih cepat, dan mengurangi kesalahan manual di aplikasi bisnis atau perangkat lunak internal.",
           tags: [
-            "Python",
-            "LangChain",
-            "Computer Vision",
-            "Machine Learning",
-            "PyTorch",
+            "Hemat Waktu",
+            "Kerja Manual Berkurang",
+            "Respon Cepat",
+            "Mudah Dikembangkan",
           ],
         },
         {
           icon: "settings",
-          title: "Infrastruktur IT & DevOps",
+          title: "Perawatan Sistem Digital",
           description:
-            "Transformasikan pipeline pengiriman Anda dengan otomasi CI/CD, infrastructure-as-code, orkestrasi container, dan pemantauan sistem proaktif 24/7.",
-          tags: ["GitHub Actions", "Ansible", "Prometheus", "Grafana"],
+            "Jaga website, aplikasi, dan perangkat lunak tetap lancar dengan pengecekan rutin, support cepat, dan konsultan yang membantu tim menyelesaikan masalah sebelum mengganggu pekerjaan.",
+          tags: ["Support Cepat", "Minim Gangguan", "Cek Rutin", "Lebih Tenang"],
         },
         {
           icon: "network",
-          title: "Infrastruktur IT & Jaringan Kantor",
+          title: "Setup IT Kantor & CCTV",
           description:
-            "Pastikan operasional harian bisnis Anda berjalan tanpa hambatan dengan instalasi jaringan internet lokal (LAN) yang dapat diandalkan, sistem keamanan CCTV, hingga penyiapan awal dan instalasi ulang komputer untuk karyawan.",
+            "Siapkan internet kantor, komputer karyawan, dan CCTV agar tim di Pontianak bisa bekerja aman, tetap terhubung, dan menjalankan operasional harian tanpa bingung urusan teknis.",
           tags: [
-            "Jaringan Kantor (LAN)",
-            "Instalasi CCTV",
-            "Setup Komputer Karyawan",
-            "IT Support",
+            "Operasional Lancar",
+            "Keamanan Kantor",
+            "Siap Digunakan",
+            "Support Cepat",
           ],
         },
       ],
