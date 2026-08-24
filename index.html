@@ -86,8 +86,9 @@
     <script>
       (function() {
         var saved = localStorage.getItem('theme');
-        var preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        var theme = saved || preferred;
+        // A first visit always starts in the brand's light theme. A later explicit
+        // choice via the theme button is preserved in localStorage.
+        var theme = saved || 'light';
         if (theme === 'dark') {
           document.documentElement.setAttribute('data-theme', 'dark');
           var meta = document.getElementById('theme-color-meta');

@@ -5,6 +5,10 @@ export function getRoute(pathname = window.location.pathname) {
     return { name: "home" };
   }
 
+  if (pathname === "/about" || pathname === "/about/") {
+    return { name: "about" };
+  }
+
   const serviceMatch = pathname.match(SERVICE_DETAIL_PATTERN);
   if (serviceMatch) {
     return {

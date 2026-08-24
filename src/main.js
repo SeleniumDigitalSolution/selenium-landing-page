@@ -54,8 +54,16 @@ const getSection = (key) => {
   const keys = key.split(".");
   let result = translations[currentLang];
   for (const k of keys) {
-    if (!result) return null;
+    if (!result) break;
     result = result[k];
+  }
+  if (result === undefined || result === null) {
+    let fallback = translations["id"];
+    for (const k of keys) {
+      if (!fallback) return null;
+      fallback = fallback[k];
+    }
+    return fallback;
   }
   return result;
 };
@@ -100,6 +108,7 @@ function renderNav() {
   const waUrl = buildWhatsAppUrl("Halo, saya ingin konsultasi");
   const route = getRoute();
   const sectionHref = (key) => {
+    if (key === "about") return "/about";
     const sectionId = key.replace("techStack", "tech-stack");
     return route.name === "home" ? `#${sectionId}` : `/#${sectionId}`;
   };
@@ -461,58 +470,19 @@ function renderAbout() {
               )
               .join("")}
           </div>
+          <a href="/about" data-router-link class="btn-ghost inline-flex mt-10 reveal reveal-delay-4">
+            ${about.cta}
+            ${icons.get("arrowRight", "w-4 h-4")}
+          </a>
         </div>
 
-        <!-- Right: Atomic Visual -->
-        <div class="relative flex items-center justify-center reveal reveal-delay-2" aria-hidden="true">
-          <div class="relative w-80 h-80 md:w-96 md:h-96">
-            <!-- Atomic orbit rings with animation -->
-            <!-- Ring 1 -->
-            <div class="absolute inset-0 rounded-full border border-se-cyan/20 animate-spin"
-                 style="animation-duration:20s;"></div>
-            <!-- Ring 2 (tilted) -->
-            <div class="absolute inset-4 rounded-full border border-se-cyan/15 animate-spin"
-                 style="animation-duration:15s;animation-direction:reverse;transform:rotateX(75deg);"></div>
-            <!-- Ring 3 -->
-            <div class="absolute inset-8 rounded-full border border-se-red/20 animate-spin"
-                 style="animation-duration:12s;"></div>
-
-            <!-- Orbiting dots -->
-            <div class="absolute inset-0">
-              <div class="absolute w-2 h-2 rounded-full bg-se-cyan animate-spin"
-                   style="top:0;left:50%;transform:translateX(-50%);animation-duration:8s;
-                          box-shadow:0 0 10px var(--se-cyan);">
-              </div>
-            </div>
-            <div class="absolute inset-0">
-              <div class="absolute w-2 h-2 rounded-full bg-se-red animate-spin"
-                   style="top:50%;right:0;transform:translateY(-50%);animation-duration:12s;animation-direction:reverse;
-                          box-shadow:0 0 10px var(--se-red);">
-              </div>
-            </div>
-
-            <!-- Center nucleus -->
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="relative">
-                <div class="w-20 h-20 rounded-full bg-se-cyan/10 border border-se-cyan/30 flex items-center justify-center animate-glow-pulse">
-                  <div class="text-se-cyan">${icons.get("atom", "w-10 h-10")}</div>
-                </div>
-                <!-- Atomic number label -->
-                <div class="absolute -top-10 left-1/2 -translate-x-1/2 text-center">
-                  <div class="font-mono text-xs text-se-muted">34</div>
-                  <div class="font-display font-bold text-se-cyan">Se</div>
-                </div>
-                <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                  <div class="font-mono text-xs text-se-muted text-center">Selenium</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Background glow -->
-            <div class="absolute inset-0 rounded-full"
-                 style="background:radial-gradient(circle,rgba(10,100,188,0.08) 0%,transparent 70%);"></div>
+        <!-- Right: Team photo; a real team photo can replace this placeholder later. -->
+        <figure class="team-photo-card reveal reveal-delay-2">
+          <div class="team-photo-wrap aspect-[4/3]">
+            <img src="/team-placeholder.png" alt="${about.teamImageAlt}" loading="lazy" width="600" height="450">
           </div>
-        </div>
+          <figcaption>${about.photoCaption}</figcaption>
+        </figure>
 
       </div>
     </div>
@@ -695,7 +665,7 @@ function renderFooter() {
               .map(
                 (link) => `
               <li role="listitem">
-                <a href="${link.href}" class="text-sm hover:text-se-cyan transition-colors duration-300">
+                <a href="${link.href}" data-router-link class="text-sm hover:text-se-cyan transition-colors duration-300">
                   ${link.label}
                 </a>
               </li>
@@ -762,6 +732,71 @@ function renderWhatsAppFAB() {
 /* ═════════════════════════════════════════════════════════════
    FULL PAGE RENDER
    ═════════════════════════════════════════════════════════════ */
+/* ═════════════════════════════════════════════════════════════
+   SECTION: PARTNERS (Client Logo Strip)
+   ═════════════════════════════════════════════════════════════ */
+function renderPartners() {
+  const partners = getSection("partners");
+  return `
+  <section id="partners" class="py-12 border-y border-[var(--border)] bg-[var(--surface-2)]/50" aria-label="Our partners and clients">
+    <div class="section-container">
+      <h3 class="text-center text-xs font-mono uppercase tracking-wider text-se-muted mb-8">${partners.heading}</h3>
+      <div class="flex flex-wrap items-center justify-center gap-6 md:gap-10" role="list">
+        ${partners.items.map(p => `
+          <div class="flex items-center gap-3 px-6 py-3 rounded-lg border border-[var(--border)] bg-[var(--surface)] hover:border-se-cyan/40 transition-all duration-300 shadow-sm group" role="listitem">
+            ${p.logo ? `
+              <img src="${p.logo}" alt="${p.name} logo" class="h-7 w-auto max-w-[120px] object-contain opacity-80 group-hover:opacity-100 transition-opacity" onerror="this.style.display='none';">
+            ` : ''}
+            <span class="text-sm font-semibold tracking-tight group-hover:text-se-cyan transition-colors">${p.name}</span>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  </section>`;
+}
+
+/* ═════════════════════════════════════════════════════════════
+   SECTION: TESTIMONIALS
+   ═════════════════════════════════════════════════════════════ */
+function renderTestimonials() {
+  const testimonials = getSection("testimonials");
+
+  return `
+  <section id="testimonials" class="py-section relative overflow-hidden" aria-labelledby="testimonials-heading">
+    <div class="section-container">
+      <!-- Section Header -->
+      <div class="text-center mb-16 reveal">
+        <div class="section-tag mb-4 justify-center">${testimonials.tag}</div>
+        <h2 id="testimonials-heading" class="section-heading mb-4">${testimonials.heading}</h2>
+        <p class="section-subheading mx-auto text-center">${testimonials.subheading}</p>
+      </div>
+
+      <!-- Testimonial Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8" role="list" aria-label="Client testimonials">
+        ${testimonials.items.map((item, i) => `
+          <article class="testimonial-card group reveal reveal-delay-${(i % 3) + 1}" role="listitem">
+            <blockquote class="testimonial-quote">
+              <p>"${item.quote}"</p>
+            </blockquote>
+            <div class="testimonial-client">
+              ${item.image
+                ? `<img class="testimonial-avatar testimonial-photo" src="${item.image}" alt="Foto ${item.name}" loading="lazy" width="40" height="40">`
+                : `<div class="testimonial-avatar" aria-hidden="true">${item.name.split(' ').map(n => n[0]).join('')}</div>`}
+              <div class="testimonial-info">
+                <h4>${item.name}</h4>
+                <p>${item.role}, ${item.company}</p>
+              </div>
+            </div>
+          </article>
+        `).join('')}
+      </div>
+    </div>
+  </section>`;
+}
+
+/* ═════════════════════════════════════════════════════════════
+   FULL PAGE RENDER (HOMEPAGE)
+   ═════════════════════════════════════════════════════════════ */
 function renderPage() {
   setDocumentMeta(
     HOME_META[currentLang].title,
@@ -774,10 +809,11 @@ function renderPage() {
     ${renderNav()}
     <main id="main-content">
       ${renderHero()}
-      ${renderCatalog()}
-      ${renderServices()}
+      ${renderPartners()}
+      ${renderServices()} 
       ${renderAbout()}
       ${renderProjects()}
+      ${renderTestimonials()}
       ${renderCTA()}
     </main>
     ${renderFooter()}
@@ -840,6 +876,140 @@ function mountPageBehaviors() {
   mountThemeToggle();
 }
 
+/* ═════════════════════════════════════════════════════════════
+   DEDICATED ABOUT PAGE RENDER
+   ═════════════════════════════════════════════════════════════ */
+function renderAboutPage() {
+  const app = document.getElementById("app");
+  const ap = getSection("aboutPage");
+  const about = getSection("about");
+
+  app.innerHTML = `
+    ${renderNav()}
+    <main id="main-content">
+      <!-- Hero -->
+      <section class="about-page-hero py-24 relative overflow-hidden" aria-labelledby="about-hero-title">
+        <div class="section-container relative z-10 text-center">
+          <div class="section-tag mb-4 justify-center" style="color: rgba(255,255,255,0.85); border-color: rgba(255,255,255,0.5);">${ap.eyebrow}</div>
+          <h1 id="about-hero-title" class="text-3xl md:text-5xl font-display font-bold mb-6 tracking-tight">
+            ${ap.title}
+          </h1>
+        </div>
+      </section>
+
+      <!-- Our Story -->
+      <section class="py-20 bg-[var(--surface)]" aria-labelledby="story-heading">
+        <div class="section-container">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 id="story-heading" class="section-heading mb-6">${ap.storyHeading}</h2>
+              <p class="leading-relaxed mb-6 text-se-silver">${ap.storyParagraph1}</p>
+              <p class="leading-relaxed mb-6 text-se-silver">${ap.storyParagraph2}</p>
+              
+              <!-- Company Quote -->
+              <blockquote class="pull-quote py-2 mb-6">
+                <p class="font-display font-medium text-lg leading-snug">
+                  ${about.quote}
+                </p>
+              </blockquote>
+            </div>
+            
+            <div class="team-photo-wrap aspect-[4/3] max-w-lg mx-auto lg:max-w-none">
+              <img src="/team-placeholder.png" alt="Tim Selenium Digital Consultant" loading="eager" width="600" height="450">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Vision & Mission -->
+      <section class="py-20 bg-[var(--surface-2)]" aria-labelledby="vision-heading">
+        <div class="section-container">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Vision -->
+            <div class="se-card">
+              <h3 id="vision-heading" class="font-display font-bold text-xl mb-4 text-gradient-primary">${ap.visionHeading}</h3>
+              <p class="text-base leading-relaxed">${ap.visionText}</p>
+            </div>
+            <!-- Mission -->
+            <div class="se-card">
+              <h3 class="font-display font-bold text-xl mb-4 text-gradient-primary">${ap.missionHeading}</h3>
+              <ul class="space-y-4" role="list">
+                ${ap.missionItems.map((item, i) => `
+                  <li class="flex gap-3 text-sm leading-relaxed" role="listitem">
+                    <span class="text-se-cyan font-bold font-mono">${i + 1}.</span>
+                    <span>${item}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Values -->
+      <section class="py-20 bg-[var(--surface)]" aria-labelledby="values-heading">
+        <div class="section-container">
+          <div class="text-center mb-16">
+            <h2 id="values-heading" class="section-heading">${ap.valuesHeading}</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" role="list">
+            ${ap.valuesItems.map((val, i) => `
+              <div class="se-card" role="listitem">
+                <div class="w-10 h-10 rounded-full bg-[var(--primary-tint)] flex items-center justify-center mb-6 text-se-cyan">
+                  ${icons.get("checkCircle", "w-5 h-5")}
+                </div>
+                <h4 class="font-display font-semibold text-lg mb-3">${val.title}</h4>
+                <p class="text-sm leading-relaxed">${val.desc}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section class="py-20 bg-[var(--surface-2)]" aria-labelledby="team-heading">
+        <div class="section-container">
+          <div class="text-center mb-16">
+            <h2 id="team-heading" class="section-heading mb-4">${ap.teamHeading}</h2>
+            <p class="section-subheading mx-auto text-center">${ap.teamSubheading}</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" role="list">
+            ${ap.teamMembers.map((m, i) => {
+              const initials = m.name
+                .split(' ')
+                .filter(Boolean)
+                .slice(0, 2)
+                .map(n => n[0].toUpperCase())
+                .join('');
+
+              return `
+              <div class="se-card flex flex-col items-center text-center h-full group hover:border-se-cyan/40 transition-all duration-300" role="listitem">
+                <div class="w-24 h-24 rounded-full overflow-hidden mb-6 border-2 border-se-cyan/30 bg-se-cyan/10 flex items-center justify-center relative shadow-sm">
+                  ${m.image ? `
+                    <img src="${m.image}" alt="${m.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy">
+                    <span class="w-full h-full hidden items-center justify-center text-se-cyan font-bold text-2xl font-mono">${initials}</span>
+                  ` : `
+                    <span class="w-full h-full flex items-center justify-center text-se-cyan font-bold text-2xl font-mono">${initials}</span>
+                  `}
+                </div>
+                <h3 class="font-display font-bold text-base mb-1">${m.name}</h3>
+                <p class="text-se-cyan text-xs font-mono mb-4 font-semibold">${m.role}</p>
+                <p class="text-xs leading-relaxed text-se-silver flex-grow">${m.desc}</p>
+              </div>
+            `}).join('')}
+          </div>
+        </div>
+      </section>
+
+      ${renderCTA()}
+    </main>
+    ${renderFooter()}
+    ${renderWhatsAppFAB()}
+  `;
+
+  mountPageBehaviors();
+}
+
 function syncScrollPosition() {
   const target = window.location.hash
     ? document.querySelector(window.location.hash)
@@ -858,6 +1028,16 @@ function renderCurrentRoute() {
 
   if (route.name === "home") {
     renderPage();
+  } else if (route.name === "about") {
+    setDocumentMeta(
+      currentLang === "id"
+        ? "Tentang Kami — Selenium Digital Consultant Pontianak"
+        : "About Us — Selenium Digital Consultant Pontianak",
+      currentLang === "id"
+        ? "Kenali Selenium Digital Consultant, partner digital yang membantu bisnis dan UMKM membangun website serta produk digital berkualitas di Pontianak dan Kalimantan Barat."
+        : "Get to know Selenium Digital Consultant, a digital partner helping businesses and MSMEs build high-quality websites and digital products in Pontianak.",
+    );
+    renderAboutPage();
   } else if (route.name === "service-detail") {
     renderDetailRoute(route.slug);
   } else {
@@ -971,8 +1151,7 @@ function initTheme() {
   // FOUC already handled by inline script in index.html.
   // This syncs JS state after the app is mounted.
   const saved = localStorage.getItem('theme');
-  const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  const theme = saved || preferred;
+  const theme = saved || 'light';
   document.documentElement.setAttribute('data-theme', theme);
 }
 
@@ -1051,6 +1230,5 @@ document.documentElement.lang = currentLang === "id" ? "id" : "en";
 // Sync theme from localStorage (FOUC already handled in index.html)
 initTheme();
 
-// Boot
 initRouter(renderCurrentRoute);
 renderCurrentRoute();
