@@ -470,7 +470,7 @@ function renderAbout() {
               )
               .join("")}
           </div>
-          <a href="/about" class="btn-ghost inline-flex mt-10 reveal reveal-delay-4">
+          <a href="/about" data-router-link class="btn-ghost inline-flex mt-10 reveal reveal-delay-4">
             ${about.cta}
             ${icons.get("arrowRight", "w-4 h-4")}
           </a>
@@ -665,7 +665,7 @@ function renderFooter() {
               .map(
                 (link) => `
               <li role="listitem">
-                <a href="${link.href}" class="text-sm hover:text-se-cyan transition-colors duration-300">
+                <a href="${link.href}" data-router-link class="text-sm hover:text-se-cyan transition-colors duration-300">
                   ${link.label}
                 </a>
               </li>
@@ -738,12 +738,17 @@ function renderWhatsAppFAB() {
 function renderPartners() {
   const partners = getSection("partners");
   return `
-  <section id="partners" aria-label="Our partners and clients">
+  <section id="partners" class="py-12 border-y border-[var(--border)] bg-[var(--surface-2)]/50" aria-label="Our partners and clients">
     <div class="section-container">
-      <h3 class="text-center text-xs font-mono uppercase tracking-wider text-se-muted mb-6">${partners.heading}</h3>
-      <div class="partner-logo-strip" role="list">
+      <h3 class="text-center text-xs font-mono uppercase tracking-wider text-se-muted mb-8">${partners.heading}</h3>
+      <div class="flex flex-wrap items-center justify-center gap-6 md:gap-10" role="list">
         ${partners.items.map(p => `
-          <div class="partner-item" role="listitem">${p.name}</div>
+          <div class="flex items-center gap-3 px-6 py-3 rounded-lg border border-[var(--border)] bg-[var(--surface)] hover:border-se-cyan/40 transition-all duration-300 shadow-sm group" role="listitem">
+            ${p.logo ? `
+              <img src="${p.logo}" alt="${p.name} logo" class="h-7 w-auto max-w-[120px] object-contain opacity-80 group-hover:opacity-100 transition-opacity" onerror="this.style.display='none';">
+            ` : ''}
+            <span class="text-sm font-semibold tracking-tight group-hover:text-se-cyan transition-colors">${p.name}</span>
+          </div>
         `).join('')}
       </div>
     </div>
@@ -805,8 +810,7 @@ function renderPage() {
     <main id="main-content">
       ${renderHero()}
       ${renderPartners()}
-      ${renderCatalog()}
-      ${renderServices()}
+      ${renderServices()} 
       ${renderAbout()}
       ${renderProjects()}
       ${renderTestimonials()}
@@ -969,17 +973,30 @@ function renderAboutPage() {
             <h2 id="team-heading" class="section-heading mb-4">${ap.teamHeading}</h2>
             <p class="section-subheading mx-auto text-center">${ap.teamSubheading}</p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8" role="list">
-            ${ap.teamMembers.map((m, i) => `
-              <div class="se-card flex flex-col items-center text-center" role="listitem">
-                <div class="w-24 h-24 rounded-full bg-se-cyan/10 border border-se-cyan/20 flex items-center justify-center mb-6 text-se-cyan font-bold text-2xl font-mono">
-                  ${m.name.split(' ').map(n => n[0]).join('')}
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" role="list">
+            ${ap.teamMembers.map((m, i) => {
+              const initials = m.name
+                .split(' ')
+                .filter(Boolean)
+                .slice(0, 2)
+                .map(n => n[0].toUpperCase())
+                .join('');
+
+              return `
+              <div class="se-card flex flex-col items-center text-center h-full group hover:border-se-cyan/40 transition-all duration-300" role="listitem">
+                <div class="w-24 h-24 rounded-full overflow-hidden mb-6 border-2 border-se-cyan/30 bg-se-cyan/10 flex items-center justify-center relative shadow-sm">
+                  ${m.image ? `
+                    <img src="${m.image}" alt="${m.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy">
+                    <span class="w-full h-full hidden items-center justify-center text-se-cyan font-bold text-2xl font-mono">${initials}</span>
+                  ` : `
+                    <span class="w-full h-full flex items-center justify-center text-se-cyan font-bold text-2xl font-mono">${initials}</span>
+                  `}
                 </div>
-                <h3 class="font-display font-bold text-lg mb-1">${m.name}</h3>
-                <p class="text-se-cyan text-xs font-mono mb-4">${m.role}</p>
-                <p class="text-sm leading-relaxed">${m.desc}</p>
+                <h3 class="font-display font-bold text-base mb-1">${m.name}</h3>
+                <p class="text-se-cyan text-xs font-mono mb-4 font-semibold">${m.role}</p>
+                <p class="text-xs leading-relaxed text-se-silver flex-grow">${m.desc}</p>
               </div>
-            `).join('')}
+            `}).join('')}
           </div>
         </div>
       </section>

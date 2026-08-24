@@ -308,10 +308,8 @@ export const translations = {
     partners: {
       heading: "Trusted by local businesses & institutions",
       items: [
-        { name: "CV Pontianak Distribusi" },
-        { name: "Kedai Kopi Lokal Pontianak" },
-        { name: "Borneo Food Startup" },
-        { name: "PMKM IF UNTAN" }
+        { name: "DTLawyers" },
+        { name: "SMAN 13 Pontianak" }
       ]
     },
 
@@ -523,10 +521,14 @@ export const translations = {
     partners: {
       heading: "Trusted by local businesses & institutions",
       items: [
-        { name: "CV Pontianak Distribusi" },
-        { name: "Kedai Kopi Lokal Pontianak" },
-        { name: "Borneo Food Startup" },
-        { name: "PMKM IF UNTAN" }
+        {
+          name: "DTLawyers",
+          logo: "/partners/dtlawyers.svg"
+        },
+        {
+          name: "SMAN 13 Pontianak",
+          logo: "/partners/sman13.svg"
+        }
       ]
     },
 
@@ -555,9 +557,30 @@ export const translations = {
       teamHeading: "Our Team",
       teamSubheading: "The dedicated individuals behind the scenes turning your business ideas into reality.",
       teamMembers: [
-        { name: "Muhammad Za'im Shidqi", role: "Co-Founder & Technical Lead", desc: "Architecting clean, reliable systems designed to solve real business challenges." },
-        { name: "Team Member 2", role: "UI/UX Designer", desc: "Crafting beautiful, user-friendly digital experiences tailored for our users." },
-        { name: "Team Member 3", role: "Full-Stack Developer", desc: "Transforming designs into robust, secure, and high-performance web applications." }
+        {
+          name: "Willy Wijaya",
+          role: "Co-Founder & Strategic Solutions Architect",
+          desc: "Translating complex business needs into clear product strategies and scalable code, ensuring every digital solution delivers real commercial value.",
+          image: "/team/willy.png"
+        },
+        {
+          name: "Muhammad Za'im Shidqi",
+          role: "Growth Lead & Creative Technologist",
+          desc: "Connecting digital innovation with market demand through data-driven growth strategies, brand storytelling, and modern web experiences.",
+          image: "/team/zaim.png"
+        },
+        {
+          name: "Arya Dwi Putra",
+          role: "Engineering Lead & Project Manager",
+          desc: "Orchestrating end-to-end software delivery and sprint execution with precision, balancing clean engineering architecture with timely milestones.",
+          image: "/team/arya.png"
+        },
+        {
+          name: "I Wayan Satya Widhya Putra Pratama",
+          role: "Chief Technology Explorer & Systems Architect",
+          desc: "Pioneering the adoption of modern frameworks, emerging tech stacks, and high-performance infrastructure to build future-proof software.",
+          image: "/team/wayan.png"
+        }
       ]
     },
   },
@@ -999,10 +1022,14 @@ export const translations = {
     partners: {
       heading: "Dipercaya oleh bisnis lokal & instansi",
       items: [
-        { name: "CV Pontianak Distribusi" },
-        { name: "Kedai Kopi Lokal Pontianak" },
-        { name: "Borneo Food Startup" },
-        { name: "PMKM IF UNTAN" }
+        {
+          name: "DTLawyers",
+          logo: "/partners/dtlawyers.svg"
+        },
+        {
+          name: "SMAN 13 Pontianak",
+          logo: "/partners/sman13.svg"
+        }
       ]
     },
 
@@ -1031,9 +1058,30 @@ export const translations = {
       teamHeading: "Tim Kami",
       teamSubheading: "Orang-orang di balik layar yang mengubah ide bisnis Anda menjadi produk digital siap pakai.",
       teamMembers: [
-        { name: "Muhammad Za'im Shidqi", role: "Co-Founder & Technical Lead", desc: "Merancang sistem yang bersih, andal, dan mampu menyelesaikan masalah nyata bisnis Anda." },
-        { name: "Anggota Tim 2", role: "Desainer UI/UX", desc: "Merancang tampilan aplikasi yang cantik, ramah pengguna, dan dekat dengan audiens Pontianak." },
-        { name: "Anggota Tim 3", role: "Full-Stack Developer", desc: "Mengubah desain menjadi sistem web yang tangguh, aman, dan berkecepatan tinggi." }
+        {
+          name: "Willy Wijaya",
+          role: "Co-Founder & Strategic Solutions Architect",
+          desc: "Menyelaraskan kebutuhan bisnis dengan strategi produk yang terarah dan arsitektur kode yang skalabel, memastikan setiap solusi membawa dampak nyata.",
+          image: "/team/willy.png"
+        },
+        {
+          name: "Muhammad Za'im Shidqi",
+          role: "Growth Lead & Creative Technologist",
+          desc: "Menghubungkan inovasi digital dengan pasar melalui strategi pertumbuhan berbasis data, komunikasi kreatif, dan pengembangan web modern.",
+          image: "/team/zaim.png"
+        },
+        {
+          name: "Arya Dwi Putra",
+          role: "Engineering Lead & Project Manager",
+          desc: "Memimpin eksekusi proyek dan delivery teknis secara presisi, menjaga keseimbangan antara arsitektur software yang bersih dan target waktu yang disiplin.",
+          image: "/team/arya.png"
+        },
+        {
+          name: "I Wayan Satya Widhya Putra Pratama",
+          role: "Chief Technology Explorer & Systems Architect",
+          desc: "Mengeksplorasi teknologi mutakhir, framework modern, dan infrastruktur berkinerja tinggi untuk membangun sistem perangkat lunak yang tahan masa depan.",
+          image: "/team/wayan.png"
+        }
       ]
     },
   },
