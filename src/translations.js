@@ -61,13 +61,40 @@ export const translations = {
       heading: "Solutions Built for Small Business to Enterprise Scale",
       subheading:
         "From infrastructure to intelligence — we deliver end-to-end technology solutions that drive measurable business outcomes.",
+      cta: "Ask via WhatsApp",
+      detailCta: "View Details",
+      backCta: "Back to Services",
+      benefitsHeading: "Business Benefits",
+      processHeading: "How We Work",
+      notFoundTitle: "Service Not Found",
+      notFoundDescription:
+        "The service page you are looking for is unavailable or has been moved.",
       items: [
         {
           icon: "cloud",
-          title: "Cloud Architecture",
+          slug: "jasa-website",
+          title: "Reliable Online Business Systems",
           description:
-            "Design and deploy secure, scalable multi-cloud and hybrid cloud environments on AWS, GCP, and Azure — optimized for performance and cost efficiency.",
-          tags: ["AWS", "GCP", "Azure", "Terraform"],
+            "Keep your business website and application fast, secure, and ready to grow, with guidance from a Pontianak consultant who helps you avoid downtime and unnecessary costs.",
+          longDescription:
+            "For businesses in Pontianak, a website or online system should do more than look good. We help you plan, build, and maintain a reliable digital presence that customers can access easily and your team can manage without technical stress.",
+          benefits: [
+            "A faster and more trustworthy website for customers",
+            "Clearer online information about your products or services",
+            "Lower risk of downtime during busy business hours",
+            "A system that can grow as your business grows",
+          ],
+          process: [
+            "Business needs discussion",
+            "Scope and proposal",
+            "Build and content setup",
+            "Testing and handover",
+          ],
+          metaTitle:
+            "Jasa Website Pontianak | Reliable Business Website & System",
+          metaDescription:
+            "Need jasa website in Pontianak? Build a fast, secure business website or online system that is easy to manage and ready to grow.",
+          tags: ["Stable System", "Secure Access", "Cost Efficient", "Growth Ready"],
         },
         // {
         //   icon:        'shield',
@@ -77,55 +104,142 @@ export const translations = {
         // },
         {
           icon: "code",
-          title: "Application Development",
+          slug: "jasa-aplikasi",
+          title: "Custom Business Applications",
           description:
-            "Architect and deliver modern full-stack web applications and microservices with a focus on performance, maintainability, and DevOps-first engineering.",
+            "Build a website, application, or software that matches your daily workflow, makes admin work easier, and gives customers a smoother way to reach your business.",
+          longDescription:
+            "When spreadsheets and manual notes start slowing the team down, a custom application can make daily operations easier. We design business software around your real workflow, so your team can record, search, approve, and report work in one organized place.",
+          benefits: [
+            "Daily admin work becomes simpler and faster",
+            "Customer and transaction data is easier to find",
+            "Features are built around your actual workflow",
+            "The application can be improved step by step",
+          ],
+          process: [
+            "Workflow mapping",
+            "Feature proposal",
+            "Application development",
+            "Training and handover",
+          ],
+          metaTitle: "Jasa Aplikasi Bisnis Pontianak | Custom Software",
+          metaDescription:
+            "Build a custom business application in Pontianak to simplify admin work, organize data, and support your team's daily workflow.",
           tags: [
-            "React",
-            "express.js",
-            "Hapi.js",
-            "Node.js",
-            "Docker",
-            "Laravel",
+            "Easy to Use",
+            "Time Saving",
+            "Custom Fit",
+            "Clear Pricing",
           ],
         },
         {
           icon: "database",
-          title: "Data Engineering & Analytics",
+          slug: "dashboard-bisnis",
+          title: "Business Reports & Dashboards",
           description:
-            "Unify your data landscape — from ETL pipeline design and data warehousing to real-time BI dashboards and predictive analytics infrastructure.",
-          tags: ["Power BI", "MySQL", "PostgreSQL"],
+            "Turn scattered sales, stock, and customer data into clear reports so owners and managers can make faster decisions without guessing.",
+          longDescription:
+            "Good decisions need clear numbers. We help turn sales, stock, customer, and operational data into dashboards and reports that business owners can read quickly, without digging through scattered files every day.",
+          benefits: [
+            "Sales and stock trends are easier to monitor",
+            "Owners can make decisions with clearer data",
+            "Reports are faster to prepare and share",
+            "Business performance is easier to review every month",
+          ],
+          process: [
+            "Data source review",
+            "Report structure planning",
+            "Dashboard setup",
+            "Review and team guidance",
+          ],
+          metaTitle: "Dashboard Bisnis Pontianak | Reports for Better Decisions",
+          metaDescription:
+            "Create business dashboards in Pontianak to organize sales, stock, and customer data into reports that help owners decide faster.",
+          tags: ["Clear Reports", "Faster Decisions", "Organized Data"],
         },
         {
           icon: "cpu",
-          title: "AI & Machine Learning",
+          slug: "otomasi-bisnis",
+          title: "Smart Operations Automation",
           description:
-            "Integrate intelligent automation into your operations — from LLM-powered workflows and NLP models to computer vision and MLOps deployment pipelines.",
+            "Use practical automation to handle repetitive tasks, respond faster to customers, and reduce manual errors in your business application or internal software.",
+          longDescription:
+            "Repetitive work can quietly consume hours every week. We help identify tasks that can be automated safely, then build practical flows that reduce copy-paste work, speed up responses, and keep your team focused on higher-value activities.",
+          benefits: [
+            "Less time spent on repetitive manual tasks",
+            "Faster response for customers and internal teams",
+            "Lower risk of typing and copy-paste errors",
+            "Operations stay consistent even when work gets busy",
+          ],
+          process: [
+            "Automation opportunity review",
+            "Flow and rule planning",
+            "Automation setup",
+            "Testing and improvement",
+          ],
+          metaTitle: "Otomasi Bisnis Pontianak | Save Time with Automation",
+          metaDescription:
+            "Use business automation in Pontianak to reduce repetitive work, speed up responses, and lower manual errors in daily operations.",
           tags: [
-            "Python",
-            "LangChain",
-            "Computer Vision",
-            "Machine Learning",
-            "PyTorch",
+            "Time Saving",
+            "Less Manual Work",
+            "Fast Response",
+            "Easy to Scale",
           ],
         },
         {
           icon: "settings",
-          title: "IT Infrastructure & DevOps",
+          slug: "konsultan-it",
+          title: "Digital System Care",
           description:
-            "Transform your delivery pipeline with CI/CD automation, infrastructure-as-code, container orchestration, and 24/7 proactive system monitoring.",
-          tags: ["GitHub Actions", "Ansible", "Prometheus", "Grafana"],
+            "Keep your website, application, and software running smoothly with routine checks, fast support, and a consultant who helps your team solve issues before they disrupt work.",
+          longDescription:
+            "A digital system needs regular care after launch. As an IT consultant in Pontianak, we help monitor issues, review risks, support your team, and keep your website or software stable so operations do not stop at the worst moment.",
+          benefits: [
+            "Problems are handled before they become bigger disruptions",
+            "Your team gets a clear place to ask for IT help",
+            "Website and application performance is reviewed regularly",
+            "Business owners can focus more on operations",
+          ],
+          process: [
+            "System health review",
+            "Support priority setup",
+            "Routine maintenance",
+            "Monthly recommendations",
+          ],
+          metaTitle: "Konsultan IT Pontianak | Website & Software Support",
+          metaDescription:
+            "Work with an IT consultant in Pontianak to keep your website, application, and software stable with routine checks and fast support.",
+          tags: ["Fast Support", "Less Downtime", "Routine Checks", "Peace of Mind"],
         },
         {
           icon: "network",
-          title: "Workspace IT & Network Setup",
+          slug: "setup-it-kantor",
+          title: "Office IT & CCTV Setup",
           description:
-            "Ensure seamless daily operations with reliable Local Area Network (LAN) deployment, CCTV security system installation, and complete workstation setup or reinstallation for your employees.",
+            "Set up office internet, employee computers, and CCTV so your team in Pontianak can work safely, stay connected, and get daily operations moving without technical confusion.",
+          longDescription:
+            "A productive office starts with practical IT that works every day. We help set up office networks, employee computers, and CCTV systems so your team can stay connected, work securely, and avoid confusing setup problems.",
+          benefits: [
+            "Office devices are ready for daily work",
+            "Internet and local network setup is tidier",
+            "CCTV helps improve workplace security",
+            "Employees get support when setup problems appear",
+          ],
+          process: [
+            "Office needs survey",
+            "Device and network plan",
+            "Installation and setup",
+            "Testing and documentation",
+          ],
+          metaTitle: "Setup IT Kantor Pontianak | Network, Computer & CCTV",
+          metaDescription:
+            "Set up office IT in Pontianak, including network, employee computers, and CCTV, so your team can work safely and stay connected.",
           tags: [
-            "Office Network (LAN)",
-            "CCTV Installation",
-            "Workstation Setup",
-            "IT Support",
+            "Smooth Operations",
+            "Office Security",
+            "Ready to Use",
+            "Fast Support",
           ],
         },
       ],
@@ -374,6 +488,78 @@ export const translations = {
         { label: "Terms of Service", href: "#" },
       ],
     },
+
+    // ── Client Testimonials ──
+    testimonials: {
+      tag: "Client Testimonials",
+      heading: "What Business Owners in Pontianak Say",
+      subheading: "Real stories from local entrepreneurs and teams who streamlined their daily operations with Selenium.",
+      items: [
+        {
+          quote: "The online ordering website built by Selenium is very practical. Our customers love it, and our daily turnover keeps growing because the ordering process is instant and hassle-free.",
+          name: "Mrs. Yanti",
+          role: "Owner",
+          company: "Kedai Kopi Lokal Pontianak",
+          image: ""
+        },
+        {
+          quote: "Selenium helped us automate our inventory tracking. Our warehouse team works much faster, and data input errors are now completely eliminated.",
+          name: "Mr. Budi",
+          role: "Operations Director",
+          company: "CV Pontianak Distribusi",
+          image: ""
+        },
+        {
+          quote: "Working with the Selenium team was a great experience. They explained technical concepts in simple language that was easy for us to understand.",
+          name: "Andi",
+          role: "Founder",
+          company: "Borneo Food Startup",
+          image: ""
+        }
+      ]
+    },
+
+    // ── Our Partners ──
+    partners: {
+      heading: "Trusted by local businesses & institutions",
+      items: [
+        { name: "CV Pontianak Distribusi" },
+        { name: "Kedai Kopi Lokal Pontianak" },
+        { name: "Borneo Food Startup" },
+        { name: "PMKM IF UNTAN" }
+      ]
+    },
+
+    // ── Dedicated About Page ──
+    aboutPage: {
+      title: "Behind every digital product, there is a story waiting to be told.",
+      eyebrow: "Our Story",
+      storyHeading: "Who We Are & Why We Build",
+      storyParagraph1: "We started with a simple belief: digital tools should help businesses run smoother, not add extra work. Many business owners in Pontianak want to grow online, but don't know where to start. We are here to make that first step clear and manageable.",
+      storyParagraph2: "We learn how your business operates, listen to daily pain points, and build solutions that genuinely help. You'll always know what is being built, why, and how to use it.",
+      valuesHeading: "Our Core Principles",
+      valuesItems: [
+        { title: "User-First Approach", desc: "We design simple, intuitive interfaces that anyone on your team can use without extensive training." },
+        { title: "Simple Yet Impactful", desc: "A simple solution that works reliably is far more valuable than an overly complex system that goes unused." },
+        { title: "Clear & Honest Communication", desc: "We speak human, not code. We are transparent about what works and what isn't necessary." },
+        { title: "Growing Together", desc: "Your growth is our success. We build partnerships that last long after the initial launch." }
+      ],
+      visionHeading: "Our Vision",
+      visionText: "To become the trusted digital partner for MSMEs and local businesses in Pontianak and across Indonesia.",
+      missionHeading: "Our Mission",
+      missionItems: [
+        "Create practical, easy-to-use websites and digital tools for everyday business.",
+        "Provide honest consulting without upselling unnecessary features or costs.",
+        "Empower local businesses to adopt digital solutions at their own pace."
+      ],
+      teamHeading: "Our Team",
+      teamSubheading: "The dedicated individuals behind the scenes turning your business ideas into reality.",
+      teamMembers: [
+        { name: "Muhammad Za'im Shidqi", role: "Co-Founder & Technical Lead", desc: "Architecting clean, reliable systems designed to solve real business challenges." },
+        { name: "Team Member 2", role: "UI/UX Designer", desc: "Crafting beautiful, user-friendly digital experiences tailored for our users." },
+        { name: "Team Member 3", role: "Full-Stack Developer", desc: "Transforming designs into robust, secure, and high-performance web applications." }
+      ]
+    },
   },
 
   /* ══════════════════════════════════════════════
@@ -424,13 +610,39 @@ export const translations = {
       heading: "Solusi yang Dibangun untuk Skala UMKM hingga Enterprise",
       subheading:
         "Dari infrastruktur hingga kecerdasan buatan — kami menghadirkan solusi teknologi end-to-end yang menghasilkan dampak bisnis yang terukur.",
+      cta: "Tanya via WhatsApp",
+      detailCta: "Lihat Detail",
+      backCta: "Kembali ke Layanan",
+      benefitsHeading: "Manfaat untuk Bisnis",
+      processHeading: "Alur Kerja Kami",
+      notFoundTitle: "Layanan Tidak Ditemukan",
+      notFoundDescription:
+        "Halaman layanan yang Anda cari tidak tersedia atau sudah dipindahkan.",
       items: [
         {
           icon: "cloud",
-          title: "Arsitektur Cloud",
+          slug: "jasa-website",
+          title: "Sistem Online yang Stabil",
           description:
-            "Merancang dan menerapkan lingkungan multi-cloud dan hybrid cloud yang aman dan skalabel di AWS, GCP, dan Azure — dioptimalkan untuk performa dan efisiensi biaya.",
-          tags: ["AWS", "GCP", "Azure", "Terraform"],
+            "Jasa website dan aplikasi untuk menjaga sistem bisnis Anda tetap cepat, aman, dan siap berkembang bersama konsultan Pontianak yang membantu mencegah downtime dan biaya yang tidak perlu.",
+          longDescription:
+            "Untuk bisnis di Pontianak, website atau sistem online sebaiknya tidak hanya terlihat bagus. Kami membantu merencanakan, membangun, dan merawat kehadiran digital yang mudah diakses pelanggan dan mudah dikelola tim tanpa beban teknis.",
+          benefits: [
+            "Website lebih cepat dan lebih dipercaya pelanggan",
+            "Informasi produk atau layanan lebih mudah ditemukan",
+            "Risiko downtime saat jam sibuk lebih rendah",
+            "Sistem siap dikembangkan saat bisnis bertumbuh",
+          ],
+          process: [
+            "Diskusi kebutuhan bisnis",
+            "Ruang lingkup dan proposal",
+            "Pengerjaan dan pengisian konten",
+            "Testing dan serah terima",
+          ],
+          metaTitle: "Jasa Website Pontianak | Website & Sistem Bisnis Stabil",
+          metaDescription:
+            "Butuh jasa website di Pontianak? Bangun website atau sistem online bisnis yang cepat, aman, mudah dikelola, dan siap berkembang.",
+          tags: ["Sistem Stabil", "Akses Aman", "Hemat Biaya", "Siap Berkembang"],
         },
         // {
         //   icon:        'shield',
@@ -440,55 +652,142 @@ export const translations = {
         // },
         {
           icon: "code",
-          title: "Pengembangan Aplikasi",
+          slug: "jasa-aplikasi",
+          title: "Aplikasi Bisnis Sesuai Kebutuhan",
           description:
-            "Merancang dan menghadirkan aplikasi web full-stack dan microservices modern dengan fokus pada performa, kemudahan pemeliharaan, dan rekayasa DevOps-first.",
+            "Bangun website, aplikasi, atau perangkat lunak yang sesuai alur kerja harian, memudahkan administrasi, dan memberi pelanggan cara yang lebih nyaman untuk menjangkau bisnis Anda.",
+          longDescription:
+            "Saat spreadsheet dan catatan manual mulai memperlambat tim, aplikasi khusus bisa membuat operasional harian jauh lebih rapi. Kami merancang perangkat lunak bisnis sesuai alur kerja nyata agar pencatatan, pencarian, persetujuan, dan laporan berada di satu tempat.",
+          benefits: [
+            "Administrasi harian menjadi lebih mudah dan cepat",
+            "Data pelanggan dan transaksi lebih mudah dicari",
+            "Fitur dibangun sesuai alur kerja bisnis Anda",
+            "Aplikasi bisa dikembangkan bertahap sesuai kebutuhan",
+          ],
+          process: [
+            "Pemetaan alur kerja",
+            "Proposal fitur",
+            "Pengembangan aplikasi",
+            "Pelatihan dan serah terima",
+          ],
+          metaTitle: "Jasa Aplikasi Bisnis Pontianak | Software Custom",
+          metaDescription:
+            "Bangun aplikasi bisnis custom di Pontianak untuk memudahkan administrasi, merapikan data, dan mendukung alur kerja harian tim.",
           tags: [
-            "React",
-            "express.js",
-            "Hapi.js",
-            "Node.js",
-            "Docker",
-            "Laravel",
+            "Mudah Digunakan",
+            "Hemat Waktu",
+            "Sesuai Kebutuhan",
+            "Harga Transparan",
           ],
         },
         {
           icon: "database",
-          title: "Rekayasa & Analitik Data",
+          slug: "dashboard-bisnis",
+          title: "Laporan Bisnis & Dashboard",
           description:
-            "Menyatukan lanskap data Anda — dari desain pipeline ETL dan data warehousing hingga dashboard BI real-time dan infrastruktur analitik prediktif.",
-          tags: ["Power BI", "MySQL", "PostgreSQL"],
+            "Ubah data penjualan, stok, dan pelanggan yang tersebar menjadi laporan yang jelas agar pemilik usaha dapat mengambil keputusan lebih cepat tanpa menebak-nebak.",
+          longDescription:
+            "Keputusan yang baik butuh angka yang jelas. Kami membantu mengubah data penjualan, stok, pelanggan, dan operasional menjadi dashboard serta laporan yang mudah dibaca pemilik usaha tanpa harus membuka banyak file setiap hari.",
+          benefits: [
+            "Tren penjualan dan stok lebih mudah dipantau",
+            "Pemilik usaha mengambil keputusan dengan data yang jelas",
+            "Laporan lebih cepat disiapkan dan dibagikan",
+            "Performa bisnis lebih mudah dievaluasi setiap bulan",
+          ],
+          process: [
+            "Review sumber data",
+            "Perencanaan struktur laporan",
+            "Pembuatan dashboard",
+            "Review dan pendampingan tim",
+          ],
+          metaTitle: "Dashboard Bisnis Pontianak | Laporan untuk Keputusan",
+          metaDescription:
+            "Buat dashboard bisnis di Pontianak untuk merapikan data penjualan, stok, dan pelanggan menjadi laporan yang membantu keputusan lebih cepat.",
+          tags: ["Laporan Jelas", "Keputusan Cepat", "Data Rapi"],
         },
         {
           icon: "cpu",
-          title: "AI & Machine Learning",
+          slug: "otomasi-bisnis",
+          title: "Otomasi Pintar untuk Operasional",
           description:
-            "Integrasikan otomasi cerdas ke dalam operasional Anda — dari alur kerja berbasis LLM dan model NLP hingga computer vision dan pipeline deployment MLOps.",
+            "Gunakan otomasi praktis untuk menangani pekerjaan berulang, merespons pelanggan lebih cepat, dan mengurangi kesalahan manual di aplikasi bisnis atau perangkat lunak internal.",
+          longDescription:
+            "Pekerjaan berulang bisa menghabiskan banyak waktu tanpa terasa. Kami membantu menemukan proses yang aman untuk diotomasi, lalu membangun alur praktis agar pekerjaan copy-paste berkurang, respons lebih cepat, dan tim fokus pada pekerjaan yang lebih penting.",
+          benefits: [
+            "Waktu untuk pekerjaan manual berulang berkurang",
+            "Respons ke pelanggan dan tim internal lebih cepat",
+            "Risiko salah input dan copy-paste lebih rendah",
+            "Operasional tetap konsisten saat pekerjaan sedang ramai",
+          ],
+          process: [
+            "Review peluang otomasi",
+            "Perencanaan alur dan aturan",
+            "Setup otomasi",
+            "Testing dan penyempurnaan",
+          ],
+          metaTitle: "Otomasi Bisnis Pontianak | Hemat Waktu Operasional",
+          metaDescription:
+            "Gunakan otomasi bisnis di Pontianak untuk mengurangi pekerjaan berulang, mempercepat respons, dan menekan kesalahan manual.",
           tags: [
-            "Python",
-            "LangChain",
-            "Computer Vision",
-            "Machine Learning",
-            "PyTorch",
+            "Hemat Waktu",
+            "Kerja Manual Berkurang",
+            "Respon Cepat",
+            "Mudah Dikembangkan",
           ],
         },
         {
           icon: "settings",
-          title: "Infrastruktur IT & DevOps",
+          slug: "konsultan-it",
+          title: "Perawatan Sistem Digital",
           description:
-            "Transformasikan pipeline pengiriman Anda dengan otomasi CI/CD, infrastructure-as-code, orkestrasi container, dan pemantauan sistem proaktif 24/7.",
-          tags: ["GitHub Actions", "Ansible", "Prometheus", "Grafana"],
+            "Jaga website, aplikasi, dan perangkat lunak tetap lancar dengan pengecekan rutin, support cepat, dan konsultan yang membantu tim menyelesaikan masalah sebelum mengganggu pekerjaan.",
+          longDescription:
+            "Sistem digital perlu dirawat setelah diluncurkan. Sebagai konsultan IT di Pontianak, kami membantu memantau masalah, meninjau risiko, mendukung tim, dan menjaga website atau perangkat lunak tetap stabil agar operasional tidak berhenti di momen penting.",
+          benefits: [
+            "Masalah ditangani sebelum menjadi gangguan besar",
+            "Tim punya tempat yang jelas untuk meminta bantuan IT",
+            "Performa website dan aplikasi dicek berkala",
+            "Pemilik bisnis bisa lebih fokus pada operasional",
+          ],
+          process: [
+            "Review kesehatan sistem",
+            "Penentuan prioritas support",
+            "Perawatan rutin",
+            "Rekomendasi bulanan",
+          ],
+          metaTitle: "Konsultan IT Pontianak | Support Website & Software",
+          metaDescription:
+            "Gunakan konsultan IT di Pontianak untuk menjaga website, aplikasi, dan perangkat lunak tetap stabil melalui cek rutin dan support cepat.",
+          tags: ["Support Cepat", "Minim Gangguan", "Cek Rutin", "Lebih Tenang"],
         },
         {
           icon: "network",
-          title: "Infrastruktur IT & Jaringan Kantor",
+          slug: "setup-it-kantor",
+          title: "Setup IT Kantor & CCTV",
           description:
-            "Pastikan operasional harian bisnis Anda berjalan tanpa hambatan dengan instalasi jaringan internet lokal (LAN) yang dapat diandalkan, sistem keamanan CCTV, hingga penyiapan awal dan instalasi ulang komputer untuk karyawan.",
+            "Siapkan internet kantor, komputer karyawan, dan CCTV agar tim di Pontianak bisa bekerja aman, tetap terhubung, dan menjalankan operasional harian tanpa bingung urusan teknis.",
+          longDescription:
+            "Kantor yang produktif membutuhkan IT praktis yang berjalan setiap hari. Kami membantu setup jaringan kantor, komputer karyawan, dan CCTV agar tim tetap terhubung, bekerja aman, dan tidak bingung menghadapi masalah setup.",
+          benefits: [
+            "Perangkat kantor siap dipakai untuk kerja harian",
+            "Internet dan jaringan lokal lebih tertata",
+            "CCTV membantu meningkatkan keamanan tempat kerja",
+            "Karyawan mendapat dukungan saat ada kendala setup",
+          ],
+          process: [
+            "Survei kebutuhan kantor",
+            "Rencana perangkat dan jaringan",
+            "Instalasi dan setup",
+            "Testing dan dokumentasi",
+          ],
+          metaTitle: "Setup IT Kantor Pontianak | Jaringan, Komputer & CCTV",
+          metaDescription:
+            "Setup IT kantor di Pontianak untuk jaringan, komputer karyawan, dan CCTV agar tim bisa bekerja aman dan tetap terhubung.",
           tags: [
-            "Jaringan Kantor (LAN)",
-            "Instalasi CCTV",
-            "Setup Komputer Karyawan",
-            "IT Support",
+            "Operasional Lancar",
+            "Keamanan Kantor",
+            "Siap Digunakan",
+            "Support Cepat",
           ],
         },
       ],
