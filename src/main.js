@@ -28,14 +28,14 @@ let currentLang = detectLanguage();
 const WHATSAPP_NUMBER = "6282253210449";
 const HOME_META = {
   en: {
-    title: "Selenium Digital Consultant — Enterprise IT Consulting",
+    title: "Selenium Digital Consultant — IT Consultant & Custom App Developer",
     description:
-      "Selenium Digital Consultant helps businesses in Pontianak build websites, applications, software, automation, and practical IT support.",
+      "Trusted IT consultant and web application developer for MSMEs in Pontianak. Building fast, secure websites, custom business software, and smart automation.",
   },
   id: {
-    title: "Selenium Digital Consultant — Konsultan IT Pontianak",
+    title: "Selenium Digital Consultant — Konsultan IT Pontianak & Jasa Pembuatan Aplikasi",
     description:
-      "Selenium Digital Consultant adalah konsultan IT Pontianak untuk jasa website, aplikasi, perangkat lunak, otomasi, dan support bisnis.",
+      "Konsultan IT Pontianak terpercaya untuk UMKM. Jasa pembuatan website, software & pembuat aplikasi Pontianak yang cepat, aman, dan siap bantu bisnis berkembang.",
   },
 };
 
@@ -1027,6 +1027,10 @@ function renderCurrentRoute() {
   const route = getRoute();
 
   if (route.name === "home") {
+    setDocumentMeta(
+      HOME_META[currentLang]?.title || HOME_META.id.title,
+      HOME_META[currentLang]?.description || HOME_META.id.description,
+    );
     renderPage();
   } else if (route.name === "about") {
     setDocumentMeta(
