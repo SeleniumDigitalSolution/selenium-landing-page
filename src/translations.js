@@ -134,27 +134,102 @@ export const translations = {
     // ── About Section ──
     about: {
       tag: "About Selenium",
-      heading: "The Essential Element for Your Digital Ecosystem",
+      heading: "Digital help that fits the way your business already works.",
       paragraph1:
-        "Just as Selenium (Se, At. No. 34) is a trace element indispensable to biological life — found in trace amounts yet critical to cellular function and vitality — Selenium Digital Consultant is the essential, foundational partner woven into the fabric of your organization's digital health.",
+        "Selenium started from conversations with business owners in Pontianak who wanted to serve customers better, but did not know where to begin with digital tools. We listen first, then help turn everyday needs into a website or system that feels familiar and useful.",
       paragraph2:
-        "We don't just consult. We embed ourselves as a strategic extension of your technical team, delivering precision-engineered solutions that sustain, protect, and accelerate your most critical digital systems.",
+        "Our work is not finished when a site goes live. We stay close, explain each step in plain language, and help your team use what we build with confidence.",
       quote:
-        '"We are the element your digital ecosystem cannot function without."',
+        '"Good digital tools should make a busy day feel a little lighter."',
+      cta: "Read Our Story",
+      photoCaption: "A small team, ready to listen and build alongside your business.",
+      teamImageAlt: "Selenium Digital Consultant team in discussion",
       valueProps: [
         {
-          title: "Precision Engineering",
-          desc: "Every solution is architecturally sound, documented, and built to last — not just to ship.",
+          title: "User-First Design",
+          desc: "Every product is built with the end user in mind, making it easy to adopt and run.",
         },
         {
-          title: "Strategic Partnership",
-          desc: "We become an embedded part of your team, aligned to your business goals, not just technical tickets.",
+          title: "Honest Guidance",
+          desc: "We recommend only what your business truly needs. No over-engineering, no unnecessary costs.",
         },
         {
-          title: "Proactive Intelligence",
-          desc: "We identify risks before they become incidents through continuous monitoring and threat intelligence.",
+          title: "Local Commitment",
+          desc: "We understand Pontianak and local business challenges, offering direct support whenever you need it.",
         },
       ],
+    },
+
+    // ── Testimonials Section ──
+    testimonials: {
+      tag: "Client Success",
+      heading: "What Pontianak Business Owners Say",
+      subheading: "Real stories from local entrepreneurs and teams who modernized their daily operations with Selenium.",
+      items: [
+        {
+          quote: "The online ordering website built by Selenium is incredibly simple. Our customers love it, and our daily sales have steadily increased because ordering is now friction-free.",
+          name: "Ibu Yanti",
+          role: "Owner",
+          company: "Kedai Kopi Lokal Pontianak",
+          image: ""
+        },
+        {
+          quote: "Selenium helped automate our inventory tracking system. Our warehouse team now works much faster, and recording errors have been completely eliminated.",
+          name: "Pak Budi",
+          role: "Operations Director",
+          company: "CV Pontianak Distribusi",
+          image: ""
+        },
+        {
+          quote: "Working with the Selenium team is a breeze. They explain technical terms in a relaxed, plain-language way that makes the entire process stress-free.",
+          name: "Andi",
+          role: "Founder",
+          company: "Borneo Food Startup",
+          image: ""
+        }
+      ]
+    },
+
+    // ── Partners Section ──
+    partners: {
+      heading: "Trusted by local businesses & institutions",
+      items: [
+        { name: "CV Pontianak Distribusi" },
+        { name: "Kedai Kopi Lokal Pontianak" },
+        { name: "Borneo Food Startup" },
+        { name: "PMKM IF UNTAN" }
+      ]
+    },
+
+    // ── Dedicated About Page ──
+    aboutPage: {
+      title: "Behind every digital product, there is a story waiting to be realized",
+      eyebrow: "Our Story",
+      storyHeading: "Who We Are & Why We Build",
+      storyParagraph1: "We began with a simple belief: digital tools should help a business run more smoothly, not create more work. Many local business owners in Pontianak want to grow online but are unsure where to start. We are here to make that first step feel clear.",
+      storyParagraph2: "We learn how your business works, listen to the problems you meet every day, and build only what can help. You will always know what is being made, why it matters, and how to use it.",
+      valuesHeading: "Our Core Principles",
+      valuesItems: [
+        { title: "Put Users First", desc: "We design simple, intuitive interfaces that anyone can use without special training." },
+        { title: "Impact Over Complexity", desc: "A simple solution that works is infinitely better than a complex system that collects dust." },
+        { title: "Clear & Honest Communication", desc: "We speak human, not code. We are transparent about what works and what is unnecessary." },
+        { title: "Grow with Our Clients", desc: "Your growth is our growth. We build relationships that last beyond the launch date." }
+      ],
+      visionHeading: "Vision",
+      visionText: "To be a trusted digital partner for small and local businesses in Pontianak and across Indonesia.",
+      missionHeading: "Mission",
+      missionItems: [
+        "Make websites and tools that are easy to use and useful every day.",
+        "Give honest advice, without adding features or costs you do not need.",
+        "Help local businesses learn and grow with digital tools at their own pace."
+      ],
+      teamHeading: "Meet Our Team",
+      teamSubheading: "The humans who transform your business ideas into working digital products.",
+      teamMembers: [
+        { name: "Muhammad Za'im Shidqi", role: "Co-Founder & Technical Lead", desc: "Architecting clean, scalable systems that solve real-world problems." },
+        { name: "Team Member 2", role: "UI/UX Designer", desc: "Designing accessible and beautiful interfaces built for Pontianak businesses." },
+        { name: "Team Member 3", role: "Full-Stack Developer", desc: "Translating mockups and designs into robust, high-performance web systems." }
+      ]
     },
 
     // ── Projects Section ──
@@ -292,7 +367,7 @@ export const translations = {
       copyright: "© 2025 Selenium Digital Consultant. All rights reserved.",
       links: [
         { label: "Services", href: "#services" },
-        { label: "About", href: "#about" },
+        { label: "About", href: "/about" },
       ],
       legalLinks: [
         { label: "Privacy Policy", href: "#" },
@@ -422,25 +497,28 @@ export const translations = {
     // ── Tentang Kami ──
     about: {
       tag: "Tentang Selenium",
-      heading: "Elemen Esensial untuk Ekosistem Digital Anda",
+      heading: "Bantuan digital yang mengikuti cara bisnis Anda bekerja.",
       paragraph1:
-        "Seperti halnya Selenium (Se, No. At. 34) adalah elemen jejak yang sangat diperlukan oleh kehidupan biologis — ditemukan dalam jumlah sedikit namun kritis bagi fungsi seluler dan vitalitas — Selenium Digital Consultant adalah mitra esensial dan fundamental yang terjalin ke dalam jalinan kesehatan digital organisasi Anda.",
+        "Selenium berawal dari banyak obrolan dengan pemilik usaha di Pontianak yang ingin melayani pelanggan lebih baik, tetapi bingung harus mulai dari mana. Kami mendengarkan dulu, lalu membantu mengubah kebutuhan sehari-hari menjadi website atau sistem yang terasa akrab dan bermanfaat.",
       paragraph2:
-        "Kami tidak hanya berkonsultasi. Kami menanamkan diri sebagai perpanjangan strategis dari tim teknis Anda, menghadirkan solusi yang dirancang dengan presisi untuk mempertahankan, melindungi, dan mempercepat sistem digital Anda yang paling kritis.",
+        "Pekerjaan kami tidak berhenti saat website diluncurkan. Kami mendampingi, menjelaskan setiap langkah dengan bahasa sederhana, dan membantu tim Anda memakai hasilnya dengan percaya diri.",
       quote:
-        '"Kami adalah elemen yang tidak bisa berfungsi tanpa ekosistem digital Anda."',
+        '"Alat digital yang baik membuat hari kerja yang sibuk terasa lebih ringan."',
+      cta: "Pelajari Cerita Kami",
+      photoCaption: "Tim kecil yang siap mendengarkan dan membangun bersama bisnis Anda.",
+      teamImageAlt: "Tim Selenium Digital Consultant sedang berdiskusi",
       valueProps: [
         {
-          title: "Rekayasa Presisi",
-          desc: "Setiap solusi dirancang secara arsitektural, terdokumentasi, dan dibangun untuk bertahan lama — bukan hanya untuk selesai.",
+          title: "Fokus Pada Kebutuhan Pengguna",
+          desc: "Setiap produk dibuat dengan memikirkan pengguna akhir, sehingga mudah digunakan dan dipahami.",
         },
         {
-          title: "Kemitraan Strategis",
-          desc: "Kami menjadi bagian tertanam dari tim Anda, selaras dengan tujuan bisnis Anda, bukan hanya tiket teknis.",
+          title: "Pendampingan Jujur",
+          desc: "Kami merekomendasikan apa yang benar-benar dibutuhkan bisnis Anda. Tanpa biaya atau fitur yang berlebihan.",
         },
         {
-          title: "Intelijen Proaktif",
-          desc: "Kami mengidentifikasi risiko sebelum menjadi insiden melalui pemantauan berkelanjutan dan threat intelligence.",
+          title: "Komitmen Lokal",
+          desc: "Kami memahami lanskap bisnis di Pontianak dan Kalimantan Barat, siap mendampingi langsung kapan pun dibutuhkan.",
         },
       ],
     },
@@ -580,12 +658,84 @@ export const translations = {
       copyright: "© 2025 Selenium Digital Consultant. Hak cipta dilindungi.",
       links: [
         { label: "Layanan", href: "#services" },
-        { label: "Tentang", href: "#about" },
+        { label: "Tentang", href: "/about" },
       ],
       legalLinks: [
         { label: "Kebijakan Privasi", href: "#" },
         { label: "Syarat Layanan", href: "#" },
       ],
+    },
+
+    // ── Testimoni Klien ──
+    testimonials: {
+      tag: "Testimoni Klien",
+      heading: "Apa Kata Pemilik Bisnis di Pontianak",
+      subheading: "Cerita nyata dari para pengusaha dan tim lokal yang merapikan operasional harian mereka bersama Selenium.",
+      items: [
+        {
+          quote: "Website pemesanan online buatan Selenium sangat praktis. Pelanggan kami menyukainya, dan omzet harian kami terus naik karena proses order jadi instan tanpa ribet.",
+          name: "Ibu Yanti",
+          role: "Owner",
+          company: "Kedai Kopi Lokal Pontianak",
+          image: ""
+        },
+        {
+          quote: "Selenium membantu kami membuat pencatatan stok otomatis. Kerja tim gudang kami jadi jauh lebih cepat, dan kesalahan input barang sekarang sudah hilang sepenuhnya.",
+          name: "Pak Budi",
+          role: "Direktur Operasional",
+          company: "CV Pontianak Distribusi",
+          image: ""
+        },
+        {
+          quote: "Bekerja bersama tim Selenium sangat menyenangkan. Mereka menjelaskan aspek teknis dengan bahasa santai yang mudah dipahami oleh kami yang awam teknologi.",
+          name: "Andi",
+          role: "Founder",
+          company: "Borneo Food Startup",
+          image: ""
+        }
+      ]
+    },
+
+    // ── Mitra Kami ──
+    partners: {
+      heading: "Dipercaya oleh bisnis lokal & instansi",
+      items: [
+        { name: "CV Pontianak Distribusi" },
+        { name: "Kedai Kopi Lokal Pontianak" },
+        { name: "Borneo Food Startup" },
+        { name: "PMKM IF UNTAN" }
+      ]
+    },
+
+    // ── Dedicated About Page ──
+    aboutPage: {
+      title: "Di balik setiap produk digital, ada cerita yang ingin diwujudkan.",
+      eyebrow: "Cerita Kami",
+      storyHeading: "Siapa Kami & Kenapa Kami Membangun",
+      storyParagraph1: "Kami memulai dari keyakinan sederhana: alat digital seharusnya membantu bisnis berjalan lebih lancar, bukan menambah pekerjaan. Banyak pemilik usaha di Pontianak ingin tumbuh secara online, tetapi belum tahu harus mulai dari mana. Kami hadir agar langkah pertama itu terasa jelas.",
+      storyParagraph2: "Kami mempelajari cara kerja bisnis Anda, mendengarkan kendala sehari-hari, lalu membuat hal yang memang dapat membantu. Anda selalu tahu apa yang sedang dibuat, alasan di baliknya, dan cara memakainya.",
+      valuesHeading: "Prinsip Utama Kami",
+      valuesItems: [
+        { title: "Mengutamakan Kebutuhan Pengguna", desc: "Kami merancang antarmuka yang sederhana dan intuitif sehingga siapa pun dapat menggunakannya tanpa pelatihan khusus." },
+        { title: "Sederhana Tapi Berdampak", desc: "Solusi sederhana yang berfungsi jauh lebih berharga daripada sistem rumit yang akhirnya tidak terpakai." },
+        { title: "Komunikasi yang Jelas & Jujur", desc: "Kami berbicara dengan bahasa manusia, bukan kode. Kami terbuka tentang apa yang berfungsi dan apa yang tidak perlu dilakukan." },
+        { title: "Bertumbuh Bersama Klien", desc: "Pertumbuhan Anda adalah keberhasilan kami. Kami membangun kemitraan yang bertahan lama setelah produk selesai dirilis." }
+      ],
+      visionHeading: "Visi Kami",
+      visionText: "Menjadi mitra digital yang dipercaya oleh UMKM dan bisnis lokal di Pontianak hingga seluruh Indonesia.",
+      missionHeading: "Misi Kami",
+      missionItems: [
+        "Membuat website dan alat bantu yang mudah dipakai serta berguna setiap hari.",
+        "Memberi saran yang jujur, tanpa menambahkan fitur atau biaya yang tidak dibutuhkan.",
+        "Membantu bisnis lokal belajar dan bertumbuh dengan alat digital sesuai langkahnya."
+      ],
+      teamHeading: "Tim Kami",
+      teamSubheading: "Orang-orang di balik layar yang mengubah ide bisnis Anda menjadi produk digital siap pakai.",
+      teamMembers: [
+        { name: "Muhammad Za'im Shidqi", role: "Co-Founder & Technical Lead", desc: "Merancang sistem yang bersih, andal, dan mampu menyelesaikan masalah nyata bisnis Anda." },
+        { name: "Anggota Tim 2", role: "Desainer UI/UX", desc: "Merancang tampilan aplikasi yang cantik, ramah pengguna, dan dekat dengan audiens Pontianak." },
+        { name: "Anggota Tim 3", role: "Full-Stack Developer", desc: "Mengubah desain menjadi sistem web yang tangguh, aman, dan berkecepatan tinggi." }
+      ]
     },
   },
 };

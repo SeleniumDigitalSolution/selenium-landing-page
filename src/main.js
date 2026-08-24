@@ -58,7 +58,7 @@ function renderNav() {
       <div class="flex items-center justify-between h-16 md:h-20">
 
         <!-- Brand / Logo -->
-        <a href="#" id="nav-brand" class="flex items-center gap-3 group" aria-label="Selenium Digital Consultant">
+        <a href="/" id="nav-brand" class="flex items-center gap-3 group" aria-label="Selenium Digital Consultant">
           <div class="w-8 h-8 relative">
             <!-- Atomic orbit logo mark -->
             <div class="absolute inset-0 rounded-full border border-se-cyan/40 animate-spin" style="animation-duration:8s;"></div>
@@ -76,7 +76,7 @@ function renderNav() {
             .map(
               (key) => `
             <li>
-              <a href="#${key.replace("techStack", "tech-stack")}"
+              <a href="${key === "about" ? "/about" : `#${key.replace("techStack", "tech-stack")}`}" 
                  class="nav-link"
                  aria-label="Navigate to ${nav[key]}">
                 ${nav[key]}
@@ -131,7 +131,7 @@ function renderNav() {
         ${links
           .map(
             (key) => `
-          <a href="#${key.replace("techStack", "tech-stack")}"
+          <a href="${key === "about" ? "/about" : `#${key.replace("techStack", "tech-stack")}`}" 
              class="mobile-nav-link text-base font-medium py-3 border-b border-[var(--border)]"
              aria-label="Navigate to ${nav[key]}">
             ${nav[key]}
@@ -379,58 +379,19 @@ function renderAbout() {
               )
               .join("")}
           </div>
+          <a href="/about" class="btn-ghost inline-flex mt-10 reveal reveal-delay-4">
+            ${about.cta}
+            ${icons.get("arrowRight", "w-4 h-4")}
+          </a>
         </div>
 
-        <!-- Right: Atomic Visual -->
-        <div class="relative flex items-center justify-center reveal reveal-delay-2" aria-hidden="true">
-          <div class="relative w-80 h-80 md:w-96 md:h-96">
-            <!-- Atomic orbit rings with animation -->
-            <!-- Ring 1 -->
-            <div class="absolute inset-0 rounded-full border border-se-cyan/20 animate-spin"
-                 style="animation-duration:20s;"></div>
-            <!-- Ring 2 (tilted) -->
-            <div class="absolute inset-4 rounded-full border border-se-cyan/15 animate-spin"
-                 style="animation-duration:15s;animation-direction:reverse;transform:rotateX(75deg);"></div>
-            <!-- Ring 3 -->
-            <div class="absolute inset-8 rounded-full border border-se-red/20 animate-spin"
-                 style="animation-duration:12s;"></div>
-
-            <!-- Orbiting dots -->
-            <div class="absolute inset-0">
-              <div class="absolute w-2 h-2 rounded-full bg-se-cyan animate-spin"
-                   style="top:0;left:50%;transform:translateX(-50%);animation-duration:8s;
-                          box-shadow:0 0 10px var(--se-cyan);">
-              </div>
-            </div>
-            <div class="absolute inset-0">
-              <div class="absolute w-2 h-2 rounded-full bg-se-red animate-spin"
-                   style="top:50%;right:0;transform:translateY(-50%);animation-duration:12s;animation-direction:reverse;
-                          box-shadow:0 0 10px var(--se-red);">
-              </div>
-            </div>
-
-            <!-- Center nucleus -->
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="relative">
-                <div class="w-20 h-20 rounded-full bg-se-cyan/10 border border-se-cyan/30 flex items-center justify-center animate-glow-pulse">
-                  <div class="text-se-cyan">${icons.get("atom", "w-10 h-10")}</div>
-                </div>
-                <!-- Atomic number label -->
-                <div class="absolute -top-10 left-1/2 -translate-x-1/2 text-center">
-                  <div class="font-mono text-xs text-se-muted">34</div>
-                  <div class="font-display font-bold text-se-cyan">Se</div>
-                </div>
-                <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                  <div class="font-mono text-xs text-se-muted text-center">Selenium</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Background glow -->
-            <div class="absolute inset-0 rounded-full"
-                 style="background:radial-gradient(circle,rgba(10,100,188,0.08) 0%,transparent 70%);"></div>
+        <!-- Right: Team photo; a real team photo can replace this placeholder later. -->
+        <figure class="team-photo-card reveal reveal-delay-2">
+          <div class="team-photo-wrap aspect-[4/3]">
+            <img src="/team-placeholder.png" alt="${about.teamImageAlt}" loading="lazy" width="600" height="450">
           </div>
-        </div>
+          <figcaption>${about.photoCaption}</figcaption>
+        </figure>
 
       </div>
     </div>
@@ -680,6 +641,66 @@ function renderWhatsAppFAB() {
 /* ═════════════════════════════════════════════════════════════
    FULL PAGE RENDER
    ═════════════════════════════════════════════════════════════ */
+/* ═════════════════════════════════════════════════════════════
+   SECTION: PARTNERS (Client Logo Strip)
+   ═════════════════════════════════════════════════════════════ */
+function renderPartners() {
+  const partners = getSection("partners");
+  return `
+  <section id="partners" aria-label="Our partners and clients">
+    <div class="section-container">
+      <h3 class="text-center text-xs font-mono uppercase tracking-wider text-se-muted mb-6">${partners.heading}</h3>
+      <div class="partner-logo-strip" role="list">
+        ${partners.items.map(p => `
+          <div class="partner-item" role="listitem">${p.name}</div>
+        `).join('')}
+      </div>
+    </div>
+  </section>`;
+}
+
+/* ═════════════════════════════════════════════════════════════
+   SECTION: TESTIMONIALS
+   ═════════════════════════════════════════════════════════════ */
+function renderTestimonials() {
+  const testimonials = getSection("testimonials");
+
+  return `
+  <section id="testimonials" class="py-section relative overflow-hidden" aria-labelledby="testimonials-heading">
+    <div class="section-container">
+      <!-- Section Header -->
+      <div class="text-center mb-16 reveal">
+        <div class="section-tag mb-4 justify-center">${testimonials.tag}</div>
+        <h2 id="testimonials-heading" class="section-heading mb-4">${testimonials.heading}</h2>
+        <p class="section-subheading mx-auto text-center">${testimonials.subheading}</p>
+      </div>
+
+      <!-- Testimonial Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8" role="list" aria-label="Client testimonials">
+        ${testimonials.items.map((item, i) => `
+          <article class="testimonial-card group reveal reveal-delay-${(i % 3) + 1}" role="listitem">
+            <blockquote class="testimonial-quote">
+              <p>"${item.quote}"</p>
+            </blockquote>
+            <div class="testimonial-client">
+              ${item.image
+                ? `<img class="testimonial-avatar testimonial-photo" src="${item.image}" alt="Foto ${item.name}" loading="lazy" width="40" height="40">`
+                : `<div class="testimonial-avatar" aria-hidden="true">${item.name.split(' ').map(n => n[0]).join('')}</div>`}
+              <div class="testimonial-info">
+                <h4>${item.name}</h4>
+                <p>${item.role}, ${item.company}</p>
+              </div>
+            </div>
+          </article>
+        `).join('')}
+      </div>
+    </div>
+  </section>`;
+}
+
+/* ═════════════════════════════════════════════════════════════
+   FULL PAGE RENDER (HOMEPAGE)
+   ═════════════════════════════════════════════════════════════ */
 function renderPage() {
   const app = document.getElementById("app");
 
@@ -687,10 +708,12 @@ function renderPage() {
     ${renderNav()}
     <main id="main-content">
       ${renderHero()}
+      ${renderPartners()}
       ${renderCatalog()}
       ${renderServices()}
       ${renderAbout()}
       ${renderProjects()}
+      ${renderTestimonials()}
       ${renderCTA()}
     </main>
     ${renderFooter()}
@@ -699,11 +722,199 @@ function renderPage() {
 
   // Mount all behaviors AFTER DOM is set
   mountNavBehavior();
-
   mountScrollReveal();
   mountLangToggle();
   mountMobileMenu();
   mountThemeToggle();
+  setupLinkInterception();
+}
+
+/* ═════════════════════════════════════════════════════════════
+   DEDICATED ABOUT PAGE RENDER
+   ═════════════════════════════════════════════════════════════ */
+function renderAboutPage() {
+  const app = document.getElementById("app");
+  const ap = getSection("aboutPage");
+  const about = getSection("about");
+
+  app.innerHTML = `
+    ${renderNav()}
+    <main id="main-content">
+      <!-- Hero -->
+      <section class="about-page-hero py-24 relative overflow-hidden" aria-labelledby="about-hero-title">
+        <div class="section-container relative z-10 text-center">
+          <div class="section-tag mb-4 justify-center" style="color: rgba(255,255,255,0.85); border-color: rgba(255,255,255,0.5);">${ap.eyebrow}</div>
+          <h1 id="about-hero-title" class="text-3xl md:text-5xl font-display font-bold mb-6 tracking-tight">
+            ${ap.title}
+          </h1>
+        </div>
+      </section>
+
+      <!-- Our Story -->
+      <section class="py-20 bg-[var(--surface)]" aria-labelledby="story-heading">
+        <div class="section-container">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 id="story-heading" class="section-heading mb-6">${ap.storyHeading}</h2>
+              <p class="leading-relaxed mb-6 text-se-silver">${ap.storyParagraph1}</p>
+              <p class="leading-relaxed mb-6 text-se-silver">${ap.storyParagraph2}</p>
+              
+              <!-- Company Quote -->
+              <blockquote class="pull-quote py-2 mb-6">
+                <p class="font-display font-medium text-lg leading-snug">
+                  ${about.quote}
+                </p>
+              </blockquote>
+            </div>
+            
+            <div class="team-photo-wrap aspect-[4/3] max-w-lg mx-auto lg:max-w-none">
+              <img src="/team-placeholder.png" alt="Tim Selenium Digital Consultant" loading="eager" width="600" height="450">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Vision & Mission -->
+      <section class="py-20 bg-[var(--surface-2)]" aria-labelledby="vision-heading">
+        <div class="section-container">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Vision -->
+            <div class="se-card">
+              <h3 id="vision-heading" class="font-display font-bold text-xl mb-4 text-gradient-primary">${ap.visionHeading}</h3>
+              <p class="text-base leading-relaxed">${ap.visionText}</p>
+            </div>
+            <!-- Mission -->
+            <div class="se-card">
+              <h3 class="font-display font-bold text-xl mb-4 text-gradient-primary">${ap.missionHeading}</h3>
+              <ul class="space-y-4" role="list">
+                ${ap.missionItems.map((item, i) => `
+                  <li class="flex gap-3 text-sm leading-relaxed" role="listitem">
+                    <span class="text-se-cyan font-bold font-mono">${i + 1}.</span>
+                    <span>${item}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Values -->
+      <section class="py-20 bg-[var(--surface)]" aria-labelledby="values-heading">
+        <div class="section-container">
+          <div class="text-center mb-16">
+            <h2 id="values-heading" class="section-heading">${ap.valuesHeading}</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" role="list">
+            ${ap.valuesItems.map((val, i) => `
+              <div class="se-card" role="listitem">
+                <div class="w-10 h-10 rounded-full bg-[var(--primary-tint)] flex items-center justify-center mb-6 text-se-cyan">
+                  ${icons.get("checkCircle", "w-5 h-5")}
+                </div>
+                <h4 class="font-display font-semibold text-lg mb-3">${val.title}</h4>
+                <p class="text-sm leading-relaxed">${val.desc}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section class="py-20 bg-[var(--surface-2)]" aria-labelledby="team-heading">
+        <div class="section-container">
+          <div class="text-center mb-16">
+            <h2 id="team-heading" class="section-heading mb-4">${ap.teamHeading}</h2>
+            <p class="section-subheading mx-auto text-center">${ap.teamSubheading}</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8" role="list">
+            ${ap.teamMembers.map((m, i) => `
+              <div class="se-card flex flex-col items-center text-center" role="listitem">
+                <div class="w-24 h-24 rounded-full bg-se-cyan/10 border border-se-cyan/20 flex items-center justify-center mb-6 text-se-cyan font-bold text-2xl font-mono">
+                  ${m.name.split(' ').map(n => n[0]).join('')}
+                </div>
+                <h3 class="font-display font-bold text-lg mb-1">${m.name}</h3>
+                <p class="text-se-cyan text-xs font-mono mb-4">${m.role}</p>
+                <p class="text-sm leading-relaxed">${m.desc}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+
+      ${renderCTA()}
+    </main>
+    ${renderFooter()}
+    ${renderWhatsAppFAB()}
+  `;
+
+  // Mount all behaviors AFTER DOM is set
+  mountNavBehavior();
+  mountScrollReveal();
+  mountLangToggle();
+  mountMobileMenu();
+  mountThemeToggle();
+  setupLinkInterception();
+}
+
+/* ═════════════════════════════════════════════════════════════
+   BEHAVIOR: SPA LINK INTERCEPTION & ROUTING
+   ═════════════════════════════════════════════════════════════ */
+function setupLinkInterception() {
+  document.querySelectorAll("a").forEach(a => {
+    const href = a.getAttribute("href");
+    if (href) {
+      if (href === "/about" || href === "/about/" || href === "/" || href === "/index.html") {
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.history.pushState({}, "", href === "/index.html" ? "/" : href);
+          renderApp();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      } else if (href.startsWith("#")) {
+        a.addEventListener("click", (e) => {
+          if (window.location.pathname !== "/" && window.location.pathname !== "/index.html") {
+            e.preventDefault();
+            window.history.pushState({}, "", "/" + href);
+            renderApp();
+            setTimeout(() => {
+              const el = document.getElementById(href.substring(1));
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+          }
+        });
+      }
+    }
+  });
+}
+
+function renderApp() {
+  const path = window.location.pathname;
+
+  if (path === "/about" || path === "/about/") {
+    document.title = currentLang === "id"
+      ? "Tentang Kami — Selenium Digital Consultant Pontianak"
+      : "About Us — Selenium Digital Consultant Pontianak";
+
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", currentLang === "id"
+        ? "Kenali Selenium Digital Consultant, partner digital yang membantu bisnis dan UMKM membangun website serta produk digital berkualitas di Pontianak dan Kalimantan Barat."
+        : "Get to know Selenium Digital Consultant, a digital partner helping businesses and MSMEs build high-quality websites and digital products in Pontianak.");
+    }
+    renderAboutPage();
+  } else {
+    document.title = currentLang === "id"
+      ? "Selenium Digital Consultant — Konsultan IT & Jasa Website Pontianak"
+      : "Selenium Digital Consultant — IT Consulting & Web Services Pontianak";
+
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", currentLang === "id"
+        ? "Selenium Digital Consultant Pontianak menghadirkan solusi pembuatan website, bot WhatsApp, dan otomasi proses bisnis handal untuk UMKM dan perusahaan lokal."
+        : "Selenium Digital Consultant Pontianak offers reliable website development, WhatsApp bots, and business automation for local MSMEs and enterprises.");
+    }
+    renderPage();
+  }
 }
 
 /* ═════════════════════════════════════════════════════════════
@@ -797,14 +1008,8 @@ function mountLangToggle() {
       // 3. Update <html lang> attribute for accessibility
       document.documentElement.lang = lang === "id" ? "id" : "en";
 
-      // 4. Update page title
-      document.title =
-        lang === "id"
-          ? "Selenium Digital Consultant — Konsultan IT Enterprise"
-          : "Selenium Digital Consultant — Enterprise IT Consulting";
-
-      // 5. Re-render the full page
-      renderPage();
+      // 4. Re-render via router
+      renderApp();
     });
   });
 }
@@ -816,8 +1021,7 @@ function initTheme() {
   // FOUC already handled by inline script in index.html.
   // This syncs JS state after the app is mounted.
   const saved = localStorage.getItem('theme');
-  const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  const theme = saved || preferred;
+  const theme = saved || 'light';
   document.documentElement.setAttribute('data-theme', theme);
 }
 
@@ -890,17 +1094,11 @@ function mountMobileMenu() {
    INIT
    ═════════════════════════════════════════════════════════════ */
 
-// Set initial <html> lang attribute
-document.documentElement.lang = currentLang === "id" ? "id" : "en";
-
-// Set dynamic page title
-document.title =
-  currentLang === "id"
-    ? "Selenium Digital Consultant — Konsultan IT Enterprise"
-    : "Selenium Digital Consultant — Enterprise IT Consulting";
-
 // Sync theme from localStorage (FOUC already handled in index.html)
 initTheme();
 
+// Listen to popstate for browser backward/forward navigation
+window.addEventListener("popstate", renderApp);
+
 // Boot
-renderPage();
+renderApp();
