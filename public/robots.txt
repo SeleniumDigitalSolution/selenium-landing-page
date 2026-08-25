@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.selenium.works/sitemap.xml
+Sitemap: https://selenium.id/sitemap.xml

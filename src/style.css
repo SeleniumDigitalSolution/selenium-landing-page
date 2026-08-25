@@ -237,6 +237,11 @@ nav[data-scrolled="true"] {
     transition: width .25s ease;
   }
   .nav-link:hover::after { width: 100%; }
+  .nav-link--active {
+    color: var(--primary);
+    font-weight: 600;
+  }
+  .nav-link--active::after { width: 100%; }
 
   /* ── Mobile Nav ── */
   .mobile-nav-link {
@@ -245,6 +250,10 @@ nav[data-scrolled="true"] {
     transition: color .15s ease;
   }
   .mobile-nav-link:hover { color: var(--primary); }
+  .mobile-nav-link--active {
+    color: var(--primary);
+    font-weight: 600;
+  }
 
   /* ── Lang Toggle ── */
   .lang-btn {

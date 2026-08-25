@@ -20,6 +20,7 @@ export const translations = {
     // ── Navigation ──
     nav: {
       brand: "Selenium",
+      home: "Home",
       services: "Services",
       about: "About",
       portfolio: "Portfolio",
@@ -422,49 +423,49 @@ export const translations = {
       items: [
         {
           id: 1,
-          image: "/catalog/catalog-1.jpg",
+          image: "/catalog/catalog-1.webp",
           title: "Landing Page",
           description:
             "High-performance sales pages specifically designed to maximize conversion rates and loading speeds.",
         },
         {
           id: 2,
-          image: "/catalog/catalog-2.jpg",
+          image: "/catalog/catalog-2.webp",
           title: "System Integration",
           description:
             "Seamlessly connecting various platforms and APIs to ensure automated and fluid business data workflows.",
         },
         {
           id: 3,
-          image: "/catalog/catalog-3.jpg",
+          image: "/catalog/catalog-3.webp",
           title: "Building Custom App",
           description:
             "Tailor-made web or mobile applications built from the ground up to match your unique workflow and business requirements.",
         },
         {
           id: 4,
-          image: "/catalog/catalog-4.jpg",
+          image: "/catalog/catalog-4.webp",
           title: "Business Automation",
           description:
             "Streamlining repetitive tasks to boost operational efficiency and minimize the risk of human error.",
         },
         {
           id: 5,
-          image: "/catalog/catalog-5.jpg",
+          image: "/catalog/catalog-5.webp",
           title: "Digital System Audit",
           description:
             "Comprehensive evaluation of digital infrastructure to identify security vulnerabilities, performance bottlenecks, and optimization paths.",
         },
         {
           id: 6,
-          image: "/catalog/catalog-6.jpg",
+          image: "/catalog/catalog-6.webp",
           title: "WhatsApp Bot",
           description:
             "Intelligent chatbot solutions for 24/7 customer service, automated lead management, and real-time messaging integration.",
         },
         {
           id: 7,
-          image: "/catalog/catalog-7.jpg",
+          image: "/catalog/catalog-7.webp",
           title: "Queue System",
           description:
             "Modern, transparent customer flow management designed to enhance user experience and on-site operational efficiency.",
@@ -592,6 +593,7 @@ export const translations = {
     // ── Navigasi ──
     nav: {
       brand: "Selenium",
+      home: "Beranda",
       services: "Layanan",
       about: "Tentang Kami",
       portfolio: "Portofolio",
@@ -923,49 +925,49 @@ export const translations = {
       items: [
         {
           id: 1,
-          image: "/catalog/catalog-1.jpg",
+          image: "/catalog/catalog-1.webp",
           title: "Landing Page",
           description:
             "Halaman penjualan berperforma tinggi yang dirancang khusus untuk memaksimalkan konversi dan kecepatan akses.",
         },
         {
           id: 2,
-          image: "/catalog/catalog-2.jpg",
+          image: "/catalog/catalog-2.webp",
           title: "Integrasi Sistem",
           description:
             "Menghubungkan berbagai platform dan API untuk memastikan alur data bisnis Anda berjalan mulus tanpa hambatan manual.",
         },
         {
           id: 3,
-          image: "/catalog/catalog-3.jpg",
+          image: "/catalog/catalog-3.webp",
           title: "Building Custom App",
           description:
             "Pengembangan aplikasi web atau mobile yang dibangun dari nol sesuai dengan alur kerja unik dan kebutuhan spesifik bisnis Anda.",
         },
         {
           id: 4,
-          image: "/catalog/catalog-4.jpg",
+          image: "/catalog/catalog-4.webp",
           title: "Automation Bisnis",
           description:
             "Otomatisasi proses repetitif untuk meningkatkan efisiensi operasional dan meminimalisir risiko kesalahan manusia (human error).",
         },
         {
           id: 5,
-          image: "/catalog/catalog-5.jpg",
+          image: "/catalog/catalog-5.webp",
           title: "Digital System Audit",
           description:
             "Evaluasi mendalam terhadap infrastruktur digital untuk menemukan celah keamanan, bottleneck performa, dan peluang optimasi.",
         },
         {
           id: 6,
-          image: "/catalog/catalog-6.jpg",
+          image: "/catalog/catalog-6.webp",
           title: "Whatsapp Bot",
           description:
             "Solusi chatbot pintar untuk melayani pelanggan 24/7, manajemen prospek otomatis, dan integrasi pesan real-time.",
         },
         {
           id: 7,
-          image: "/catalog/catalog-7.jpg",
+          image: "/catalog/catalog-7.webp",
           title: "Sistem Antrian",
           description:
             "Manajemen alur pelanggan yang modern dan transparan untuk meningkatkan kenyamanan pengguna serta efisiensi layanan di lokasi.",
