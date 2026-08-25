@@ -273,7 +273,7 @@ function renderNav() {
    ═════════════════════════════════════════════════════════════ */
 function renderHero() {
   const hero = getSection("hero");
-
+  const waUrl = buildWhatsAppUrl("Halo, saya ingin konsultasi");
   return `
   <section id="home" class="relative flex flex-col justify-center overflow-hidden"
            aria-labelledby="hero-headline" role="banner">
@@ -293,10 +293,10 @@ function renderHero() {
         <p class="section-subheading mb-12 reveal reveal-delay-2 max-w-2xl">
           ${hero.subheadline}
         </p>
-
+        
         <!-- CTA Buttons -->
         <div class="flex flex-wrap gap-4 mb-20 reveal reveal-delay-3">
-          <a href="#contact" class="btn-primary animate-glow-pulse" id="hero-cta-primary" aria-label="${hero.ctaPrimary}">
+          <a href=${waUrl} target="_blank" rel="noopener noreferrer" class="btn-primary animate-glow-pulse" id="hero-cta-primary" aria-label="${hero.ctaPrimary}">
             ${hero.ctaPrimary}
             ${icons.get("arrowRight", "w-4 h-4")}
           </a>
