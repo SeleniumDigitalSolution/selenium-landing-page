@@ -1,36 +1,46 @@
-# Selenium Digital Consultant
+# Selenium Digital Consultant (selenium.id)
 
-Selenium Digital Consultant adalah perusahaan konsultan dan pengembangan IT terkemuka yang berbasis di Pontianak, Indonesia. Kami melayani klien Enterprise dan Usaha Mikro Kecil dan Menengah (UMKM).
+> Selenium Digital Consultant adalah mitra konsultan IT, software house, dan jasa pembuatan aplikasi & website terpercaya untuk UMKM dan bisnis di Pontianak, Kalimantan Barat, Indonesia.
 
-## Layanan Utama
-1. Arsitektur Cloud (AWS, GCP, Azure, Terraform)
-2. Pengembangan Aplikasi (React, express.js, Node.js, Laravel)
-3. Rekayasa Data & Analitik (PostgreSQL, Power BI)
-4. AI & Machine Learning (Computer Vision, LangChain)
-5. Infrastruktur IT & DevOps (CI/CD, Kubernetes)
-6. Jaringan & Setup IT Kantor
+## Profil Bisnis
+- **Nama Perusahaan**: Selenium Digital Consultant
+- **Website**: https://selenium.id/
+- **Email**: hello@selenium.id
+- **WhatsApp / Telepon**: +62 822 5321 0449
+- **Lokasi Kantor**: Pontianak, Kalimantan Barat, Indonesia
+- **Fokus Utama**: Membantu pemilik bisnis dan UMKM merapikan operasional harian, membuat sistem online yang stabil, membangun aplikasi kustom, dan menyediakan otomasi bisnis praktis.
 
-## Promo Spesial UMKM
-**Paket Website Company Profile - Mulai dari Rp 299.000**
-Kehadiran digital yang terjangkau dan berkualitas tinggi untuk UMKM.
+## Layanan Utama (Services)
+1. **Jasa Website & Sistem Online Bisnis** (`https://selenium.id/layanan/jasa-website`)
+   - Pembuatan website bisnis cepat, aman, responsif, dan ramah SEO.
+   - Company profile modern dan landing page konversi tinggi.
+   - Manajemen konten mudah dikelola tim internal.
 
-Fitur:
-- Gratis Domain (.my.id / .web.id)
-- Website Profesional 1 Halaman (Sangat Ramah SEO)
-- Diterima Siap Pakai & Live
-- Dikenali oleh AI (Termasuk llms.txt ini)
-- Sudah Termasuk Hosting Performa Tinggi
-- Gratis 1 Bulan Pemeliharaan & Dukungan Langsung
-- Kepemilikan Penuh Source Code
-- Konsultasi Awal Gratis
+2. **Jasa Aplikasi Bisnis Custom** (`https://selenium.id/layanan/jasa-aplikasi`)
+   - Pengembangan perangkat lunak / software internal sesuai alur kerja bisnis.
+   - Sistem inventaris, Point of Sale (POS), sistem pencatatan transaksi, dan admin dashboard.
+   - Menggantikan spreadsheet manual yang rawan kesalahan.
 
-**Harga Perpanjangan / Pemeliharaan:**
-- 1 Bulan: Rp 99.000
-- 3 Bulan: Rp 199.000
-- 1 Tahun: Rp 999.000
+3. **Laporan Bisnis & Dashboard Data** (`https://selenium.id/layanan/dashboard-bisnis`)
+   - Visualisasi data penjualan, stok, dan performa keuangan secara real-time.
+   - Membantu pemilik bisnis mengambil keputusan lebih cepat berdasarkan angka pasti.
 
-## Informasi Kontak
-- Email: seleniumdigitalsolution@gmail.com
-- Telepon: +62 822 5321 0449
-- Lokasi: Pontianak, Indonesia
-- Website: https://www.selenium.works
+4. **Otomasi Pintar untuk Operasional** (`https://selenium.id/layanan/otomasi-bisnis`)
+   - Bot WhatsApp otomatis untuk layanan pelanggan 24/7 dan notifikasi pesanan.
+   - Integrasi sistem untuk mengurangi pekerjaan copy-paste manual yang berulang.
+
+5. **Konsultan IT & Perawatan Sistem** (`https://selenium.id/layanan/konsultan-it`)
+   - Pemeliharaan rutin, monitoring downtime, backup data, dan penanganan kendala teknis cepat.
+   - Konsultasi arsitektur IT untuk ekspansi bisnis.
+
+6. **Setup IT Kantor, Jaringan & CCTV** (`https://selenium.id/layanan/setup-it-kantor`)
+   - Instalasi jaringan lokal (LAN/WiFi kantor), konfigurasi komputer staf, dan pemasangan kamera CCTV keamanan.
+
+## Tentang Tim
+- **Willy Wijaya** — Co-Founder & Strategic Solutions Architect
+- **Muhammad Za'im Shidqi** — Growth Lead & Creative Technologist
+- **Arya Dwi Putra** — Engineering Lead & Project Manager
+- **I Wayan Satya Widhya Putra Pratama** — Chief Technology Explorer & Systems Architect
+
+## Area Layanan
+Pontianak, Kubu Raya, Singkawang, Sambas, Ketapang, seluruh Kalimantan Barat, dan seluruh Indonesia.

@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.selenium.works/</loc>
+    <loc>https://selenium.id/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.selenium.works/about</loc>
+    <loc>https://selenium.id/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.selenium.works/layanan/jasa-website</loc>
+    <loc>https://selenium.id/layanan/jasa-website</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.selenium.works/layanan/jasa-aplikasi</loc>
+    <loc>https://selenium.id/layanan/jasa-aplikasi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.selenium.works/layanan/dashboard-bisnis</loc>
+    <loc>https://selenium.id/layanan/dashboard-bisnis</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.selenium.works/layanan/otomasi-bisnis</loc>
+    <loc>https://selenium.id/layanan/otomasi-bisnis</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.selenium.works/layanan/konsultan-it</loc>
+    <loc>https://selenium.id/layanan/konsultan-it</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.selenium.works/layanan/setup-it-kantor</loc>
+    <loc>https://selenium.id/layanan/setup-it-kantor</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

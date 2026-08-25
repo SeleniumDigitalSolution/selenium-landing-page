@@ -16,15 +16,20 @@
           content="konsultan IT Pontianak, pembuat aplikasi Pontianak, jasa website Pontianak, jasa pembuatan software Pontianak, software house Pontianak, IT consultant Pontianak, solusi digital UMKM, developer aplikasi Pontianak, konsultan software Kalimantan Barat, jasa pembuatan aplikasi bisnis" />
     <meta name="author" content="Selenium Digital Consultant" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://www.selenium.works/" />
+
+    <!-- ─── Canonical & Hreflang ─── -->
+    <link rel="canonical" href="https://selenium.id/" />
+    <link rel="alternate" hreflang="id" href="https://selenium.id/" />
+    <link rel="alternate" hreflang="en" href="https://selenium.id/" />
+    <link rel="alternate" hreflang="x-default" href="https://selenium.id/" />
 
     <!-- ─── Open Graph (Social Sharing) ─── -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.selenium.works/" />
+    <meta property="og:url" content="https://selenium.id/" />
     <meta property="og:title" content="Selenium Digital Consultant — Konsultan IT & Pembuat Aplikasi Pontianak" />
     <meta property="og:description"
           content="Konsultan IT Pontianak terpercaya untuk UMKM. Jasa pembuatan website, software & pembuat aplikasi Pontianak yang cepat, aman, dan siap bantu bisnis berkembang." />
-    <meta property="og:image" content="https://www.selenium.works/og-preview.png" />
+    <meta property="og:image" content="https://selenium.id/og-preview.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Selenium Digital Consultant — Konsultan IT & Pembuat Aplikasi Pontianak" />
@@ -34,14 +39,13 @@
 
     <!-- ─── Twitter Card ─── -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://www.selenium.works/" />
+    <meta name="twitter:url" content="https://selenium.id/" />
     <meta name="twitter:title" content="Selenium Digital Consultant — Konsultan IT & Pembuat Aplikasi Pontianak" />
     <meta name="twitter:description"
           content="Konsultan IT Pontianak terpercaya untuk UMKM. Jasa pembuatan website, software & pembuat aplikasi Pontianak yang cepat, aman, dan siap bantu bisnis berkembang." />
-    <meta name="twitter:image" content="https://www.selenium.works/og-preview.png" />
+    <meta name="twitter:image" content="https://selenium.id/og-preview.webp" />
 
     <!-- ─── Favicon ─── -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate icon" type="image/png" href="/logo.png" />
 
     <!-- ─── Preconnect for Google Fonts performance ─── -->
@@ -52,18 +56,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet" />
 
-    <!-- ─── Structured Data (JSON-LD) for Local SEO & Business ─── -->
+    <!-- ─── Structured Data (JSON-LD) for LocalBusiness & ProfessionalService ─── -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "name": "Selenium Digital Consultant",
       "alternateName": "Selenium IT Consultant Pontianak",
       "description": "Konsultan IT dan pembuat aplikasi di Pontianak yang membantu UMKM dan bisnis lokal membangun website, aplikasi custom, otomasi proses, dan solusi teknologi handal.",
-      "url": "https://www.selenium.works",
+      "url": "https://selenium.id/",
       "telephone": "+62-822-5321-0449",
-      "email": "seleniumdigitalsolution@gmail.com",
-      "image": "https://www.selenium.works/og-preview.png",
+      "email": "hello@selenium.id",
+      "image": "https://selenium.id/og-preview.webp",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
@@ -76,6 +80,21 @@
         "latitude": "-0.026330",
         "longitude": "109.342503"
       },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ],
       "areaServed": [
         {
           "@type": "City",
@@ -138,8 +157,9 @@
   <body>
     <!-- Skip to main content (accessibility) -->
     <a href="#main-content"
-       class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-se-cyan focus:text-se-void focus:rounded-sm focus:font-semibold"
-       id="skip-nav">
+       class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-se-cyan focus:text-white focus:rounded-sm focus:font-semibold"
+       id="skip-nav"
+       aria-label="Skip to main content">
       Skip to main content
     </a>
 

@@ -71,11 +71,47 @@ const getSection = (key) => {
 const buildWhatsAppUrl = (message) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
-const setDocumentMeta = (title, description) => {
+const BASE_KEYWORDS =
+  "konsultan IT Pontianak, pembuat aplikasi Pontianak, jasa website Pontianak, " +
+  "jasa pembuatan software Pontianak, software house Pontianak, IT consultant Pontianak, " +
+  "solusi digital UMKM, developer aplikasi Pontianak, konsultan software Kalimantan Barat, " +
+  "jasa pembuatan aplikasi bisnis";
+
+const setDocumentMeta = (title, description, canonicalPath = window.location.pathname, extraKeywords = "") => {
   document.title = title;
 
   const metaDescription = document.querySelector('meta[name="description"]');
   if (metaDescription) metaDescription.setAttribute("content", description);
+
+  // ── Keywords ──────────────────────────────────────────────
+  const combinedKeywords = extraKeywords
+    ? `${extraKeywords}, ${BASE_KEYWORDS}`
+    : BASE_KEYWORDS;
+  let metaKeywords = document.querySelector('meta[name="keywords"]');
+  if (!metaKeywords) {
+    metaKeywords = document.createElement("meta");
+    metaKeywords.setAttribute("name", "keywords");
+    document.head.appendChild(metaKeywords);
+  }
+  metaKeywords.setAttribute("content", combinedKeywords);
+
+  // ── Canonical & OG URL ────────────────────────────────────
+  const cleanPath = canonicalPath === "/" ? "" : (canonicalPath.startsWith("/") ? canonicalPath : `/${canonicalPath}`);
+  const canonicalUrl = `https://selenium.id${cleanPath === "" ? "/" : cleanPath}`;
+
+  let canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.setAttribute("rel", "canonical");
+    document.head.appendChild(canonical);
+  }
+  canonical.setAttribute("href", canonicalUrl);
+
+  const ogUrl = document.querySelector('meta[property="og:url"]');
+  if (ogUrl) ogUrl.setAttribute("content", canonicalUrl);
+
+  const twitterUrl = document.querySelector('meta[name="twitter:url"]');
+  if (twitterUrl) twitterUrl.setAttribute("content", canonicalUrl);
 
   const ogTitle = document.querySelector('meta[property="og:title"]');
   if (ogTitle) ogTitle.setAttribute("content", title);
@@ -107,10 +143,11 @@ function renderNav() {
   const links = ["services", "about", "portfolio", "contact"];
   const waUrl = buildWhatsAppUrl("Halo, saya ingin konsultasi");
   const route = getRoute();
+  const isHome = route.name === "home";
   const sectionHref = (key) => {
     if (key === "about") return "/about";
     const sectionId = key.replace("techStack", "tech-stack");
-    return route.name === "home" ? `#${sectionId}` : `/#${sectionId}`;
+    return isHome ? `#${sectionId}` : `/#${sectionId}`;
   };
 
   return `
@@ -121,7 +158,7 @@ function renderNav() {
       <div class="flex items-center justify-between h-16 md:h-20">
 
         <!-- Brand / Logo -->
-        <a href="/" data-router-link id="nav-brand" class="flex items-center gap-3 group" aria-label="Selenium Digital Consultant">
+        <a href="/" data-router-link id="nav-brand" class="flex items-center gap-3 group" aria-label="Selenium Digital Consultant — Halaman Utama">
           <div class="w-8 h-8 relative">
             <!-- Atomic orbit logo mark -->
             <div class="absolute inset-0 rounded-full border border-se-cyan/40 animate-spin" style="animation-duration:8s;"></div>
@@ -135,6 +172,16 @@ function renderNav() {
 
         <!-- Desktop Navigation Links -->
         <ul class="hidden lg:flex items-center gap-8" role="list">
+          <!-- Home link — always visible -->
+          <li>
+            <a href="/"
+               data-router-link
+               class="nav-link${isHome ? " nav-link--active" : ""}"
+               aria-label="Navigate to Home"
+               aria-current="${isHome ? "page" : "false"}">
+              ${nav.home}
+            </a>
+          </li>
           ${links
             .map(
               (key) => `
@@ -192,6 +239,14 @@ function renderNav() {
     <!-- Mobile Menu Drawer -->
     <div id="mobile-menu" class="lg:hidden hidden glass-panel border-t border-se-border" role="dialog" aria-modal="true" aria-label="Mobile navigation">
       <div class="section-container py-6 flex flex-col gap-4">
+        <!-- Home link in mobile menu -->
+        <a href="/"
+           data-router-link
+           class="mobile-nav-link text-base font-medium py-3 border-b border-[var(--border)]${isHome ? " text-se-cyan" : ""}"
+           aria-label="Navigate to Home"
+           aria-current="${isHome ? "page" : "false"}">
+          ${nav.home}
+        </a>
         ${links
           .map(
             (key) => `
@@ -479,7 +534,7 @@ function renderAbout() {
         <!-- Right: Team photo; a real team photo can replace this placeholder later. -->
         <figure class="team-photo-card reveal reveal-delay-2">
           <div class="team-photo-wrap aspect-[4/3]">
-            <img src="/team-placeholder.png" alt="${about.teamImageAlt}" loading="lazy" width="600" height="450">
+            <img src="/team-placeholder.webp" alt="${about.teamImageAlt}" loading="lazy" width="600" height="450">
           </div>
           <figcaption>${about.photoCaption}</figcaption>
         </figure>
@@ -598,7 +653,7 @@ function renderCatalog() {
               <div class="aspect-square w-full overflow-hidden mb-6">
                 <img src="${item.image}" alt="${item.title}"
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                     loading="lazy">
+                     loading="lazy" width="600" height="600">
               </div>
 
               <!-- Content -->
@@ -745,7 +800,7 @@ function renderPartners() {
         ${partners.items.map(p => `
           <div class="flex items-center gap-3 px-6 py-3 rounded-lg border border-[var(--border)] bg-[var(--surface)] hover:border-se-cyan/40 transition-all duration-300 shadow-sm group" role="listitem">
             ${p.logo ? `
-              <img src="${p.logo}" alt="${p.name} logo" class="h-7 w-auto max-w-[120px] object-contain opacity-80 group-hover:opacity-100 transition-opacity" onerror="this.style.display='none';">
+              <img src="${p.logo}" alt="${p.name} logo" class="h-7 w-auto max-w-[120px] object-contain opacity-80 group-hover:opacity-100 transition-opacity" onerror="this.style.display='none';" loading="lazy" width="120" height="28">
             ` : ''}
             <span class="text-sm font-semibold tracking-tight group-hover:text-se-cyan transition-colors">${p.name}</span>
           </div>
@@ -832,6 +887,7 @@ function renderDetailRoute(slug) {
     setDocumentMeta(
       `${labels.notFoundTitle} | Selenium Digital Consultant`,
       labels.notFoundDescription,
+      `/layanan/${slug}`,
     );
 
     app.innerHTML = `
@@ -847,7 +903,16 @@ function renderDetailRoute(slug) {
     return;
   }
 
-  setDocumentMeta(service.metaTitle, service.metaDescription);
+  const SERVICE_KEYWORDS = {
+    "jasa-website": "jasa website Pontianak, buat website bisnis Pontianak, website company profile Pontianak, landing page Pontianak, toko online Pontianak, hosting Pontianak, domain murah Pontianak, website responsif Pontianak",
+    "jasa-aplikasi": "jasa aplikasi bisnis Pontianak, software POS Pontianak, aplikasi kasir Pontianak, sistem manajemen toko Pontianak, aplikasi inventaris Pontianak, sistem absensi Pontianak, custom software Pontianak, pembuatan software bisnis",
+    "dashboard-bisnis": "dashboard bisnis Pontianak, laporan penjualan otomatis, sistem pelaporan bisnis, visualisasi data bisnis, business intelligence UMKM, analitik bisnis Pontianak, monitoring stok otomatis",
+    "otomasi-bisnis": "otomasi bisnis Pontianak, WhatsApp bot bisnis Pontianak, chatbot WhatsApp UMKM, otomasi notifikasi pesanan, integrasi sistem bisnis Pontianak, otomasi pemasaran digital",
+    "konsultan-it": "konsultan IT Pontianak, IT consultant Pontianak, konsultasi teknologi UMKM, maintenance sistem IT, pengelolaan infrastruktur IT Pontianak, IT support Pontianak, perawatan website Pontianak",
+    "setup-it-kantor": "setup IT kantor Pontianak, instalasi jaringan kantor Pontianak, pasang CCTV Pontianak, konfigurasi komputer kantor Pontianak, setup WiFi kantor Pontianak, infrastruktur IT kantor",
+  };
+  const slugKeywords = SERVICE_KEYWORDS[slug] || "";
+  setDocumentMeta(service.metaTitle, service.metaDescription, `/layanan/${slug}`, slugKeywords);
 
   app.innerHTML = `
     ${renderNav()}
@@ -915,7 +980,7 @@ function renderAboutPage() {
             </div>
             
             <div class="team-photo-wrap aspect-[4/3] max-w-lg mx-auto lg:max-w-none">
-              <img src="/team-placeholder.png" alt="Tim Selenium Digital Consultant" loading="eager" width="600" height="450">
+              <img src="/team-placeholder.webp" alt="Tim Selenium Digital Consultant" loading="eager" width="600" height="450">
             </div>
           </div>
         </div>
@@ -986,7 +1051,7 @@ function renderAboutPage() {
               <div class="se-card flex flex-col items-center text-center h-full group hover:border-se-cyan/40 transition-all duration-300" role="listitem">
                 <div class="w-24 h-24 rounded-full overflow-hidden mb-6 border-2 border-se-cyan/30 bg-se-cyan/10 flex items-center justify-center relative shadow-sm">
                   ${m.image ? `
-                    <img src="${m.image}" alt="${m.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy">
+                    <img src="${m.image}" alt="${m.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy" width="96" height="96">
                     <span class="w-full h-full hidden items-center justify-center text-se-cyan font-bold text-2xl font-mono">${initials}</span>
                   ` : `
                     <span class="w-full h-full flex items-center justify-center text-se-cyan font-bold text-2xl font-mono">${initials}</span>
@@ -1030,6 +1095,10 @@ function renderCurrentRoute() {
     setDocumentMeta(
       HOME_META[currentLang]?.title || HOME_META.id.title,
       HOME_META[currentLang]?.description || HOME_META.id.description,
+      "/",
+      currentLang === "id"
+        ? "jasa IT Pontianak, digital UMKM Pontianak, sistem informasi bisnis Pontianak, aplikasi kasir Pontianak, aplikasi inventaris Pontianak, website toko online Pontianak, WhatsApp bot bisnis, otomasi operasional UMKM, IT support Pontianak, vendor IT Kalimantan Barat"
+        : "IT services Pontianak, digital business system Pontianak, custom POS Pontianak, inventory app Pontianak, business website Pontianak, WhatsApp automation, business operations automation, IT support West Kalimantan",
     );
     renderPage();
   } else if (route.name === "about") {
@@ -1040,6 +1109,10 @@ function renderCurrentRoute() {
       currentLang === "id"
         ? "Kenali Selenium Digital Consultant, partner digital yang membantu bisnis dan UMKM membangun website serta produk digital berkualitas di Pontianak dan Kalimantan Barat."
         : "Get to know Selenium Digital Consultant, a digital partner helping businesses and MSMEs build high-quality websites and digital products in Pontianak.",
+      "/about",
+      currentLang === "id"
+        ? "tim IT Pontianak, startup teknologi Pontianak, digital agency Pontianak, tentang selenium digital, konsultan bisnis digital Pontianak, pengembang software Kalimantan Barat, vendor teknologi UMKM"
+        : "IT team Pontianak, tech startup Pontianak, digital agency Pontianak, about selenium digital, business technology consultant Pontianak",
     );
     renderAboutPage();
   } else if (route.name === "service-detail") {
