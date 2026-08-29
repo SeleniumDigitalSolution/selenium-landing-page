@@ -864,7 +864,6 @@ function renderPage() {
     ${renderNav()}
     <main id="main-content">
       ${renderHero()}
-      ${renderPartners()}
       ${renderServices()} 
       ${renderAbout()}
       ${renderProjects()}
