@@ -375,12 +375,12 @@ export const translations = {
           text: "Visit Project",
         },
         {
-          title: "Village Profile Website",
+          title: "Website Company Profile",
           client: "Web Development",
           description:
-            "Built an interactive website serving as an information hub to provide easy public access to regional data and local potentials.",
+            "Built an interactive website serving as an information hub to provide easy public access to your business",
           tags: ["Frontend", "UI/UX Design"],
-          url: "https://github.com/PMKM-IF-UNTAN-2025/Web-Profile-Desa-CMS-Template",
+          url: "https://dtlawyers.id",
           text: "Visit Project",
         },
         {
@@ -877,12 +877,12 @@ export const translations = {
           text: "Kunjungi Projek",
         },
         {
-          title: "Website Profil Desa",
+          title: "Website Profil Bisnis",
           client: "Web Development",
           description:
-            "Membangun website profil sebagai pilar informasi utama yang memudahkan akses publik terhadap potensi dan data daerah.",
+            "Membangun website profil sebagai pilar informasi utama yang memudahkan akses publik terhadap bisnis anda",
           tags: ["Frontend", "UI/UX Design"],
-          url: "https://github.com/PMKM-IF-UNTAN-2025/Web-Profile-Desa-CMS-Template",
+          url: "https://dtlawyers.id",
           text: "Kunjungi Projek",
         },
         {
