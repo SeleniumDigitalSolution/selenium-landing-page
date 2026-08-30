@@ -477,6 +477,7 @@ export const translations = {
     // ── Footer ──
     footer: {
       tagline: "The Essential Element for Your Digital Ecosystem.",
+      email: "support@selenium.works",
       copyright: "© 2025 Selenium Digital Consultant. All rights reserved.",
       links: [
         { label: "Services", href: "#services" },
@@ -979,6 +980,7 @@ export const translations = {
     // ── Footer ──
     footer: {
       tagline: "Elemen Esensial untuk Ekosistem Digital Anda.",
+      email: "support@selenium.works",
       copyright: "© 2025 Selenium Digital Consultant. Hak cipta dilindungi.",
       links: [
         { label: "Layanan", href: "#services" },

@@ -702,10 +702,17 @@ function renderFooter() {
               Se<span>lenium</span>
             </span>
           </div>
-          <p class="text-sm leading-relaxed max-w-xs">${footer.tagline}</p>
+          <p class="text-sm leading-relaxed max-w-xs mb-4">${footer.tagline}</p>
+
+          <div class="mb-5">
+            <a href="mailto:${footer.email || 'support@selenium.works'}" class="inline-flex items-center gap-2 text-sm text-se-text-muted hover:text-se-cyan transition-colors duration-300">
+              ${icons.get("mail", "w-4 h-4 text-se-cyan")}
+              <span>${footer.email || "support@selenium.works"}</span>
+            </a>
+          </div>
 
           <!-- Atomic number badge -->
-          <div class="mt-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-sm border border-se-border text-xs font-mono">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm border border-se-border text-xs font-mono">
             <span class="text-se-cyan">Se</span>
             <span>·</span>
             <span>Atomic No. 34</span>
