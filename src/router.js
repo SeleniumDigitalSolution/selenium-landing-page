@@ -9,6 +9,15 @@ export function getRoute(pathname = window.location.pathname) {
     return { name: "about" };
   }
 
+  if (
+    pathname === "/products/sosialin" ||
+    pathname === "/products/sosialin/" ||
+    pathname === "/products/product-name" ||
+    pathname === "/products/product-name/"
+  ) {
+    return { name: "sosialin" };
+  }
+
   const serviceMatch = pathname.match(SERVICE_DETAIL_PATTERN);
   if (serviceMatch) {
     return {

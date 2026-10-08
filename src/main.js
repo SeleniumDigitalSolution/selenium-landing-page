@@ -20,6 +20,10 @@ import {
   renderServiceDetailPage,
   renderServiceNotFoundPage,
 } from "./pages/serviceDetailPage.js";
+import {
+  renderSosialinPageContent,
+  mountSosialinBehaviors,
+} from "./pages/sosialinPage.js";
 
 /* ═════════════════════════════════════════════════════════════
    GLOBAL STATE
@@ -1121,6 +1125,8 @@ function renderCurrentRoute() {
         : "IT team Pontianak, tech startup Pontianak, digital agency Pontianak, about selenium digital, business technology consultant Pontianak",
     );
     renderAboutPage();
+  } else if (route.name === "sosialin") {
+    renderSosialinRoute();
   } else if (route.name === "service-detail") {
     renderDetailRoute(route.slug);
   } else {
@@ -1128,6 +1134,30 @@ function renderCurrentRoute() {
   }
 
   syncScrollPosition();
+}
+
+function renderSosialinRoute() {
+  const app = document.getElementById("app");
+  if (!app) return;
+
+  setDocumentMeta(
+    "Sosialin — Otomasi Engagement & Leads Instagram untuk Agensi & Penjual Online",
+    "Otomasi komentar dan DM Instagram untuk agensi dan penjual online. Bangun flow pesan tanpa koding, tangkap leads otomatis. Daftar akses awal sekarang.",
+    "/products/sosialin",
+    "otomasi instagram, auto reply dm instagram, dm automation instagram, lead capture instagram, sosialin"
+  );
+
+  app.innerHTML = `
+    ${renderNav()}
+    <main id="main-content">
+      ${renderSosialinPageContent()}
+    </main>
+    ${renderFooter()}
+    ${renderWhatsAppFAB()}
+  `;
+
+  mountPageBehaviors();
+  mountSosialinBehaviors();
 }
 
 /* ═════════════════════════════════════════════════════════════
